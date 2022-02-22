@@ -22,6 +22,7 @@
 		18F641CE27C473A2000B2526 /* Check.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CD27C473A2000B2526 /* Check.storyboard */; };
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
 		18F641D527C4772E000B2526 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641D427C4772E000B2526 /* Register.storyboard */; };
+		26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9927C4785D00304788 /* SelectBookViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		18F641CD27C473A2000B2526 /* Check.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Check.storyboard; sourceTree = "<group>"; };
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		18F641D427C4772E000B2526 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 		18F641CF27C47410000B2526 /* Apply */ = {
 			isa = PBXGroup;
 			children = (
+				26765C9927C4785D00304788 /* SelectBookViewController.swift */,
 			);
 			path = Apply;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */,
 				18F641D227C4744E000B2526 /* DummyData.swift in Sources */,
 				18F641BF27C470D6000B2526 /* StartViewController.swift in Sources */,
+				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
