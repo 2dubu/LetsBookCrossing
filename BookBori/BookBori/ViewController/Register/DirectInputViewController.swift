@@ -19,7 +19,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     var whetherUploadCoverImage: Bool = false
 //    let db = Firestore.firestore()
 //    let user = Auth.auth().currentUser
-//    var searchItem : SearchResultOfKakao.BookInfo?
+    var searchItem : SearchResultOfNaver.BookInfo?
     
     //MARK: - IBOutlet
     
@@ -64,8 +64,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        calculateDate()
+//        calculateDate()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         categoryOpaqueView.addGestureRecognizer(tapGesture)
@@ -77,9 +76,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         scrollView.addGestureRecognizer(singleTapGestureRecognizer)
         
         if userSelectRegistrationMethodButton == "검색" {
-            self.searchItem = dataManager.shared.searchResultOfKakao?.documents[indexPath-1]
+            self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
         } else if userSelectRegistrationMethodButton == "바코드" {
-            self.searchItem = dataManager.shared.searchResultOfKakao?.documents[indexPath]
+            self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
         
         applyDynamicFont()
@@ -89,7 +88,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         reviewTextView.delegate = self
         coverImagePC.delegate = self
-         */
     }
     
     // MARK: - IBAction
@@ -421,7 +419,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         coverImageView.layer.shadowOpacity = 0.3
         coverImageView.layer.shadowColor = UIColor.black.cgColor
         
-        /*
         guard let searchItem = searchItem else { return }
         
         let matchedStrData = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
@@ -430,14 +427,16 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         titleTextField.text = matchedStrData
         
+        /*
         if searchItem.authors.count == 1 {
             authorTextField.text = searchItem.authors[0]
         } else if searchItem.authors.count > 1 {
             authorTextField.text = "\(searchItem.authors[0]) 외 \(searchItem.authors.count-1)명"
-        }
+        } */
+        authorTextField.text = searchItem.author
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         
-        guard let imageURL = URL(string: searchItem.thumbnail) else { return }
+        guard let imageURL = URL(string: searchItem.image) else { return }
         coverImageView.kf.indicatorType = .activity
         coverImageView.kf.setImage(
             with: imageURL,
@@ -446,7 +445,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
-         */
     }
     
     func placeholderSetting() {

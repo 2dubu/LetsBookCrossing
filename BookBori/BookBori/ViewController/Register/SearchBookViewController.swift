@@ -26,7 +26,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        dataManager.shared.searchResultOfKakao?.documents.removeAll()
+        dataManager.shared.searchResultOfNaver?.items.removeAll()
         searchBookTableView.reloadData()
         
         searchBookTableView.delegate = self
@@ -60,7 +60,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.tintColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
     }
 
-    /*
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
         self.searchBookTableView.contentOffset = CGPoint(x: 0, y: 0 - searchBookTableView.contentInset.top)
@@ -84,7 +83,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                             self.searchBookTableView.separatorStyle = .singleLine
                             self.searchBookTableView.reloadData()
                             
-                            if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfKakao?.documents.isEmpty == true {
+                            if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                                 self.searchBookTableView.separatorStyle = .none
                                 self.defaultImage.image = UIImage(named: "searchTableViewPlaceholder2")
                                 self.defaultImage.isHidden = false
@@ -99,18 +98,16 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-     */
     
-    /*
     func requestBookBySearch(
         _ query: String,
-        _ completion: @escaping (Result<SearchResultOfKakao, Error>) -> ()
+        _ completion: @escaping (Result<SearchResultOfNaver, Error>) -> ()
     ) {
-        let baseURL = "https://dapi.kakao.com/v3/search/book?target="
-        let url = baseURL + "title&query=" + "\(query)"
-        let RestAPIKEY: String = "a020fb7fae0b849fa5e0ca6f9b039d9c"
+        let baseURL = "https://openapi.naver.com/v1/search/book.json?query="
+        let url = baseURL + "\(query)"
         let headers: HTTPHeaders = [
-            "Authorization": "KakaoAK \(RestAPIKEY)",
+            "X-Naver-Client-Id": "SLVdtD48toDlPkzUQcqQ",
+            "X-Naver-Client-Secret": "6OoqxoUJPT",
             "Content-Type": "application/json; charset=utf-8"
         ]
         if let urlEncoding = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
@@ -130,9 +127,9 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                     case .success(let jsonData):
                         do {
                             let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                            let searchInfo = try JSONDecoder().decode(SearchResultOfKakao.self, from: json)
+                            let searchInfo = try JSONDecoder().decode(SearchResultOfNaver.self, from: json)
                             
-                            dataManager.shared.searchResultOfKakao = searchInfo
+                            dataManager.shared.searchResultOfNaver = searchInfo
                             completion(.success(searchInfo))
                         } catch(let error) {
                             completion(.failure(error))
@@ -157,7 +154,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
         }
     }
-     */
     
     private func checkDeviceNetworkStatus() {
         if(DeviceManager.shared.networkStatus) == false {
@@ -187,10 +183,9 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    /*
-    func getFilterdData() -> [SearchResultOfKakao.BookInfo] {
-        let filteredItem = dataManager.shared.searchResultOfKakao?.documents.filter({ item in
-            if item.title == "" || item.thumbnail == "" || item.authors == [] || item.datetime == "" {
+    func getFilterdData() -> [SearchResultOfNaver.BookInfo] {
+        let filteredItem = dataManager.shared.searchResultOfNaver?.items.filter({ item in
+            if item.title == "" || item.image == "" || item.author == "" || item.pubdate == "" {
                 return false
             } else {
                 return true
@@ -198,7 +193,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         })
         return filteredItem ?? []
     }
-     */
     
     // MARK: - TableViewController
     
@@ -208,23 +202,22 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if getFilterdData().isEmpty == true {
-//            return 0
-//        } else {
-//            return getFilterdData().count
-//        }
+        if getFilterdData().isEmpty == true {
+            return 0
+        } else {
+            return getFilterdData().count
+        }
         return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as! SearchBookTableViewCell
         cell.selectionStyle = .none
         self.defaultImage.isHidden = true
         
-        let filteredItem = dataManager.shared.searchResultOfKakao?.documents.filter({ item in
-            if item.title == "" || item.thumbnail == "" || item.authors == [] {
+        let filteredItem = dataManager.shared.searchResultOfNaver?.items.filter({ item in
+            if item.title == "" || item.image == "" || item.author == "" {
                 return false
             } else {
                 return true
@@ -233,7 +226,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if let item = filteredItem?[indexPath.row] {
             
-            guard let url = URL(string: item.thumbnail) else { return cell }
+            guard let url = URL(string: item.image) else { return cell }
             cell.bookImageView.kf.indicatorType = .activity
             cell.bookImageView.kf.setImage(
                 with: url,
@@ -244,15 +237,16 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 ])
 
             cell.bookTitleLabel.text = item.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+            
+            /*
             if item.authors.count == 1 {
                 cell.bookAuthorLabel.text = item.authors[0]
             } else if item.authors.count > 1 {
                 cell.bookAuthorLabel.text = "\(item.authors[0]) 외 \(item.authors.count-1)명"
-            }
+            } */
+            
+            cell.bookAuthorLabel.text = item.author
         }
-        */
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as! UITableViewCell
-        
         return cell
     }
     

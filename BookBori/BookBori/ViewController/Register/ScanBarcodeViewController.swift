@@ -92,22 +92,26 @@ class ScanBarcodeViewController: UIViewController {
     }
     
     //MARK: - functions
-    /*
+    
     func requestBookByScan(
         _ query: String,
-        _ completion: @escaping (Result<SearchResultOfKakao, Error>) -> ()
+        _ completion: @escaping (Result<SearchResultOfNaver, Error>) -> ()
     ) {
-        let baseURL = "https://dapi.kakao.com/v3/search/book?target="
-        let url = baseURL + "isbn&query=" + "\(query)"
-        let RestAPIKEY: String = "a020fb7fae0b849fa5e0ca6f9b039d9c"
+        let baseURL = "https://openapi.naver.com/v1/search/book.json?query="
+        let url = baseURL + "\(query)"
         let headers: HTTPHeaders = [
-            "Authorization": "KakaoAK \(RestAPIKEY)",
+            "X-Naver-Client-Id": "SLVdtD48toDlPkzUQcqQ",
+            "X-Naver-Client-Secret": "6OoqxoUJPT",
             "Content-Type": "application/json; charset=utf-8"
         ]
         if let urlEncoding = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            checkDeviceNetworkStatus()
             self.indicatorView.isHidden = false
             self.indicatorView.startAnimating()
-            checkDeviceNetworkStatus()
+            
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = 10 // seconds
+            configuration.timeoutIntervalForResource = 10
             AF
                 .request(urlEncoding, method: .get, headers: headers, requestModifier: { $0.timeoutInterval = 5 })
                 .responseJSON { response in
@@ -115,8 +119,9 @@ class ScanBarcodeViewController: UIViewController {
                     case .success(let jsonData):
                         do {
                             let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                            let searchInfo = try JSONDecoder().decode(SearchResultOfKakao.self, from: json)
-                            dataManager.shared.searchResultOfKakao = searchInfo
+                            let searchInfo = try JSONDecoder().decode(SearchResultOfNaver.self, from: json)
+                            
+                            dataManager.shared.searchResultOfNaver = searchInfo
                             completion(.success(searchInfo))
                         } catch(let error) {
                             completion(.failure(error))
@@ -127,7 +132,6 @@ class ScanBarcodeViewController: UIViewController {
                 }
         }
     }
-     */
     
     private func checkDeviceNetworkStatus() {
         if(DeviceManager.shared.networkStatus) == false {
@@ -190,7 +194,6 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             print("isbn = \(stringValue)")
-            /*
             requestBookByScan(stringValue) { result in
                 switch result {
                 case .success(_):
@@ -200,7 +203,7 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.indicatorView.stopAnimating()
                         self.indicatorView.isHidden = true
                         
-                        if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfKakao?.documents.isEmpty == true {
+                        if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                             let ac = UIAlertController(title: "검색 결과가 없습니다", message: "검색 결과가 없습니다. 다른 등록 방법을 사용해주세요.", preferredStyle: .alert)
                             ac.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
                                 self.navigationController?.popViewController(animated: true)
@@ -215,7 +218,6 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                     print(error.localizedDescription)
                 }
             }
-            */
         }
     }
     
