@@ -8,22 +8,32 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    //MARK: - IBOutlet
+    @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var checkButton: UIButton!
 
+    //MARK: - Properties
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - IBAction
+    @IBAction func applyButtonTapped(_ sender: Any) {
+        let applySB = UIStoryboard(name: "Apply", bundle: nil)
+        let selectBookVC = applySB.instantiateViewController(withIdentifier: "SelectBookVC")
+        self.navigationController?.pushViewController(selectBookVC, animated: true)
     }
-    */
+    
+    @IBAction func checkButtonTapped(_ sender: Any) {
+        let checkSB = UIStoryboard(name: "Check", bundle: nil)
+        let checkVC = checkSB.instantiateViewController(withIdentifier: "CheckVC")
+        self.navigationController?.pushViewController(checkVC, animated: true)
+    }
+    
+    //MARK: - Functions
+
 
 }

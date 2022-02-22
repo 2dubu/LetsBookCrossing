@@ -8,20 +8,104 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartVC" id="BYZ-38-t0r" customClass="StartViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reV-aL-PZl">
+                                <rect key="frame" x="150.5" y="437.5" width="113.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="reV-aL-PZl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JLj-px-Zfi"/>
+                            <constraint firstItem="reV-aL-PZl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQD-rn-Xf5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="85"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="cMp-MH-o1X">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" id="5Do-JC-jYa" customClass="MainViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m1S-Wh-4DB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="OGt-dl-tj8">
+                                <rect key="frame" x="20" y="322" width="374" height="252"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-i7-Cuc">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Bd6-yd-0b9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="북크로싱 신청하기"/>
+                                        <connections>
+                                            <action selector="applyButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="EMt-lG-tab"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpV-R4-XDc">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="120"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="북크로싱 신청 내역 조회하기"/>
+                                        <connections>
+                                            <action selector="checkButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="HrB-hF-igQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kpV-R4-XDc" firstAttribute="height" secondItem="OFo-i7-Cuc" secondAttribute="height" id="6oF-OA-kOQ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gUU-ax-mkS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OGt-dl-tj8" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="20" id="Osw-g0-DCY"/>
+                            <constraint firstItem="gUU-ax-mkS" firstAttribute="trailing" secondItem="OGt-dl-tj8" secondAttribute="trailing" constant="20" id="mZH-WJ-oQl"/>
+                            <constraint firstItem="OGt-dl-tj8" firstAttribute="centerY" secondItem="m1S-Wh-4DB" secondAttribute="centerY" id="xuK-eE-iLZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZWb-A3-2Ym"/>
+                    <connections>
+                        <outlet property="applyButton" destination="OFo-i7-Cuc" id="EQC-68-row"/>
+                        <outlet property="checkButton" destination="kpV-R4-XDc" id="I5l-oT-Vfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKy-bk-IW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CBI-ee-aQE">
+            <objects>
+                <navigationController storyboardIdentifier="MainNC" automaticallyAdjustsScrollViewInsets="NO" id="aKU-o6-3JV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-lW-OUI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Do-JC-jYa" kind="relationship" relationship="rootViewController" id="D53-4P-yE3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcz-xT-Hqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="84"/>
         </scene>
     </scenes>
     <resources>
