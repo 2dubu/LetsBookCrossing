@@ -21,6 +21,7 @@
 		18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CB27C4731F000B2526 /* Apply.storyboard */; };
 		18F641CE27C473A2000B2526 /* Check.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CD27C473A2000B2526 /* Check.storyboard */; };
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
+		18F641D527C4772E000B2526 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641D427C4772E000B2526 /* Register.storyboard */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		18F641CB27C4731F000B2526 /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
 		18F641CD27C473A2000B2526 /* Check.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Check.storyboard; sourceTree = "<group>"; };
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		18F641D427C4772E000B2526 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				18F641AD27C46A84000B2526 /* LaunchScreen.storyboard */,
 				18F641A827C46A7F000B2526 /* Main.storyboard */,
 				18F641CB27C4731F000B2526 /* Apply.storyboard */,
+				18F641D427C4772E000B2526 /* Register.storyboard */,
 				18F641CD27C473A2000B2526 /* Check.storyboard */,
 			);
 			path = Storyboard;
@@ -251,6 +254,7 @@
 				18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */,
 				18F641AC27C46A83000B2526 /* Assets.xcassets in Resources */,
 				18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */,
+				18F641D527C4772E000B2526 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
