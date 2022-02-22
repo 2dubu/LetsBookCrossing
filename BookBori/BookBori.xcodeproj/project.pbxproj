@@ -23,6 +23,11 @@
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
 		18F641D527C4772E000B2526 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641D427C4772E000B2526 /* Register.storyboard */; };
 		18F641D727C480AC000B2526 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D627C480AC000B2526 /* CheckViewController.swift */; };
+		18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */; };
+		18F641DC27C4AB92000B2526 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DB27C4AB92000B2526 /* Constants.swift */; };
+		18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */; };
+		18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */; };
+		18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E127C4AD53000B2526 /* SearchBookViewController.swift */; };
 		26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9927C4785D00304788 /* SelectBookViewController.swift */; };
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
@@ -47,6 +52,11 @@
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		18F641D427C4772E000B2526 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		18F641D627C480AC000B2526 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRegistrationMethodViewController.swift; sourceTree = "<group>"; };
+		18F641DB27C4AB92000B2526 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectInputViewController.swift; sourceTree = "<group>"; };
+		18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarcodeViewController.swift; sourceTree = "<group>"; };
+		18F641E127C4AD53000B2526 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,10 +120,11 @@
 		18F641B727C46E98000B2526 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				18F641DB27C4AB92000B2526 /* Constants.swift */,
+				18F641C627C4710D000B2526 /* Utilities.swift */,
 				18F641C027C470EB000B2526 /* DeviceConfig.swift */,
 				18F641C227C470F2000B2526 /* LabelExtension.swift */,
 				18F641C427C470F7000B2526 /* NavigationExtension.swift */,
-				18F641C627C4710D000B2526 /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 				18F641BE27C470D6000B2526 /* StartViewController.swift */,
 				18F641C927C47214000B2526 /* MainViewController.swift */,
 				18F641CF27C47410000B2526 /* Apply */,
+				18F641D827C4A96A000B2526 /* Register */,
 				18F641D027C47417000B2526 /* Check */,
 			);
 			path = ViewController;
@@ -180,6 +192,17 @@
 				18F641D627C480AC000B2526 /* CheckViewController.swift */,
 			);
 			path = Check;
+			sourceTree = "<group>";
+		};
+		18F641D827C4A96A000B2526 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */,
+				18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */,
+				18F641E127C4AD53000B2526 /* SearchBookViewController.swift */,
+				18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		5F99A8400F77CD4A14E85842 /* Pods */ = {
@@ -299,17 +322,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */,
 				18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */,
 				18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */,
+				18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */,
 				18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */,
 				18F641D227C4744E000B2526 /* DummyData.swift in Sources */,
 				18F641BF27C470D6000B2526 /* StartViewController.swift in Sources */,
 				26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */,
 				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
+				18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */,
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
+				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
 				18F641CA27C47214000B2526 /* MainViewController.swift in Sources */,
+				18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */,
 				18F641D727C480AC000B2526 /* CheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
