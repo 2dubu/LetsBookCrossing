@@ -13,6 +13,7 @@
 		18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641A827C46A7F000B2526 /* Main.storyboard */; };
 		18F641AC27C46A83000B2526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AB27C46A83000B2526 /* Assets.xcassets */; };
 		18F641AF27C46A84000B2526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AD27C46A84000B2526 /* LaunchScreen.storyboard */; };
+		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		18F641AB27C46A83000B2526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F641AE27C46A84000B2526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F641B027C46A84000B2526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
+		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
+		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				18F641A127C46A7F000B2526 /* BookBori */,
 				18F641A027C46A7F000B2526 /* Products */,
+				5F99A8400F77CD4A14E85842 /* Pods */,
+				7718CC8CE8F6D65EFB10E1E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = BookBori;
 			sourceTree = "<group>";
 		};
+		5F99A8400F77CD4A14E85842 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */,
+				E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7718CC8CE8F6D65EFB10E1E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F641B327C46A84000B2526 /* Build configuration list for PBXNativeTarget "BookBori" */;
 			buildPhases = (
+				E4EEA1AE25F3C6F482895D2B /* [CP] Check Pods Manifest.lock */,
 				18F6419B27C46A7F000B2526 /* Sources */,
 				18F6419C27C46A7F000B2526 /* Frameworks */,
 				18F6419D27C46A7F000B2526 /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4EEA1AE25F3C6F482895D2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookBori-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18F6419B27C46A7F000B2526 /* Sources */ = {
@@ -284,6 +335,7 @@
 		};
 		18F641B427C46A84000B2526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,12 +358,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		18F641B527C46A84000B2526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -334,7 +387,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
