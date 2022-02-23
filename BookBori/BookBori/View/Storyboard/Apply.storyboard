@@ -167,7 +167,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="안내" id="7HK-i7-iA6">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="XP9-sG-rEp"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="XP9-sG-rEp">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="qHx-ix-aIn" id="cN2-PV-yxS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bookCoverImageView" destination="dRF-GS-ve8" id="rHN-pb-iZC"/>
@@ -278,7 +282,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="사용자 정보 수집" id="YaB-M9-28u">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="8ON-sn-Ye6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="8ON-sn-Ye6">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="kUS-Om-dIG" id="B5n-1R-i33"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-gh-XFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
