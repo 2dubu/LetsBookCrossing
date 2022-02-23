@@ -437,7 +437,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         } else if searchItem.authors.count > 1 {
             authorTextField.text = "\(searchItem.authors[0]) 외 \(searchItem.authors.count-1)명"
         } */
-        authorTextField.text = searchItem.author
+        authorTextField.text = searchItem.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         
         guard let imageURL = URL(string: searchItem.image) else { return }
