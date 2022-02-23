@@ -262,7 +262,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
                                             <action selector="passwordTextFieldEditingChanged:" destination="kUS-Om-dIG" eventType="editingChanged" id="F6U-7c-yI5"/>
                                         </connections>
