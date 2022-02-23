@@ -8,15 +8,18 @@
 import UIKit
 
 class GuideViewController: UIViewController {
+    
+    // MARK: - viewController Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 신청할 도서 정보 표시
-        guard let book = bookApplied else { return }
-        bookCoverImageView.image = UIImage(named: book.image)
-        bookTitleLabel.text = book.title
-        bookDetailLabel.text = "저자 : \(book.author)\n출판사 : \(book.publisher)\n발행연도 : \(book.yearPublished)"
+        setBookAppliedInfo()
+        dynamicFont()
+        setButton()
+        
+        // 중간 line 세팅
+        lineView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
     
     
@@ -25,21 +28,44 @@ class GuideViewController: UIViewController {
     @IBOutlet weak var bookCoverImageView: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var bookDetailLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var lineView: UIView!
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - function
+    
+    func dynamicFont() {
+        bookTitleLabel.dynamicFont(fontSize: 16, weight: .semibold)
+        bookDetailLabel.dynamicFont(fontSize: 13, weight: .light)
+        continueButton.titleLabel?.dynamicFont(fontSize: 18, weight: .medium)
+        
     }
-    */
-
+    
+    func setBookAppliedInfo() {
+        guard let book = bookApplied else { return }
+        bookCoverImageView.image = UIImage(named: book.image)
+        bookTitleLabel.text = book.title
+        
+        // bookDetailLabel 세팅
+        bookDetailLabel.text = "저자 : \(book.author)\n출판사 : \(book.publisher)\n발행연도 : \(book.yearPublished)"
+        let attrString = NSMutableAttributedString(string: bookDetailLabel.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 2
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        bookDetailLabel.attributedText = attrString
+    }
+    
+    func setButton() {
+        continueButton.layer.cornerRadius = UIScreen.main.bounds.width/50
+        continueButton.layer.shadowColor = UIColor.darkGray.cgColor
+        continueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        continueButton.layer.shadowRadius = 1
+        continueButton.layer.shadowOpacity = 0.5
+        continueButton.backgroundColor = .white
+        continueButton.tintColor = .black
+    }
 }
