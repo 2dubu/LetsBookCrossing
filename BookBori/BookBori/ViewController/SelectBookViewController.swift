@@ -10,10 +10,9 @@ import UIKit
 class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     //MARK: - constant, variable
-    
+
     let searchBar = UISearchBar()
     var filteredArray : [Book] = BookDummyData.shared.books  // 검색에 맞는 데이터만 필터링해서 담는 Book 배열
-    
     
     //MARK: - viewController Life Cycle
     
@@ -80,6 +79,7 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        bookApplied = BookDummyData.shared.books[indexPath.row]
         let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
         self.navigationController?.pushViewController(guideVC, animated: true)
     }
