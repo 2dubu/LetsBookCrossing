@@ -206,7 +206,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         updateCompleteBarbuttonItemState()
     }
     
-    /*
+    
     // 등록할 책의 데이터 입력 후 확인 버튼
     @IBAction func registrationCompleteButtonTapped(_ sender: Any) {
         
@@ -236,6 +236,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.present(longLettersAlert, animated: true, completion: nil)
         }
         
+        guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
+        self.navigationController?.pushViewController(completeRegisterVC, animated: true)
+        
+        /*
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.000Z"
         let convertDate = dateFormatter.date(from: searchItem!.datetime)
@@ -287,8 +291,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         registrationCompleteAlert.addAction(registrationCompleteCancelAction)
         registrationCompleteAlert.addAction(registrationCompleteConfirmAction)
         self.present(registrationCompleteAlert, animated: true, completion: nil)
+        */
     }
-    */
     
     @IBAction func categoryTextFieldTapped(_ sender: Any) {
         self.categoryOpaqueView.isHidden = false
@@ -468,7 +472,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func updateCompleteBarbuttonItemState() {
-        if titleTextField.hasText == true, authorTextField.hasText == true,  publisherTextField.hasText == true,  "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 20 || "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 151, categoryTextField.titleLabel?.text != "선택" {
+        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true,  "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 20 || "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 151, categoryTextField.titleLabel?.text != "선택", reviewTextView.text != "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요." {
             completeButton.isEnabled = true
             completeButton.layer.backgroundColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
             completeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
