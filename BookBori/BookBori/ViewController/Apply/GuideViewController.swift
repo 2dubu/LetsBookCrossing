@@ -11,9 +11,21 @@ class GuideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // 신청할 도서 정보 표시
+        guard let book = bookApplied else { return }
+        bookCoverImageView.image = UIImage(named: book.image)
+        bookTitleLabel.text = book.title
+        bookDetailLabel.text = "저자 : \(book.author)\n출판사 : \(book.publisher)\n발행연도 : \(book.yearPublished)"
     }
+    
+    
+    // MARK: - IBOutlet & IBAction
+    
+    @IBOutlet weak var bookCoverImageView: UIImageView!
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var bookDetailLabel: UILabel!
+    
     
 
     /*
