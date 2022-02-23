@@ -27,7 +27,7 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 
-    //MARK: - IBAction, IBOutlet
+    // MARK: - IBOutlet & IBAction
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -58,6 +58,9 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
         
         cell.titleLabel.text = filteredArray[indexPath.row].title
         cell.coverImageView.image = UIImage(named: filteredArray[indexPath.row].image)
+        
+        // titleLabel dynamicFont
+        cell.titleLabel.dynamicFont(fontSize: 12, weight: .semibold)
         
         return cell
     }
