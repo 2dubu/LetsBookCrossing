@@ -16,6 +16,7 @@ class CollectUserInfoViewController: UIViewController {
         
         dynamicFont()
         setButton()
+        updateContinueButton()
 
     }
     
@@ -31,6 +32,50 @@ class CollectUserInfoViewController: UIViewController {
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        if phoneNumberTextField.hasText && passwordTextField.hasText {
+            
+            var phoneNumberSuitable : Bool = false
+            var passwordSuitable : Bool = false
+        
+            // 전화번호 검사
+            let phoneNumberRegex = try? NSRegularExpression(pattern: "^01([0-9])-([0-9]{3,4})-([0-9]{4})$")
+            guard let phoneNumberText = phoneNumberTextField.text else { return }
+            if ((phoneNumberRegex?.firstMatch(in: phoneNumberText, options: [], range: NSRange(location: 0, length: phoneNumberText.count))) != nil) {
+                phoneNumberSuitable = true
+                print("전번 굿")
+            }
+            
+            // 비밀번호 검사
+            let passwordRegex = try? NSRegularExpression(pattern: "^[0-9]{4,4}$")
+            guard let passwordText = passwordTextField.text else { return }
+            if ((passwordRegex?.firstMatch(in: passwordText, options: [], range: NSRange(location: 0, length: passwordText.count))) != nil) {
+                passwordSuitable = true
+                print("비번 굿")
+            }
+            
+            if phoneNumberSuitable == true && passwordSuitable == true {
+                userPhoneNumber = phoneNumberText
+                userPassword = passwordText
+            } else if phoneNumberSuitable == false {
+                self.present(UtilitiesForAlert.returnAlert(title: "전화번호를 다시 한 번 확인해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            } else {
+                self.present(UtilitiesForAlert.returnAlert(title: "비밀번호를 다시 한 번 확인해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            }
+            
+        } else {
+            self.present(UtilitiesForAlert.returnAlert(title: "전화번호와 비밀번호를 모두 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func phoneNumberTextFieldEditingChanged(_ sender: Any) {
+        updateContinueButton()
+    }
+    
+    @IBAction func passwordTextFieldEditingChanged(_ sender: Any) {
+        updateContinueButton()
     }
     
     
@@ -52,6 +97,20 @@ class CollectUserInfoViewController: UIViewController {
         continueButton.backgroundColor = .white
         continueButton.tintColor = .black
     }
+    
+    func updateContinueButton() {
+        if phoneNumberTextField.hasText && passwordTextField.hasText {
+            continueButton.tintColor = .black
+        } else {
+            continueButton.tintColor = .lightGray
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     
 
     /*

@@ -10,3 +10,6 @@ import Foundation
 var userSelectRegistrationMethodButton : String?
 
 var bookApplied : Book?
+
+var userPhoneNumber : String?
+var userPassword : String?

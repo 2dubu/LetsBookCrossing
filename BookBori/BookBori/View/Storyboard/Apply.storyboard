@@ -219,6 +219,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="다음"/>
                                 <connections>
+                                    <action selector="continueButtonTapped:" destination="kUS-Om-dIG" eventType="touchUpInside" id="Ysz-AJ-wex"/>
                                     <segue destination="imp-IG-cav" kind="show" id="eGn-ho-foc"/>
                                 </connections>
                             </button>
@@ -236,9 +237,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="btL-Kj-3O6" secondAttribute="height" multiplier="6.5:1" id="Iou-vV-0qy"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="phoneNumberTextFieldEditingChanged:" destination="kUS-Om-dIG" eventType="editingChanged" id="C5u-DV-Bac"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -256,9 +260,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GVL-81-e0Z" secondAttribute="height" multiplier="6.5:1" id="SGf-wA-9as"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="passwordTextFieldEditingChanged:" destination="kUS-Om-dIG" eventType="editingChanged" id="F6U-7c-yI5"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
