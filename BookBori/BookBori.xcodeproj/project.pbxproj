@@ -32,6 +32,8 @@
 		18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */; };
 		26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9927C4785D00304788 /* SelectBookViewController.swift */; };
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
+		26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9D27C5B9A500304788 /* GuideViewController.swift */; };
+		26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectUserInfoViewController.swift; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				26765C9927C4785D00304788 /* SelectBookViewController.swift */,
+				26765C9D27C5B9A500304788 /* GuideViewController.swift */,
+				26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */,
 			);
 			path = Apply;
 			sourceTree = "<group>";
@@ -340,7 +346,9 @@
 				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
 				18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */,
+				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,
 				18F641E427C4C61F000B2526 /* searchData.swift in Sources */,
+				26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */,
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
 				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
@@ -496,7 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -509,7 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -525,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
