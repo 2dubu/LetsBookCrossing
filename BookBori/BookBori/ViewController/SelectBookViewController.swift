@@ -7,13 +7,97 @@
 
 import UIKit
 
-class SelectBookViewController: UIViewController {
+class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    
+    let searchBar = UISearchBar()
+    var titleArray : [String]?
+    var filterArray : [String]?
 
+    @IBOutlet weak var booksCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        booksCollectionView.delegate = self
+        booksCollectionView.dataSource = self
+        self.searchBar.delegate = self
 
-        // Do any additional setup after loading the view.
+        initSearchBar()
     }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func initSearchBar() {
+        searchBar.text = ""
+        searchBar.placeholder = "책을 검색해 보세요"
+        self.navigationItem.titleView = searchBar
+        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
+        searchBar.searchTextField.backgroundColor = UIColor.clear
+        searchBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+    
+    //MARK: - collectionView
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return BookDummyData.shared.books.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = booksCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BooksCollectionViewCell
+        
+        let book = BookDummyData.shared.books[indexPath.row]
+        cell.titleLabel.text = book.title
+        cell.coverImageView.image = UIImage(named: book.image)
+        
+        return cell
+    }
+    
+    // 위 아래 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+
+    // 옆 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    // cell 사이즈( 옆 라인을 고려하여 설정 )
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let size = CGSize(width: collectionView.frame.width/3, height: collectionView.frame.width/3+10)
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "guideVC")
+        self.navigationController?.pushViewController(guideVC, animated: true)
+    }
+
+    
+    //MARK: - searchBar
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        print("검색!")
+        
+        guard let text = searchBar.text else { return }
+        
+        if text.trimmingCharacters(in: .whitespaces).isEmpty {
+            print("비어있음")
+            UtilitiesForAlert.showAlert(viewController: self.presentingViewController, title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil)
+        } else {
+            
+        }
+        
+    }
+    
     
 
     /*
