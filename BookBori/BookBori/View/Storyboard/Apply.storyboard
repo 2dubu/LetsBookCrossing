@@ -12,7 +12,7 @@
         <!--제목 검색-->
         <scene sceneID="IgJ-Dt-XWc">
             <objects>
-                <viewController storyboardIdentifier="SelectBookVC" id="OKz-yk-3wv" customClass="SelectBookViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectBookVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OKz-yk-3wv" customClass="SelectBookViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z44-rv-rnZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
         <!--View Controller-->
         <scene sceneID="vxc-xR-SXC">
             <objects>
-                <viewController storyboardIdentifier="guideVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHx-ix-aIn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuideVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHx-ix-aIn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zFE-5i-RkH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,12 +132,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAo-lH-fwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="73"/>
+            <point key="canvasLocation" x="3041" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wxt-kE-VHL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gT4-r8-Nyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqu-8g-kqd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H3z-20-NOX">
@@ -149,13 +148,14 @@
                         <segue destination="OKz-yk-3wv" kind="relationship" relationship="rootViewController" id="nly-Bb-Nj2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gT4-r8-Nyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="782.60869565217399" y="61.607142857142854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Lkf-FJ-35e">
             <objects>
-                <viewController id="kUS-Om-dIG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectUserInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUS-Om-dIG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G2J-a0-Ems">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-gh-XFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3987" y="73"/>
+            <point key="canvasLocation" x="3725" y="62"/>
         </scene>
         <!--SetRegistrationVC-->
         <scene sceneID="h8w-mR-gd3">
@@ -198,12 +198,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P15-0j-aeo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4524" y="66"/>
+            <point key="canvasLocation" x="4262" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEy-zY-F9n">
             <objects>
-                <navigationController storyboardIdentifier="guideNC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v0u-Uq-yIc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GuideNC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v0u-Uq-yIc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUV-jK-gvz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -216,7 +216,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY0-TH-Wda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2608.6956521739135" y="72.991071428571431"/>
+            <point key="canvasLocation" x="2346" y="62"/>
         </scene>
     </scenes>
     <resources>
