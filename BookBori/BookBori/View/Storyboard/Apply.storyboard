@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1492.753623188406" y="61.607142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Guide View Controller-->
         <scene sceneID="vxc-xR-SXC">
             <objects>
-                <viewController storyboardIdentifier="GuideVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHx-ix-aIn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuideVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHx-ix-aIn" customClass="GuideViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zFE-5i-RkH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="782.60869565217399" y="61.607142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Collect User Info View Controller-->
         <scene sceneID="Lkf-FJ-35e">
             <objects>
-                <viewController storyboardIdentifier="CollectUserInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUS-Om-dIG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectUserInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUS-Om-dIG" customClass="CollectUserInfoViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G2J-a0-Ems">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
