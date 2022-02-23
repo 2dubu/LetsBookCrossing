@@ -76,7 +76,7 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "guideVC")
+        let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
         self.navigationController?.pushViewController(guideVC, animated: true)
     }
 
@@ -90,9 +90,13 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
         guard let text = searchBar.text else { return }
         
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            print("비어있음")
-            UtilitiesForAlert.showAlert(viewController: self.presentingViewController, title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil)
+        
+            self.present(UtilitiesForAlert.returnAlert(title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            
         } else {
+            
+            
+            
             
         }
         
