@@ -13,7 +13,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
 
     let jsconDecoder: JSONDecoder = JSONDecoder()
     let searchBar = UISearchBar()
-    let transfrom = CGAffineTransform.init(scaleX: 2.5, y: 2.5)
+    let transfrom = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
     
     @IBOutlet weak var searchBookTableView: UITableView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
@@ -207,7 +207,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             return getFilterdData().count
         }
-        return 0
     }
     
     
@@ -217,7 +216,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         self.defaultImage.isHidden = true
         
         let filteredItem = dataManager.shared.searchResultOfNaver?.items.filter({ item in
-            if item.title == "" || item.image == "" || item.author == "" {
+            if item.title == "" || item.image == "" || item.author == "" || item.pubdate == "" {
                 return false
             } else {
                 return true
@@ -245,7 +244,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.bookAuthorLabel.text = "\(item.authors[0]) 외 \(item.authors.count-1)명"
             } */
             
-            cell.bookAuthorLabel.text = item.author
+            cell.bookAuthorLabel.text = item.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         }
         return cell
     }
