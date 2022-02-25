@@ -340,8 +340,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         let matchedStrData = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
         print("matched strData : \(matchedStrData)")
         
-        // YYYYMMDD -> YYYY년 M월로 수정 필요
-        
         titleTextField.text = matchedStrData
         
         /*
@@ -352,7 +350,12 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         } */
         authorTextField.text = searchItem.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
-        pubdateTextField.text = searchItem.pubdate
+        
+        var pubdate = searchItem.pubdate
+        pubdate.removeLast(2)
+        pubdate.insert(contentsOf: "년 ", at: pubdate.index(pubdate.startIndex, offsetBy: 4))
+        pubdate.append(contentsOf: "월")
+        pubdateTextField.text = pubdate
         
         guard let imageURL = URL(string: searchItem.image) else { return }
         coverImageView.kf.indicatorType = .activity
