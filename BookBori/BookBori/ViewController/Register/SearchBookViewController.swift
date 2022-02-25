@@ -229,9 +229,10 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.bookImageView.kf.indicatorType = .activity
             cell.bookImageView.kf.setImage(
                 with: url,
+                placeholder: UIImage(named: "imageNotFound"),
                 options: [
                     .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(1)),
+                    .transition(.fade(0.7)),
                     .cacheOriginalImage
                 ])
 
