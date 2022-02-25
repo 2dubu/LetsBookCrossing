@@ -48,13 +48,15 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        calculateDate()
         
         if userSelectRegistrationMethodButton == "검색" {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
         } else if userSelectRegistrationMethodButton == "바코드" {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         applyDynamicFont()
         setElements()
@@ -92,30 +94,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.present(uploadCoverImageAlert, animated: true, completion: nil)
     }
     
-    // Use Photo를 눌렀을 때 or 사진을 선택했을 때
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var newImage: UIImage? = nil // update 할 이미지
-        
-        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            newImage = possibleImage // 수정된 이미지가 있을 경우
-        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            newImage = possibleImage // 원본 이미지가 있을 경우
-        }
-        
-        self.coverImageView.image = newImage // 받아온 이미지를 update
-        whetherUploadCoverImage = true
-        updateCompleteBarbuttonItemState()
-        scrollView.isScrollEnabled = true
-        picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
-    }
-    
-    // 사진 찍은 후 Retake 눌렀을 때
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
     // complete button이 활성화되는 시점
-    
     @IBAction func titleTextFieldEditingChanged(_ sender: Any) {
         updateCompleteBarbuttonItemState()
     }
@@ -221,6 +200,24 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     //MARK: - functions
     
+    // 키보드 올라올 때
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keybaordRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keybaordRectangle.height
+            scrollView.frame.size.height -= keyboardHeight
+        }
+    }
+    
+    // 키보드 내려갈 때
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keybaordRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keybaordRectangle.height
+            scrollView.frame.size.height += keyboardHeight
+        }
+    }
+        
     // 사진 앨범 접근 권한
     func checkAlbumPermission() {
         PHPhotoLibrary.requestAuthorization( { status in
@@ -265,6 +262,28 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                 }
             }
         })
+    }
+    
+    // Use Photo를 눌렀을 때 or 사진을 선택했을 때
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var newImage: UIImage? = nil // update 할 이미지
+        
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = possibleImage // 수정된 이미지가 있을 경우
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage // 원본 이미지가 있을 경우
+        }
+        
+        self.coverImageView.image = newImage // 받아온 이미지를 update
+        whetherUploadCoverImage = true
+        updateCompleteBarbuttonItemState()
+        scrollView.isScrollEnabled = true
+        picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
+    }
+    
+    // 사진 찍은 후 Retake 눌렀을 때
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func applyDynamicFont() {
