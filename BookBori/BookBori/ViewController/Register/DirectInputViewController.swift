@@ -24,7 +24,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     //MARK: - IBOutlet
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var categoryStackView: UIStackView!
+    @IBOutlet weak var pubdateStackView: UIStackView!
     
     @IBOutlet weak var coverImageButton: UIButton!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -34,46 +34,21 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var pubdateLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var reviewConditionLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var publisherTextField: UITextField!
-    @IBOutlet weak var categoryTextField: UIButton!
-    @IBOutlet weak var categorySelectButton: UIImageView!
+    @IBOutlet weak var pubdateTextField: UITextField!
     @IBOutlet weak var reviewTextView: UITextView!
-    @IBOutlet weak var categoryOpaqueView: UIView!
-    @IBOutlet weak var categoryMenuStackView: UIStackView!
-    
-    // 카테고리 선택 버튼
-    @IBOutlet weak var novelButton: UIButton!
-    @IBOutlet weak var poetryEssayButton: UIButton!
-    @IBOutlet weak var economicManagementButton: UIButton!
-    @IBOutlet weak var selfImprovmentButton: UIButton!
-    @IBOutlet weak var humanitiesButton: UIButton!
-    @IBOutlet weak var historyCultureButton: UIButton!
-    @IBOutlet weak var societyButton: UIButton!
-    @IBOutlet weak var scienceEngineeringButton: UIButton!
-    @IBOutlet weak var artPopularcultureButton: UIButton!
-    @IBOutlet weak var childChildrenButton: UIButton!
-    
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        calculateDate()
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        categoryOpaqueView.addGestureRecognizer(tapGesture)
-        
-        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
-        singleTapGestureRecognizer.numberOfTapsRequired = 1
-        singleTapGestureRecognizer.isEnabled = true
-        singleTapGestureRecognizer.cancelsTouchesInView = false
-        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
         
         if userSelectRegistrationMethodButton == "검색" {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
@@ -137,57 +112,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     // 사진 찍은 후 Retake 눌렀을 때
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    // 소설
-    @IBAction func novelTapped(_ sender: Any) {
-        comboBox(title: "소설")
-        categoryTitle = "소설"
-    }
-    // 시/에세이
-    @IBAction func poetryEssayTapped(_ sender: Any) {
-        comboBox(title: "시/에세이")
-        categoryTitle = "시/에세이"
-    }
-    // 경제/경영
-    @IBAction func economicManagementTapped(_ sender: Any) {
-        comboBox(title: "경제/경영")
-        categoryTitle = "경제/경영"
-    }
-    // 자기계발
-    @IBAction func selfImprovmentTapped(_ sender: Any) {
-        comboBox(title: "자기계발")
-        categoryTitle = "자기계발"
-    }
-    // 인문
-    @IBAction func humanitiesTapped(_ sender: Any) {
-        comboBox(title: "인문")
-        categoryTitle = "인문"
-    }
-    // 역사/문화
-    @IBAction func historyCultureTapped(_ sender: Any) {
-        comboBox(title: "역사/문화")
-        categoryTitle = "역사/문화"
-    }
-    // 사회
-    @IBAction func societyTapped(_ sender: Any) {
-        comboBox(title: "사회")
-        categoryTitle = "사회"
-    }
-    // 과학/공학
-    @IBAction func scienceEngineeringTapped(_ sender: Any) {
-        comboBox(title: "과학/공학")
-        categoryTitle = "과학/공학"
-    }
-    // 예술/대중문화
-    @IBAction func artPopularcultureTapped(_ sender: Any) {
-        comboBox(title: "예술/대중문화")
-        categoryTitle = "예술/대중문화"
-    }
-    // 유아/어린이
-    @IBAction func childChildrenTapped(_ sender: Any) {
-        comboBox(title: "유아/어린이")
-        categoryTitle = "유아/어린이"
     }
     
     // complete button이 활성화되는 시점
@@ -294,12 +218,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         */
     }
     
-    @IBAction func categoryTextFieldTapped(_ sender: Any) {
-        self.categoryOpaqueView.isHidden = false
-        self.categoryMenuStackView.isHidden = false
-        self.scrollView.isScrollEnabled = false
-    }
-    
     //MARK: - functions
     
     // 사진 앨범 접근 권한
@@ -354,19 +272,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         titleLabel.dynamicFont(fontSize: 18, weight: .bold)
         authorLabel.dynamicFont(fontSize: 18, weight: .bold)
         publisherLabel.dynamicFont(fontSize: 18, weight: .bold)
-        categoryLabel.dynamicFont(fontSize: 18, weight: .bold)
+        pubdateLabel.dynamicFont(fontSize: 18, weight: .bold)
         reviewLabel.dynamicFont(fontSize: 18, weight: .bold)
         reviewConditionLabel.dynamicFont(fontSize: 17, weight: .light)
-        novelButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        poetryEssayButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        economicManagementButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        selfImprovmentButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        humanitiesButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        historyCultureButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        societyButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        scienceEngineeringButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        artPopularcultureButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
-        childChildrenButton.titleLabel?.dynamicFont(fontSize: 15, weight: .regular)
     }
 
     func updateWhetherUploadCoverImage() {
@@ -377,21 +285,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         } else {
             whetherUploadCoverImage = false
         }
-    }
-    
-    private func comboBox(title: String) {
-        self.categoryOpaqueView.isHidden = true
-        self.categoryMenuStackView.isHidden = true
-        categoryTextField.setTitleColor(.black, for: .normal)
-        categoryTextField.setTitle(title, for: .normal)
-        updateCompleteBarbuttonItemState()
-        self.scrollView.isScrollEnabled = true
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer) {
-        self.categoryOpaqueView.isHidden = true
-        self.categoryMenuStackView.isHidden = true
-        self.scrollView.isScrollEnabled = true
     }
     
     // 화면 빈 곳 탭하여 키보드 내리기
@@ -415,7 +308,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.layer.borderWidth = 1
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        categorySelectButton.tintColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         
         coverImageView.layer.masksToBounds = false
         coverImageView.layer.shadowRadius = 6
@@ -427,7 +319,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         let matchedStrData = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
         print("matched strData : \(matchedStrData)")
-         
+        
+        // YYYYMMDD -> YYYY년 M월로 수정 필요
         
         titleTextField.text = matchedStrData
         
@@ -439,11 +332,13 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         } */
         authorTextField.text = searchItem.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+        pubdateTextField.text = searchItem.pubdate
         
         guard let imageURL = URL(string: searchItem.image) else { return }
         coverImageView.kf.indicatorType = .activity
         coverImageView.kf.setImage(
             with: imageURL,
+            placeholder: UIImage(named: "beforeRegistrationImage"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
@@ -472,7 +367,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func updateCompleteBarbuttonItemState() {
-        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true,  "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 20 || "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 151, categoryTextField.titleLabel?.text != "선택", reviewTextView.text != "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요." {
+        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true, pubdateTextField.hasText == true, "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 20 || "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 151, reviewTextView.text != "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요." {
             completeButton.isEnabled = true
             completeButton.layer.backgroundColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
             completeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
