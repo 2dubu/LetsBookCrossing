@@ -160,6 +160,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.present(longLettersAlert, animated: true, completion: nil)
         }
         
+        bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
         guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
         self.navigationController?.pushViewController(completeRegisterVC, animated: true)
         
