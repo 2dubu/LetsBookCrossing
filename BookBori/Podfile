@@ -4,5 +4,6 @@
 target 'BookBori' do
   pod 'Kingfisher', '~> 7.0'
   pod 'Alamofire', '~> 5.5'
+  pod 'IQKeyboardManager' #iOS8 and later
 
 end
