@@ -63,13 +63,11 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
                 userPhoneNumber = phoneNumberText
                 userPassword = passwordText
             } else if phoneNumberSuitable == false {
-                self.present(UtilitiesForAlert.returnAlert(title: "전화번호를 다시 한 번 확인해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
             } else {
-                self.present(UtilitiesForAlert.returnAlert(title: "비밀번호를 다시 한 번 확인해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호를 다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
             }
             
-        } else {
-            self.present(UtilitiesForAlert.returnAlert(title: "전화번호와 비밀번호를 모두 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
         }
     }
     
@@ -137,8 +135,10 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     func updateContinueButton() {
         if phoneNumberTextField.hasText && passwordTextField.hasText {
+            continueButton.isEnabled = true
             continueButton.tintColor = .black
         } else {
+            continueButton.isEnabled = false
             continueButton.tintColor = .lightGray
         }
     }
