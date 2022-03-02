@@ -94,7 +94,7 @@ class SelectBookViewController: UIViewController, UICollectionViewDelegate, UICo
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.present(UtilitiesForAlert.returnAlert(title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
         }
     }
     
