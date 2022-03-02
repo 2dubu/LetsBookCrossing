@@ -55,9 +55,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         applyDynamicFont()
         setElements()
         placeholderSetting()
@@ -199,25 +196,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     //MARK: - functions
-    
-    // 키보드 올라올 때
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keybaordRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keybaordRectangle.height
-            scrollView.frame.size.height -= keyboardHeight
-        }
-    }
-    
-    // 키보드 내려갈 때
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keybaordRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keybaordRectangle.height
-            scrollView.frame.size.height += keyboardHeight
-        }
-    }
-        
+            
     // 사진 앨범 접근 권한
     func checkAlbumPermission() {
         PHPhotoLibrary.requestAuthorization( { status in
@@ -305,11 +284,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         } else {
             whetherUploadCoverImage = false
         }
-    }
-    
-    // 화면 빈 곳 탭하여 키보드 내리기
-    @objc func MyTapMethod(sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
     }
     
     func setElements() {
