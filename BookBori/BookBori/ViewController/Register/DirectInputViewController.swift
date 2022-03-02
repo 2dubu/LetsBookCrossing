@@ -62,6 +62,12 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         reviewTextView.delegate = self
         coverImagePC.delegate = self
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        scrollView.addGestureRecognizer(singleTapGestureRecognizer)
     }
     
     // MARK: - IBAction
@@ -196,6 +202,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     //MARK: - functions
+    
+    @objc func MyTapMethod(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
             
     // 사진 앨범 접근 권한
     func checkAlbumPermission() {
