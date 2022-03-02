@@ -147,49 +147,6 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    /*
-    @objc private func phoneNumberDidChange(_ notification: Notification) {
-        if let textField = notification.object as? UITextField {
-            if let text = textField.text {
-                
-                let maxLength = 13
-                
-                if text.count == maxLength {
-                    textField.resignFirstResponder()
-                }
-                
-                if text.count == 3 {
-                    textField.text! += "-"
-                } else if text.count == 8 {
-                    textField.text! += "-"
-                } else if text.count > maxLength {
-                    let index = text.index(text.startIndex, offsetBy: maxLength)
-                    let newString = text[text.startIndex..<index]
-                    textField.text = String(newString)
-                }
-            }
-        }
-    }
-    
-    @objc private func passwordDidChange(_ notification: Notification) {
-        if let textField = notification.object as? UITextField {
-            if let text = textField.text {
-                
-                let maxLength = 4
-                
-                if text.count == maxLength {
-                    textField.resignFirstResponder()
-                }
-                
-                if text.count > maxLength {
-                    let index = text.index(text.startIndex, offsetBy: maxLength)
-                    let newString = text[text.startIndex..<index]
-                    textField.text = String(newString)
-                }
-            }
-        }
-    }
-    */
 
     /*
     // MARK: - Navigation
