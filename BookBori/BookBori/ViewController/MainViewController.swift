@@ -12,12 +12,16 @@ class MainViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
-
+    @IBOutlet weak var noticeButton: UIButton!
+    @IBOutlet weak var FAQButton: UIButton!
+    
     //MARK: - Properties
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtons()
     }
     
     //MARK: - IBAction
@@ -35,5 +39,27 @@ class MainViewController: UIViewController {
     
     //MARK: - Functions
 
-
+    func setButtons() {
+        
+        // 테두리 설정
+        applyButton.layer.borderWidth = 1
+        checkButton.layer.borderWidth = 1
+        applyButton.layer.borderColor = UIColor.black.cgColor
+        checkButton.layer.borderColor = UIColor.black.cgColor
+        
+        applyButton.layer.cornerRadius = 24
+        checkButton.layer.cornerRadius = 24
+        applyButton.layer.maskedCorners = CACornerMask.layerMinXMinYCorner // 좌측 상단
+        checkButton.layer.maskedCorners = CACornerMask.layerMaxXMaxYCorner // 우측 하단
+        
+        // 텍스트 및 이미지 설정
+        applyButton.titleLabel?.textColor = .black
+        checkButton.titleLabel?.textColor = .black
+        
+        // notice & FAQ 버튼
+        noticeButton.layer.cornerRadius = 8
+        FAQButton.layer.cornerRadius = 8
+        noticeButton.titleLabel?.font =  UIFont(name: "GmarketSansMedium", size: 20)
+        FAQButton.titleLabel?.font =  UIFont(name: "GmarketSansMedium", size: 20)
+    }
 }
