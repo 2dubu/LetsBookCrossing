@@ -109,6 +109,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-i7-Cuc">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
+                                        <color key="backgroundColor" red="0.94901960784313721" green="0.98431372549019602" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Bd6-yd-0b9"/>
                                         </constraints>
@@ -117,8 +118,8 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="북크로싱 신청하기">
                                                     <attributes>
-                                                        <color key="NSColor" systemColor="labelColor"/>
-                                                        <font key="NSFont" size="16" name="GmarketSansMedium"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="18" name="GmarketSansMedium"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -130,13 +131,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpV-R4-XDc">
                                         <rect key="frame" x="0.0" y="132" width="350" height="120"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.98431372549999996" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="북크로싱 신청 내역 조회하기">
+                                                <fragment content="북크로싱 신청 내역">
                                                     <attributes>
                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="16" name="GmarketSansMedium"/>
+                                                        <font key="NSFont" size="18" name="GmarketSansMedium"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -151,7 +153,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4l9-wE-rV4">
-                                <rect key="frame" x="20" y="749.66666666666663" width="350" height="42.333333333333371"/>
+                                <rect key="frame" x="20" y="751.66666666666663" width="350" height="42.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZb-84-zyq">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="42.333333333333336"/>
@@ -194,7 +196,7 @@
                         <constraints>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JjZ-ai-lVA" secondAttribute="trailing" constant="8" symbolic="YES" id="1x6-Rr-G3R"/>
                             <constraint firstItem="SZe-lZ-FhY" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.009" id="6YM-SS-up5"/>
-                            <constraint firstItem="gUU-ax-mkS" firstAttribute="bottom" secondItem="4l9-wE-rV4" secondAttribute="bottom" constant="18" id="7xk-HP-oeb"/>
+                            <constraint firstAttribute="bottom" secondItem="4l9-wE-rV4" secondAttribute="bottom" constant="50" id="7xk-HP-oeb"/>
                             <constraint firstAttribute="trailing" secondItem="lMM-Pp-AFm" secondAttribute="trailing" constant="24" id="8up-KZ-OMx"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="trailing" secondItem="gUU-ax-mkS" secondAttribute="trailing" id="A1F-Fz-vxe"/>
                             <constraint firstItem="CeN-dF-CpV" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="20" id="CnQ-m7-Ndu"/>
