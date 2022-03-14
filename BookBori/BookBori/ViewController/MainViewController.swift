@@ -10,6 +10,10 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: - IBOutlet
+    @IBOutlet weak var bookCrossingLabel: UILabel!
+    
+    @IBOutlet weak var howToUseButton: UIButton!
+    
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var noticeButton: UIButton!
@@ -35,6 +39,9 @@ class MainViewController: UIViewController {
         let checkSB = UIStoryboard(name: "Check", bundle: nil)
         let checkVC = checkSB.instantiateViewController(withIdentifier: "CheckVC")
         self.navigationController?.pushViewController(checkVC, animated: true)
+    }
+    
+    @IBAction func howToUseButtonTapped(_ sender: Any) {
     }
     
     //MARK: - Functions
