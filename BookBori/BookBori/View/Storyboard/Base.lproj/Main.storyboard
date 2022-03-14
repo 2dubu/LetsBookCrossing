@@ -24,7 +24,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.99215686274509807" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="reV-aL-PZl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JLj-px-Zfi"/>
                             <constraint firstItem="reV-aL-PZl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQD-rn-Xf5"/>
@@ -62,7 +62,7 @@
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="15" name="GmarketSansMedium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3999999999999999" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3999999999999999" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -94,6 +94,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="howToUseButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="q6a-lF-dnp"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_v_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-lZ-FhY">
                                 <rect key="frame" x="190" y="269.33333333333331" width="21" height="7.3333333333333144"/>
@@ -148,11 +151,11 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4l9-wE-rV4">
-                                <rect key="frame" x="20" y="737.66666666666663" width="350" height="42.333333333333371"/>
+                                <rect key="frame" x="20" y="749.66666666666663" width="350" height="42.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZb-84-zyq">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="42.333333333333336"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.32941176470588235" green="0.61568627450980395" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button">
@@ -160,7 +163,6 @@
                                                 <fragment content="공지사항">
                                                     <attributes>
                                                         <font key="NSFont" size="12" name="GmarketSansMedium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -168,13 +170,13 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijt-Uh-qao">
                                         <rect key="frame" x="185" y="0.0" width="165" height="42.333333333333336"/>
-                                        <color key="backgroundColor" red="0.88235294117647056" green="0.94901960784313721" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.32941176470588235" green="0.61568627450980395" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="FAQ">
                                                     <attributes>
-                                                        <color key="NSColor" systemColor="labelColor"/>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <font key="NSFont" size="12" name="GmarketSansMedium"/>
                                                     </attributes>
                                                 </fragment>
@@ -188,10 +190,11 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUU-ax-mkS"/>
-                        <color key="backgroundColor" red="0.93333333333333335" green="0.9882352941176471" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.99215686274509807" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JjZ-ai-lVA" secondAttribute="trailing" constant="8" symbolic="YES" id="1x6-Rr-G3R"/>
                             <constraint firstItem="SZe-lZ-FhY" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.009" id="6YM-SS-up5"/>
+                            <constraint firstItem="gUU-ax-mkS" firstAttribute="bottom" secondItem="4l9-wE-rV4" secondAttribute="bottom" constant="18" id="7xk-HP-oeb"/>
                             <constraint firstAttribute="trailing" secondItem="lMM-Pp-AFm" secondAttribute="trailing" constant="24" id="8up-KZ-OMx"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="trailing" secondItem="gUU-ax-mkS" secondAttribute="trailing" id="A1F-Fz-vxe"/>
                             <constraint firstItem="CeN-dF-CpV" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="20" id="CnQ-m7-Ndu"/>
@@ -206,7 +209,6 @@
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.14" id="Ug8-pK-4hV"/>
                             <constraint firstItem="4l9-wE-rV4" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="V0R-gJ-mOk"/>
                             <constraint firstItem="ijt-Uh-qao" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.05" id="a46-3I-aiz"/>
-                            <constraint firstItem="gUU-ax-mkS" firstAttribute="bottom" secondItem="4l9-wE-rV4" secondAttribute="bottom" constant="30" id="cGs-Kq-eQc"/>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="top" secondItem="7Gd-Xa-6fw" secondAttribute="bottom" constant="30" id="dHA-QX-761"/>
                             <constraint firstItem="4l9-wE-rV4" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="20" id="dlm-aS-EXB"/>
                             <constraint firstItem="lMM-Pp-AFm" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.18" id="eIU-J8-xc5"/>
@@ -224,7 +226,9 @@
                     <connections>
                         <outlet property="FAQButton" destination="ijt-Uh-qao" id="sXF-Rc-DLQ"/>
                         <outlet property="applyButton" destination="OFo-i7-Cuc" id="EQC-68-row"/>
+                        <outlet property="bookCrossingLabel" destination="JjZ-ai-lVA" id="bBN-kT-VF2"/>
                         <outlet property="checkButton" destination="kpV-R4-XDc" id="I5l-oT-Vfd"/>
+                        <outlet property="howToUseButton" destination="CeN-dF-CpV" id="qsO-MR-UTh"/>
                         <outlet property="noticeButton" destination="zZb-84-zyq" id="gy1-QA-pzI"/>
                     </connections>
                 </viewController>
@@ -259,9 +263,6 @@
         <image name="logo" width="80" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
