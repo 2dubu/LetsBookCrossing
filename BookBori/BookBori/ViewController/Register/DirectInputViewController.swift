@@ -276,14 +276,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func applyDynamicFont() {
-        coverImageConditionLabel.dynamicFont(fontSize: 15, weight: .light)
-        coverImageConditionLabel2.dynamicFont(fontSize: 15, weight: .light)
-        titleLabel.dynamicFont(fontSize: 18, weight: .bold)
-        authorLabel.dynamicFont(fontSize: 18, weight: .bold)
-        publisherLabel.dynamicFont(fontSize: 18, weight: .bold)
-        pubdateLabel.dynamicFont(fontSize: 18, weight: .bold)
-        reviewLabel.dynamicFont(fontSize: 18, weight: .bold)
-        reviewConditionLabel.dynamicFont(fontSize: 17, weight: .light)
+        coverImageConditionLabel.dynamicFont(fontSize: 15)
+        coverImageConditionLabel2.dynamicFont(fontSize: 15)
+        titleLabel.dynamicFont(fontSize: 18)
+        authorLabel.dynamicFont(fontSize: 18)
+        publisherLabel.dynamicFont(fontSize: 18)
+        pubdateLabel.dynamicFont(fontSize: 18)
+        reviewLabel.dynamicFont(fontSize: 18)
+        reviewConditionLabel.dynamicFont(fontSize: 17)
     }
 
     func updateWhetherUploadCoverImage() {
@@ -299,7 +299,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     func setElements() {
         completeButton.isEnabled = false
         completeButton.layer.cornerRadius = UIScreen.main.bounds.width/30
-        completeButton.titleLabel?.dynamicFont(fontSize: 17, weight: .regular)
+        completeButton.titleLabel?.dynamicFont(fontSize: 17)
         completeButton.layer.shadowColor = UIColor.darkGray.cgColor
         completeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         completeButton.layer.shadowRadius = 1

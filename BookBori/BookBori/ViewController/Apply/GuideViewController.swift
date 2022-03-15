@@ -39,10 +39,9 @@ class GuideViewController: UIViewController {
     // MARK: - function
     
     func dynamicFont() {
-        bookTitleLabel.dynamicFont(fontSize: 16, weight: .semibold)
-        bookDetailLabel.dynamicFont(fontSize: 13, weight: .light)
-        continueButton.titleLabel?.dynamicFont(fontSize: 18, weight: .medium)
-        
+        bookTitleLabel.dynamicFont(fontSize: 16)
+        bookDetailLabel.dynamicFont(fontSize: 13)
+        continueButton.titleLabel?.dynamicFont(fontSize: 18)
     }
     
     func setBookAppliedInfo() {

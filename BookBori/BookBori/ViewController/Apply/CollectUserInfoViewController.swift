@@ -117,10 +117,10 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     // MARK: - function
     
     func dynamicFont() {
-        collectUserInfoTitleLabel.dynamicFont(fontSize: 26, weight: .bold)
-        phoneNumberLabel.dynamicFont(fontSize: 17, weight: .semibold)
-        passwordLabel.dynamicFont(fontSize: 17, weight: .semibold)
-        continueButton.titleLabel?.dynamicFont(fontSize: 18, weight: .medium)
+        collectUserInfoTitleLabel.dynamicFont(fontSize: 26)
+        phoneNumberLabel.dynamicFont(fontSize: 17)
+        passwordLabel.dynamicFont(fontSize: 17)
+        continueButton.titleLabel?.dynamicFont(fontSize: 18)
     }
     
     func setButton() {

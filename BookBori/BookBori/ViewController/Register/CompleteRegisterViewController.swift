@@ -145,15 +145,15 @@ class CompleteRegisterViewController: UIViewController {
     }
     
     func dynamicFont() {
-        exchangedBookLabel.dynamicFont(fontSize: 14, weight: .semibold)
-        seoulBookBogoLabel.dynamicFont(fontSize: 14, weight: .semibold)
-        exchangedBookTitle.dynamicFont(fontSize: 14, weight: .medium)
-        seoulBookBogoBookTitle.dynamicFont(fontSize: 14, weight: .medium)
+        exchangedBookLabel.dynamicFont(fontSize: 14)
+        seoulBookBogoLabel.dynamicFont(fontSize: 14)
+        exchangedBookTitle.dynamicFont(fontSize: 14)
+        seoulBookBogoBookTitle.dynamicFont(fontSize: 14)
         
-        description1.dynamicFont(fontSize: 14, weight: .regular)
-        description2.dynamicFont(fontSize: 14, weight: .regular)
+        description1.dynamicFont(fontSize: 14)
+        description2.dynamicFont(fontSize: 14)
         
-        confirmButton.titleLabel?.dynamicFont(fontSize: 18, weight: .medium)
+        confirmButton.titleLabel?.dynamicFont(fontSize: 18)
     }
 
 }
