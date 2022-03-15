@@ -9,36 +9,28 @@ import Foundation
 import UIKit
 
 extension UILabel {
-  func dynamicFont(fontSize size: CGFloat, weight: UIFont.Weight) {
+  func dynamicFont(fontSize size: CGFloat) {
     let currentFontName = self.font.fontName
-    var calculatedFont: UIFont?
-    let bounds = UIScreen.main.bounds
-    let height = bounds.size.height
+    let height = UIScreen.main.bounds.size.height
     
     switch height {
     case 480.0: //Iphone 3,4S => 3.5 inch
-      calculatedFont = UIFont(name: currentFontName, size: size * 0.7)
-      resizeFont(calculatedFont: calculatedFont, weight: weight)
+      resizeFont(calculatedFont: UIFont(name: currentFontName, size: size * 0.7))
       break
     case 568.0: //iphone 5, SE => 4 inch
-      calculatedFont = UIFont(name: currentFontName, size: size * 0.85)
-      resizeFont(calculatedFont: calculatedFont, weight: weight)
+      resizeFont(calculatedFont: UIFont(name: currentFontName, size: size * 0.85))
       break
     case 667.0: //iphone 6, 6s, 7, 8 => 4.7 inch
-      calculatedFont = UIFont(name: currentFontName, size: size * 0.92)
-      resizeFont(calculatedFont: calculatedFont, weight: weight)
+      resizeFont(calculatedFont: UIFont(name: currentFontName, size: size * 0.92))
       break
     case 736.0: //iphone 6s+ 6+, 7+, 8+ => 5.5 inch
-      calculatedFont = UIFont(name: currentFontName, size: size * 0.95)
-     resizeFont(calculatedFont: calculatedFont, weight: weight)
+     resizeFont(calculatedFont: UIFont(name: currentFontName, size: size * 0.95))
       break
     case 812.0: //iphone X, XS => 5.8 inch
-      calculatedFont = UIFont(name: currentFontName, size: size)
-      resizeFont(calculatedFont: calculatedFont, weight: weight)
+      resizeFont(calculatedFont: UIFont(name: currentFontName, size: size))
       break
     case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
-      calculatedFont = UIFont(name: currentFontName, size: size * 1.15)
-      resizeFont(calculatedFont: calculatedFont, weight: weight)
+      resizeFont(calculatedFont: UIFont(name: currentFontName, size: size * 1.15))
       break
     default:
       print("not an iPhone")
@@ -46,8 +38,8 @@ extension UILabel {
     }
   }
   
-  private func resizeFont(calculatedFont: UIFont?, weight: UIFont.Weight) {
+  private func resizeFont(calculatedFont: UIFont?) {
     self.font = calculatedFont
-    self.font = UIFont.systemFont(ofSize: calculatedFont!.pointSize, weight: weight)
+    //self.font = UIFont.systemFont(ofSize: calculatedFont!.pointSize)
   }
 }
