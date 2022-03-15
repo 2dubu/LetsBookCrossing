@@ -11,7 +11,7 @@ import AVFoundation
 class SetRegistrationMethodViewController: UIViewController {
     
     //MARK: - IBOutlet & IBAction
-    @IBOutlet weak var imageVIew: UIImageView!
+    
     @IBOutlet weak var chooseMethodLabel: UILabel!
     @IBOutlet weak var barcodeButton: UIButton!
     @IBOutlet weak var searchTitleButton: UIButton!
@@ -23,21 +23,29 @@ class SetRegistrationMethodViewController: UIViewController {
     
     @IBAction func barcodeButtonTapped(_ sender: Any) {
         checkCameraPermission()
-        userSelectRegistrationMethodButton = "바코드"
+        //userSelectRegistrationMethodButton = "바코드"
     }
+    /*
     @IBAction func searchTitleButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "검색"
     }
     @IBAction func directButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "입력"
     }
+     */
 
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "내 책 등록하기"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 20)!]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
+        
         applyDynamicFont()
         setButton()
+        view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
     }
     
     //MARK: - functions
@@ -64,10 +72,10 @@ class SetRegistrationMethodViewController: UIViewController {
       }
     
     func applyDynamicFont() {
-        chooseMethodLabel.dynamicFont(fontSize: 20, weight: .regular)
-        barcodeButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
-        searchTitleButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
-        directButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
+        chooseMethodLabel.dynamicFont(fontSize: 20)
+        barcodeButton.titleLabel?.dynamicFont(fontSize: 18)
+        searchTitleButton.titleLabel?.dynamicFont(fontSize: 18)
+        directButton.titleLabel?.dynamicFont(fontSize: 18)
     }
     
     func setButton() {
@@ -75,24 +83,20 @@ class SetRegistrationMethodViewController: UIViewController {
         searchTitleButton.layer.cornerRadius = UIScreen.main.bounds.width/50
         directButton.layer.cornerRadius = UIScreen.main.bounds.width/50
         
-        barcodeButton.backgroundColor = .white
-        searchTitleButton.backgroundColor = .white
-        directButton.backgroundColor = .white
-        
         barcodeButton.layer.shadowColor = UIColor.darkGray.cgColor
-        barcodeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        barcodeButton.layer.shadowRadius = 1
-        barcodeButton.layer.shadowOpacity = 0.5
+        barcodeButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        barcodeButton.layer.shadowRadius = 5
+        barcodeButton.layer.shadowOpacity = 0.3
         
         searchTitleButton.layer.shadowColor = UIColor.darkGray.cgColor
-        searchTitleButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        searchTitleButton.layer.shadowRadius = 1
-        searchTitleButton.layer.shadowOpacity = 0.5
+        searchTitleButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        searchTitleButton.layer.shadowRadius = 5
+        searchTitleButton.layer.shadowOpacity = 0.3
         
         directButton.layer.shadowColor = UIColor.darkGray.cgColor
-        directButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        directButton.layer.shadowRadius = 1
-        directButton.layer.shadowOpacity = 0.5
+        directButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        directButton.layer.shadowRadius = 5
+        directButton.layer.shadowOpacity = 0.3
     }
 }
 
