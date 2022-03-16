@@ -43,6 +43,8 @@ class SetRegistrationMethodViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 20)!]
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
         
+        chooseMethodLabel.text = "도서를 등록할 방법을\n선택하세요."
+        
         applyDynamicFont()
         setButton()
         view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)

@@ -26,12 +26,14 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        searchBookTableView.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        
         dataManager.shared.searchResultOfNaver?.items.removeAll()
         searchBookTableView.reloadData()
         
         searchBookTableView.delegate = self
         searchBookTableView.dataSource = self
-        searchBookTableView.separatorStyle = .none
         self.searchBar.delegate = self
         
         self.view.bringSubviewToFront(self.indicatorView)
@@ -43,21 +45,18 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         initSearchBar()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
     // 화면 탭하여 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
     
     private func initSearchBar() {
-        searchBar.text = ""
-        searchBar.placeholder = "책을 검색해보세요"
         self.navigationItem.titleView = searchBar
-        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
+        searchBar.text = ""
+        searchBar.placeholder = "등록하고 싶은 도서명을 검색하세요"
+        searchBar.searchTextField.font = UIFont(name: "GmarketSansLight", size: 17)
         searchBar.searchTextField.backgroundColor = UIColor.clear
-        searchBar.tintColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
+        searchBar.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -92,7 +91,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                         }
                     case .failure(let error):
                         print("error : \(error.localizedDescription)")
-                        // 이거 잘뜨네
                     }
                 }
             }
@@ -213,6 +211,8 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as! SearchBookTableViewCell
         cell.selectionStyle = .none
+        tableView.separatorStyle = .none
+        cell.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         self.defaultImage.isHidden = true
         
         let filteredItem = dataManager.shared.searchResultOfNaver?.items.filter({ item in
@@ -245,8 +245,20 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.bookAuthorLabel.text = "\(item.authors[0]) 외 \(item.authors.count-1)명"
             } */
             
-            cell.bookAuthorLabel.text = item.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+            cell.bookAuthorLabel2.text = item.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+            cell.bookCompanyLabel2.text = item.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+            cell.bookDayLabel2.text = item.pubdate
         }
+        
+        // DynamicFont
+        cell.bookTitleLabel.dynamicFont(fontSize: 17)
+        cell.bookAuthorLabel1.dynamicFont(fontSize: 13)
+        cell.bookAuthorLabel2.dynamicFont(fontSize: 12)
+        cell.bookCompanyLabel1.dynamicFont(fontSize: 13)
+        cell.bookCompanyLabel2.dynamicFont(fontSize: 12)
+        cell.bookDayLabel1.dynamicFont(fontSize: 13)
+        cell.bookDayLabel2.dynamicFont(fontSize: 12)
+        
         return cell
     }
     
