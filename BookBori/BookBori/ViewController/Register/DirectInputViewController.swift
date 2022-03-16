@@ -24,19 +24,17 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     //MARK: - IBOutlet
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pubdateStackView: UIStackView!
+    @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var coverImageButton: UIButton!
     @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var whiteView: UIView!
     
-    @IBOutlet weak var coverImageConditionLabel: UILabel!
-    @IBOutlet weak var coverImageConditionLabel2: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var pubdateLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var reviewConditionLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -49,6 +47,18 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        scrollView.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        backgroundView.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        whiteView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        whiteView.layer.cornerRadius = 15
+        whiteView.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        whiteView.layer.borderWidth = 0.5
+        whiteView.layer.shadowRadius = 3
+        whiteView.layer.shadowOffset = .zero
+        whiteView.layer.shadowOpacity = 0.3
+        whiteView.layer.shadowColor = UIColor.gray.cgColor
+        
         if userSelectRegistrationMethodButton == "검색" {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
         } else if userSelectRegistrationMethodButton == "바코드" {
@@ -57,8 +67,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         applyDynamicFont()
         setElements()
-        placeholderSetting()
         updateWhetherUploadCoverImage()
+        updateCompleteBarbuttonItemState()
         
         reviewTextView.delegate = self
         coverImagePC.delegate = self
@@ -91,9 +101,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         uploadCoverImageAlert.addAction(library)
         uploadCoverImageAlert.addAction(camera)
         uploadCoverImageAlert.addAction(cancelAction)
-        library.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-        camera.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-        cancelAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+        library.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
+        camera.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
+        cancelAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
             self.present(uploadCoverImageAlert, animated: true, completion: nil)
     }
     
@@ -107,8 +117,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBAction func publisherTextFieldEditingChanged(_ sender: Any) {
         updateCompleteBarbuttonItemState()
     }
-    
-    func textViewDidChange(_ textView: UITextView) {
+    @IBAction func pubDateTextFieldEditingChanged(_ sender: Any) {
         updateCompleteBarbuttonItemState()
     }
     
@@ -119,27 +128,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         if whetherUploadCoverImage == false {
             let inputImageAlert = UIAlertController(title: "사진 등록", message: "교환할 책의 사진을 등록해 주세요", preferredStyle: .alert)
             let inputImageAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            inputImageAlertAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+            inputImageAlertAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
 
             inputImageAlert.addAction(inputImageAlertAction)
             self.present(inputImageAlert, animated: true, completion: nil)
-        }
-
-        if  "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 20 {
-            let shortLettersAlert = UIAlertController(title: "다시 작성해주세요", message: "다음 사람에게 전하는 말을 공백제외 20자 이상 작성해 주세요", preferredStyle: .alert)
-            let shortLettersAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            shortLettersAlertAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-
-            shortLettersAlert.addAction(shortLettersAlertAction)
-            self.present(shortLettersAlert, animated: true, completion: nil)
-            
-        } else if "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 151 {
-            let longLettersAlert = UIAlertController(title: "다시 작성해주세요", message: "다음 사람에게 전하는 말을 150자 이내로 작성해 주세요", preferredStyle: .alert)
-            let longLettersAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            longLettersAlertAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-
-            longLettersAlert.addAction(longLettersAlertAction)
-            self.present(longLettersAlert, animated: true, completion: nil)
         }
         
         bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
@@ -223,7 +215,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                     }
                     albumPermissionAlert.addAction(confirmAction)
                     self.present(albumPermissionAlert, animated: true, completion: nil)
-                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
                 default: break
                 }
             }
@@ -247,7 +239,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                     }
                     cameraPermissionAlert.addAction(confirmAction)
                     self.present(cameraPermissionAlert, animated: true, completion: nil)
-                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
                 }
             }
         })
@@ -276,14 +268,11 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func applyDynamicFont() {
-        coverImageConditionLabel.dynamicFont(fontSize: 15)
-        coverImageConditionLabel2.dynamicFont(fontSize: 15)
         titleLabel.dynamicFont(fontSize: 18)
         authorLabel.dynamicFont(fontSize: 18)
         publisherLabel.dynamicFont(fontSize: 18)
         pubdateLabel.dynamicFont(fontSize: 18)
         reviewLabel.dynamicFont(fontSize: 18)
-        reviewConditionLabel.dynamicFont(fontSize: 17)
     }
 
     func updateWhetherUploadCoverImage() {
@@ -297,27 +286,30 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func setElements() {
-        completeButton.isEnabled = false
+        
+        // 텍스트필트 글씨체 설정
+        titleTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        authorTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        publisherTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        pubdateTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        reviewTextView.font = UIFont(name: "GmarketSansLight", size: 14)
+        
+        //completeButton.isEnabled = false
         completeButton.layer.cornerRadius = UIScreen.main.bounds.width/30
         completeButton.titleLabel?.dynamicFont(fontSize: 17)
         completeButton.layer.shadowColor = UIColor.darkGray.cgColor
         completeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         completeButton.layer.shadowRadius = 1
         completeButton.layer.shadowOpacity = 0.5
-        completeButton.setTitle("완료", for: .normal)
-        
-        completeButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        completeButton.setTitleColor(#colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1), for: .normal)
         
         reviewTextView.layer.borderWidth = 1
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         
         coverImageView.layer.masksToBounds = false
-        coverImageView.layer.shadowRadius = 6
         coverImageView.layer.shadowOffset = .zero
         coverImageView.layer.shadowOpacity = 0.3
-        coverImageView.layer.shadowColor = UIColor.black.cgColor
+        coverImageView.layer.shadowColor = UIColor.gray.cgColor
         
         guard let searchItem = searchItem else { return }
         
@@ -336,9 +328,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         
         var pubdate = searchItem.pubdate
-        pubdate.removeLast(2)
-        pubdate.insert(contentsOf: "년 ", at: pubdate.index(pubdate.startIndex, offsetBy: 4))
-        pubdate.append(contentsOf: "월")
+        //pubdate.removeLast(2)
+        //pubdate.insert(contentsOf: "년 ", at: pubdate.index(pubdate.startIndex, offsetBy: 4))
+        //pubdate.append(contentsOf: "월")
         pubdateTextField.text = pubdate
         
         guard let imageURL = URL(string: searchItem.image) else { return }
@@ -353,35 +345,23 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             ])
     }
     
-    func placeholderSetting() {
-        reviewTextView.text = "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요."
-        reviewTextView.textColor = UIColor.lightGray
-    }
-    
-    // TextView Place Holder
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요."
-            textView.textColor = UIColor.lightGray
-        }
-    }
-    
     func updateCompleteBarbuttonItemState() {
-        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true, pubdateTextField.hasText == true, "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count > 20 || "\(reviewTextView.text!)".filter({$0 != " " && $0 != "\n"}).count < 151, reviewTextView.text != "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요." {
-            completeButton.isEnabled = true
-            completeButton.layer.backgroundColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
-            completeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        } else {
-            completeButton.isEnabled = false
-            completeButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-            completeButton.setTitleColor(#colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1), for: .normal)
+        
+        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true, pubdateTextField.hasText == true {
+            
+            let regex = try? NSRegularExpression(pattern: "[0-9]{8}")
+            if let _ = regex?.firstMatch(in: pubdateTextField.text!, options: [], range: NSRange(location: 0, length: pubdateTextField.text!.count)) {
+                print("됐어???")
+                completeButton.isEnabled = true
+                completeButton.layer.backgroundColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
+                completeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+            } else {
+                print("안됐나...")
+                completeButton.isEnabled = false
+                completeButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+                completeButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+            }
         }
     }
+    
 }

@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "beforeRegistrationImage.jpeg",
+      "filename" : "스크린샷 2022-03-16 오후 12.01.12.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "beforeRegistrationImage@ 2x.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "beforeRegistrationImage@ 3x.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

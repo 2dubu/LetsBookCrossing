@@ -25,14 +25,12 @@ class SetRegistrationMethodViewController: UIViewController {
         checkCameraPermission()
         //userSelectRegistrationMethodButton = "바코드"
     }
-    /*
     @IBAction func searchTitleButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "검색"
     }
     @IBAction func directButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "입력"
     }
-     */
 
     
     //MARK: - LifeCycle
