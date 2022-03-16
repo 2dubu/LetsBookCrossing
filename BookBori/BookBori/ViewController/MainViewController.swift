@@ -49,8 +49,8 @@ class MainViewController: UIViewController {
     func setButtons() {
         
         // 그림자 설정
-        setButtonShadow(button: applyButton, shadowOpacity: 0.4, shadowRadius: 2)
-        setButtonShadow(button: checkButton, shadowOpacity: 0.4, shadowRadius: 2)
+        setButtonShadow(button: applyButton, shadowRadius: 2, shadowOpacity: 0.4)
+        setButtonShadow(button: checkButton, shadowRadius: 2, shadowOpacity: 0.4)
         
         applyButton.layer.cornerRadius = 24
         checkButton.layer.cornerRadius = 24
