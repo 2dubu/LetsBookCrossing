@@ -10,34 +10,31 @@ import UIKit
 class CompleteRegisterViewController: UIViewController {
     
     //MARK: - IBOutlet
-    @IBOutlet weak var exchangedBookLabel: UILabel!
-    @IBOutlet weak var seoulBookBogoLabel: UILabel!
+    @IBOutlet weak var registerLabel: UILabel!
+    @IBOutlet weak var applyLabel: UILabel!
     
-    @IBOutlet weak var exchangedBookImageView: UIImageView!
-    @IBOutlet weak var seoulBookBogoImageView: UIImageView!
-    @IBOutlet weak var exchangedBookTitle: UILabel!
-    @IBOutlet weak var seoulBookBogoBookTitle: UILabel!
+    @IBOutlet weak var registerImageView: UIImageView!
+    @IBOutlet weak var applyImageView: UIImageView!
+    @IBOutlet weak var registerTitleLabel: UILabel!
+    @IBOutlet weak var applyTitleLabel: UILabel!
     
     @IBOutlet weak var exchangeIcon: UIImageView!
-    @IBOutlet var lineView: UIView!
     
-    @IBOutlet weak var checkImageView1: UIImageView!
     @IBOutlet weak var description1: UILabel!
-    @IBOutlet weak var checkImageView2: UIImageView!
     @IBOutlet weak var description2: UILabel!
     
     @IBOutlet weak var confirmButton: UIButton!
-    
-    //MARK: - Properties
-    
+    @IBOutlet weak var checkApplyButton: UIButton!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
+        
         setElements()
         dynamicFont()
-        attribute()
+        //attribute()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,39 +57,30 @@ class CompleteRegisterViewController: UIViewController {
     //MARK: - Functions
     
     func setElements() {
-        
-        let fontsize : CGFloat = 10
-        
+                
         navigationItem.title = "도서 교환 정보"
         
-        exchangedBookLabel.text = "등록한 도서"
-        seoulBookBogoLabel.text = "신청한 도서"
+        registerImageView.image = UIImage(named: bookApplied?.image ?? "")
+        //applyImageView.image = UIImage(named: bookRegister?.image ?? "")
+        applyImageView.image = UIImage(named: "1")
         
-        exchangeIcon.image = UIImage(systemName: "arrow.left.arrow.right")
-        exchangedBookImageView.image = UIImage(named: bookApplied?.image ?? "")
-        //seoulBookBogoImageView.image = UIImage(named: bookRegister?.image ?? "")
-        seoulBookBogoImageView.image = UIImage(named: "1")
+        registerTitleLabel.text = bookApplied?.title
+        applyTitleLabel.text = bookRegister?.title
         
-        exchangedBookTitle.text = bookApplied?.title
-        seoulBookBogoBookTitle.text = bookRegister?.title
+        description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
+        description2.text = "\"북크로싱 신청 내역 조회\"에서\n교환을 취소할 수 있습니다."
         
-        lineView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        
-        checkImageView1.image = UIImage(systemName: "checkmark")
-        checkImageView2.image = UIImage(systemName: "checkmark")
-        
-        description1.text = "신청이 완료되었습니다.\n서울책보고에 방문하신 후 \(calculateDate()) 오후 7시까지 교환을 완료하여 주시기 바랍니다.\n시간 내에 교환이 완료되지 않을 경우 자동으로 취소 처리됩니다."
-        description2.text = "교환 취소를 원하실 경우 '북크로싱 신청 내역 조회'에서 취소할 수 있습니다."
-        
-        // comfirmButton 세팅
-        confirmButton.setTitle("확인", for: .normal)
+        // comfirmButton, checkApplyButton 세팅
         confirmButton.layer.cornerRadius = UIScreen.main.bounds.width/50
         confirmButton.layer.shadowColor = UIColor.darkGray.cgColor
         confirmButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         confirmButton.layer.shadowRadius = 1
         confirmButton.layer.shadowOpacity = 0.5
-        confirmButton.backgroundColor = .white
-        confirmButton.tintColor = .black
+        checkApplyButton.layer.cornerRadius = UIScreen.main.bounds.width/50
+        checkApplyButton.layer.shadowColor = UIColor.darkGray.cgColor
+        checkApplyButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        checkApplyButton.layer.shadowRadius = 1
+        checkApplyButton.layer.shadowOpacity = 0.5
     }
     
     func calculateDate() -> String {
@@ -112,13 +100,14 @@ class CompleteRegisterViewController: UIViewController {
         return formattedDate
     }
     
+    /*
     func attribute() {
         
         let paragraphStyle1 = NSMutableParagraphStyle()
         paragraphStyle1.lineSpacing = 2
         
         // 책 제목 행간 조절
-        let attrString1 = NSMutableAttributedString(string: exchangedBookTitle.text!)
+        let attrString1 = NSMutableAttributedString(string: registerTitleLabel.text!)
         let attrString2 = NSMutableAttributedString(string: seoulBookBogoBookTitle.text!)
         attrString1.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle1, range: NSMakeRange(0, attrString1.length))
         attrString2.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle1, range: NSMakeRange(0, attrString2.length))
@@ -139,21 +128,20 @@ class CompleteRegisterViewController: UIViewController {
         let attrString4 = NSMutableAttributedString(string: self.description2.text ?? "")
         attrString4.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle2, range: NSMakeRange(0, attrString4.length))
         description2.attributedText = attrString4
-        
-        exchangedBookTitle.textAlignment = .center
-        seoulBookBogoBookTitle.textAlignment = .center
     }
+     */
     
     func dynamicFont() {
-        exchangedBookLabel.dynamicFont(fontSize: 14)
-        seoulBookBogoLabel.dynamicFont(fontSize: 14)
-        exchangedBookTitle.dynamicFont(fontSize: 14)
-        seoulBookBogoBookTitle.dynamicFont(fontSize: 14)
+        registerLabel.dynamicFont(fontSize: 19)
+        applyLabel.dynamicFont(fontSize: 19)
+        registerTitleLabel.dynamicFont(fontSize: 15)
+        applyTitleLabel.dynamicFont(fontSize: 15)
         
-        description1.dynamicFont(fontSize: 14)
-        description2.dynamicFont(fontSize: 14)
+        description1.dynamicFont(fontSize: 15)
+        description2.dynamicFont(fontSize: 15)
         
-        confirmButton.titleLabel?.dynamicFont(fontSize: 18)
+        confirmButton.titleLabel?.dynamicFont(fontSize: 20)
+        checkApplyButton.titleLabel?.dynamicFont(fontSize: 19)
     }
 
 }
