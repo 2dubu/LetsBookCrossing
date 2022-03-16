@@ -12,5 +12,7 @@ class BooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
+    override func awakeFromNib() {
+        titleLabel.dynamicFont(fontSize: 12)
+    }
 }

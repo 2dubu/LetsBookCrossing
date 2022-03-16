@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prP-Tt-r0g">
-                                <rect key="frame" x="15" y="113" width="384" height="749"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prP-Tt-r0g">
+                                <rect key="frame" x="20" y="108" width="374" height="788"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SV9-aS-nDk">
                                     <size key="itemSize" width="128" height="128"/>
@@ -34,34 +34,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0s-lds">
-                                                    <rect key="frame" x="10" y="4" width="108" height="120"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0s-lds">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-CP-JjT">
-                                                            <rect key="frame" x="24" y="0.0" width="60" height="87"/>
+                                                            <rect key="frame" x="28.5" y="0.0" width="71" height="103"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="60" id="50s-9S-myA"/>
-                                                                <constraint firstAttribute="height" constant="86.599999999999994" id="A19-of-179"/>
+                                                                <constraint firstAttribute="width" secondItem="H0C-CP-JjT" secondAttribute="height" multiplier="9:13" id="1qr-CF-3Ry"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우주는 얼마나 넓을까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im6-eD-zqp">
-                                                            <rect key="frame" x="0.0" y="90" width="108" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="Lab-EH-8OR"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="im6-eD-zqp">
+                                                            <rect key="frame" x="4" y="108" width="120" height="20"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="우주는 얼마나 넓을까?">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="12" name="GmarketSansMedium"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="im6-eD-zqp" firstAttribute="width" secondItem="H0C-CP-JjT" secondAttribute="width" multiplier="1.8" id="iCz-qy-aFg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="im6-eD-zqp" secondAttribute="trailing" constant="4" id="6wy-pV-6gR"/>
+                                                        <constraint firstItem="H0C-CP-JjT" firstAttribute="top" secondItem="7LB-0s-lds" secondAttribute="top" id="OfX-DN-PsB"/>
+                                                        <constraint firstItem="H0C-CP-JjT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7LB-0s-lds" secondAttribute="leading" constant="5" id="QO1-Yd-fMm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="im6-eD-zqp" secondAttribute="bottom" id="QWL-eN-Vgn"/>
+                                                        <constraint firstItem="im6-eD-zqp" firstAttribute="leading" secondItem="7LB-0s-lds" secondAttribute="leading" constant="4" id="mZg-6W-KKQ"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H0C-CP-JjT" secondAttribute="trailing" constant="5" id="ueQ-nQ-PkO"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7LB-0s-lds" firstAttribute="centerX" secondItem="gOa-4l-s7s" secondAttribute="centerX" id="G3h-y1-a0n"/>
+                                                <constraint firstAttribute="bottom" secondItem="7LB-0s-lds" secondAttribute="bottom" id="EDA-Ph-Mo2"/>
+                                                <constraint firstItem="7LB-0s-lds" firstAttribute="leading" secondItem="gOa-4l-s7s" secondAttribute="leading" id="MYV-7y-AfC"/>
+                                                <constraint firstAttribute="trailing" secondItem="7LB-0s-lds" secondAttribute="trailing" id="bfh-O6-WWA"/>
                                                 <constraint firstItem="7LB-0s-lds" firstAttribute="centerY" secondItem="gOa-4l-s7s" secondAttribute="centerY" id="pU6-VU-tEd"/>
+                                                <constraint firstItem="7LB-0s-lds" firstAttribute="top" secondItem="gOa-4l-s7s" secondAttribute="top" id="sMd-eo-QBf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
@@ -73,12 +83,12 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FvG-eT-wPD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="prP-Tt-r0g" firstAttribute="bottom" secondItem="FvG-eT-wPD" secondAttribute="bottom" id="IXM-Lv-KfL"/>
-                            <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="prP-Tt-r0g" secondAttribute="trailing" constant="15" id="foG-XG-17x"/>
-                            <constraint firstItem="prP-Tt-r0g" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="15" id="hSA-A1-6bn"/>
-                            <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" constant="25" id="p5f-9W-8bV"/>
+                            <constraint firstItem="prP-Tt-r0g" firstAttribute="bottom" secondItem="Z44-rv-rnZ" secondAttribute="bottom" id="IXM-Lv-KfL"/>
+                            <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="prP-Tt-r0g" secondAttribute="trailing" constant="20" id="foG-XG-17x"/>
+                            <constraint firstItem="prP-Tt-r0g" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="hSA-A1-6bn"/>
+                            <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" constant="20" id="p5f-9W-8bV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="제목 검색" id="c8p-ow-aw3">
