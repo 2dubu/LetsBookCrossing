@@ -34,7 +34,6 @@ class CompleteRegisterViewController: UIViewController {
         
         setElements()
         dynamicFont()
-        //attribute()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,37 +98,6 @@ class CompleteRegisterViewController: UIViewController {
 
         return formattedDate
     }
-    
-    /*
-    func attribute() {
-        
-        let paragraphStyle1 = NSMutableParagraphStyle()
-        paragraphStyle1.lineSpacing = 2
-        
-        // 책 제목 행간 조절
-        let attrString1 = NSMutableAttributedString(string: registerTitleLabel.text!)
-        let attrString2 = NSMutableAttributedString(string: seoulBookBogoBookTitle.text!)
-        attrString1.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle1, range: NSMakeRange(0, attrString1.length))
-        attrString2.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle1, range: NSMakeRange(0, attrString2.length))
-        exchangedBookTitle.attributedText = attrString1
-        seoulBookBogoBookTitle.attributedText = attrString2
-    
-        // 안내문 특정 문장 굵기 변경 & 행간 조절
-        let paragraphStyle2 = NSMutableParagraphStyle()
-        paragraphStyle2.lineSpacing = 4
-        
-        let attrString3 = NSMutableAttributedString(string: self.description1.text ?? "")
-        attrString3.addAttribute(.font, value: UIFont.systemFont(ofSize: 14, weight: .bold), range: (self.description1.text! as NSString).range(of: "신청이 완료되었습니다."))
-        attrString3.addAttribute(.font, value: UIFont.systemFont(ofSize: 14, weight: .semibold), range: (self.description1.text! as NSString).range(of: "시간 내에 교환이 완료되지 않을 경우 자동으로 취소"))
-        attrString3.addAttribute(.foregroundColor, value: UIColor.red, range: (self.description1.text! as NSString).range(of: "시간 내에 교환이 완료되지 않을 경우 자동으로 취소"))
-        attrString3.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle2, range: NSMakeRange(0, attrString3.length))
-        description1.attributedText = attrString3
-        
-        let attrString4 = NSMutableAttributedString(string: self.description2.text ?? "")
-        attrString4.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle2, range: NSMakeRange(0, attrString4.length))
-        description2.attributedText = attrString4
-    }
-     */
     
     func dynamicFont() {
         registerLabel.dynamicFont(fontSize: 19)

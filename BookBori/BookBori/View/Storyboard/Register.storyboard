@@ -715,7 +715,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="NSColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="15" name="GmarketSansMedium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3999999999999999" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -783,31 +783,31 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-qc-Hug">
-                                <rect key="frame" x="30" y="337" width="14.5" height="14.5"/>
+                                <rect key="frame" x="30" y="340" width="14.5" height="14.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="height" multiplier="1:1" id="s4N-46-sAg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-fQ-s91">
-                                <rect key="frame" x="52.5" y="332" width="331.5" height="21"/>
+                                <rect key="frame" x="52.5" y="332" width="331.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
                                             <font key="NSFont" size="15" name="GmarketSansMedium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3999999999999999" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="B3V-Vt-aTb">
-                                <rect key="frame" x="30" y="383" width="14.5" height="14.5"/>
+                                <rect key="frame" x="30" y="389" width="14.5" height="14.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B3V-Vt-aTb" secondAttribute="height" multiplier="1:1" id="4qc-Fj-7C6"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-Lg-BKU">
-                                <rect key="frame" x="40" y="706.5" width="334" height="125.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-Lg-BKU">
+                                <rect key="frame" x="40" y="708.5" width="334" height="123.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3p-3a-WDo">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="56"/>
@@ -833,7 +833,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X4-6d-2DH">
-                                        <rect key="frame" x="0.0" y="70" width="334" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="68" width="334" height="55.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="19"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -862,12 +862,12 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-IP-VqA">
-                                <rect key="frame" x="52.5" y="378" width="331.5" height="21"/>
+                                <rect key="frame" x="52.5" y="381" width="331.5" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
                                             <font key="NSFont" size="15" name="GmarketSansMedium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3999999999999999" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -885,7 +885,7 @@
                             <constraint firstItem="FmT-fQ-s91" firstAttribute="leading" secondItem="DMN-qc-Hug" secondAttribute="trailing" constant="8" id="HQt-sd-BE3"/>
                             <constraint firstItem="tzH-US-YEg" firstAttribute="centerY" secondItem="wT0-B6-naI" secondAttribute="centerY" id="Heg-fD-sHW"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="trailing" secondItem="6L0-IP-VqA" secondAttribute="trailing" constant="30" id="JbA-9t-hwx"/>
-                            <constraint firstItem="DMN-qc-Hug" firstAttribute="top" secondItem="9Bn-iS-ll6" secondAttribute="bottom" constant="50" id="Jgw-oM-rCL"/>
+                            <constraint firstItem="DMN-qc-Hug" firstAttribute="top" secondItem="9Bn-iS-ll6" secondAttribute="bottom" constant="53" id="Jgw-oM-rCL"/>
                             <constraint firstItem="tzH-US-YEg" firstAttribute="centerX" secondItem="Ddw-FF-x6F" secondAttribute="centerX" id="NNu-Xg-KzD"/>
                             <constraint firstItem="SgM-GJ-yny" firstAttribute="top" secondItem="0wW-km-0Nf" secondAttribute="top" constant="50" id="Ow9-tw-J6S"/>
                             <constraint firstItem="tzH-US-YEg" firstAttribute="centerY" secondItem="O4Z-ZO-YxO" secondAttribute="centerY" id="TVS-cf-KLd"/>
@@ -894,7 +894,7 @@
                             <constraint firstItem="DMN-qc-Hug" firstAttribute="width" secondItem="Ddw-FF-x6F" secondAttribute="width" multiplier="0.035" id="d7r-dQ-KPt"/>
                             <constraint firstItem="DMN-qc-Hug" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="30" id="fRe-1m-nWr"/>
                             <constraint firstItem="6L0-IP-VqA" firstAttribute="top" secondItem="FmT-fQ-s91" secondAttribute="bottom" constant="25" id="ftS-me-bBD"/>
-                            <constraint firstItem="B3V-Vt-aTb" firstAttribute="top" secondItem="FmT-fQ-s91" secondAttribute="bottom" constant="30" id="gec-3E-0AR"/>
+                            <constraint firstItem="B3V-Vt-aTb" firstAttribute="top" secondItem="FmT-fQ-s91" secondAttribute="bottom" constant="33" id="gec-3E-0AR"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="bottom" secondItem="Ojj-Lg-BKU" secondAttribute="bottom" constant="30" id="inX-IX-1ay"/>
                             <constraint firstItem="Ojj-Lg-BKU" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="40" id="iuD-50-5gQ"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="trailing" secondItem="SgM-GJ-yny" secondAttribute="trailing" constant="30" id="kT0-oQ-MeN"/>
