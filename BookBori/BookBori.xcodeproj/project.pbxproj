@@ -39,6 +39,7 @@
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
 		26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9D27C5B9A500304788 /* GuideViewController.swift */; };
 		26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */; };
+		26AD8E4A27E30A0A0009345F /* CheckUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD8E4927E30A0A0009345F /* CheckUserInfoViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectUserInfoViewController.swift; sourceTree = "<group>"; };
+		26AD8E4927E30A0A0009345F /* CheckUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckUserInfoViewController.swift; path = BookBori/ViewController/Check/CheckUserInfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +237,7 @@
 				18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */,
 				18F641E127C4AD53000B2526 /* SearchBookViewController.swift */,
 				18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */,
+				26AD8E4927E30A0A0009345F /* CheckUserInfoViewController.swift */,
 				18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */,
 			);
 			path = Register;
@@ -380,6 +383,7 @@
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
 				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
+				26AD8E4A27E30A0A0009345F /* CheckUserInfoViewController.swift in Sources */,
 				18F641CA27C47214000B2526 /* MainViewController.swift in Sources */,
 				18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */,
 				18F641D727C480AC000B2526 /* CheckViewController.swift in Sources */,
@@ -532,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -542,13 +546,14 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -564,7 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -574,13 +579,14 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
