@@ -294,6 +294,12 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         pubdateTextField.font = UIFont(name: "GmarketSansLight", size: 14)
         reviewTextView.font = UIFont(name: "GmarketSansLight", size: 14)
         
+        // 텍스트필드 leftPadding
+        titleTextField.addLeftPadding()
+        authorTextField.addLeftPadding()
+        publisherTextField.addLeftPadding()
+        pubdateTextField.addLeftPadding()
+        
         //completeButton.isEnabled = false
         completeButton.layer.cornerRadius = UIScreen.main.bounds.width/30
         completeButton.titleLabel?.dynamicFont(fontSize: 17)
