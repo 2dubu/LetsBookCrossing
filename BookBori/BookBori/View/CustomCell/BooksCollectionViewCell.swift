@@ -13,6 +13,8 @@ class BooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
+        coverImageView.layer.masksToBounds = true
+        setImageShadow(image: coverImageView, shadowRadius: 6, shadowOpacity: 0.3)
         titleLabel.dynamicFont(fontSize: 12)
     }
 }
