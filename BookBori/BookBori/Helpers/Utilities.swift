@@ -17,6 +17,8 @@ class UtilitiesForAlert {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: buttonTitle, style: .default, handler: handler)
+        
+        defaultAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
         alertController.addAction(defaultAction)
         
         return alertController
@@ -30,8 +32,8 @@ class UtilitiesForAlert {
         let defaultAction = UIAlertAction(title: buttonTitle1, style: .default, handler: handler)
         let cancelAction = UIAlertAction(title: buttonTitle2, style: .cancel, handler: nil)
         
-        defaultAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-        cancelAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+        defaultAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
+        cancelAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
         
         alertController.addAction(defaultAction)
         alertController.addAction(cancelAction)
