@@ -11,6 +11,7 @@
 		18998AB627DAF03400943C21 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB327DAEFD800943C21 /* GmarketSansLight.otf */; };
 		18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB227DAEFD800943C21 /* GmarketSansMedium.otf */; };
 		18BA6C7B27DF22C00031405D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA6C7A27DF22C00031405D /* Design.swift */; };
+		18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */; };
 		18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A227C46A7F000B2526 /* AppDelegate.swift */; };
 		18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A427C46A7F000B2526 /* SceneDelegate.swift */; };
 		18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641A827C46A7F000B2526 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		18998AB327DAEFD800943C21 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
 		18998AB427DAEFD900943C21 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		18BA6C7A27DF22C00031405D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		18F6419F27C46A7F000B2526 /* BookBori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F641A227C46A7F000B2526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F641A427C46A7F000B2526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				18F641C027C470EB000B2526 /* DeviceConfig.swift */,
 				18F641C227C470F2000B2526 /* LabelExtension.swift */,
 				18F641C427C470F7000B2526 /* NavigationExtension.swift */,
+				18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				18F641E427C4C61F000B2526 /* searchData.swift in Sources */,
 				26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */,
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
+				18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
 				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
 				26AD8E4A27E30A0A0009345F /* CheckUserInfoViewController.swift in Sources */,
