@@ -14,12 +14,12 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.9921568627, blue: 0.862745098, alpha: 1)
+        
         dynamicFont()
         setButton()
+        setTextField()
         updateContinueButton()
-        
-        phoneNumberTextField.keyboardType = .numberPad
-        passwordTextField.keyboardType = .numberPad
         
         phoneNumberTextField.delegate = self
         passwordTextField.delegate = self
@@ -28,7 +28,6 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlet & IBAction
     
-    @IBOutlet weak var collectUserInfoTitleLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -46,7 +45,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
             var passwordSuitable : Bool = false
         
             // 전화번호 검사
-            let phoneNumberRegex = try? NSRegularExpression(pattern: "^01([0-9])-([0-9]{3,4})-([0-9]{4})$")
+            let phoneNumberRegex = try? NSRegularExpression(pattern: "^01([0-9])([0-9]{3,4})([0-9]{4})$")
             guard let phoneNumberText = phoneNumberTextField.text else { return }
             if ((phoneNumberRegex?.firstMatch(in: phoneNumberText, options: [], range: NSRange(location: 0, length: phoneNumberText.count))) != nil) {
                 phoneNumberSuitable = true
@@ -65,42 +64,31 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
             } else if phoneNumberSuitable == false {
                 self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
             } else {
-                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호를 다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호 형식이 올바르지 않아요\n다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
             }
             
         }
     }
     
-    var pastCount : Int?
     @IBAction func phoneNumberTextFieldEditingChanged(_ sender: Any) {
         updateContinueButton()
         
-        guard let text = phoneNumberTextField.text else { return }
-        
-        if phoneNumberTextField.text?.count ?? 0 > pastCount ?? 0 {
-            let maxLength = 13
+        if let text = phoneNumberTextField.text {
+            let maxLength = 11
             if text.count == maxLength {
                 phoneNumberTextField.resignFirstResponder()
             }
-            if text.count == 3 {
-                phoneNumberTextField.text! += "-"
-            } else if text.count == 8 {
-                phoneNumberTextField.text! += "-"
-            } else if text.count > maxLength {
+            if text.count > maxLength {
                 let index = text.index(text.startIndex, offsetBy: maxLength)
                 let newString = text[text.startIndex..<index]
                 phoneNumberTextField.text = String(newString)
             }
-        } else {
-            if phoneNumberTextField.text?.hasSuffix("-") == true {
-                phoneNumberTextField.text?.removeLast(1)
-            }
         }
-        pastCount = phoneNumberTextField.text?.count
     }
     
     @IBAction func passwordTextFieldEditingChanged(_ sender: Any) {
         updateContinueButton()
+        
         if let text = passwordTextField.text {
             let maxLength = 4
             if text.count == maxLength {
@@ -117,10 +105,9 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     // MARK: - function
     
     func dynamicFont() {
-        collectUserInfoTitleLabel.dynamicFont(fontSize: 26)
         phoneNumberLabel.dynamicFont(fontSize: 17)
         passwordLabel.dynamicFont(fontSize: 17)
-        continueButton.titleLabel?.dynamicFont(fontSize: 18)
+        continueButton.titleLabel?.dynamicFont(fontSize: 10)
     }
     
     func setButton() {
@@ -129,17 +116,31 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         continueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         continueButton.layer.shadowRadius = 1
         continueButton.layer.shadowOpacity = 0.5
-        continueButton.backgroundColor = .white
-        continueButton.tintColor = .black
+        continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+    }
+    
+    func setTextField() {
+        
+        phoneNumberTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        passwordTextField.font = UIFont(name: "GmarketSansLight", size: 14)
+        phoneNumberTextField.keyboardType = .numberPad
+        passwordTextField.keyboardType = .numberPad
+        
+        phoneNumberTextField.addLeftPadding()
+        passwordTextField.addLeftPadding()
     }
     
     func updateContinueButton() {
         if phoneNumberTextField.hasText && passwordTextField.hasText {
             continueButton.isEnabled = true
-            continueButton.tintColor = .black
+            continueButton.setTitleColor(.white, for: .normal)
+            continueButton.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)
+            
         } else {
             continueButton.isEnabled = false
-            continueButton.tintColor = .lightGray
+            continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+            continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         }
     }
     

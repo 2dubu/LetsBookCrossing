@@ -16,46 +16,99 @@ class GuideViewController: UIViewController {
         
         setBookAppliedInfo()
         dynamicFont()
+        setWhiteViews()
         setButton()
-        
-        // 중간 line 세팅
-        lineView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
     
-    
     // MARK: - IBOutlet & IBAction
+    @IBOutlet weak var whiteView1: UIView!
+    @IBOutlet weak var whiteView2: UIView!
     
+    // 책 정보
     @IBOutlet weak var bookCoverImageView: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
-    @IBOutlet weak var bookDetailLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var lineView: UIView!
     
+    @IBOutlet weak var bookInfoBGView: UIView!
+    @IBOutlet weak var authorLabel1: UILabel!
+    @IBOutlet weak var authorLabel2: UILabel!
+    @IBOutlet weak var publisherLabel1: UILabel!
+    @IBOutlet weak var publisherLabel2: UILabel!
+    @IBOutlet weak var pubDateLabel1: UILabel!
+    @IBOutlet weak var pubDateLabel2: UILabel!
+    
+    // 이용약관
+    @IBOutlet weak var ruleTitle: UILabel!
+    
+    @IBOutlet weak var ruleContents1: UILabel!
+    @IBOutlet weak var ruleContents2: UILabel!
+    @IBOutlet weak var ruleContents3: UILabel!
+    
+    @IBOutlet weak var ruleCheckButton1: UIButton!
+    @IBOutlet weak var ruleCheckButton2: UIButton!
+    @IBOutlet weak var ruleCheckButton3: UIButton!
+    
+    @IBOutlet weak var continueButton: UIButton!
+    
+    // MARK: - IBAction
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func ruleCheckButton1Tapped(_ sender: Any) {
+    }
+    
+    @IBAction func ruleCheckButton2Tapped(_ sender: Any) {
+    }
+    
+    @IBAction func ruleCheckButton3Tapped(_ sender: Any) {
+    }
     
     // MARK: - function
     
     func dynamicFont() {
-        bookTitleLabel.dynamicFont(fontSize: 16)
-        bookDetailLabel.dynamicFont(fontSize: 13)
-        continueButton.titleLabel?.dynamicFont(fontSize: 18)
+        bookTitleLabel.dynamicFont(fontSize: 15)
+        authorLabel1.dynamicFont(fontSize: 13)
+        authorLabel2.dynamicFont(fontSize: 13)
+        publisherLabel1.dynamicFont(fontSize: 13)
+        publisherLabel2.dynamicFont(fontSize: 13)
+        pubDateLabel1.dynamicFont(fontSize: 13)
+        pubDateLabel2.dynamicFont(fontSize: 13)
+        
+        ruleTitle.dynamicFont(fontSize: 18)
+        ruleContents1.dynamicFont(fontSize: 13)
+        ruleContents2.dynamicFont(fontSize: 13)
+        ruleContents3.dynamicFont(fontSize: 13)
+        
+        continueButton.titleLabel?.dynamicFont(fontSize: 16)
     }
     
     func setBookAppliedInfo() {
         guard let book = bookApplied else { return }
+        
         bookCoverImageView.image = UIImage(named: book.image)
         bookTitleLabel.text = book.title
+        authorLabel2.text = book.author
+        publisherLabel2.text = book.publisher
+        pubDateLabel2.text = String(book.yearPublished)
+    }
+    
+    func setWhiteViews() {
+        whiteView1.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        whiteView2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        // bookDetailLabel 세팅
-        bookDetailLabel.text = "저자 : \(book.author)\n출판사 : \(book.publisher)\n발행연도 : \(book.yearPublished)"
-        let attrString = NSMutableAttributedString(string: bookDetailLabel.text!)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 2
-        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
-        bookDetailLabel.attributedText = attrString
+        whiteView1.layer.cornerRadius = 20
+        whiteView1.layer.shadowColor = UIColor.darkGray.cgColor
+        whiteView1.layer.shadowOffset = CGSize(width: 0, height: 0)
+        whiteView1.layer.shadowRadius = 2
+        whiteView1.layer.shadowOpacity = 0.5
+        
+        whiteView2.layer.cornerRadius = 20
+        whiteView2.layer.shadowColor = UIColor.darkGray.cgColor
+        whiteView2.layer.shadowOffset = CGSize(width: 0, height: 0)
+        whiteView2.layer.shadowRadius = 2
+        whiteView2.layer.shadowOpacity = 0.5
+        
+        bookInfoBGView.layer.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9764705882, blue: 0.9725490196, alpha: 1)
     }
     
     func setButton() {
@@ -64,7 +117,7 @@ class GuideViewController: UIViewController {
         continueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         continueButton.layer.shadowRadius = 1
         continueButton.layer.shadowOpacity = 0.5
-        continueButton.backgroundColor = .white
-        continueButton.tintColor = .black
+        continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
     }
 }
