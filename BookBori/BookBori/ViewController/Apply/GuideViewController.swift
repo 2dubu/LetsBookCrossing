@@ -9,6 +9,10 @@ import UIKit
 
 class GuideViewController: UIViewController {
     
+    var checkButton1Tapped: Bool = false
+    var checkButton2Tapped: Bool = false
+    var checkButton3Tapped: Bool = false
+    
     // MARK: - viewController Life Cycle
 
     override func viewDidLoad() {
@@ -55,12 +59,43 @@ class GuideViewController: UIViewController {
     }
     
     @IBAction func ruleCheckButton1Tapped(_ sender: Any) {
+        
+        checkButton1Tapped.toggle()
+        
+        if checkButton1Tapped {
+            ruleCheckButton1.setImage(UIImage(named: "selected_check"), for: .normal)
+        } else {
+            ruleCheckButton1.setImage(UIImage(named: "check"), for: .normal)
+        }
+        
+        updateContinueButton()
     }
     
     @IBAction func ruleCheckButton2Tapped(_ sender: Any) {
+        
+        checkButton2Tapped.toggle()
+        
+        if checkButton2Tapped {
+            ruleCheckButton2.setImage(UIImage(named: "selected_check"), for: .normal)
+            
+        } else {
+            ruleCheckButton2.setImage(UIImage(named: "check"), for: .normal)
+        }
+        
+        updateContinueButton()
     }
     
     @IBAction func ruleCheckButton3Tapped(_ sender: Any) {
+        
+        checkButton3Tapped.toggle()
+        
+        if checkButton3Tapped {
+            ruleCheckButton3.setImage(UIImage(named: "selected_check"), for: .normal)
+        } else {
+            ruleCheckButton3.setImage(UIImage(named: "check"), for: .normal)
+        }
+        
+        updateContinueButton()
     }
     
     // MARK: - function
@@ -79,6 +114,9 @@ class GuideViewController: UIViewController {
         ruleContents2.dynamicFont(fontSize: 13)
         ruleContents3.dynamicFont(fontSize: 13)
         
+        continueButton.isEnabled = false
+        continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         continueButton.titleLabel?.dynamicFont(fontSize: 16)
     }
     
@@ -119,5 +157,25 @@ class GuideViewController: UIViewController {
         continueButton.layer.shadowOpacity = 0.5
         continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        ruleCheckButton1.imageView?.contentMode = .scaleAspectFit
+        ruleCheckButton2.imageView?.contentMode = .scaleAspectFit
+        ruleCheckButton3.imageView?.contentMode = .scaleAspectFit
+        
+        ruleCheckButton1.setImage(UIImage(named: "check"), for: .normal)
+        ruleCheckButton2.setImage(UIImage(named: "check"), for: .normal)
+        ruleCheckButton3.setImage(UIImage(named: "check"), for: .normal)
+    }
+    
+    func updateContinueButton() {
+        if checkButton1Tapped && checkButton2Tapped && checkButton3Tapped {
+            continueButton.isEnabled = true
+            continueButton.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)
+            continueButton.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        } else {
+            continueButton.isEnabled = false
+            continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+            continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        }
     }
 }
