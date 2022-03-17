@@ -38,7 +38,7 @@
         <!--Main View Controller-->
         <scene sceneID="cMp-MH-o1X">
             <objects>
-                <viewController storyboardIdentifier="MainVC" id="5Do-JC-jYa" customClass="MainViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Do-JC-jYa" customClass="MainViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m1S-Wh-4DB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

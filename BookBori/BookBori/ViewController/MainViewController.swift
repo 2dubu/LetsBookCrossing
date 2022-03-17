@@ -28,6 +28,10 @@ class MainViewController: UIViewController {
         setButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true
+    }
+    
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
         let applySB = UIStoryboard(name: "Apply", bundle: nil)
