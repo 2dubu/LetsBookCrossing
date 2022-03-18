@@ -518,8 +518,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="continueButtonTapped:" destination="kUS-Om-dIG" eventType="touchUpInside" id="Ysz-AJ-wex"/>
-                                    <segue destination="imp-IG-cav" kind="show" id="eGn-ho-foc"/>
+                                    <action selector="continueButtonTapped:" destination="kUS-Om-dIG" eventType="touchUpInside" id="0p2-ve-HaK"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="TUD-ho-AFb">
@@ -611,16 +610,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9E-gh-XFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3724.6376811594205" y="61.607142857142854"/>
-        </scene>
-        <!--SetRegistrationVC-->
-        <scene sceneID="h8w-mR-gd3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Register" referencedIdentifier="SetRegistrationVC" id="imp-IG-cav" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="K2Y-uz-0Yu"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P15-0j-aeo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4257" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OEy-zY-F9n">
