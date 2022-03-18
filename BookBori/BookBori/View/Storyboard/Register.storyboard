@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="xQx-4X-mGc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-FO-cM7">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="839.5"/>
@@ -303,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-68-E01">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -643,11 +643,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nir-tQ-nwn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0En-2l-7Rh">
-                                <rect key="frame" x="197" y="411" width="20" height="20"/>
+                                <rect key="frame" x="197" y="433" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TZD-eG-vd4"/>
@@ -850,10 +850,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-Lg-BKU">
-                                <rect key="frame" x="40" y="708.5" width="334" height="123.5"/>
+                                <rect key="frame" x="40" y="776.5" width="334" height="55.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3p-3a-WDo">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="55.5"/>
                                         <color key="backgroundColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -876,34 +876,9 @@
                                             <segue destination="ucm-bK-uoA" kind="show" id="htM-Tb-9Ae"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8X4-6d-2DH">
-                                        <rect key="frame" x="0.0" y="68" width="334" height="55.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="19"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <state key="normal" title="확인하고 신청내역 조회하기">
-                                            <color key="titleColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="barcodeButtonTapped:" destination="9Fx-fg-kc6" eventType="touchUpInside" id="xDx-3H-etY"/>
-                                            <action selector="registrationCompleteButtonTapped:" destination="Qp7-o4-sQX" eventType="touchUpInside" id="Rax-8w-IUb"/>
-                                            <segue destination="0k0-mb-6y0" kind="show" id="crP-0y-W06"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y3p-3a-WDo" firstAttribute="width" secondItem="Y3p-3a-WDo" secondAttribute="height" multiplier="6:1" id="sW4-mI-vdy"/>
-                                    <constraint firstItem="8X4-6d-2DH" firstAttribute="width" secondItem="8X4-6d-2DH" secondAttribute="height" multiplier="6:1" id="vch-TP-Bvm"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -924,7 +899,6 @@
                         <outlet property="applyImageView" destination="wT0-B6-naI" id="BXZ-97-fFe"/>
                         <outlet property="applyLabel" destination="VsD-A7-OCe" id="mCN-Yo-VZI"/>
                         <outlet property="applyTitleLabel" destination="o2y-po-HcT" id="fTk-XS-iOG"/>
-                        <outlet property="checkApplyButton" destination="8X4-6d-2DH" id="vrb-rJ-CX7"/>
                         <outlet property="confirmButton" destination="Y3p-3a-WDo" id="dXJ-2U-vgL"/>
                         <outlet property="description1" destination="FmT-fQ-s91" id="15e-NT-pAs"/>
                         <outlet property="description2" destination="6L0-IP-VqA" id="nJZ-16-lgP"/>
@@ -947,16 +921,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOR-vA-S4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4555" y="80"/>
-        </scene>
-        <!--CheckUserInfoVC-->
-        <scene sceneID="muG-Bj-grm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Check" referencedIdentifier="CheckUserInfoVC" id="0k0-mb-6y0" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="BqH-DR-ncS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FSz-Qm-4Qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4551" y="137"/>
         </scene>
     </scenes>
     <resources>
