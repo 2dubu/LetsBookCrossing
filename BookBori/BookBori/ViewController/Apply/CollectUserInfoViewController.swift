@@ -39,34 +39,23 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        if phoneNumberTextField.hasText && passwordTextField.hasText {
-            
-            var phoneNumberSuitable : Bool = false
-            var passwordSuitable : Bool = false
         
-            // 전화번호 검사
-            let phoneNumberRegex = try? NSRegularExpression(pattern: "^01([0-9])([0-9]{3,4})([0-9]{4})$")
-            guard let phoneNumberText = phoneNumberTextField.text else { return }
-            if ((phoneNumberRegex?.firstMatch(in: phoneNumberText, options: [], range: NSRange(location: 0, length: phoneNumberText.count))) != nil) {
-                phoneNumberSuitable = true
-            }
-            
-            // 비밀번호 검사
-            let passwordRegex = try? NSRegularExpression(pattern: "^[0-9]{4,4}$")
-            guard let passwordText = passwordTextField.text else { return }
-            if ((passwordRegex?.firstMatch(in: passwordText, options: [], range: NSRange(location: 0, length: passwordText.count))) != nil) {
-                passwordSuitable = true
-            }
-            
-            if phoneNumberSuitable == true && passwordSuitable == true {
-                userPhoneNumber = phoneNumberText
-                userPassword = passwordText
-            } else if phoneNumberSuitable == false {
-                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
-            } else {
-                self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호 형식이 올바르지 않아요\n다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
-            }
-            
+        // 바로 전 뷰를 확인하는 부분에 문제가 있음
+        let nv = self.presentedViewController
+//        let nv = self.navigationController as? UINavigationController
+//        let sv = nv?.viewControllers.last
+        if nv != nil && nv!.isKind(of: MainViewController.self) {
+            // 신청내역 조회 화면에서 이 화면을 띄웠을 때
+            checkToPush()
+            let registerSB = UIStoryboard(name: "Check", bundle: nil)
+            let checkVC = registerSB.instantiateViewController(withIdentifier: "CheckVC")
+            self.navigationController?.pushViewController(checkVC, animated: true)
+        } else {
+            // 도서 신청 중 이 화면을 띄웠을 때
+            checkToPush()
+            let registerSB = UIStoryboard(name: "Register", bundle: nil)
+            let setRegistrationVC = registerSB.instantiateViewController(withIdentifier: "SetRegistrationVC")
+            self.navigationController?.pushViewController(setRegistrationVC, animated: true)
         }
     }
     
@@ -129,6 +118,46 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         
         phoneNumberTextField.addLeftPadding()
         passwordTextField.addLeftPadding()
+    }
+    
+    // presentingVC에 따라 설명글을 다르게 설정
+    func setDescriptions() {
+        let nv = (presentingViewController as? UINavigationController)
+        let sv = nv?.viewControllers.last
+        if sv != nil && sv!.isKind(of: MainViewController.self) {
+            // 신청내역 조회 화면에서 이 화면을 띄웠을 때
+            
+        } else {
+            // 도서 신청 중 이 화면을 띄웠을 때
+        }
+    }
+    
+    func checkToPush() {
+        var phoneNumberSuitable : Bool = false
+        var passwordSuitable : Bool = false
+        
+        // 전화번호 검사
+        let phoneNumberRegex = try? NSRegularExpression(pattern: "^01([0-9])([0-9]{3,4})([0-9]{4})$")
+        guard let phoneNumberText = phoneNumberTextField.text else { return }
+        if ((phoneNumberRegex?.firstMatch(in: phoneNumberText, options: [], range: NSRange(location: 0, length: phoneNumberText.count))) != nil) {
+            phoneNumberSuitable = true
+        }
+        
+        // 비밀번호 검사
+        let passwordRegex = try? NSRegularExpression(pattern: "^[0-9]{4,4}$")
+        guard let passwordText = passwordTextField.text else { return }
+        if ((passwordRegex?.firstMatch(in: passwordText, options: [], range: NSRange(location: 0, length: passwordText.count))) != nil) {
+            passwordSuitable = true
+        }
+        
+        if phoneNumberSuitable == true && passwordSuitable == true {
+            userPhoneNumber = phoneNumberText
+            userPassword = passwordText
+        } else if phoneNumberSuitable == false {
+            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+        } else {
+            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호 형식이 올바르지 않아요\n다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+        }
     }
     
     func updateContinueButton() {

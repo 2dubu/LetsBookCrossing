@@ -40,9 +40,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
-        let checkSB = UIStoryboard(name: "Check", bundle: nil)
-        let checkVC = checkSB.instantiateViewController(withIdentifier: "CheckVC")
-        self.navigationController?.pushViewController(checkVC, animated: true)
+        let registerSB = UIStoryboard(name: "Apply", bundle: nil)
+        let collectUserInfoVC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoVC")
+        self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
     }
     
     @IBAction func howToUseButtonTapped(_ sender: Any) {
