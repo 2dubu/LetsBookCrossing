@@ -221,11 +221,17 @@
                                 <rect key="frame" x="23" y="358.66666666666669" width="344" height="107.33333333333331"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="applyButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="xec-5S-jGr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zen-ic-CoR">
                                 <rect key="frame" x="23" y="481.00000000000006" width="344" height="107.66666666666669"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="checkButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="fQ0-SC-Z9B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUU-ax-mkS"/>
