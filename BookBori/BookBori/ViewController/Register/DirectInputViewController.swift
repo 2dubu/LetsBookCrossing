@@ -343,7 +343,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         coverImageView.kf.indicatorType = .activity
         coverImageView.kf.setImage(
             with: imageURL,
-            placeholder: UIImage(named: "beforeRegistrationImage"),
+            placeholder: UIImage(named: "beforeRegistration"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(1)),
