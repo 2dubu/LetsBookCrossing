@@ -34,11 +34,15 @@ class SelectBookViewController: UIViewController {
         searchBar.returnKeyType = .done
         
         initSearchBar()
+        
+        defaultImageView.image = UIImage(named: "selectCollectionViewPlaceholder")
+        defaultImageView.isHidden = true
     }
     
 
     // MARK: - IBOutlet & IBAction
     @IBOutlet weak var booksCollectionView: UICollectionView!
+    @IBOutlet weak var defaultImageView: UIImageView!
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -97,6 +101,12 @@ extension SelectBookViewController: UISearchBarDelegate {
             filteredArray = BookDummyData.shared.books
         }
         self.booksCollectionView.reloadData()
+        // 검색 결과 없을 땐 defaultImage 표시
+        if filteredArray.count == 0 {
+            defaultImageView.isHidden = false
+        } else {
+            defaultImageView.isHidden = true
+        }
     }
     
     // searchBar 완료 버튼 눌렀을 때 키보드 내리기

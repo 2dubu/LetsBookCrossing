@@ -73,7 +73,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 requestBookBySearch(queryValue) { result in
                     switch result {
                     case .success(_):
-                        
                         DispatchQueue.main.async { [weak self] in
                             guard let self = self else { return }
                             self.indicatorView.stopAnimating()
@@ -84,8 +83,8 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                                 self.defaultImage.image = UIImage(named: "searchTableViewPlaceholder2")
                                 self.defaultImage.isHidden = false
                             }
-                            
                         }
+                        
                     case .failure(let error):
                         print("error : \(error.localizedDescription)")
                     }
