@@ -215,6 +215,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as! SearchBookTableViewCell
+        cell.selectionStyle = .none
         tableView.separatorStyle = .none
         cell.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         self.defaultImage.isHidden = true
@@ -275,4 +276,13 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             directInputVC.indexPath = userSelectedSearchBookNumber
         }
     }
+    // tableView 하단 공백 추가
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 15
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: Int(tableView.frame.height), width: Int(tableView.frame.width), height: 15))
+        return footerView
+    }
+    
 }
