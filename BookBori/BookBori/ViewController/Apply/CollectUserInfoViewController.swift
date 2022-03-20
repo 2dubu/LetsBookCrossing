@@ -14,7 +14,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.9921568627, blue: 0.862745098, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         
         dynamicFont()
         setButton()

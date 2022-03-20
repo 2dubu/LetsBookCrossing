@@ -419,7 +419,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.8980392157" green="0.99215686270000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="02Z-Qa-vvW" firstAttribute="top" secondItem="6gO-cb-TdJ" secondAttribute="bottom" constant="20" id="8Xx-ze-2Wj"/>
                                             <constraint firstAttribute="trailing" secondItem="02Z-Qa-vvW" secondAttribute="trailing" constant="20" id="9j1-1K-EYd"/>
@@ -431,6 +431,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="odV-Bx-FZ2" firstAttribute="top" secondItem="dG0-I0-qDy" secondAttribute="top" id="Jxn-Fj-tMW"/>
                                     <constraint firstItem="odV-Bx-FZ2" firstAttribute="leading" secondItem="dG0-I0-qDy" secondAttribute="leading" id="MYE-U8-hxI"/>
@@ -442,7 +443,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IPz-rQ-GeX"/>
-                        <color key="backgroundColor" red="0.8980392157" green="0.99215686270000003" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dG0-I0-qDy" firstAttribute="leading" secondItem="IPz-rQ-GeX" secondAttribute="leading" id="40s-pR-FIr"/>
                             <constraint firstItem="IPz-rQ-GeX" firstAttribute="trailing" secondItem="dG0-I0-qDy" secondAttribute="trailing" id="95e-ng-s0l"/>
