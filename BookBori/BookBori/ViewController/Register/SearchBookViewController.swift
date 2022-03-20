@@ -52,21 +52,24 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func initSearchBar() {
         self.navigationItem.titleView = searchBar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .search, primaryAction: UIAction(handler: { _ in
+            self.showSearchResult()
+        }))
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
         searchBar.text = ""
         searchBar.placeholder = "등록하고 싶은 도서명을 검색하세요"
-        searchBar.searchTextField.font = UIFont(name: "GmarketSansLight", size: 17)
+        searchBar.searchTextField.font = UIFont(name: "GmarketSansLight", size: 16)
         searchBar.searchTextField.backgroundColor = UIColor.clear
-        searchBar.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
+        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
     }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    
+    func showSearchResult() {
         self.searchBar.endEditing(true)
-        self.searchBookTableView.contentOffset = CGPoint(x: 0, y: 0 - searchBookTableView.contentInset.top)
         guard let text = self.searchBar.text else { return }
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
             let noKeywordalert : UIAlertController = UIAlertController(title: "검색어를 입력해 주세요", message: "", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            okAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+            okAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
             noKeywordalert.addAction(okAction)
             self.present(noKeywordalert, animated: true, completion: nil)
         } else  {
@@ -79,11 +82,9 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                             guard let self = self else { return }
                             self.indicatorView.stopAnimating()
                             self.indicatorView.isHidden = true
-                            self.searchBookTableView.separatorStyle = .singleLine
                             self.searchBookTableView.reloadData()
                             
                             if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
-                                self.searchBookTableView.separatorStyle = .none
                                 self.defaultImage.image = UIImage(named: "searchTableViewPlaceholder2")
                                 self.defaultImage.isHidden = false
                             }
@@ -95,6 +96,10 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        showSearchResult()
     }
     
     func requestBookBySearch(
@@ -210,7 +215,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBookCell", for: indexPath) as! SearchBookTableViewCell
-        cell.selectionStyle = .none
         tableView.separatorStyle = .none
         cell.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         self.defaultImage.isHidden = true
