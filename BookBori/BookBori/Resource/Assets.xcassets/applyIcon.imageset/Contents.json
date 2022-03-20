@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "selectCollectionViewPlaceholder1.png",
+      "filename" : "applyIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "selectCollectionViewPlaceholder1@2x.png",
+      "filename" : "applyIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "selectCollectionViewPlaceholder1@3x.png",
+      "filename" : "applyIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

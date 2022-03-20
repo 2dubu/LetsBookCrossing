@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "searchTableViewPlaceholder2@1x.png",
+      "filename" : "searchTableViewPlaceholder2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "searchTableViewPlaceholder2@2x.png",
+      "filename" : "searchTableViewPlaceholder2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

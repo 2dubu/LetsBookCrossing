@@ -16,6 +16,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var applyView: UIView!
+    @IBOutlet weak var checkView: UIView!
+    @IBOutlet weak var applyLabel: UILabel!
+    @IBOutlet weak var checkLabel: UILabel!
+    
     @IBOutlet weak var noticeButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
     
@@ -53,22 +58,25 @@ class MainViewController: UIViewController {
     func setButtons() {
         
         // 그림자 설정
-        setButtonShadow(button: applyButton, shadowRadius: 2, shadowOpacity: 0.4)
-        setButtonShadow(button: checkButton, shadowRadius: 2, shadowOpacity: 0.4)
+        setViewShadow(view: applyView, shadowRadius: 3, shadowOpacity: 0.3)
+        setViewShadow(view: checkView, shadowRadius: 3, shadowOpacity: 0.3)
+        setButtonShadow(button: noticeButton, shadowRadius: 3, shadowOpacity: 0.3)
+        setButtonShadow(button: FAQButton, shadowRadius: 3, shadowOpacity: 0.3)
         
-        applyButton.layer.cornerRadius = 24
-        checkButton.layer.cornerRadius = 24
-        applyButton.layer.maskedCorners = CACornerMask.layerMinXMinYCorner // 좌측 상단
-        checkButton.layer.maskedCorners = CACornerMask.layerMaxXMaxYCorner // 우측 하단
-        
-        // 텍스트 및 이미지 설정
-        applyButton.titleLabel?.textColor = .black
-        checkButton.titleLabel?.textColor = .black
-        
-        // notice & FAQ 버튼
+        // corner radius
+        applyView.layer.cornerRadius = 22
+        checkView.layer.cornerRadius = 22
+        applyView.layer.maskedCorners = CACornerMask.layerMinXMinYCorner // 좌측 상단
+        checkView.layer.maskedCorners = CACornerMask.layerMaxXMaxYCorner // 우측 하단
         noticeButton.layer.cornerRadius = 8
         FAQButton.layer.cornerRadius = 8
-        noticeButton.titleLabel?.font =  UIFont(name: "GmarketSansMedium", size: 20)
-        FAQButton.titleLabel?.font =  UIFont(name: "GmarketSansMedium", size: 20)
+        
+        // dynamicFont
+        bookCrossingLabel.dynamicFont(fontSize: 16)
+        howToUseButton.titleLabel?.dynamicFont(fontSize: 20)
+        applyLabel.dynamicFont(fontSize: 20)
+        checkLabel.dynamicFont(fontSize: 20)
+        noticeButton.titleLabel?.dynamicFont(fontSize: 16)
+        FAQButton.titleLabel?.dynamicFont(fontSize: 16)
     }
 }
