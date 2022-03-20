@@ -12,6 +12,7 @@
 		18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB227DAEFD800943C21 /* GmarketSansMedium.otf */; };
 		18BA6C7B27DF22C00031405D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA6C7A27DF22C00031405D /* Design.swift */; };
 		18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */; };
+		18E6015127E72461005A993A /* ExchangeHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */; };
 		18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A227C46A7F000B2526 /* AppDelegate.swift */; };
 		18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A427C46A7F000B2526 /* SceneDelegate.swift */; };
 		18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641A827C46A7F000B2526 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		18998AB427DAEFD900943C21 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		18BA6C7A27DF22C00031405D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		18F6419F27C46A7F000B2526 /* BookBori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F641A227C46A7F000B2526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F641A427C46A7F000B2526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */,
 				26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */,
+				18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			files = (
 				18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */,
 				18BA6C7B27DF22C00031405D /* Design.swift in Sources */,
+				18E6015127E72461005A993A /* ExchangeHistoryTableViewCell.swift in Sources */,
 				18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */,
 				18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */,
 				18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */,
