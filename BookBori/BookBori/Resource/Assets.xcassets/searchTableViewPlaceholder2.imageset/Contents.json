@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "스크린샷 2022-03-18 오후 3.45.05.png",
+      "filename" : "searchTableViewPlaceholder2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "searchTableViewPlaceholder2@1x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "searchTableViewPlaceholder2@2x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

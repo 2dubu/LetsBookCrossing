@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "스크린샷 2022-03-16 오후 10.15.56.png",
+      "filename" : "exchangeArrow.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "exchangeArrow@1x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "exchangeArrow@2x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
