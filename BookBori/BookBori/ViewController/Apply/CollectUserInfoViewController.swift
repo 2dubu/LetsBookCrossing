@@ -40,11 +40,9 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         
-        // 바로 전 뷰를 확인하는 부분에 문제가 있음
-        let nv = self.presentedViewController
-//        let nv = self.navigationController as? UINavigationController
-//        let sv = nv?.viewControllers.last
-        if nv != nil && nv!.isKind(of: MainViewController.self) {
+        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
+        let viewControllersCount = nv?.viewControllers.count
+        if viewControllersCount != nil && viewControllersCount! < 3 {
             // 신청내역 조회 화면에서 이 화면을 띄웠을 때
             checkToPush()
             let registerSB = UIStoryboard(name: "Check", bundle: nil)
