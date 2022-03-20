@@ -51,16 +51,17 @@ class ExchangeHistoryTableViewCell: UITableViewCell {
     }
     
     func dynamicFont() {
-        registeredBookLabel.dynamicFont(fontSize: 19)
-        appliedBookLabel.dynamicFont(fontSize: 19)
+        
+        dateLabel.dynamicFont(fontSize: 14)
+        registeredBookLabel.dynamicFont(fontSize: 18)
+        appliedBookLabel.dynamicFont(fontSize: 18)
         registeredBookTitleLabel.dynamicFont(fontSize: 15)
         appliedBookTitleLabel.dynamicFont(fontSize: 15)
         
-        applyCancelButton.titleLabel?.dynamicFont(fontSize: 20)
+        applyCancelButton.titleLabel?.dynamicFont(fontSize: 17)
     }
     
     @IBAction func applyCancelButtonTapped(_ sender: Any) {
     }
     
-
 }
