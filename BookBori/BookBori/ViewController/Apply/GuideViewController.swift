@@ -17,11 +17,17 @@ class GuideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setBookAppliedInfo()
         dynamicFont()
-        setWhiteViews()
-        setButton()
+        setViews()
+        updateContinueButton()
+        
+        // button 초기 세팅
+        continueButton.layer.cornerRadius = UIScreen.main.bounds.width/50
+        setButtonShadow(button: continueButton, shadowRadius: 3, shadowOpacity: 0.3)
+        ruleCheckImageView1.image = UIImage(named: "check")
+        ruleCheckImageView2.image = UIImage(named: "check")
+        ruleCheckImageView3.image = UIImage(named: "check")
     }
     
     // MARK: - IBOutlet & IBAction
@@ -43,6 +49,10 @@ class GuideViewController: UIViewController {
     // 이용약관
     @IBOutlet weak var ruleTitle: UILabel!
     
+    @IBOutlet weak var ruleCheckImageView1: UIImageView!
+    @IBOutlet weak var ruleCheckImageView2: UIImageView!
+    @IBOutlet weak var ruleCheckImageView3: UIImageView!
+    
     @IBOutlet weak var ruleContents1: UILabel!
     @IBOutlet weak var ruleContents2: UILabel!
     @IBOutlet weak var ruleContents3: UILabel!
@@ -59,60 +69,50 @@ class GuideViewController: UIViewController {
     }
     
     @IBAction func ruleCheckButton1Tapped(_ sender: Any) {
-        
         checkButton1Tapped.toggle()
-        
         if checkButton1Tapped {
-            ruleCheckButton1.setImage(UIImage(named: "selected_check"), for: .normal)
+            ruleCheckImageView1.image = UIImage(named: "selected_check")
         } else {
-            ruleCheckButton1.setImage(UIImage(named: "check"), for: .normal)
+            ruleCheckImageView1.image = UIImage(named: "check")
         }
-        
         updateContinueButton()
     }
     
     @IBAction func ruleCheckButton2Tapped(_ sender: Any) {
-        
         checkButton2Tapped.toggle()
-        
         if checkButton2Tapped {
-            ruleCheckButton2.setImage(UIImage(named: "selected_check"), for: .normal)
-            
+            ruleCheckImageView2.image = UIImage(named: "selected_check")
         } else {
-            ruleCheckButton2.setImage(UIImage(named: "check"), for: .normal)
+            ruleCheckImageView2.image = UIImage(named: "check")
         }
-        
         updateContinueButton()
     }
     
     @IBAction func ruleCheckButton3Tapped(_ sender: Any) {
-        
         checkButton3Tapped.toggle()
-        
         if checkButton3Tapped {
-            ruleCheckButton3.setImage(UIImage(named: "selected_check"), for: .normal)
+            ruleCheckImageView3.image = UIImage(named: "selected_check")
         } else {
-            ruleCheckButton3.setImage(UIImage(named: "check"), for: .normal)
+            ruleCheckImageView3.image = UIImage(named: "check")
         }
-        
         updateContinueButton()
     }
     
     // MARK: - function
     
     func dynamicFont() {
-        bookTitleLabel.dynamicFont(fontSize: 15)
+        bookTitleLabel.dynamicFont(fontSize: 17)
         authorLabel1.dynamicFont(fontSize: 13)
-        authorLabel2.dynamicFont(fontSize: 13)
+        authorLabel2.dynamicFont(fontSize: 12)
         publisherLabel1.dynamicFont(fontSize: 13)
-        publisherLabel2.dynamicFont(fontSize: 13)
+        publisherLabel2.dynamicFont(fontSize: 12)
         pubDateLabel1.dynamicFont(fontSize: 13)
-        pubDateLabel2.dynamicFont(fontSize: 13)
+        pubDateLabel2.dynamicFont(fontSize: 12)
         
-        ruleTitle.dynamicFont(fontSize: 18)
-        ruleContents1.dynamicFont(fontSize: 13)
-        ruleContents2.dynamicFont(fontSize: 13)
-        ruleContents3.dynamicFont(fontSize: 13)
+        ruleTitle.dynamicFont(fontSize: 22)
+        ruleContents1.dynamicFont(fontSize: 15)
+        ruleContents2.dynamicFont(fontSize: 15)
+        ruleContents3.dynamicFont(fontSize: 15)
         
         continueButton.isEnabled = false
         continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
@@ -130,41 +130,20 @@ class GuideViewController: UIViewController {
         pubDateLabel2.text = String(book.yearPublished)
     }
     
-    func setWhiteViews() {
+    func setViews() {
+        whiteView1.layer.cornerRadius = 15
         whiteView1.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        whiteView2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        whiteView1.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        whiteView1.layer.borderWidth = 0.5
+        setViewShadow(view: whiteView1, shadowRadius: 3, shadowOpacity: 0.3)
         
-        whiteView1.layer.cornerRadius = 20
-        whiteView1.layer.shadowColor = UIColor.darkGray.cgColor
-        whiteView1.layer.shadowOffset = CGSize(width: 0, height: 0)
-        whiteView1.layer.shadowRadius = 2
-        whiteView1.layer.shadowOpacity = 0.5
-        
-        whiteView2.layer.cornerRadius = 20
-        whiteView2.layer.shadowColor = UIColor.darkGray.cgColor
-        whiteView2.layer.shadowOffset = CGSize(width: 0, height: 0)
-        whiteView2.layer.shadowRadius = 2
-        whiteView2.layer.shadowOpacity = 0.5
-        
+        whiteView2.layer.cornerRadius = 15
+        whiteView2.backgroundColor = #colorLiteral(red: 0.9716641307, green: 0.9766351581, blue: 0.9722399116, alpha: 1)
+        whiteView2.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        whiteView2.layer.borderWidth = 0.5
+        setViewShadow(view: whiteView2, shadowRadius: 3, shadowOpacity: 0.3)
+ 
         bookInfoBGView.layer.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9764705882, blue: 0.9725490196, alpha: 1)
-    }
-    
-    func setButton() {
-        continueButton.layer.cornerRadius = UIScreen.main.bounds.width/50
-        continueButton.layer.shadowColor = UIColor.darkGray.cgColor
-        continueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        continueButton.layer.shadowRadius = 1
-        continueButton.layer.shadowOpacity = 0.5
-        continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
-        continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        
-        ruleCheckButton1.imageView?.contentMode = .scaleAspectFit
-        ruleCheckButton2.imageView?.contentMode = .scaleAspectFit
-        ruleCheckButton3.imageView?.contentMode = .scaleAspectFit
-        
-        ruleCheckButton1.setImage(UIImage(named: "check"), for: .normal)
-        ruleCheckButton2.setImage(UIImage(named: "check"), for: .normal)
-        ruleCheckButton3.setImage(UIImage(named: "check"), for: .normal)
     }
     
     func updateContinueButton() {
