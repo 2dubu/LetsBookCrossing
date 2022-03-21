@@ -18,6 +18,7 @@ class CheckViewController: UIViewController {
         exchangeHistoryTableView.dataSource = self
         
         self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

@@ -26,6 +26,7 @@ class ScanBarcodeViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.view.backgroundColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
         
         self.view.bringSubviewToFront(self.indicatorView)
         indicatorView.transform = transfrom

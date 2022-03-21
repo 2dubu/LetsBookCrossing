@@ -28,6 +28,8 @@ class GuideViewController: UIViewController {
         ruleCheckImageView1.image = UIImage(named: "check")
         ruleCheckImageView2.image = UIImage(named: "check")
         ruleCheckImageView3.image = UIImage(named: "check")
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
     }
     
     // MARK: - IBOutlet & IBAction

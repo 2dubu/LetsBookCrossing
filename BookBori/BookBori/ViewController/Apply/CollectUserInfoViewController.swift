@@ -24,6 +24,8 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         phoneNumberTextField.delegate = self
         passwordTextField.delegate = self
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
+        
         let nv = (presentingViewController?.presentedViewController as? UINavigationController)
         let viewControllersCount = nv?.viewControllers.count
         if viewControllersCount != nil && viewControllersCount! < 3 {
@@ -106,9 +108,9 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     // MARK: - function
     
     func dynamicFont() {
-        phoneNumberLabel.dynamicFont(fontSize: 17)
-        passwordLabel.dynamicFont(fontSize: 17)
-        continueButton.titleLabel?.dynamicFont(fontSize: 10)
+        phoneNumberLabel.dynamicFont(fontSize: 20)
+        passwordLabel.dynamicFont(fontSize: 20)
+        continueButton.titleLabel?.dynamicFont(fontSize: 18)
     }
     
     func setButton() {
@@ -117,12 +119,9 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         continueButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         continueButton.layer.shadowRadius = 1
         continueButton.layer.shadowOpacity = 0.5
-        continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
-        continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
     }
     
     func setTextField() {
-        
         phoneNumberTextField.font = UIFont(name: "GmarketSansLight", size: 14)
         passwordTextField.font = UIFont(name: "GmarketSansLight", size: 14)
         phoneNumberTextField.keyboardType = .numberPad

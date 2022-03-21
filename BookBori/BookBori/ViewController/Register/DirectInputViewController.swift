@@ -65,6 +65,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
+        
         applyDynamicFont()
         setElements()
         placeholderSetting()

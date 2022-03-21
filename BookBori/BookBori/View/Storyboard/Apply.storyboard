@@ -565,43 +565,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-4P-1qs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvr-4P-1qs">
                                 <rect key="frame" x="52" y="765.5" width="310.5" height="51.5"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.61568627450000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fvr-4P-1qs" secondAttribute="height" multiplier="6:1" id="pfR-78-mlI"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="다음">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="GmarketSansMedium"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <state key="normal" title="다음"/>
                                 <connections>
                                     <action selector="continueButtonTapped:" destination="kUS-Om-dIG" eventType="touchUpInside" id="0p2-ve-HaK"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="TUD-ho-AFb">
-                                <rect key="frame" x="35" y="128" width="344" height="81.5"/>
+                                <rect key="frame" x="35" y="128" width="344" height="84.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHd-tI-rMb">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="20"/>
                                         <attributedString key="attributedText">
                                             <fragment content="전화번호">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="GmarketSansMedium"/>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="20" name="GmarketSansMedium"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder=" '-' 없이 입력해 주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-Kj-3O6">
-                                        <rect key="frame" x="0.0" y="24" width="344" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="27" width="344" height="57.5"/>
                                         <color key="tintColor" red="0.3294117647" green="0.61568627450000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="btL-Kj-3O6" secondAttribute="height" multiplier="6:1" id="Iou-vV-0qy"/>
@@ -615,21 +609,21 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="tjS-GI-Etx">
-                                <rect key="frame" x="35" y="244.5" width="344" height="81"/>
+                                <rect key="frame" x="35" y="247.5" width="344" height="84"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMM-nh-W8P">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="20"/>
                                         <attributedString key="attributedText">
                                             <fragment content="비밀번호">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="GmarketSansMedium"/>
+                                                    <font key="NSFont" size="20" name="GmarketSansMedium"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder=" 숫자 4자리로 입력해 주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVL-81-e0Z">
-                                        <rect key="frame" x="0.0" y="24" width="344" height="57"/>
+                                        <rect key="frame" x="0.0" y="27" width="344" height="57"/>
                                         <color key="tintColor" red="0.3294117647" green="0.61568627450000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GVL-81-e0Z" secondAttribute="height" multiplier="6:1" id="SGf-wA-9as"/>

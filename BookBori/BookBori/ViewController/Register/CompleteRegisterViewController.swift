@@ -33,6 +33,8 @@ class CompleteRegisterViewController: UIViewController {
         
         setElements()
         dynamicFont()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GmarketSansMedium", size: 18)!]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +94,7 @@ class CompleteRegisterViewController: UIViewController {
         description1.dynamicFont(fontSize: 15)
         description2.dynamicFont(fontSize: 15)
         
-        confirmButton.titleLabel?.dynamicFont(fontSize: 20)
+        confirmButton.titleLabel?.dynamicFont(fontSize: 18)
     }
 
 }
