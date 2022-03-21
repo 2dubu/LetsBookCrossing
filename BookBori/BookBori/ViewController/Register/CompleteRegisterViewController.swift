@@ -24,7 +24,6 @@ class CompleteRegisterViewController: UIViewController {
     @IBOutlet weak var description2: UILabel!
     
     @IBOutlet weak var confirmButton: UIButton!
-    @IBOutlet weak var checkApplyButton: UIButton!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -69,17 +68,9 @@ class CompleteRegisterViewController: UIViewController {
         description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
         description2.text = "\"북크로싱 신청 내역 조회\"에서\n교환을 취소할 수 있습니다."
         
-        // comfirmButton, checkApplyButton 세팅
+        // comfirmButton 세팅
         confirmButton.layer.cornerRadius = UIScreen.main.bounds.width/50
-        confirmButton.layer.shadowColor = UIColor.darkGray.cgColor
-        confirmButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        confirmButton.layer.shadowRadius = 1
-        confirmButton.layer.shadowOpacity = 0.5
-        checkApplyButton.layer.cornerRadius = UIScreen.main.bounds.width/50
-        checkApplyButton.layer.shadowColor = UIColor.darkGray.cgColor
-        checkApplyButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        checkApplyButton.layer.shadowRadius = 1
-        checkApplyButton.layer.shadowOpacity = 0.5
+        setButtonShadow(button: confirmButton, shadowRadius: 1, shadowOpacity: 0.5)
     }
     
     func calculateDate() -> String {
@@ -109,7 +100,6 @@ class CompleteRegisterViewController: UIViewController {
         description2.dynamicFont(fontSize: 15)
         
         confirmButton.titleLabel?.dynamicFont(fontSize: 20)
-        checkApplyButton.titleLabel?.dynamicFont(fontSize: 19)
     }
 
 }
