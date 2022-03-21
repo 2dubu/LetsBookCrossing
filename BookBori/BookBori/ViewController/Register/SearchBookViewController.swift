@@ -41,6 +41,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         indicatorView.isHidden = true
         
         defaultImage.image = UIImage(named: "searchTableViewPlaceholder1")
+        searchBookTableView.isScrollEnabled = false
         
         initSearchBar()
     }
@@ -67,7 +68,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         self.searchBar.endEditing(true)
         guard let text = self.searchBar.text else { return }
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.present(UtilitiesForAlert.returnAlert(title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
         } else  {
             if let queryValue: String = self.searchBar.text {
                 requestBookBySearch(queryValue) { result in
@@ -78,10 +79,12 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                             self.indicatorView.stopAnimating()
                             self.indicatorView.isHidden = true
                             self.searchBookTableView.reloadData()
+                            self.searchBookTableView.isScrollEnabled = true
                             
                             if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                                 self.defaultImage.image = UIImage(named: "searchTableViewPlaceholder2")
                                 self.defaultImage.isHidden = false
+                                self.searchBookTableView.isScrollEnabled = false
                             }
                         }
                         

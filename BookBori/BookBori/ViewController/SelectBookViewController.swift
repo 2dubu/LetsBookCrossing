@@ -126,8 +126,10 @@ extension SelectBookViewController: UISearchBarDelegate {
         // 검색 결과 없을 땐 defaultImage 표시
         if filteredArray.count == 0 {
             defaultImageView.isHidden = false
+            booksCollectionView.isScrollEnabled = false
         } else {
             defaultImageView.isHidden = true
+            booksCollectionView.isScrollEnabled = true
         }
     }
     
