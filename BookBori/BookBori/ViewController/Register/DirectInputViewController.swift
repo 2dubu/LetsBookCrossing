@@ -67,6 +67,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         applyDynamicFont()
         setElements()
+        placeholderSetting()
         updateWhetherUploadCoverImage()
         updateCompleteBarbuttonItemState()
         
@@ -312,7 +313,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.layer.borderWidth = 1
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        reviewTextView.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
+        reviewTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 10, right: 10)
         
         coverImageView.layer.masksToBounds = false
         coverImageView.layer.shadowOffset = .zero
@@ -372,12 +373,28 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
     }
     
+    // TextView Place Holder
+    func placeholderSetting() {
+        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 20.0
+        paragraphStyle.maximumLineHeight = 20.0
+        paragraphStyle.minimumLineHeight = 20.0
+        let ats = [NSAttributedString.Key.font: UIFont(name: "GmarketSansLight", size: 14)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+        reviewTextView.attributedText = NSAttributedString(string: "이 책을 읽고 좋았던 점 또는 책에 담긴 여러분의 이야기, 추천해주고 싶은 사람과 그 이유 등을 자유롭게 적어주세요.", attributes: ats)
+        reviewTextView.textColor = UIColor.lightGray
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            placeholderSetting()
+        }
+    }
+    
 }
-
-//extension UITextField {
-//  func addLeftPadding() {
-//    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
-//    self.leftView = paddingView
-//    self.leftViewMode = ViewMode.always
-//  }
-//}
