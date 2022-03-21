@@ -54,7 +54,7 @@ class StartViewController: UIViewController {
             let action: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { (ACTION) in
                 self.checkDeviceNetworkStatus()
             })
-            action.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+            action.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         }

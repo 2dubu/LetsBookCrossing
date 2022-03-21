@@ -143,7 +143,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                             let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
                                 
                             })
-                            okAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+                            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
                             timeOutAlert.addAction(okAction)
                             self.present(timeOutAlert, animated: true, completion: nil)
                         }
@@ -173,8 +173,8 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             let againAction: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { _ in
 //                self.searchBarSearchButtonClicked(self.searchBar)
             })
-            okAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-            againAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
+            againAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
             alert.addAction(okAction)
             alert.addAction(againAction)
             present(alert, animated: true, completion: nil)

@@ -184,8 +184,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
 
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
-        registrationCompleteConfirmAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
-        registrationCompleteCancelAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+        registrationCompleteConfirmAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
+        registrationCompleteCancelAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
         
         registrationCompleteAlert.addAction(registrationCompleteCancelAction)
         registrationCompleteAlert.addAction(registrationCompleteConfirmAction)
@@ -308,9 +308,11 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         completeButton.layer.shadowRadius = 1
         completeButton.layer.shadowOpacity = 0.5
         
+        // reviewTextView 좌우 간격 및 줄 간격
         reviewTextView.layer.borderWidth = 1
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        reviewTextView.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
         
         coverImageView.layer.masksToBounds = false
         coverImageView.layer.shadowOffset = .zero
@@ -371,3 +373,11 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
 }
+
+//extension UITextField {
+//  func addLeftPadding() {
+//    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+//    self.leftView = paddingView
+//    self.leftViewMode = ViewMode.always
+//  }
+//}
