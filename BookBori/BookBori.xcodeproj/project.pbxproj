@@ -13,6 +13,7 @@
 		18BA6C7B27DF22C00031405D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA6C7A27DF22C00031405D /* Design.swift */; };
 		18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */; };
 		18E6015127E72461005A993A /* ExchangeHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */; };
+		18E6015327E73C20005A993A /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015227E73C20005A993A /* GetData.swift */; };
 		18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A227C46A7F000B2526 /* AppDelegate.swift */; };
 		18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A427C46A7F000B2526 /* SceneDelegate.swift */; };
 		18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641A827C46A7F000B2526 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		18BA6C7A27DF22C00031405D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		18E6015227E73C20005A993A /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		18F6419F27C46A7F000B2526 /* BookBori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F641A227C46A7F000B2526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F641A427C46A7F000B2526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		18F641BA27C46EB8000B2526 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18E6015227E73C20005A993A /* GetData.swift */,
 				18F641E327C4C61F000B2526 /* searchData.swift */,
 				18F641D127C4744E000B2526 /* DummyData.swift */,
 			);
@@ -380,6 +383,7 @@
 				26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */,
 				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
+				18E6015327E73C20005A993A /* GetData.swift in Sources */,
 				18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */,
 				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,
 				18F641E427C4C61F000B2526 /* searchData.swift in Sources */,
