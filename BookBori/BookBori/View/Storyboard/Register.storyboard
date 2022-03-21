@@ -872,9 +872,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="barcodeButtonTapped:" destination="9Fx-fg-kc6" eventType="touchUpInside" id="YlP-LB-iLo"/>
-                                            <action selector="registrationCompleteButtonTapped:" destination="Qp7-o4-sQX" eventType="touchUpInside" id="2ZZ-GY-O9v"/>
-                                            <segue destination="ucm-bK-uoA" kind="show" id="htM-Tb-9Ae"/>
+                                            <action selector="confirmButtonTapped:" destination="f4Z-CR-7UZ" eventType="touchUpInside" id="vRb-0E-JFG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -912,16 +910,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of6-qR-JkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4839.130434782609" y="93.75"/>
-        </scene>
-        <!--MainVC-->
-        <scene sceneID="Mei-zg-H7v">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MainVC" storyboardName="Main" referencedIdentifier="MainVC" id="ucm-bK-uoA" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WLj-4b-z57"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOR-vA-S4Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5463.768115942029" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
