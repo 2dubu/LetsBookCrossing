@@ -66,7 +66,7 @@ class CompleteRegisterViewController: UIViewController {
         applyTitleLabel.text = bookRegister?.title
         
         description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
-        description2.text = "\"북크로싱 신청 내역 조회\"에서\n교환을 취소할 수 있습니다."
+        description2.text = "교환을 취소하시려면\n\"북크로싱 신청 내역 조회\"에서 취소할 수 있습니다."
         
         // comfirmButton 세팅
         confirmButton.layer.cornerRadius = UIScreen.main.bounds.width/50
