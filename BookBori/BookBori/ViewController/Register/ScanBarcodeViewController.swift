@@ -31,7 +31,6 @@ class ScanBarcodeViewController: UIViewController {
         indicatorView.transform = transfrom
         indicatorView.isHidden = true
         
-        view.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -147,7 +146,7 @@ class ScanBarcodeViewController: UIViewController {
             let againAction: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { _ in
                 self.captureSession.startRunning()
             })
-            againAction.setValue(UIColor(#colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)), forKey: "titleTextColor")
+            againAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
             alert.addAction(againAction)
             present(alert, animated: true, completion: nil)
         }
@@ -158,12 +157,12 @@ class ScanBarcodeViewController: UIViewController {
         let centerGuideLineView2 = UIView()
         
         centerGuideLineView.translatesAutoresizingMaskIntoConstraints = false
-        centerGuideLineView.backgroundColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
+        centerGuideLineView.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)
         avLayerView.addSubview(centerGuideLineView)
         avLayerView.bringSubviewToFront(centerGuideLineView)
         
         centerGuideLineView2.translatesAutoresizingMaskIntoConstraints = false
-        centerGuideLineView2.backgroundColor = #colorLiteral(red: 0.6823529412, green: 0.5725490196, blue: 0.4039215686, alpha: 1)
+        centerGuideLineView2.backgroundColor = #colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)
         avLayerView.addSubview(centerGuideLineView2)
         avLayerView.bringSubviewToFront(centerGuideLineView2)
         
@@ -205,9 +204,11 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                         
                         if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                             let ac = UIAlertController(title: "검색 결과가 없습니다", message: "검색 결과가 없습니다. 다른 등록 방법을 사용해주세요.", preferredStyle: .alert)
-                            ac.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+                            let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
                                 self.navigationController?.popViewController(animated: true)
-                            }))
+                            })
+                            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
+                            ac.addAction(okAction)
                             self.present(ac, animated: true)
                         } else {
                             guard let directInputVC = self.storyboard?.instantiateViewController(withIdentifier: "DirectInputVC") else { return }
@@ -223,7 +224,10 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func failed() {
         let ac = UIAlertController(title: "스캔이 지원되지 않습니다", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default)
+        okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
+        ac.addAction(okAction)
+        self.present(ac, animated: true)
         present(ac, animated: true)
         captureSession = nil
     }
