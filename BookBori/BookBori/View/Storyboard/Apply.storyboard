@@ -95,17 +95,65 @@
                                     <constraint firstAttribute="width" secondItem="NdI-40-WRf" secondAttribute="height" multiplier="1:1" id="7c6-yO-m5c"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8va-QF-pov">
+                                <rect key="frame" x="20" y="98" width="374" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4en-qd-xOv">
+                                        <rect key="frame" x="37.5" y="13.5" width="299.5" height="45"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">현재 서울책보고에 있는 북크로싱 도서입니다. 
+교환을 신청하고 싶은 도서를 선택하세요.</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="15" name="GmarketSansMedium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.5" defaultTabInterval="144.34999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6t-AS-teR">
+                                        <rect key="frame" x="349" y="8" width="17" height="15.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="D6t-AS-teR" secondAttribute="height" multiplier="1:0.9" id="qcr-yf-KbM"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" image="xmark" catalog="system"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="OKz-yk-3wv" eventType="touchUpInside" id="r1E-fo-USg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="D6t-AS-teR" firstAttribute="height" secondItem="8va-QF-pov" secondAttribute="height" multiplier="0.2" id="MLn-LX-oGu"/>
+                                    <constraint firstAttribute="width" secondItem="8va-QF-pov" secondAttribute="height" multiplier="4.85:1" id="OoG-Ud-wQv"/>
+                                    <constraint firstItem="4en-qd-xOv" firstAttribute="centerY" secondItem="8va-QF-pov" secondAttribute="centerY" multiplier="0.93" id="bZS-IV-V0Y"/>
+                                    <constraint firstItem="D6t-AS-teR" firstAttribute="top" secondItem="8va-QF-pov" secondAttribute="top" constant="8" id="ixZ-n5-5M8"/>
+                                    <constraint firstAttribute="trailing" secondItem="D6t-AS-teR" secondAttribute="trailing" constant="8" id="utA-g7-S0n"/>
+                                    <constraint firstItem="4en-qd-xOv" firstAttribute="centerX" secondItem="8va-QF-pov" secondAttribute="centerX" id="wf3-v9-zVw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FvG-eT-wPD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="8va-QF-pov" secondAttribute="trailing" constant="20" id="9KJ-SJ-ng8"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="bottom" secondItem="Z44-rv-rnZ" secondAttribute="bottom" id="IXM-Lv-KfL"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="centerY" secondItem="Z44-rv-rnZ" secondAttribute="centerY" multiplier="0.94" id="L49-Qj-SJE"/>
+                            <constraint firstItem="8va-QF-pov" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" constant="10" id="Owe-iO-H1z"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="width" secondItem="Z44-rv-rnZ" secondAttribute="width" multiplier="0.6" id="TdY-EY-adz"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="centerX" secondItem="Z44-rv-rnZ" secondAttribute="centerX" id="UqZ-NM-gfH"/>
                             <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="prP-Tt-r0g" secondAttribute="trailing" constant="20" id="foG-XG-17x"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="hSA-A1-6bn"/>
-                            <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" id="p5f-9W-8bV"/>
+                            <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" id="htI-ch-u4G"/>
+                            <constraint firstItem="8va-QF-pov" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="r7q-XJ-L5P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="제목 검색" id="c8p-ow-aw3">
@@ -117,7 +165,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="booksCollectionView" destination="prP-Tt-r0g" id="gt9-SU-5rb"/>
+                        <outlet property="cancelButton" destination="D6t-AS-teR" id="vA8-Qd-LW3"/>
                         <outlet property="defaultImageView" destination="NdI-40-WRf" id="yQR-Ta-HpN"/>
+                        <outlet property="descriptionLabel" destination="4en-qd-xOv" id="VBZ-3s-qBZ"/>
+                        <outlet property="whiteView" destination="8va-QF-pov" id="7Cg-Zp-6Sw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5j-un-jZC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -427,7 +478,7 @@
                                             <constraint firstItem="6gO-cb-TdJ" firstAttribute="leading" secondItem="odV-Bx-FZ2" secondAttribute="leading" constant="20" id="Rvm-sz-9u0"/>
                                             <constraint firstAttribute="trailing" secondItem="6gO-cb-TdJ" secondAttribute="trailing" constant="20" id="S7S-Ka-w6j"/>
                                             <constraint firstAttribute="bottom" secondItem="02Z-Qa-vvW" secondAttribute="bottom" constant="20" id="ebe-S9-s2h"/>
-                                            <constraint firstItem="6gO-cb-TdJ" firstAttribute="top" secondItem="odV-Bx-FZ2" secondAttribute="top" constant="20" symbolic="YES" id="tKg-8U-pOq"/>
+                                            <constraint firstItem="6gO-cb-TdJ" firstAttribute="top" secondItem="odV-Bx-FZ2" secondAttribute="top" constant="20" id="tKg-8U-pOq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -644,6 +695,7 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="selectCollectionViewPlaceholder2" width="1480" height="1422"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

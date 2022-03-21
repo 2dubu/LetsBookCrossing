@@ -15,6 +15,7 @@ class SelectBookViewController: UIViewController {
     var filteredArray : [Book] = BookDummyData.shared.books  // 검색에 맞는 데이터만 필터링해서 담는 Book 배열
     
     var refreshControl = UIRefreshControl()
+    var collectionViewHearderHeight = 28 + (UIScreen.main.bounds.width-40)*0.2
     
     //MARK: - viewController Life Cycle
     
@@ -33,6 +34,7 @@ class SelectBookViewController: UIViewController {
         
         searchBar.returnKeyType = .done
         
+        setWhiteView()
         initSearchBar()
         
         defaultImageView.image = UIImage(named: "selectCollectionViewPlaceholder")
@@ -43,9 +45,18 @@ class SelectBookViewController: UIViewController {
     // MARK: - IBOutlet & IBAction
     @IBOutlet weak var booksCollectionView: UICollectionView!
     @IBOutlet weak var defaultImageView: UIImageView!
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        whiteView.isHidden = true
+        collectionViewHearderHeight = 18
+        booksCollectionView.reloadData()
     }
     
     //MARK: - function
@@ -53,6 +64,17 @@ class SelectBookViewController: UIViewController {
     // 화면 탭하여 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
+    }
+    
+    func setWhiteView() {
+        whiteView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.9)
+        
+        whiteView.layer.cornerRadius = 12
+        whiteView.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
+        whiteView.layer.borderWidth = 0.5
+        setViewShadow(view: whiteView, shadowRadius: 4, shadowOpacity: 0.3)
+        
+        descriptionLabel.dynamicFont(fontSize: 15)
     }
     
     // searchBar
@@ -164,7 +186,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     // collectionView 상하단 공백 추가
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 12)
+        return CGSize(width: collectionView.frame.width, height: collectionViewHearderHeight)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 22)
