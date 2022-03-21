@@ -16,10 +16,12 @@ class CheckViewController: UIViewController {
         
         exchangeHistoryTableView.delegate = self
         exchangeHistoryTableView.dataSource = self
+        
+        self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 

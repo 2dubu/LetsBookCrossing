@@ -36,22 +36,15 @@ class CompleteRegisterViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-         self.navigationItem.hidesBackButton = true
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
     }
     
     //MARK: - IBAction
     @IBAction func confirmButtonTapped(_ sender: Any) {
-        
-        // 이때 에니메이션 스타일을 모달 내리는 것 처럼 하는 건 어떨까 고려
-        let controllers = self.navigationController?.viewControllers
-        for vc in controllers! {
-            if vc is MainViewController {
-                _ = self.navigationController?.popToViewController(vc as! MainViewController, animated: true)
-            }
-        }
+        self.dismiss(animated: true)
     }
-    
+
     //MARK: - Functions
     
     func setElements() {

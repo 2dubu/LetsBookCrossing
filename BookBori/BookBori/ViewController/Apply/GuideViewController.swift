@@ -98,6 +98,11 @@ class GuideViewController: UIViewController {
         updateContinueButton()
     }
     
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        let collectUserInfoVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "CollectUserInfoVC")
+        self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
+    }
+    
     // MARK: - function
     
     func dynamicFont() {

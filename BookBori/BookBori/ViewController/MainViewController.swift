@@ -40,14 +40,16 @@ class MainViewController: UIViewController {
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
         let applySB = UIStoryboard(name: "Apply", bundle: nil)
-        let selectBookVC = applySB.instantiateViewController(withIdentifier: "SelectBookVC")
-        self.navigationController?.pushViewController(selectBookVC, animated: true)
+        let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
+        selectBookNC.modalPresentationStyle = .fullScreen
+        self.present(selectBookNC, animated: true, completion: nil)
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
         let registerSB = UIStoryboard(name: "Apply", bundle: nil)
-        let collectUserInfoVC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoVC")
-        self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
+        let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
+        collectUserInfoNC.modalPresentationStyle = .fullScreen
+        self.present(collectUserInfoNC, animated: true, completion: nil)
     }
     
     @IBAction func howToUseButtonTapped(_ sender: Any) {

@@ -46,14 +46,13 @@ class SelectBookViewController: UIViewController {
     @IBOutlet weak var booksCollectionView: UICollectionView!
     @IBOutlet weak var defaultImageView: UIImageView!
     @IBOutlet weak var whiteView: UIView!
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
-    @IBAction func cancelButtonTapped(_ sender: Any) {
+    @IBAction func descriptionCancelButtonTapped(_ sender: Any) {
         whiteView.isHidden = true
         collectionViewHearderHeight = 18
         booksCollectionView.reloadData()

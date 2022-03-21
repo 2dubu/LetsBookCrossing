@@ -23,6 +23,14 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         
         phoneNumberTextField.delegate = self
         passwordTextField.delegate = self
+        
+        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
+        let viewControllersCount = nv?.viewControllers.count
+        if viewControllersCount != nil && viewControllersCount! < 3 {
+            self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
+        } else {
+            self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "chevron.backward")
+        }
     }
     
     
@@ -35,7 +43,13 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var continueButton: UIButton!
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
+        let viewControllersCount = nv?.viewControllers.count
+        if viewControllersCount != nil && viewControllersCount! < 3 {
+            self.dismiss(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
