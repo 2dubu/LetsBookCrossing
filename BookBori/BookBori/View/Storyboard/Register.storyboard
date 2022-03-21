@@ -687,7 +687,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-l1-yAt">
-                                <rect key="frame" x="30" y="233" width="354" height="295.5"/>
+                                <rect key="frame" x="30" y="255.5" width="354" height="295.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-Ug-aYK">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="192.5"/>
@@ -792,12 +792,13 @@
                                         <constraints>
                                             <constraint firstItem="tzH-US-YEg" firstAttribute="height" secondItem="O4Z-ZO-YxO" secondAttribute="height" multiplier="0.5" id="AJe-RN-VC9"/>
                                             <constraint firstItem="SgM-GJ-yny" firstAttribute="width" secondItem="9Bn-iS-ll6" secondAttribute="width" id="DBd-f5-dNV"/>
+                                            <constraint firstItem="SgM-GJ-yny" firstAttribute="height" secondItem="9Bn-iS-ll6" secondAttribute="height" id="WiT-TW-oyO"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fdC-Pj-1Jq">
                                         <rect key="frame" x="0.0" y="227.5" width="354" height="68"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-qc-Hug">
@@ -807,7 +808,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-fQ-s91">
-                                                        <rect key="frame" x="22.5" y="0.0" width="331.5" height="24"/>
+                                                        <rect key="frame" x="19.5" y="0.0" width="334.5" height="24"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Label">
                                                                 <attributes>
@@ -820,7 +821,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
                                                 <rect key="frame" x="0.0" y="44" width="354" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="B3V-Vt-aTb">
@@ -830,7 +831,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-IP-VqA">
-                                                        <rect key="frame" x="22.5" y="0.0" width="331.5" height="24"/>
+                                                        <rect key="frame" x="19.5" y="0.0" width="334.5" height="24"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Label">
                                                                 <attributes>
@@ -886,7 +887,7 @@
                         <constraints>
                             <constraint firstItem="1h9-l1-yAt" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="30" id="793-lQ-HBp"/>
                             <constraint firstAttribute="trailing" secondItem="1h9-l1-yAt" secondAttribute="trailing" constant="30" id="Ugh-2p-dtN"/>
-                            <constraint firstItem="1h9-l1-yAt" firstAttribute="centerY" secondItem="Ddw-FF-x6F" secondAttribute="centerY" multiplier="0.85" id="ZZH-GA-jza"/>
+                            <constraint firstItem="1h9-l1-yAt" firstAttribute="centerY" secondItem="Ddw-FF-x6F" secondAttribute="centerY" multiplier="0.9" id="ZZH-GA-jza"/>
                             <constraint firstItem="DMN-qc-Hug" firstAttribute="width" secondItem="Ddw-FF-x6F" secondAttribute="width" multiplier="0.035" id="enh-pL-TC1"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="bottom" secondItem="Ojj-Lg-BKU" secondAttribute="bottom" constant="30" id="inX-IX-1ay"/>
                             <constraint firstItem="Ojj-Lg-BKU" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="40" id="iuD-50-5gQ"/>
