@@ -23,7 +23,7 @@ class SetRegistrationMethodViewController: UIViewController {
     
     @IBAction func barcodeButtonTapped(_ sender: Any) {
         checkCameraPermission()
-        //userSelectRegistrationMethodButton = "바코드"
+        userSelectRegistrationMethodButton = "바코드"
     }
     @IBAction func searchTitleButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "검색"
