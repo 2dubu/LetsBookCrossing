@@ -375,7 +375,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     func updateCompleteButtonState() {
         
-        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true, pubdateTextField.hasText == true {
+        if titleTextField.hasText == true, authorTextField.hasText == true, publisherTextField.hasText == true, pubdateTextField.hasText == true, pubdateTextField.text?.count == 8 {
             completeButton.isEnabled = true
             completeButton.layer.backgroundColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
             completeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
