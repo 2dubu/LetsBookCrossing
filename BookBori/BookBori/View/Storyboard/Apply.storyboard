@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -594,7 +594,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder=" '-' 없이 입력해 주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-Kj-3O6">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="전화번호를 정확히 입력해 주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btL-Kj-3O6">
                                         <rect key="frame" x="0.0" y="27" width="344" height="57.5"/>
                                         <color key="tintColor" red="0.3294117647" green="0.61568627450000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -636,14 +636,23 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or9-CP-RGa">
+                                <rect key="frame" x="35" y="371.5" width="42.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kC8-7r-Ccy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TUD-ho-AFb" firstAttribute="top" secondItem="kC8-7r-Ccy" secondAttribute="top" constant="40" id="2yJ-wl-Oy3"/>
+                            <constraint firstItem="or9-CP-RGa" firstAttribute="leading" secondItem="tjS-GI-Etx" secondAttribute="leading" id="90R-Q7-Pfo"/>
                             <constraint firstItem="TUD-ho-AFb" firstAttribute="leading" secondItem="kC8-7r-Ccy" secondAttribute="leading" constant="35" id="Bc0-Lc-Hga"/>
+                            <constraint firstItem="kC8-7r-Ccy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="or9-CP-RGa" secondAttribute="trailing" constant="40" id="Q2I-Cp-kqM"/>
                             <constraint firstItem="fvr-4P-1qs" firstAttribute="width" secondItem="G2J-a0-Ems" secondAttribute="width" multiplier="0.75" id="YmB-L4-aCU"/>
                             <constraint firstItem="tjS-GI-Etx" firstAttribute="leading" secondItem="kC8-7r-Ccy" secondAttribute="leading" constant="35" id="bnq-jx-Hrp"/>
+                            <constraint firstItem="or9-CP-RGa" firstAttribute="top" secondItem="tjS-GI-Etx" secondAttribute="bottom" constant="40" id="d1B-uj-3kG"/>
                             <constraint firstItem="fvr-4P-1qs" firstAttribute="centerX" secondItem="G2J-a0-Ems" secondAttribute="centerX" id="j5r-kg-VR7"/>
                             <constraint firstItem="kC8-7r-Ccy" firstAttribute="bottom" secondItem="fvr-4P-1qs" secondAttribute="bottom" constant="45" id="jcL-wx-0gZ"/>
                             <constraint firstItem="tjS-GI-Etx" firstAttribute="centerX" secondItem="G2J-a0-Ems" secondAttribute="centerX" id="t1i-o0-9DM"/>
@@ -661,6 +670,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="continueButton" destination="fvr-4P-1qs" id="gB4-7J-xtf"/>
+                        <outlet property="descriptionLabel" destination="or9-CP-RGa" id="k1O-rP-cPN"/>
                         <outlet property="passwordLabel" destination="nMM-nh-W8P" id="fT9-WS-i5t"/>
                         <outlet property="passwordTextField" destination="GVL-81-e0Z" id="its-vw-mqG"/>
                         <outlet property="phoneNumberLabel" destination="gHd-tI-rMb" id="QPF-P1-RlH"/>

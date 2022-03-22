@@ -19,6 +19,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         dynamicFont()
         setButton()
         setTextField()
+        setDescriptions()
         updateContinueButton()
         
         phoneNumberTextField.delegate = self
@@ -42,6 +43,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -133,13 +135,15 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     
     // presentingVC에 따라 설명글을 다르게 설정
     func setDescriptions() {
-        let nv = (presentingViewController as? UINavigationController)
-        let sv = nv?.viewControllers.last
-        if sv != nil && sv!.isKind(of: MainViewController.self) {
-            // 신청내역 조회 화면에서 이 화면을 띄웠을 때
+        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
+        let viewControllersCount = nv?.viewControllers.count
+        if viewControllersCount != nil && viewControllersCount! < 3 {
+            // 신청 내역 조회 화면에서 이 화면을 띄웠을 때
+            self.descriptionLabel.text = "· 도서를 신청할 때 입력했던 전화번호와 비밀번호를 입력해 신청내역 조회, 신청취소를 진행할 수 있습니다."
             
         } else {
-            // 도서 신청 중 이 화면을 띄웠을 때
+            // 도서 신청 중 이 화면을 띄웠을 떄
+            self.descriptionLabel.text = "· 현재 입력하는 값은 신청내역을 조회하거나 신청을 취소할 때 사용될 수 있습니다."
         }
     }
     
