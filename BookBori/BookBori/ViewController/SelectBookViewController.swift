@@ -32,8 +32,6 @@ class SelectBookViewController: UIViewController {
         self.view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         self.booksCollectionView.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
         
-        searchBar.returnKeyType = .done
-        
         setWhiteView()
         initSearchBar()
         
@@ -67,22 +65,51 @@ class SelectBookViewController: UIViewController {
     
     func setWhiteView() {
         whiteView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.9)
-        
         whiteView.layer.cornerRadius = 12
         whiteView.layer.borderColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)
         whiteView.layer.borderWidth = 0.5
         setViewShadow(view: whiteView, shadowRadius: 4, shadowOpacity: 0.3)
-        
         descriptionLabel.dynamicFont(fontSize: 15)
     }
     
     // searchBar
     func initSearchBar() {
         self.navigationItem.titleView = searchBar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .search, primaryAction: UIAction(handler: { _ in
+            self.showSearchResult()
+        }))
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
         searchBar.text = ""
         searchBar.placeholder = "신청하고 싶은 도서명을 검색하세요"
         searchBar.searchTextField.font = UIFont(name: "GmarketSansLight", size: 16)
         searchBar.searchTextField.backgroundColor = UIColor.clear
+        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
+    }
+    
+    func showSearchResult() {
+        self.searchBar.endEditing(true)
+        guard let text = self.searchBar.text else { return }
+        if text.trimmingCharacters(in: .whitespaces).isEmpty {
+            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+        } else  {
+            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
+            filteredArray.removeAll()
+            guard let text = searchBar.text else { return }
+            for i in BookDummyData.shared.books {
+                if i.title.lowercased().contains(text.lowercased()) {
+                    filteredArray.append(i)
+                }
+            }
+            self.booksCollectionView.reloadData()
+            // 검색 결과 없을 땐 defaultImage 표시
+            if filteredArray.count == 0 && (DeviceManager.shared.networkStatus) == true {
+                defaultImageView.isHidden = false
+                booksCollectionView.isScrollEnabled = false
+            } else {
+                defaultImageView.isHidden = true
+                booksCollectionView.isScrollEnabled = true
+            }
+        }
     }
     
     // 스크롤 뷰 아래에서 바운스 X
@@ -110,35 +137,19 @@ class SelectBookViewController: UIViewController {
 extension SelectBookViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredArray.removeAll()
-        guard let text = searchBar.text else { return }
-        for i in BookDummyData.shared.books {
-            if i.title.lowercased().contains(text.lowercased()) {
-                filteredArray.append(i)
-            }
-        }
-        // 검색 바에 텍스트가 비어있을 때는 모든 데이터 표시
-        if text.trimmingCharacters(in: .whitespaces).isEmpty == true {
+        guard let text = self.searchBar.text else { return }
+        if text.isEmpty {
+            // 신청 가능한 모든 데이터를 서버로부터 불러오기
             filteredArray = BookDummyData.shared.books
-        }
-        self.booksCollectionView.reloadData()
-        // 검색 결과 없을 땐 defaultImage 표시
-        if filteredArray.count == 0 {
-            defaultImageView.isHidden = false
-            booksCollectionView.isScrollEnabled = false
-        } else {
+            self.booksCollectionView.reloadData()
             defaultImageView.isHidden = true
             booksCollectionView.isScrollEnabled = true
         }
     }
     
-    // searchBar 완료 버튼 눌렀을 때 키보드 내리기
+    // searchBar 완료 버튼 눌렀을 때 검색 결과 띄우기
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.endEditing(true)
-        guard let text = self.searchBar.text else { return }
-        if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.present(UtilitiesForAlert.returnAlert(title: "검색어를 입력해 주세요", msg: "", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
-        }
+        showSearchResult()
     }
     
 }
