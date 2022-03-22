@@ -19,7 +19,6 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         dynamicFont()
         setButton()
         setTextField()
-        setDescriptions()
         updateContinueButton()
         
         phoneNumberTextField.delegate = self
@@ -31,8 +30,12 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         let viewControllersCount = nv?.viewControllers.count
         if viewControllersCount != nil && viewControllersCount! < 3 {
             self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
+            self.navigationItem.title = "사용자 확인"
+            self.descriptionLabel.text = "교환을 신청하는 과정에서 입력했던 전화번호와 비밀번호를 입력해 신청내역 조회 또는 신청 취소를 진행할 수 있습니다."
         } else {
             self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "chevron.backward")
+            self.navigationItem.title = "사용자 정보 입력"
+            self.descriptionLabel.text = "이곳에서 입력하시는 정보는 이후 신청내역을 조회하거나 신청을 취소하기 전, 사용자를 확인하는 목적으로 사용됩니다."
         }
     }
     
@@ -112,6 +115,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
     func dynamicFont() {
         phoneNumberLabel.dynamicFont(fontSize: 20)
         passwordLabel.dynamicFont(fontSize: 20)
+        descriptionLabel.dynamicFont(fontSize: 15)
         continueButton.titleLabel?.dynamicFont(fontSize: 18)
     }
     
@@ -131,20 +135,6 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         
         phoneNumberTextField.addLeftPadding()
         passwordTextField.addLeftPadding()
-    }
-    
-    // presentingVC에 따라 설명글을 다르게 설정
-    func setDescriptions() {
-        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
-        let viewControllersCount = nv?.viewControllers.count
-        if viewControllersCount != nil && viewControllersCount! < 3 {
-            // 신청 내역 조회 화면에서 이 화면을 띄웠을 때
-            self.descriptionLabel.text = "· 도서를 신청할 때 입력했던 전화번호와 비밀번호를 입력해 신청내역 조회, 신청취소를 진행할 수 있습니다."
-            
-        } else {
-            // 도서 신청 중 이 화면을 띄웠을 떄
-            self.descriptionLabel.text = "· 현재 입력하는 값은 신청내역을 조회하거나 신청을 취소할 때 사용될 수 있습니다."
-        }
     }
     
     func checkToPush() {
