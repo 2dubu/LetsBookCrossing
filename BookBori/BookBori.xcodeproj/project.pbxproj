@@ -12,7 +12,6 @@
 		18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB227DAEFD800943C21 /* GmarketSansMedium.otf */; };
 		18BA6C7B27DF22C00031405D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA6C7A27DF22C00031405D /* Design.swift */; };
 		18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */; };
-		18E6015127E72461005A993A /* ExchangeHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */; };
 		18E6015327E73C20005A993A /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015227E73C20005A993A /* GetData.swift */; };
 		18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A227C46A7F000B2526 /* AppDelegate.swift */; };
 		18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A427C46A7F000B2526 /* SceneDelegate.swift */; };
@@ -26,10 +25,8 @@
 		18F641C727C4710D000B2526 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C627C4710D000B2526 /* Utilities.swift */; };
 		18F641CA27C47214000B2526 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C927C47214000B2526 /* MainViewController.swift */; };
 		18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CB27C4731F000B2526 /* Apply.storyboard */; };
-		18F641CE27C473A2000B2526 /* Check.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CD27C473A2000B2526 /* Check.storyboard */; };
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
 		18F641D527C4772E000B2526 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641D427C4772E000B2526 /* Register.storyboard */; };
-		18F641D727C480AC000B2526 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D627C480AC000B2526 /* CheckViewController.swift */; };
 		18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */; };
 		18F641DC27C4AB92000B2526 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DB27C4AB92000B2526 /* Constants.swift */; };
 		18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */; };
@@ -51,7 +48,6 @@
 		18998AB427DAEFD900943C21 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		18BA6C7A27DF22C00031405D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
-		18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		18E6015227E73C20005A993A /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		18F6419F27C46A7F000B2526 /* BookBori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F641A227C46A7F000B2526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,10 +63,8 @@
 		18F641C627C4710D000B2526 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		18F641C927C47214000B2526 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18F641CB27C4731F000B2526 /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
-		18F641CD27C473A2000B2526 /* Check.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Check.storyboard; sourceTree = "<group>"; };
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		18F641D427C4772E000B2526 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		18F641D627C480AC000B2526 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRegistrationMethodViewController.swift; sourceTree = "<group>"; };
 		18F641DB27C4AB92000B2526 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectInputViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +176,6 @@
 				18F641C927C47214000B2526 /* MainViewController.swift */,
 				18F641CF27C47410000B2526 /* Apply */,
 				18F641D827C4A96A000B2526 /* Register */,
-				18F641D027C47417000B2526 /* Check */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,7 +195,6 @@
 			children = (
 				18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */,
 				26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */,
-				18E6015027E72461005A993A /* ExchangeHistoryTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -214,7 +206,6 @@
 				18F641A827C46A7F000B2526 /* Main.storyboard */,
 				18F641CB27C4731F000B2526 /* Apply.storyboard */,
 				18F641D427C4772E000B2526 /* Register.storyboard */,
-				18F641CD27C473A2000B2526 /* Check.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -227,14 +218,6 @@
 				26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */,
 			);
 			path = Apply;
-			sourceTree = "<group>";
-		};
-		18F641D027C47417000B2526 /* Check */ = {
-			isa = PBXGroup;
-			children = (
-				18F641D627C480AC000B2526 /* CheckViewController.swift */,
-			);
-			path = Check;
 			sourceTree = "<group>";
 		};
 		18F641D827C4A96A000B2526 /* Register */ = {
@@ -325,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F641CE27C473A2000B2526 /* Check.storyboard in Resources */,
 				18F641AF27C46A84000B2526 /* LaunchScreen.storyboard in Resources */,
 				18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */,
 				18998AB627DAF03400943C21 /* GmarketSansLight.otf in Resources */,
@@ -371,7 +353,6 @@
 			files = (
 				18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */,
 				18BA6C7B27DF22C00031405D /* Design.swift in Sources */,
-				18E6015127E72461005A993A /* ExchangeHistoryTableViewCell.swift in Sources */,
 				18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */,
 				18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */,
 				18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */,
@@ -394,7 +375,6 @@
 				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
 				18F641CA27C47214000B2526 /* MainViewController.swift in Sources */,
 				18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */,
-				18F641D727C480AC000B2526 /* CheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
