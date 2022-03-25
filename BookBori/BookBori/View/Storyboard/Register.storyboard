@@ -801,17 +801,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fdC-Pj-1Jq">
                                         <rect key="frame" x="0.0" y="232.5" width="354" height="68"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-qc-Hug">
-                                                        <rect key="frame" x="0.0" y="0.0" width="14.5" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="height" multiplier="1:1" id="s4N-46-sAg"/>
+                                                            <constraint firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="height" multiplier="1:2.4" id="s4N-46-sAg"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-fQ-s91">
-                                                        <rect key="frame" x="19.5" y="0.0" width="334.5" height="24"/>
+                                                        <rect key="frame" x="16.5" y="0.0" width="337.5" height="24"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Label">
                                                                 <attributes>
@@ -825,17 +825,17 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
                                                 <rect key="frame" x="0.0" y="44" width="354" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="B3V-Vt-aTb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="14.5" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="B3V-Vt-aTb" secondAttribute="height" multiplier="1:1" id="4qc-Fj-7C6"/>
+                                                            <constraint firstAttribute="width" secondItem="B3V-Vt-aTb" secondAttribute="height" multiplier="1:2.4" id="4qc-Fj-7C6"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-IP-VqA">
-                                                        <rect key="frame" x="19.5" y="0.0" width="334.5" height="24"/>
+                                                        <rect key="frame" x="16.5" y="0.0" width="337.5" height="24"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Label">
                                                                 <attributes>
@@ -892,7 +892,7 @@
                             <constraint firstItem="1h9-l1-yAt" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="30" id="793-lQ-HBp"/>
                             <constraint firstAttribute="trailing" secondItem="1h9-l1-yAt" secondAttribute="trailing" constant="30" id="Ugh-2p-dtN"/>
                             <constraint firstItem="1h9-l1-yAt" firstAttribute="centerY" secondItem="Ddw-FF-x6F" secondAttribute="centerY" multiplier="0.9" id="ZZH-GA-jza"/>
-                            <constraint firstItem="DMN-qc-Hug" firstAttribute="width" secondItem="Ddw-FF-x6F" secondAttribute="width" multiplier="0.035" id="enh-pL-TC1"/>
+                            <constraint firstItem="DMN-qc-Hug" firstAttribute="width" secondItem="Ddw-FF-x6F" secondAttribute="width" multiplier="0.02" id="enh-pL-TC1"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="bottom" secondItem="Ojj-Lg-BKU" secondAttribute="bottom" constant="30" id="inX-IX-1ay"/>
                             <constraint firstItem="Ojj-Lg-BKU" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="40" id="iuD-50-5gQ"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="trailing" secondItem="Ojj-Lg-BKU" secondAttribute="trailing" constant="40" id="wvl-DO-p5f"/>
@@ -929,7 +929,7 @@
         <image name="beforeRegistration" width="250" height="352"/>
         <image name="bg_m_visual" width="212.5" height="183.5"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="dot" width="86" height="86"/>
+        <image name="dot" width="54" height="152"/>
         <image name="exchangeArrow" width="390" height="462"/>
         <image name="ico_m_visual" width="229" height="266.5"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

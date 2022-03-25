@@ -636,17 +636,17 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-hq-fJb">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-hq-fJb">
                                 <rect key="frame" x="35" y="371.5" width="344" height="24"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="13F-px-Lis">
-                                        <rect key="frame" x="0.0" y="0.0" width="14.5" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="13F-px-Lis" secondAttribute="height" multiplier="1:1" id="LSt-7I-CGf"/>
+                                            <constraint firstAttribute="width" secondItem="13F-px-Lis" secondAttribute="height" multiplier="1:2.4" id="LSt-7I-CGf"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grz-BT-jt4">
-                                        <rect key="frame" x="19.5" y="0.0" width="324.5" height="24"/>
+                                        <rect key="frame" x="16.5" y="0.0" width="327.5" height="24"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -669,7 +669,7 @@
                             <constraint firstItem="TUD-ho-AFb" firstAttribute="leading" secondItem="kC8-7r-Ccy" secondAttribute="leading" constant="35" id="Bc0-Lc-Hga"/>
                             <constraint firstItem="7Ny-hq-fJb" firstAttribute="top" secondItem="tjS-GI-Etx" secondAttribute="bottom" constant="40" id="E8D-L5-2oo"/>
                             <constraint firstItem="fvr-4P-1qs" firstAttribute="width" secondItem="G2J-a0-Ems" secondAttribute="width" multiplier="0.75" id="YmB-L4-aCU"/>
-                            <constraint firstItem="13F-px-Lis" firstAttribute="width" secondItem="G2J-a0-Ems" secondAttribute="width" multiplier="0.035" id="Zwx-ZJ-ogU"/>
+                            <constraint firstItem="13F-px-Lis" firstAttribute="width" secondItem="G2J-a0-Ems" secondAttribute="width" multiplier="0.02" id="Zwx-ZJ-ogU"/>
                             <constraint firstItem="kC8-7r-Ccy" firstAttribute="trailing" secondItem="7Ny-hq-fJb" secondAttribute="trailing" constant="35" id="bam-vQ-07c"/>
                             <constraint firstItem="tjS-GI-Etx" firstAttribute="leading" secondItem="kC8-7r-Ccy" secondAttribute="leading" constant="35" id="bnq-jx-Hrp"/>
                             <constraint firstItem="fvr-4P-1qs" firstAttribute="centerX" secondItem="G2J-a0-Ems" secondAttribute="centerX" id="j5r-kg-VR7"/>
@@ -739,7 +739,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="dot" width="86" height="86"/>
+        <image name="dot" width="54" height="152"/>
         <image name="selectCollectionViewPlaceholder" width="1480" height="1422"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
