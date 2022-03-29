@@ -52,9 +52,6 @@ class MainViewController: UIViewController {
         self.present(collectUserInfoNC, animated: true, completion: nil)
     }
     
-    @IBAction func howToUseButtonTapped(_ sender: Any) {
-    }
-    
     @IBAction func noticeButtonTapped(_ sender: Any) {
         guard let url = URL(string: "https://www.seoulbookbogo.kr/bookcross/front/index.php?g_page=community&m_page=community01"), UIApplication.shared.canOpenURL(url) else { return }
 
