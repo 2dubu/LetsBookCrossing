@@ -34,6 +34,7 @@
 		18F641E427C4C61F000B2526 /* searchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E327C4C61F000B2526 /* searchData.swift */; };
 		18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */; };
 		18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */; };
+		263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */; };
 		2641E4FB27F141A800689B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AD27C46A84000B2526 /* LaunchScreen.storyboard */; };
 		26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9927C4785D00304788 /* SelectBookViewController.swift */; };
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
@@ -74,6 +75,7 @@
 		18F641E327C4C61F000B2526 /* searchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchData.swift; sourceTree = "<group>"; };
 		18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegisterViewController.swift; sourceTree = "<group>"; };
+		263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayToParticipateCollectionViewCell.swift; sourceTree = "<group>"; };
 		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */,
 				26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */,
+				263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */,
 				18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */,
 				18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */,
+				263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */,
 				18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */,
 				18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */,
 				18F641D227C4744E000B2526 /* DummyData.swift in Sources */,
