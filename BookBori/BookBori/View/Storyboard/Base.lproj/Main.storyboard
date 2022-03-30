@@ -311,7 +311,7 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-TW-6Ei">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1498"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1459"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvg-9c-Z9a">
                                                 <rect key="frame" x="15" y="12" width="360" height="580.66666666666663"/>
@@ -462,10 +462,10 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z10-gj-mW3">
-                                                <rect key="frame" x="0.0" y="670" width="390" height="624"/>
+                                                <rect key="frame" x="0.0" y="670" width="390" height="585"/>
                                                 <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="z10-gj-mW3" secondAttribute="height" multiplier="1:1.6" id="y4c-Up-ell"/>
+                                                    <constraint firstAttribute="width" secondItem="z10-gj-mW3" secondAttribute="height" multiplier="1:1.5" id="kFS-qC-71t"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="35y-Iz-DgG">
                                                     <size key="itemSize" width="391" height="624"/>
@@ -475,7 +475,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WayToParticipateCell" id="Tea-ol-eKN" customClass="WayToParticipateCollectionViewCell" customModule="BookBori" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="391" height="624"/>
+                                                        <rect key="frame" x="0.0" y="-19.666666666666668" width="391" height="624"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="odY-fr-Cxd">
                                                             <rect key="frame" x="0.0" y="0.0" width="391" height="624"/>
@@ -485,10 +485,7 @@
                                                                     <rect key="frame" x="15" y="0.0" width="361" height="624"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic5-Ym-1is">
-                                                                            <rect key="frame" x="0.0" y="30" width="361" height="60"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="60" id="Bhb-xa-IUW"/>
-                                                                            </constraints>
+                                                                            <rect key="frame" x="0.0" y="20.000000000000007" width="361" height="116.66666666666669"/>
                                                                             <attributedString key="attributedText">
                                                                                 <fragment>
                                                                                     <string key="content">첫 번째, 
@@ -497,14 +494,14 @@
                                                                                     <attributes>
                                                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                                         <font key="NSFont" size="16" name="GmarketSansLight"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                     </attributes>
                                                                                 </fragment>
                                                                             </attributedString>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPQ-Oo-z77">
-                                                                            <rect key="frame" x="72.333333333333329" y="130" width="216.33333333333337" height="389"/>
+                                                                            <rect key="frame" x="81.333333333333329" y="166.66666666666666" width="198.33333333333337" height="357.33333333333337"/>
                                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="zPQ-Oo-z77" secondAttribute="height" multiplier="1:1.8" id="jHs-4h-HPZ"/>
@@ -513,12 +510,13 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="zPQ-Oo-z77" firstAttribute="width" secondItem="GkU-WV-Z9S" secondAttribute="width" multiplier="0.55" id="CYC-55-7h3"/>
                                                                         <constraint firstItem="zPQ-Oo-z77" firstAttribute="centerX" secondItem="GkU-WV-Z9S" secondAttribute="centerX" id="FeG-N9-fQM"/>
-                                                                        <constraint firstItem="Ic5-Ym-1is" firstAttribute="top" secondItem="GkU-WV-Z9S" secondAttribute="top" constant="30" id="IcO-JK-foK"/>
+                                                                        <constraint firstItem="Ic5-Ym-1is" firstAttribute="top" secondItem="GkU-WV-Z9S" secondAttribute="top" constant="20" id="N6c-h5-aHq"/>
                                                                         <constraint firstItem="Ic5-Ym-1is" firstAttribute="leading" secondItem="GkU-WV-Z9S" secondAttribute="leading" id="RDU-mm-9ao"/>
                                                                         <constraint firstAttribute="trailing" secondItem="Ic5-Ym-1is" secondAttribute="trailing" id="bV1-Gu-HQK"/>
-                                                                        <constraint firstItem="zPQ-Oo-z77" firstAttribute="top" secondItem="Ic5-Ym-1is" secondAttribute="bottom" constant="40" id="oTi-xK-qXB"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="zPQ-Oo-z77" secondAttribute="bottom" constant="105" id="pC6-jS-84W"/>
+                                                                        <constraint firstItem="zPQ-Oo-z77" firstAttribute="top" secondItem="Ic5-Ym-1is" secondAttribute="bottom" constant="30" id="oTi-xK-qXB"/>
+                                                                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="zPQ-Oo-z77" secondAttribute="bottom" constant="100" id="pC6-jS-84W"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -539,17 +537,17 @@
                                                 </cells>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-Id-mGd">
-                                                <rect key="frame" x="0.0" y="1247" width="390" height="25"/>
+                                                <rect key="frame" x="0.0" y="1208" width="390" height="25"/>
                                                 <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pageControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmC-Qr-RxC">
-                                                <rect key="frame" x="0.0" y="1227" width="390" height="15"/>
+                                                <rect key="frame" x="0.0" y="1188" width="390" height="15"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="옆으로 스와이프 하세요">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="15" name="GmarketSansLight"/>
+                                                            <font key="NSFont" size="14" name="GmarketSansLight"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -557,7 +555,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-lg-wjL">
-                                                <rect key="frame" x="15" y="1302" width="360" height="176"/>
+                                                <rect key="frame" x="15" y="1263" width="360" height="176"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-KN-GNN">
                                                         <rect key="frame" x="0.0" y="30" width="360" height="22"/>
@@ -690,6 +688,7 @@
                             <color key="tintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="390" height="844"/>
                     <connections>
                         <outlet property="afterApplyDescriptionLabel" destination="4Mp-Tf-04P" id="g7h-vj-8y2"/>
                         <outlet property="afterApplyLabel" destination="sSN-KN-GNN" id="TqW-xJ-qtZ"/>
