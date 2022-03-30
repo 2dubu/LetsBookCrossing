@@ -22,30 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hy7-Az-8KD">
-                                <rect key="frame" x="144.33333333333334" y="404.33333333333331" width="101.33333333333334" height="35.333333333333314"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="책보리">
-                                        <attributes>
-                                            <color key="NSColor" red="0.35771813891250531" green="0.55155764923636363" blue="0.35817490734885787" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="35" name="GmarketSansBold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcT-Ln-eNp">
+                                <rect key="frame" x="138.33333333333334" y="411.66666666666669" width="113.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.99215686274509807" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hy7-Az-8KD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Azg-gc-Fz4"/>
-                            <constraint firstItem="Hy7-Az-8KD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ljv-90-XWg"/>
+                            <constraint firstItem="hcT-Ln-eNp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="INr-7N-wTy"/>
+                            <constraint firstItem="hcT-Ln-eNp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OGP-AW-VSK"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="launchLabel" destination="Hy7-Az-8KD" id="FCV-sb-B7b"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,19 +311,19 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-TW-6Ei">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1496"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1494"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvg-9c-Z9a">
-                                                <rect key="frame" x="18" y="12" width="354" height="576.66666666666663"/>
+                                                <rect key="frame" x="15" y="12" width="360" height="580.66666666666663"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="howToUseImage" translatesAutoresizingMaskIntoConstraints="NO" id="oSu-w8-S9P">
-                                                        <rect key="frame" x="17" y="17" width="320" height="220.66666666666666"/>
+                                                        <rect key="frame" x="17" y="16.999999999999986" width="326" height="224.66666666666663"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="oSu-w8-S9P" secondAttribute="height" multiplier="1.45:1" id="4ca-UI-RYe"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySo-El-ZVV">
-                                                        <rect key="frame" x="19" y="265.66666666666669" width="316" height="20"/>
+                                                        <rect key="frame" x="19" y="269.66666666666669" width="322" height="20"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="북크로싱은,">
                                                                 <attributes>
@@ -345,7 +335,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcf-MT-xUb">
-                                                        <rect key="frame" x="19" y="293.66666666666669" width="316" height="75"/>
+                                                        <rect key="frame" x="19" y="297.66666666666669" width="322" height="75"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="책을 읽은 후 책과 함께 메시지를 적어 공공장소에 놓아두면 다른 사람이 그 책을 읽고 또 다른 사람에게 넘기는 책 순환 운동입니다.">
                                                                 <attributes>
@@ -360,7 +350,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDg-kY-92G">
-                                                        <rect key="frame" x="19" y="398.66666666666669" width="316" height="20"/>
+                                                        <rect key="frame" x="19" y="402.66666666666669" width="322" height="20"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="서울책보고는,">
                                                                 <attributes>
@@ -372,7 +362,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-w2-TaP">
-                                                        <rect key="frame" x="19" y="426.66666666666663" width="316" height="125"/>
+                                                        <rect key="frame" x="19" y="430.66666666666663" width="322" height="125"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="온라인 ‘책보리’와 오프라인 서가를 마련해 시민들이 다 읽은 책을 다른 사람에게 건넬 수 있도록 온·오프라인 북크로싱 프로그램을 운영합니다. 집에서 잠들어 있는 책을 책보리에 등록된 500여 권의 책과 교환해 보세요!">
                                                                 <attributes>
@@ -409,7 +399,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-FN-iv6">
-                                                <rect key="frame" x="0.0" y="608.66666666666663" width="390" height="51.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="610.66666666666663" width="390" height="51.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NI-3d-3y9">
                                                         <rect key="frame" x="76.333333333333329" y="14.666666666666742" width="237.33333333333337" height="22"/>
@@ -473,41 +463,63 @@
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z10-gj-mW3">
                                                 <rect key="frame" x="0.0" y="668" width="390" height="624"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="z10-gj-mW3" secondAttribute="height" multiplier="1:1.6" id="y4c-Up-ell"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="35y-Iz-DgG">
-                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="itemSize" width="391" height="624"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Tea-ol-eKN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WayToParticipateCell" id="Tea-ol-eKN" customClass="WayToParticipateCollectionViewCell" customModule="BookBori" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="391" height="624"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="odY-fr-Cxd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="391" height="624"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkU-WV-Z9S">
-                                                                    <rect key="frame" x="10" y="10" width="108" height="108"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <rect key="frame" x="15" y="0.0" width="361" height="624"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="GkU-WV-Z9S" secondAttribute="bottom" constant="10" id="B6Q-dm-xOJ"/>
-                                                                <constraint firstItem="GkU-WV-Z9S" firstAttribute="top" secondItem="odY-fr-Cxd" secondAttribute="top" constant="10" id="CyF-Xp-Og4"/>
-                                                                <constraint firstAttribute="trailing" secondItem="GkU-WV-Z9S" secondAttribute="trailing" constant="10" id="O2z-nS-oLU"/>
-                                                                <constraint firstItem="GkU-WV-Z9S" firstAttribute="leading" secondItem="odY-fr-Cxd" secondAttribute="leading" constant="10" id="Y6n-Ri-cj2"/>
+                                                                <constraint firstAttribute="bottom" secondItem="GkU-WV-Z9S" secondAttribute="bottom" id="B6Q-dm-xOJ"/>
+                                                                <constraint firstItem="GkU-WV-Z9S" firstAttribute="top" secondItem="odY-fr-Cxd" secondAttribute="top" id="CyF-Xp-Og4"/>
+                                                                <constraint firstAttribute="trailing" secondItem="GkU-WV-Z9S" secondAttribute="trailing" constant="15" id="O2z-nS-oLU"/>
+                                                                <constraint firstItem="GkU-WV-Z9S" firstAttribute="leading" secondItem="odY-fr-Cxd" secondAttribute="leading" constant="15" id="Y6n-Ri-cj2"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <size key="customSize" width="391" height="624"/>
+                                                        <connections>
+                                                            <outlet property="whiteView" destination="GkU-WV-Z9S" id="Oik-ia-YFa"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-Id-mGd">
+                                                <rect key="frame" x="0.0" y="1245" width="390" height="25"/>
+                                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="currentPageIndicatorTintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </pageControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmC-Qr-RxC">
+                                                <rect key="frame" x="0.0" y="1223" width="390" height="15"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="옆으로 스와이프 하세요">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="15" name="GmarketSansLight"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-lg-wjL">
-                                                <rect key="frame" x="15" y="1300" width="360" height="176"/>
+                                                <rect key="frame" x="15" y="1298" width="360" height="176"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-KN-GNN">
                                                         <rect key="frame" x="0.0" y="30" width="360" height="22"/>
@@ -596,18 +608,24 @@
                                         <color key="tintColor" red="0.58431375029999999" green="0.39215683940000001" blue="0.6784313917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="Lhp-lg-wjL" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" constant="15" id="1qB-js-ZTP"/>
-                                            <constraint firstItem="Lhp-lg-wjL" firstAttribute="top" secondItem="z10-gj-mW3" secondAttribute="bottom" constant="8" id="3xW-Mx-nYk"/>
+                                            <constraint firstItem="Lhp-lg-wjL" firstAttribute="top" secondItem="z10-gj-mW3" secondAttribute="bottom" constant="6" id="3xW-Mx-nYk"/>
                                             <constraint firstAttribute="trailing" secondItem="2Hc-FN-iv6" secondAttribute="trailing" id="4X2-O8-IQQ"/>
                                             <constraint firstItem="z10-gj-mW3" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" id="Crr-kg-BqH"/>
                                             <constraint firstAttribute="trailing" secondItem="z10-gj-mW3" secondAttribute="trailing" id="F5X-Pe-sY9"/>
-                                            <constraint firstItem="2Hc-FN-iv6" firstAttribute="top" secondItem="nvg-9c-Z9a" secondAttribute="bottom" constant="20" id="Ude-4S-yXM"/>
-                                            <constraint firstItem="nvg-9c-Z9a" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" constant="18" id="YFe-Nc-GD5"/>
+                                            <constraint firstItem="2Hc-FN-iv6" firstAttribute="top" secondItem="nvg-9c-Z9a" secondAttribute="bottom" constant="18" id="Ude-4S-yXM"/>
+                                            <constraint firstAttribute="trailing" secondItem="KmC-Qr-RxC" secondAttribute="trailing" id="Uea-2y-zje"/>
+                                            <constraint firstItem="mqS-Id-mGd" firstAttribute="bottom" secondItem="z10-gj-mW3" secondAttribute="bottom" constant="-22" id="VOQ-Kg-WXB"/>
+                                            <constraint firstItem="nvg-9c-Z9a" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" constant="15" id="YFe-Nc-GD5"/>
+                                            <constraint firstItem="mqS-Id-mGd" firstAttribute="top" secondItem="KmC-Qr-RxC" secondAttribute="bottom" constant="7" id="btF-c1-e92"/>
                                             <constraint firstItem="nvg-9c-Z9a" firstAttribute="top" secondItem="IEg-TW-6Ei" secondAttribute="top" constant="12" id="cAt-FU-yNA"/>
-                                            <constraint firstItem="z10-gj-mW3" firstAttribute="top" secondItem="2Hc-FN-iv6" secondAttribute="bottom" constant="8" id="cXZ-xP-iXY"/>
+                                            <constraint firstItem="z10-gj-mW3" firstAttribute="top" secondItem="2Hc-FN-iv6" secondAttribute="bottom" constant="6" id="cXZ-xP-iXY"/>
+                                            <constraint firstItem="mqS-Id-mGd" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" id="dOJ-ni-WmA"/>
                                             <constraint firstAttribute="bottom" secondItem="Lhp-lg-wjL" secondAttribute="bottom" constant="20" id="iMy-WX-vDO"/>
                                             <constraint firstItem="2Hc-FN-iv6" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" id="o0C-Jl-8tL"/>
-                                            <constraint firstAttribute="trailing" secondItem="nvg-9c-Z9a" secondAttribute="trailing" constant="18" id="p8m-K7-fZX"/>
+                                            <constraint firstAttribute="trailing" secondItem="nvg-9c-Z9a" secondAttribute="trailing" constant="15" id="p8m-K7-fZX"/>
+                                            <constraint firstItem="KmC-Qr-RxC" firstAttribute="leading" secondItem="IEg-TW-6Ei" secondAttribute="leading" id="qPh-o5-sI5"/>
                                             <constraint firstAttribute="trailing" secondItem="Lhp-lg-wjL" secondAttribute="trailing" constant="15" id="rnl-kb-Rji"/>
+                                            <constraint firstAttribute="trailing" secondItem="mqS-Id-mGd" secondAttribute="trailing" id="yDg-vi-S7f"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -640,9 +658,12 @@
                         <outlet property="bookcrossingDescriptionLabel" destination="Vcf-MT-xUb" id="8zz-DW-ByA"/>
                         <outlet property="bookcrossingLabel" destination="ySo-El-ZVV" id="zhf-kr-5B0"/>
                         <outlet property="howToUseImageView" destination="oSu-w8-S9P" id="O1x-op-xVF"/>
+                        <outlet property="pageControl" destination="mqS-Id-mGd" id="Slc-Cq-j82"/>
                         <outlet property="seoulBookbogoDescriptionLabel" destination="j6m-w2-TaP" id="Bqf-Rw-lGd"/>
                         <outlet property="seoulBookbogoLabel" destination="uDg-kY-92G" id="oms-33-Vwj"/>
-                        <outlet property="wayToParticipateTItleLabel" destination="4NI-3d-3y9" id="O5b-Cl-ajB"/>
+                        <outlet property="swipeLabel" destination="KmC-Qr-RxC" id="R0p-ev-24D"/>
+                        <outlet property="wayToParticipateCollectionView" destination="z10-gj-mW3" id="bQE-dw-dsS"/>
+                        <outlet property="wayToParticipateTitleLabel" destination="4NI-3d-3y9" id="JoT-HL-EL9"/>
                         <outlet property="whiteView1" destination="nvg-9c-Z9a" id="hkb-cj-hXc"/>
                         <outlet property="whiteView2" destination="Lhp-lg-wjL" id="g9N-cU-gEY"/>
                     </connections>
