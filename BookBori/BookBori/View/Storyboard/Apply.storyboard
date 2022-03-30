@@ -557,7 +557,7 @@
             </objects>
             <point key="canvasLocation" x="782.60869565217399" y="61.607142857142854"/>
         </scene>
-        <!--사용자 정보 수집-->
+        <!--사용자 정보 입력-->
         <scene sceneID="Lkf-FJ-35e">
             <objects>
                 <viewController storyboardIdentifier="CollectUserInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUS-Om-dIG" customClass="CollectUserInfoViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
@@ -679,7 +679,7 @@
                             <constraint firstItem="tjS-GI-Etx" firstAttribute="top" secondItem="TUD-ho-AFb" secondAttribute="bottom" constant="35" id="xMh-ci-Zx6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="사용자 정보 수집" id="YaB-M9-28u">
+                    <navigationItem key="navigationItem" title="사용자 정보 입력" id="YaB-M9-28u">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="8ON-sn-Ye6">
                             <color key="tintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>

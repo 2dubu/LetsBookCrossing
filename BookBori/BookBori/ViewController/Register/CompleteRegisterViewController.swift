@@ -93,9 +93,9 @@ class CompleteRegisterViewController: UIViewController {
             
             // image, bookTitle set
             
-            confirmButton.setTitle("교환 취소", for: .normal)
+            confirmButton.setTitle("북크로싱 신청 취소", for: .normal)
         } else {
-            navigationItem.title = "도서 교환 정보"
+            navigationItem.title = "북크로싱 정보 확인"
             description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
             description2.text = "교환 신청 취소는\"북크로싱 신청 내역 조회\"\n에서 진행할 수 있습니다."
             
@@ -106,7 +106,7 @@ class CompleteRegisterViewController: UIViewController {
             registerTitleLabel.text = bookApplied?.title
             applyTitleLabel.text = bookRegister?.title
             
-            confirmButton.setTitle("완료", for: .normal)
+            confirmButton.setTitle("확인", for: .normal)
         }
     }
     

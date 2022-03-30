@@ -30,12 +30,12 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         let viewControllersCount = nv?.viewControllers.count
         if viewControllersCount != nil && viewControllersCount! < 3 {
             self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
-            self.navigationItem.title = "사용자 확인"
+            self.navigationItem.title = "사용자 정보 확인"
             self.descriptionLabel.text = "교환을 신청하는 과정에서 입력했던 전화번호와 비밀번호를 입력해 신청내역 조회 또는 신청 취소를 진행할 수 있습니다."
         } else {
             self.navigationItem.leftBarButtonItem?.image = UIImage(systemName: "chevron.backward")
             self.navigationItem.title = "사용자 정보 입력"
-            self.descriptionLabel.text = "이곳에서 입력하시는 정보는 이후 신청내역을 조회하거나 신청을 취소하기 전, 사용자를 확인하는 목적으로 사용됩니다."
+            self.descriptionLabel.text = "이곳에서 입력하시는 정보는 이후 교환 시에 또는 신청내역 조회 및 신청 취소 전, 사용자를 확인하는 목적으로 사용됩니다."
         }
     }
     
