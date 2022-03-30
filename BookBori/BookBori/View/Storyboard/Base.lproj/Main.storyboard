@@ -500,7 +500,7 @@
                                                                             </attributedString>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPQ-Oo-z77">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPQ-Oo-z77" customClass="GIFImageView" customModule="Gifu">
                                                                             <rect key="frame" x="81.333333333333329" y="166.66666666666666" width="198.33333333333337" height="357.33333333333337"/>
                                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
                                                                             <constraints>
@@ -529,8 +529,8 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="391" height="624"/>
                                                         <connections>
-                                                            <outlet property="descriptionImage" destination="zPQ-Oo-z77" id="lfY-cT-zX9"/>
                                                             <outlet property="descriptionLabel" destination="Ic5-Ym-1is" id="E4E-n9-vyx"/>
+                                                            <outlet property="gifImageView" destination="zPQ-Oo-z77" id="bNc-Zy-XSC"/>
                                                             <outlet property="whiteView" destination="GkU-WV-Z9S" id="Oik-ia-YFa"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -686,6 +686,9 @@
                     <navigationItem key="navigationItem" title="이용 안내" id="hN0-PI-qSb">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="vAM-Fp-knW">
                             <color key="tintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="vNW-KF-bWK" id="ly7-dL-9yF"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="390" height="844"/>

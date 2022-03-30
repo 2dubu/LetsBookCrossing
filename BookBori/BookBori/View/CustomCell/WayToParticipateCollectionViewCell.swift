@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Gifu
 
 class WayToParticipateCollectionViewCell: UICollectionViewCell {
     
@@ -13,6 +14,6 @@ class WayToParticipateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var descriptionImage: UIImageView!
+    @IBOutlet weak var gifImageView: GIFImageView!
     
 }

@@ -40,7 +40,8 @@
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
 		26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9D27C5B9A500304788 /* GuideViewController.swift */; };
 		26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */; };
-		269AA2C227F2EEC200D8B22B /* HowToUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUserViewController.swift */; };
+		2681330127F400480076CA33 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2681330027F400480076CA33 /* 3.gif */; };
+		269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +81,8 @@
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectUserInfoViewController.swift; sourceTree = "<group>"; };
-		269AA2C127F2EEC100D8B22B /* HowToUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUserViewController.swift; path = BookBori/ViewController/HowToUserViewController.swift; sourceTree = SOURCE_ROOT; };
+		2681330027F400480076CA33 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUseViewController.swift; path = BookBori/ViewController/HowToUseViewController.swift; sourceTree = SOURCE_ROOT; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		18F641B627C46E82000B2526 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				268132FF27F400200076CA33 /* Gifs */,
 				18998AB127DAEFC800943C21 /* Fonts */,
 				18F641AB27C46A83000B2526 /* Assets.xcassets */,
 			);
@@ -178,7 +181,7 @@
 			children = (
 				18F641BE27C470D6000B2526 /* StartViewController.swift */,
 				18F641C927C47214000B2526 /* MainViewController.swift */,
-				269AA2C127F2EEC100D8B22B /* HowToUserViewController.swift */,
+				269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */,
 				18F641CF27C47410000B2526 /* Apply */,
 				18F641D827C4A96A000B2526 /* Register */,
 			);
@@ -236,6 +239,14 @@
 				18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		268132FF27F400200076CA33 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				2681330027F400480076CA33 /* 3.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		5F99A8400F77CD4A14E85842 /* Pods */ = {
@@ -319,6 +330,7 @@
 				18998AB627DAF03400943C21 /* GmarketSansLight.otf in Resources */,
 				18F641AC27C46A83000B2526 /* Assets.xcassets in Resources */,
 				18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */,
+				2681330127F400480076CA33 /* 3.gif in Resources */,
 				18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */,
 				18998AB527DAF03200943C21 /* GmarketSansBold.otf in Resources */,
 				18F641D527C4772E000B2526 /* Register.storyboard in Resources */,
@@ -371,7 +383,7 @@
 				26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */,
 				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
-				269AA2C227F2EEC200D8B22B /* HowToUserViewController.swift in Sources */,
+				269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */,
 				18E6015327E73C20005A993A /* GetData.swift in Sources */,
 				18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */,
 				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,

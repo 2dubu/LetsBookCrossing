@@ -29,6 +29,10 @@ class HowToUserViewController: UIViewController {
     @IBOutlet weak var afterApplyLabel: UILabel!
     @IBOutlet weak var afterApplyDescriptionLabel: UILabel!
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,7 +103,7 @@ extension HowToUserViewController : UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = wayToParticipateCollectionView.dequeueReusableCell(withReuseIdentifier: "WayToParticipateCell", for: indexPath) as! WayToParticipateCollectionViewCell
         cell.descriptionLabel.text = HowToUseDummyData.shared.descriptions[indexPath.row].description
-        //cell.descriptionImage.image = UIImage(named: HowToUseDummyData.shared.descriptions[indexPath.row].image)
+        cell.gifImageView.animate(withGIFNamed: HowToUseDummyData.shared.descriptions[indexPath.row].image)
         
         // Set whiteView
         cell.whiteView.layer.cornerRadius = 15
