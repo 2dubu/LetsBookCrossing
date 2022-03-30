@@ -59,3 +59,21 @@ class ExchangeHistoryDummyData {
         ExchangeHistory(registeredBookTitle: "때때로 난 고양이에게 깔리고 싶다", applieddBookTitle: "난 강아지가 더 좋은걸", registeredBookImage: "1", applieddBookImage: "2")
     ]
 }
+
+
+// HowToUse Data
+
+struct Description {
+    var description : String
+    var image : String
+}
+
+class HowToUseDummyData {
+    static let shared = HowToUseDummyData()
+    
+    var descriptions: [Description] = [
+        Description(description: "첫 번째,\n‘북크로싱 신청하기’ 메뉴의 도서 목록 중,\n교환하고 싶은 도서 선택 후 이용 약관 확인", image: "1"),
+        Description(description: "두 번째,\n본인의 전화번호와 비밀번호 입력\n(전화번호/비밀번호는 이후 본인 확인 용도로\n 사용되니 정확히 입력해 주세요.)", image: "2"),
+        Description(description: "세 번째,\n바코드 스캔, 제목 검색, 직접 입력 \n중 하나로 첫 단계에서 선택한 책과 교환할,\n자신의 책 등록 후 교환 신청 완료!", image: "1")
+    ]
+}

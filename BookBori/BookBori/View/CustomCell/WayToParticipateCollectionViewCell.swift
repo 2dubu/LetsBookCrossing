@@ -9,4 +9,10 @@ import UIKit
 
 class WayToParticipateCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var whiteView: UIView!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var descriptionImage: UIImageView!
+    
 }
