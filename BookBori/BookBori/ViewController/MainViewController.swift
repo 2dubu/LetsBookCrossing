@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bookCrossingLabel: UILabel!
     
     @IBOutlet weak var howToUseButton: UIButton!
+    @IBOutlet weak var howToUseButtonUnderLineView: UIView!
     
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
@@ -89,5 +90,7 @@ class MainViewController: UIViewController {
         checkLabel.dynamicFont(fontSize: 20)
         noticeButton.titleLabel?.dynamicFont(fontSize: 16)
         FAQButton.titleLabel?.dynamicFont(fontSize: 16)
+        
+        howToUseButtonUnderLineView.layer.addBorder([.bottom], color: .black, width: 2)
     }
 }

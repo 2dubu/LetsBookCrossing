@@ -241,6 +241,12 @@
                                     <action selector="checkButtonTapped:" destination="5Do-JC-jYa" eventType="touchUpInside" id="fQ0-SC-Z9B"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-n7-iYK">
+                                <rect key="frame" x="23" y="320.66666666666669" width="160" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="1Vd-d7-1ps"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUU-ax-mkS"/>
                         <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -251,6 +257,7 @@
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="trailing" secondItem="gUU-ax-mkS" secondAttribute="trailing" id="A1F-Fz-vxe"/>
                             <constraint firstItem="CeN-dF-CpV" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="23" id="CnQ-m7-Ndu"/>
                             <constraint firstItem="OGt-dl-tj8" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="F7N-Y4-eAY"/>
+                            <constraint firstItem="RIl-n7-iYK" firstAttribute="top" secondItem="CeN-dF-CpV" secondAttribute="bottom" id="GUb-xl-b8Q"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="top" secondItem="m1S-Wh-4DB" secondAttribute="top" id="GfX-cg-ClI"/>
                             <constraint firstItem="OGt-dl-tj8" firstAttribute="top" secondItem="CeN-dF-CpV" secondAttribute="bottom" constant="38" id="IuT-pj-Two"/>
                             <constraint firstItem="Eoe-Al-oUc" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="Kt1-M8-G7H"/>
@@ -266,6 +273,7 @@
                             <constraint firstItem="iR7-hB-8Jz" firstAttribute="leading" secondItem="7wd-qY-rbt" secondAttribute="leading" id="WHD-X0-mKy"/>
                             <constraint firstItem="zen-ic-CoR" firstAttribute="leading" secondItem="07c-tW-jsf" secondAttribute="leading" id="XdD-es-n0P"/>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="width" secondItem="m1S-Wh-4DB" secondAttribute="width" multiplier="0.43" id="Y9d-Oc-JGy"/>
+                            <constraint firstItem="RIl-n7-iYK" firstAttribute="leading" secondItem="CeN-dF-CpV" secondAttribute="leading" id="Zip-BY-72p"/>
                             <constraint firstItem="lMM-Pp-AFm" firstAttribute="top" secondItem="ppy-Ab-hVi" secondAttribute="top" constant="15" id="a00-iz-8fY"/>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="top" secondItem="7Gd-Xa-6fw" secondAttribute="bottom" constant="40" id="dHA-QX-761"/>
                             <constraint firstItem="4l9-wE-rV4" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="23" id="dlm-aS-EXB"/>
@@ -280,6 +288,7 @@
                             <constraint firstItem="iR7-hB-8Jz" firstAttribute="bottom" secondItem="7wd-qY-rbt" secondAttribute="bottom" id="ql0-b4-Tmt"/>
                             <constraint firstItem="iR7-hB-8Jz" firstAttribute="trailing" secondItem="7wd-qY-rbt" secondAttribute="trailing" id="sOb-dl-Pbg"/>
                             <constraint firstItem="lMM-Pp-AFm" firstAttribute="trailing" secondItem="ppy-Ab-hVi" secondAttribute="trailing" constant="-5" id="u2S-5C-LpY"/>
+                            <constraint firstItem="RIl-n7-iYK" firstAttribute="width" secondItem="CeN-dF-CpV" secondAttribute="width" id="vUe-m9-D8H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZWb-A3-2Ym"/>
@@ -293,6 +302,7 @@
                         <outlet property="checkLabel" destination="V4L-XZ-qoH" id="QZm-pd-IlO"/>
                         <outlet property="checkView" destination="07c-tW-jsf" id="xQ1-js-wWb"/>
                         <outlet property="howToUseButton" destination="CeN-dF-CpV" id="qsO-MR-UTh"/>
+                        <outlet property="howToUseButtonUnderLineView" destination="RIl-n7-iYK" id="by8-dM-0OZ"/>
                         <outlet property="noticeButton" destination="zZb-84-zyq" id="gy1-QA-pzI"/>
                     </connections>
                 </viewController>
