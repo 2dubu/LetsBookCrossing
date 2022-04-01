@@ -10,16 +10,15 @@ import UIKit
 class CheckTableViewCell: UITableViewCell {
     
     @IBOutlet weak var whiteView: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var countView: UIView!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var applyDateLabel: UILabel!
+    @IBOutlet weak var registerLabel: UILabel!
+    @IBOutlet weak var applyLabel: UILabel!
+    @IBOutlet weak var registerImageView: UIImageView!
+    @IBOutlet weak var applyImageView: UIImageView!
+    @IBOutlet weak var registerTitleLabel: UILabel!
+    @IBOutlet weak var applyTitleLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
 
 }

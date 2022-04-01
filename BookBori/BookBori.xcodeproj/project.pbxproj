@@ -41,6 +41,7 @@
 		26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9D27C5B9A500304788 /* GuideViewController.swift */; };
 		26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */; };
 		2681330127F400480076CA33 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2681330027F400480076CA33 /* 3.gif */; };
+		268B02B527F6824100980723 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B02B427F6824100980723 /* CheckViewController.swift */; };
 		268E076627F67C2F0056F03F /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E076527F67C2F0056F03F /* CheckTableViewCell.swift */; };
 		269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
@@ -84,6 +85,7 @@
 		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		26765C9F27C5B9DE00304788 /* CollectUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectUserInfoViewController.swift; sourceTree = "<group>"; };
 		2681330027F400480076CA33 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		268B02B427F6824100980723 /* CheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		268E076527F67C2F0056F03F /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUseViewController.swift; path = BookBori/ViewController/HowToUseViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6985EC527F591AF00B0571C /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */,
 				18F641CF27C47410000B2526 /* Apply */,
 				18F641D827C4A96A000B2526 /* Register */,
+				268B02B327F6823600980723 /* Check */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -253,6 +256,14 @@
 				2681330027F400480076CA33 /* 3.gif */,
 			);
 			path = Gifs;
+			sourceTree = "<group>";
+		};
+		268B02B327F6823600980723 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				268B02B427F6824100980723 /* CheckViewController.swift */,
+			);
+			path = Check;
 			sourceTree = "<group>";
 		};
 		5F99A8400F77CD4A14E85842 /* Pods */ = {
@@ -381,6 +392,7 @@
 				18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */,
 				18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */,
 				18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */,
+				268B02B527F6824100980723 /* CheckViewController.swift in Sources */,
 				18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */,
 				263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */,
 				18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */,
