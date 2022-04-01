@@ -19,6 +19,9 @@ struct Book {
 }
 
 struct ExchangeHistory {
+    
+    var applyDate : String
+    
     var registeredBookTitle: String
     var applieddBookTitle: String
     
@@ -55,8 +58,8 @@ class ExchangeHistoryDummyData {
     static let shared = ExchangeHistoryDummyData()
     
     var histories: [ExchangeHistory] = [
-        ExchangeHistory(registeredBookTitle: "왜 설탕은 달고 소금은 짤까", applieddBookTitle: "설탕과 소금의 충격적인 진실", registeredBookImage: "2", applieddBookImage: "1"),
-        ExchangeHistory(registeredBookTitle: "때때로 난 고양이에게 깔리고 싶다", applieddBookTitle: "난 강아지가 더 좋은걸", registeredBookImage: "1", applieddBookImage: "2")
+        ExchangeHistory(applyDate: "2022-03-14", registeredBookTitle: "왜 설탕은 달고 소금은 짤까", applieddBookTitle: "설탕과 소금의 충격적인 진실", registeredBookImage: "1", applieddBookImage: "2"),
+        ExchangeHistory(applyDate: "2202-03-13", registeredBookTitle: "때때로 난 고양이에게 깔리고 싶다", applieddBookTitle: "난 강아지가 더 좋은걸", registeredBookImage: "2", applieddBookImage: "1")
     ]
 }
 

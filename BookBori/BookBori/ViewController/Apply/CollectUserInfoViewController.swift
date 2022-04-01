@@ -67,7 +67,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
             // 신청내역 조회 화면에서 이 화면을 띄웠을 때
             checkToPush()
             let registerSB = UIStoryboard(name: "Register", bundle: nil)
-            let checkVC = registerSB.instantiateViewController(withIdentifier: "CompleteRegisterVC")
+            let checkVC = registerSB.instantiateViewController(withIdentifier: "CheckVC")
             self.navigationController?.pushViewController(checkVC, animated: true)
         } else {
             // 도서 신청 중 이 화면을 띄웠을 때
