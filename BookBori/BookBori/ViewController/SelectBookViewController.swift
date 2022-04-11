@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SelectBookViewController: UIViewController {
     
@@ -218,7 +219,15 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = booksCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BooksCollectionViewCell
         
         cell.titleLabel.text = returnArray()[indexPath.row].bookTitle
-        cell.coverImageView.image = UIImage(named: returnArray()[indexPath.row].imgUrl)
+        cell.coverImageView.kf.indicatorType = .activity
+        cell.coverImageView.kf.setImage(
+            with: URL(string: returnArray()[indexPath.row].imgUrl),
+            placeholder: UIImage(named: "imageNotFound"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.7)),
+                .cacheOriginalImage
+            ])
         
         // titleLabel dynamicFont
         cell.titleLabel.dynamicFont(fontSize: 11)
