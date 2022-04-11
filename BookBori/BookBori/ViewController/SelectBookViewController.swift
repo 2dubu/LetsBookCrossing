@@ -12,9 +12,11 @@ class SelectBookViewController: UIViewController {
     //MARK: - constant, variable
 
     let searchBar = UISearchBar()
-    var filteredArray : [Book] = BookDummyData.shared.books  // 검색에 맞는 데이터만 필터링해서 담는 Book 배열
+    var baseArray: [BookData] = (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList)!
+    var filteredArray: [BookData] = []
     
     var currentPage: Int = 1
+    var currentPageForSearch: Int = 1
     var fetchingMore = true
     
     var refreshControl = UIRefreshControl()
@@ -98,22 +100,31 @@ class SelectBookViewController: UIViewController {
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
             self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
         } else  {
-            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
             filteredArray.removeAll()
-            guard let text = searchBar.text else { return }
-            for i in BookDummyData.shared.books {
-                if i.title.lowercased().contains(text.lowercased()) {
-                    filteredArray.append(i)
+            print("지금 몇개야?", filteredArray.count)
+            
+            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
+            self.indicatorView.isHidden = false
+            self.indicatorView.startAnimating()
+            
+            getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
+                self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
+                self.booksCollectionView.reloadData()
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
+                
+                self.booksCollectionView.reloadData()
+                
+                print("!!!!!!!!!!!!!", filteredArray)
+                
+                // 검색 결과 없을 땐 defaultImage 표시
+                if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
+                    defaultImageView.isHidden = false
+                    booksCollectionView.isScrollEnabled = false
+                } else {
+                    defaultImageView.isHidden = true
+                    booksCollectionView.isScrollEnabled = true
                 }
-            }
-            self.booksCollectionView.reloadData()
-            // 검색 결과 없을 땐 defaultImage 표시
-            if filteredArray.count == 0 && (DeviceManager.shared.networkStatus) == true {
-                defaultImageView.isHidden = false
-                booksCollectionView.isScrollEnabled = false
-            } else {
-                defaultImageView.isHidden = true
-                booksCollectionView.isScrollEnabled = true
             }
         }
     }
@@ -124,17 +135,29 @@ class SelectBookViewController: UIViewController {
         let contentHeight = scrollView.contentSize.height
                 
         if offsetY > contentHeight - scrollView.frame.height {
-            if SeoulBookBogoDataManager.shared.applicableBookList?.data?.nextPage == "N" && fetchingMore {
+            if SeoulBookBogoDataManager.shared.applicableBookList?.data.nextPage == "Y" && fetchingMore {
                 
                 fetchingMore = false
                 self.indicatorView.isHidden = false
                 self.indicatorView.startAnimating()
                 
-                getApplicableBookList(pagesize: 21, page: self.currentPage + 1, keyword: "") {
-                    self.booksCollectionView.reloadData()
-                    self.indicatorView.stopAnimating()
-                    self.indicatorView.isHidden = true
-                    self.fetchingMore = true
+                // 만약 도서를 검색한 상태라면
+                if self.searchBar.text?.isEmpty == false {
+                    currentPageForSearch += 1
+                    getApplicableBookList(pagesize: 21, page: self.currentPageForSearch, keyword: self.searchBar.text!) {
+                        self.booksCollectionView.reloadData()
+                        self.indicatorView.stopAnimating()
+                        self.indicatorView.isHidden = true
+                        self.fetchingMore = true
+                    }
+                } else {
+                    currentPage += 1
+                    getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: "") {
+                        self.booksCollectionView.reloadData()
+                        self.indicatorView.stopAnimating()
+                        self.indicatorView.isHidden = true
+                        self.fetchingMore = true
+                    }
                 }
             }
         }
@@ -161,8 +184,7 @@ extension SelectBookViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let text = self.searchBar.text else { return }
         if text.isEmpty {
-            // 신청 가능한 모든 데이터를 서버로부터 불러오기
-            filteredArray = BookDummyData.shared.books
+            // X버튼 또는 서치바에 있는 텍스트가 모두 지워졌을 때
             self.booksCollectionView.reloadData()
             defaultImageView.isHidden = true
             booksCollectionView.isScrollEnabled = true
@@ -179,16 +201,24 @@ extension SelectBookViewController: UISearchBarDelegate {
 //MARK: - collectionView
 extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    func returnArray() -> [BookData] {
+        if self.searchBar.text?.isEmpty == true {
+            return baseArray
+        } else {
+            return filteredArray
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filteredArray.count
+        returnArray().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = booksCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BooksCollectionViewCell
         
-        cell.titleLabel.text = filteredArray[indexPath.row].title
-        cell.coverImageView.image = UIImage(named: filteredArray[indexPath.row].image)
+        cell.titleLabel.text = returnArray()[indexPath.row].bookTitle
+        cell.coverImageView.image = UIImage(named: returnArray()[indexPath.row].imgUrl)
         
         // titleLabel dynamicFont
         cell.titleLabel.dynamicFont(fontSize: 11)
@@ -222,6 +252,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionViewHearderHeight)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 22)
     }

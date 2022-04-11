@@ -28,8 +28,8 @@ struct Header: Codable {
 //MARK: - SelectBookVC
 
 struct ApplicableBookList: Codable {
-    let header: Header?
-    let data: BookListData?
+    let header: Header
+    let data: BookListData
 }
 
 struct BookListData: Codable {
@@ -45,10 +45,12 @@ struct BookData: Codable {
 }
 
 func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion: @escaping ()->()) {
-    let urlString = "https://gschool.fortune8282.co.kr/bookList.asp?pagesize=\(pagesize)&page=\(page)&keyword=\(keyword)"
+    let baseURL = "https://gschool.fortune8282.co.kr/bookList.asp?pagesize=\(pagesize)&page=\(page)&keyword="
+    let encodingKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    let url = baseURL + "\(encodingKeyword ?? "")"
     
     // HTTP Request
-    AF.request(urlString).responseJSON { (response) in
+    AF.request(url).responseJSON { (response) in
         switch response.result {
         case .success(let res):
             do {
