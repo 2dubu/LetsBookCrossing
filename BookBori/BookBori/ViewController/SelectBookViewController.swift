@@ -14,6 +14,9 @@ class SelectBookViewController: UIViewController {
     let searchBar = UISearchBar()
     var filteredArray : [Book] = BookDummyData.shared.books  // 검색에 맞는 데이터만 필터링해서 담는 Book 배열
     
+    var currentPage: Int = 1
+    var fetchingMore = true
+    
     var refreshControl = UIRefreshControl()
     var collectionViewHearderHeight = 28 + (UIScreen.main.bounds.width-40)*0.2
     
@@ -21,6 +24,8 @@ class SelectBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        indicatorView.isHidden = true
         
         booksCollectionView.refreshControl = refreshControl
         booksCollectionView.delegate = self
@@ -45,6 +50,7 @@ class SelectBookViewController: UIViewController {
     @IBOutlet weak var defaultImageView: UIImageView!
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
@@ -112,10 +118,26 @@ class SelectBookViewController: UIViewController {
         }
     }
     
-    // 스크롤 뷰 아래에서 바운스 X
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.searchBar.endEditing(true)
-        scrollView.bounces = scrollView.contentOffset.y < 300
+    // 애니메이션이 끝난 후 스크롤뷰의 가장 아래일 때 실행
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+                
+        if offsetY > contentHeight - scrollView.frame.height {
+            if SeoulBookBogoDataManager.shared.applicableBookList?.data?.nextPage == "N" && fetchingMore {
+                
+                fetchingMore = false
+                self.indicatorView.isHidden = false
+                self.indicatorView.startAnimating()
+                
+                getApplicableBookList(pagesize: 21, page: self.currentPage + 1, keyword: "") {
+                    self.booksCollectionView.reloadData()
+                    self.indicatorView.stopAnimating()
+                    self.indicatorView.isHidden = true
+                    self.fetchingMore = true
+                }
+            }
+        }
     }
     
     // refreshControl
