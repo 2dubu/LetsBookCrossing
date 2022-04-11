@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-class DataManager {
-    static let shared: DataManager = DataManager()
+class SeoulBookBogoDataManager {
+    static let shared: SeoulBookBogoDataManager = SeoulBookBogoDataManager()
     
     var applicableBookList: ApplicableBookList?
     var isApplicableBook: IsApplicableBook?
-    var infoApplyBook: InfoApplyBook?
+    var appliedBookInfo: AppliedBookInfo?
     var isApplicableUser: IsApplicableUser?
     
     private init () {
@@ -55,8 +55,8 @@ func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
                 let json = try JSONDecoder().decode(ApplicableBookList.self, from: jsonData)
 
-                DataManager.shared.applicableBookList = json
-                print("succes!", DataManager.shared.applicableBookList)
+                SeoulBookBogoDataManager.shared.applicableBookList = json
+                print("succes!", SeoulBookBogoDataManager.shared.applicableBookList)
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -79,7 +79,7 @@ struct isApplicableBookData: Codable {
     let canApply: Bool
 }
 
-func getIsApplicableBook(bookPk: Int, completion: @escaping ()->()) {
+func getIsApplicableBook(bookPK: Int, completion: @escaping ()->()) {
     let urlString = ""
     
     // HTTP Request
@@ -90,8 +90,8 @@ func getIsApplicableBook(bookPk: Int, completion: @escaping ()->()) {
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
                 let json = try JSONDecoder().decode(IsApplicableBook.self, from: jsonData)
 
-                DataManager.shared.isApplicableBook = json
-                print("succes!", DataManager.shared.isApplicableBook)
+                SeoulBookBogoDataManager.shared.isApplicableBook = json
+                print("succes!", SeoulBookBogoDataManager.shared.isApplicableBook)
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -105,18 +105,18 @@ func getIsApplicableBook(bookPk: Int, completion: @escaping ()->()) {
 
 //MARK: - GuideVC
 
-struct InfoApplyBook: Codable {
+struct AppliedBookInfo: Codable {
     let header: Header?
-    let data: infoApplyData?
+    let data: AppliedBookData? // 이름 수정
 }
 
-struct infoApplyData: Codable {
+struct AppliedBookData: Codable { // 이름 수정
     let writer: String
     let pubDate: Date
     let publisher: Date
 }
 
-func getInfoApplyBook(bookPk: Int, completion: @escaping ()->()) {
+func getAppliedBookInfo(bookPK: Int, completion: @escaping ()->()) {
     let urlString = ""
     
     // HTTP Request
@@ -125,10 +125,10 @@ func getInfoApplyBook(bookPk: Int, completion: @escaping ()->()) {
         case .success(let res):
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-                let json = try JSONDecoder().decode(InfoApplyBook.self, from: jsonData)
+                let json = try JSONDecoder().decode(AppliedBookInfo.self, from: jsonData)
 
-                DataManager.shared.infoApplyBook = json
-                print("succes!", DataManager.shared.infoApplyBook)
+                SeoulBookBogoDataManager.shared.appliedBookInfo = json
+                print("succes!", SeoulBookBogoDataManager.shared.appliedBookInfo)
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -162,8 +162,8 @@ func getIsApplicableUser(phoneNum: String, completion: @escaping ()->()) {
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
                 let json = try JSONDecoder().decode(IsApplicableUser.self, from: jsonData)
 
-                DataManager.shared.isApplicableUser = json
-                print("succes!", DataManager.shared.isApplicableUser)
+                SeoulBookBogoDataManager.shared.isApplicableUser = json
+                print("succes!", SeoulBookBogoDataManager.shared.isApplicableUser)
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
