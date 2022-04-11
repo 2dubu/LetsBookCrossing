@@ -31,7 +31,7 @@
 		18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */; };
 		18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */; };
 		18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E127C4AD53000B2526 /* SearchBookViewController.swift */; };
-		18F641E427C4C61F000B2526 /* searchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E327C4C61F000B2526 /* searchData.swift */; };
+		18F641E427C4C61F000B2526 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E327C4C61F000B2526 /* SearchData.swift */; };
 		18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */; };
 		18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */; };
 		263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */; };
@@ -76,7 +76,7 @@
 		18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectInputViewController.swift; sourceTree = "<group>"; };
 		18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarcodeViewController.swift; sourceTree = "<group>"; };
 		18F641E127C4AD53000B2526 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
-		18F641E327C4C61F000B2526 /* searchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchData.swift; sourceTree = "<group>"; };
+		18F641E327C4C61F000B2526 /* SearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegisterViewController.swift; sourceTree = "<group>"; };
 		263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayToParticipateCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				18E6015227E73C20005A993A /* GetData.swift */,
-				18F641E327C4C61F000B2526 /* searchData.swift */,
+				18F641E327C4C61F000B2526 /* SearchData.swift */,
 				18F641D127C4744E000B2526 /* DummyData.swift */,
 			);
 			path = Model;
@@ -406,7 +406,7 @@
 				18E6015327E73C20005A993A /* GetData.swift in Sources */,
 				18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */,
 				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,
-				18F641E427C4C61F000B2526 /* searchData.swift in Sources */,
+				18F641E427C4C61F000B2526 /* SearchData.swift in Sources */,
 				26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */,
 				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
 				18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */,
@@ -564,7 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9GHM5422CF;
+				DEVELOPMENT_TEAM = 6JLYLDSW4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -581,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -597,7 +597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9GHM5422CF;
+				DEVELOPMENT_TEAM = 6JLYLDSW4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -40,10 +40,12 @@ class MainViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
-        let applySB = UIStoryboard(name: "Apply", bundle: nil)
-        let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
-        selectBookNC.modalPresentationStyle = .fullScreen
-        self.present(selectBookNC, animated: true, completion: nil)
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
+            let applySB = UIStoryboard(name: "Apply", bundle: nil)
+            let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
+            selectBookNC.modalPresentationStyle = .fullScreen
+            self.present(selectBookNC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
