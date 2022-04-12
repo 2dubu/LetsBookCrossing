@@ -105,35 +105,36 @@ class ScanBarcodeViewController: UIViewController {
             "Content-Type": "application/json; charset=utf-8"
         ]
         if let urlEncoding = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            checkDeviceNetworkStatus()
-            self.indicatorView.isHidden = false
-            self.indicatorView.startAnimating()
-            
-            let configuration = URLSessionConfiguration.default
-            configuration.timeoutIntervalForRequest = 10 // seconds
-            configuration.timeoutIntervalForResource = 10
-            AF
-                .request(urlEncoding, method: .get, headers: headers, requestModifier: { $0.timeoutInterval = 5 })
-                .responseJSON { response in
-                    switch response.result {
-                    case .success(let jsonData):
-                        do {
-                            let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
-                            let searchInfo = try JSONDecoder().decode(SearchResultOfNaver.self, from: json)
-                            
-                            dataManager.shared.searchResultOfNaver = searchInfo
-                            completion(.success(searchInfo))
-                        } catch(let error) {
+            checkDeviceNetworkStatusToScanBarcode {
+                self.indicatorView.isHidden = false
+                self.indicatorView.startAnimating()
+                
+                let configuration = URLSessionConfiguration.default
+                configuration.timeoutIntervalForRequest = 10 // seconds
+                configuration.timeoutIntervalForResource = 10
+                AF
+                    .request(urlEncoding, method: .get, headers: headers, requestModifier: { $0.timeoutInterval = 5 })
+                    .responseJSON { response in
+                        switch response.result {
+                        case .success(let jsonData):
+                            do {
+                                let json = try JSONSerialization.data(withJSONObject: jsonData, options: .prettyPrinted)
+                                let searchInfo = try JSONDecoder().decode(SearchResultOfNaver.self, from: json)
+                                
+                                dataManager.shared.searchResultOfNaver = searchInfo
+                                completion(.success(searchInfo))
+                            } catch(let error) {
+                                completion(.failure(error))
+                            }
+                        case .failure(let error):
                             completion(.failure(error))
                         }
-                    case .failure(let error):
-                        completion(.failure(error))
                     }
-                }
+            }
         }
     }
     
-    private func checkDeviceNetworkStatus() {
+    private func checkDeviceNetworkStatusToScanBarcode(completion: @escaping ()->()) {
         if(DeviceManager.shared.networkStatus) == false {
             // 네트워크 연결 X
             self.indicatorView.stopAnimating()
@@ -143,6 +144,8 @@ class ScanBarcodeViewController: UIViewController {
             } handler2: { _ in
                 self.navigationController?.popViewController(animated: true)
             }
+        } else {
+            completion()
         }
     }
     

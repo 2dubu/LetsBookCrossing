@@ -97,7 +97,9 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        showSearchResult()
+        checkDeviceNetworkStatus {
+            self.showSearchResult()
+        }
     }
     
     func requestBookBySearch(
@@ -112,7 +114,6 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             "Content-Type": "application/json; charset=utf-8"
         ]
         if let urlEncoding = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            checkDeviceNetworkStatus()
             self.indicatorView.isHidden = false
             self.indicatorView.startAnimating()
             
@@ -145,7 +146,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    private func checkDeviceNetworkStatus() {
+    private func checkDeviceNetworkStatus(completion: @escaping ()->()) {
         if(DeviceManager.shared.networkStatus) == false {
             // 네트워크 연결 X
             self.indicatorView.stopAnimating()
@@ -155,6 +156,8 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
             } handler2: { _ in
                 self.navigationController?.popViewController(animated: true)
             }
+        } else {
+            completion()
         }
     }
     
