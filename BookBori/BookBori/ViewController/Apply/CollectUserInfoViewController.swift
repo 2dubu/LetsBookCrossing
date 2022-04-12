@@ -159,9 +159,9 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
             userPhoneNumber = phoneNumberText
             userPassword = passwordText
         } else if phoneNumberSuitable == false {
-            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.showAlert1(title: "안내", message: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil)
         } else {
-            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "비밀번호 형식이 올바르지 않아요\n다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.showAlert1(title: "안내", message: "비밀번호 형식이 올바르지 않아요\n다시 한 번 확인해 주세요", buttonTitle: "확인", handler: nil)
         }
     }
     

@@ -8,26 +8,22 @@
 import Foundation
 import UIKit
 
-// MARK: UtilitiesForAlert
-class UtilitiesForAlert {
-    
-    // Alert Dialog
-    class func returnAlert(title: String, msg: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?) -> UIAlertController {
+extension UIViewController {
+    func showAlert1(title: String, message: String, buttonTitle: String, handler: ((UIAlertAction) -> Swift.Void)?) {
         
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: buttonTitle, style: .default, handler: handler)
         
         defaultAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
         alertController.addAction(defaultAction)
         
-        return alertController
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    // buttonTitle2 is cancelAction's title
-    class func returnAlert2(title: String, msg: String, buttonTitle1: String, buttonTitle2: String, handler: ((UIAlertAction) -> Swift.Void)?) -> UIAlertController{
+    // 2개의 버튼을 가진 Alert (buttonTitle2는 cancelAction의 이름)
+    func showAlert2(title: String, message: String, buttonTitle1: String, buttonTitle2: String, handler: ((UIAlertAction) -> Swift.Void)?) {
         
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: buttonTitle1, style: .default, handler: handler)
         let cancelAction = UIAlertAction(title: buttonTitle2, style: .cancel, handler: nil)
@@ -38,6 +34,6 @@ class UtilitiesForAlert {
         alertController.addAction(defaultAction)
         alertController.addAction(cancelAction)
         
-        return alertController
+        self.present(alertController, animated: true, completion: nil)
     }
 }

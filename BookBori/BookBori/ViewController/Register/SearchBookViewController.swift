@@ -68,7 +68,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         self.searchBar.endEditing(true)
         guard let text = self.searchBar.text else { return }
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.showAlert1(title: "안내", message: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil)
         } else  {
             if let queryValue: String = self.searchBar.text {
                 requestBookBySearch(queryValue) { result in
@@ -174,7 +174,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                 
             })
             let againAction: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { _ in
-//                self.searchBarSearchButtonClicked(self.searchBar)
+                self.searchBarSearchButtonClicked(self.searchBar)
             })
             okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
             againAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")

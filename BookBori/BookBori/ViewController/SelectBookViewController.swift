@@ -129,7 +129,7 @@ class SelectBookViewController: UIViewController {
         self.searchBar.endEditing(true)
         guard let text = self.searchBar.text else { return }
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil), animated: true, completion: nil)
+            self.showAlert1(title: "안내", message: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil)
         } else  {
             filteredArray.removeAll()
             print("지금 몇개야?", filteredArray.count)

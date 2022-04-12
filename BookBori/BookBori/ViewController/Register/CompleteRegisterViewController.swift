@@ -52,7 +52,7 @@ class CompleteRegisterViewController: UIViewController {
         
         if isPresentedToMain() {
             // 교환 취소
-            self.present(UtilitiesForAlert.returnAlert(title: "안내", msg: "아직 준비 중인 기능입니다.", buttonTitle: "확인", handler: nil), animated: true)
+            self.showAlert1(title: "안내", message: "아직 준비 중인 기능입니다.", buttonTitle: "확인", handler: nil)
         } else {
             self.dismiss(animated: true)
         }

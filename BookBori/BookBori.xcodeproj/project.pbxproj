@@ -21,7 +21,7 @@
 		18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C027C470EB000B2526 /* DeviceConfig.swift */; };
 		18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C227C470F2000B2526 /* LabelExtension.swift */; };
 		18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C427C470F7000B2526 /* NavigationExtension.swift */; };
-		18F641C727C4710D000B2526 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C627C4710D000B2526 /* Utilities.swift */; };
+		18F641C727C4710D000B2526 /* VCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C627C4710D000B2526 /* VCExtension.swift */; };
 		18F641CA27C47214000B2526 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C927C47214000B2526 /* MainViewController.swift */; };
 		18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CB27C4731F000B2526 /* Apply.storyboard */; };
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
@@ -66,7 +66,7 @@
 		18F641C027C470EB000B2526 /* DeviceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConfig.swift; sourceTree = "<group>"; };
 		18F641C227C470F2000B2526 /* LabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		18F641C427C470F7000B2526 /* NavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
-		18F641C627C4710D000B2526 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		18F641C627C4710D000B2526 /* VCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtension.swift; sourceTree = "<group>"; };
 		18F641C927C47214000B2526 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18F641CB27C4731F000B2526 /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -163,9 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				18F641DB27C4AB92000B2526 /* Constants.swift */,
-				18F641C627C4710D000B2526 /* Utilities.swift */,
 				18BA6C7A27DF22C00031405D /* Design.swift */,
 				18F641C027C470EB000B2526 /* DeviceConfig.swift */,
+				18F641C627C4710D000B2526 /* VCExtension.swift */,
 				18F641C227C470F2000B2526 /* LabelExtension.swift */,
 				18F641C427C470F7000B2526 /* NavigationExtension.swift */,
 				18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */,
@@ -408,7 +408,7 @@
 				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,
 				18F641E427C4C61F000B2526 /* SearchData.swift in Sources */,
 				26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */,
-				18F641C727C4710D000B2526 /* Utilities.swift in Sources */,
+				18F641C727C4710D000B2526 /* VCExtension.swift in Sources */,
 				18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
 				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
