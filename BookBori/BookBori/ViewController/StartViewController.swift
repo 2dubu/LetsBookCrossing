@@ -31,11 +31,11 @@ class StartViewController: UIViewController {
     
     //MARK: - LifeCycle
     override func viewDidAppear(_ animated: Bool) {
-        checkDeviceNetworkStatus()
+        checkDeviceNetworkStatusAndPresentView()
     }
     
     //MARK: - function
-    func checkDeviceNetworkStatus() {
+    func checkDeviceNetworkStatusAndPresentView() {
         if(DeviceManager.shared.networkStatus) {
             // 네트워크 연결 O
             let mainNav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNC")
@@ -52,7 +52,7 @@ class StartViewController: UIViewController {
                     """,
                                                               preferredStyle: .alert)
             let action: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { (ACTION) in
-                self.checkDeviceNetworkStatus()
+                self.checkDeviceNetworkStatusAndPresentView()
             })
             action.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
             alert.addAction(action)
