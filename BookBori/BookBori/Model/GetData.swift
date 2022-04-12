@@ -73,8 +73,8 @@ func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion
 //MARK: - IsApplicableBook
 
 struct IsApplicableBook: Codable {
-    let header: Header?
-    let data: isApplicableBookData?
+    let header: Header
+    let data: isApplicableBookData
 }
 
 struct isApplicableBookData: Codable {
@@ -82,16 +82,16 @@ struct isApplicableBookData: Codable {
 }
 
 func getIsApplicableBook(bookPK: Int, completion: @escaping ()->()) {
-    let urlString = ""
+    let url = "https://gschool.fortune8282.co.kr/isAppBook.asp?bookPK=\(bookPK)"
     
     // HTTP Request
-    AF.request(urlString).responseJSON { (response) in
+    AF.request(url).responseJSON { (response) in
         switch response.result {
         case .success(let res):
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
                 let json = try JSONDecoder().decode(IsApplicableBook.self, from: jsonData)
-
+                
                 SeoulBookBogoDataManager.shared.isApplicableBook = json
                 print("succes!", SeoulBookBogoDataManager.shared.isApplicableBook)
             } catch(let err) {
@@ -108,8 +108,8 @@ func getIsApplicableBook(bookPK: Int, completion: @escaping ()->()) {
 //MARK: - GuideVC
 
 struct AppliedBookInfo: Codable {
-    let header: Header?
-    let data: AppliedBookData? // 이름 수정
+    let header: Header
+    let data: AppliedBookData // 이름 수정
 }
 
 struct AppliedBookData: Codable { // 이름 수정
@@ -145,8 +145,8 @@ func getAppliedBookInfo(bookPK: Int, completion: @escaping ()->()) {
 //MARK: - CollectUserInfoVC
 
 struct IsApplicableUser: Codable {
-    let header: Header?
-    let data: IsApplicableUserData?
+    let header: Header
+    let data: IsApplicableUserData
 }
 
 struct IsApplicableUserData: Codable {

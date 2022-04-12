@@ -20,6 +20,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
 //    let db = Firestore.firestore()
 //    let user = Auth.auth().currentUser
     var searchItem : SearchResultOfNaver.BookInfo?
+    var isApplicableBook = SeoulBookBogoDataManager.shared.isApplicableBook
     
     //MARK: - IBOutlet
     
@@ -140,6 +141,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
         guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
         self.navigationController?.pushViewController(completeRegisterVC, animated: true)
+        
+        getIsApplicableBook(bookPK:1) {
+            self.checkApplicableAndShowAlert()
+        }
         
         /*
         let dateFormatter = DateFormatter()
