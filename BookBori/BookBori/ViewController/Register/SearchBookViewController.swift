@@ -137,18 +137,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                         }
                     case .failure(let error):
                         if error._code == NSURLErrorTimedOut {
-                            let timeOutAlert : UIAlertController = UIAlertController(title: "요청 시간 초과",
-                                message: """
-                                네트워크가 불안정합니다.
-                                네트워크 상태를 확인해주세요.
-                                """,
-                                preferredStyle: .alert)
-                            let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
-                                
-                            })
-                            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-                            timeOutAlert.addAction(okAction)
-                            self.present(timeOutAlert, animated: true, completion: nil)
+                            self.showAlert1(title: "요청 시간 초과", message: "네트워크가 불안정합니다.\n네트워크 상태를 확인해주세요.", buttonTitle: "확인", handler: nil)
                         }
                         completion(.failure(error))
                     }
@@ -159,28 +148,13 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     private func checkDeviceNetworkStatus() {
         if(DeviceManager.shared.networkStatus) == false {
             // 네트워크 연결 X
-            OperationQueue.main.addOperation {
-                
-            }
             self.indicatorView.stopAnimating()
             self.indicatorView.isHidden = true
-            let alert : UIAlertController = UIAlertController(title: "서버에 연결할 수 없습니다",
-                message: """
-                네트워크가 연결되지 않았습니다.
-                Wi-Fi 또는 데이터를 활성화 해주세요.
-                """,
-                preferredStyle: .alert)
-            let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
-                
-            })
-            let againAction: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { _ in
+            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
                 self.searchBarSearchButtonClicked(self.searchBar)
-            })
-            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-            againAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-            alert.addAction(okAction)
-            alert.addAction(againAction)
-            present(alert, animated: true, completion: nil)
+            } handler2: { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

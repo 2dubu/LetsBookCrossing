@@ -21,12 +21,12 @@ extension UIViewController {
     }
     
     // 2개의 버튼을 가진 Alert (buttonTitle2는 cancelAction의 이름)
-    func showAlert2(title: String, message: String, buttonTitle1: String, buttonTitle2: String, handler: ((UIAlertAction) -> Swift.Void)?) {
+    func showAlert2(title: String, message: String, buttonTitle1: String, buttonTitle2: String, handler1: ((UIAlertAction) -> Swift.Void)?, handler2: ((UIAlertAction) -> Swift.Void)?) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let defaultAction = UIAlertAction(title: buttonTitle1, style: .default, handler: handler)
-        let cancelAction = UIAlertAction(title: buttonTitle2, style: .cancel, handler: nil)
+        let defaultAction = UIAlertAction(title: buttonTitle1, style: .default, handler: handler1)
+        let cancelAction = UIAlertAction(title: buttonTitle2, style: .cancel, handler: handler2)
         
         defaultAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
         cancelAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")

@@ -58,14 +58,10 @@ class SetRegistrationMethodViewController: UIViewController {
                       print("카메라 권한 허용")
                   } else {
                       print("카메라 권한 거부")
-                      let cameraPermissionAlert = UIAlertController(title: "책보리가 카메라에 접근하려고 합니다", message: "바코드 스캔을 위해 카메라 접근 권한을 허가해 주세요", preferredStyle: .alert)
-                      let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                      self.showAlert1(title: "책보리가 카메라에 접근하려고 합니다", message: "바코드 스캔을 위해 카메라 접근 권한을 허가해 주세요", buttonTitle: "확인") { _ in
                           guard let appSettings = URL(string: UIApplication.openSettingsURLString) else { return }
-                      UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+                          UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
                       }
-                      cameraPermissionAlert.addAction(confirmAction)
-                      self.present(cameraPermissionAlert, animated: true, completion: nil)
-                      confirmAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
                   }
               }
           })

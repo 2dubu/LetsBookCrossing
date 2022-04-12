@@ -138,18 +138,12 @@ class ScanBarcodeViewController: UIViewController {
             // 네트워크 연결 X
             self.indicatorView.stopAnimating()
             self.indicatorView.isHidden = true
-            let alert : UIAlertController = UIAlertController(title: "서버에 연결할 수 없습니다",
-                message: """
-                네트워크가 연결되지 않았습니다.
-                Wi-Fi 또는 데이터를 활성화 해주세요.
-                """,
-                preferredStyle: .alert)
-            let againAction: UIAlertAction = UIAlertAction(title: "다시 시도", style: .default, handler: { _ in
+            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
                 self.captureSession.startRunning()
-            })
-            againAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-            alert.addAction(againAction)
-            present(alert, animated: true, completion: nil)
+            } handler2: { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+
         }
     }
     
@@ -204,13 +198,9 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.indicatorView.isHidden = true
                         
                         if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
-                            let ac = UIAlertController(title: "검색 결과가 없습니다", message: "검색 결과가 없습니다. 다른 등록 방법을 사용해주세요.", preferredStyle: .alert)
-                            let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
+                            self.showAlert1(title: "검색 결과가 없습니다", message: "검색 결과가 없습니다. 다른 등록 방법을 사용해주세요.", buttonTitle: "확인") { _ in
                                 self.navigationController?.popViewController(animated: true)
-                            })
-                            okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-                            ac.addAction(okAction)
-                            self.present(ac, animated: true)
+                            }
                         } else {
                             guard let directInputVC = self.storyboard?.instantiateViewController(withIdentifier: "DirectInputVC") else { return }
                             self.navigationController?.pushViewController(directInputVC, animated: true)
@@ -224,12 +214,7 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func failed() {
-        let ac = UIAlertController(title: "스캔이 지원되지 않습니다", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default)
-        okAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-        ac.addAction(okAction)
-        self.present(ac, animated: true)
-        present(ac, animated: true)
+        self.showAlert1(title: "스캔이 지원되지 않습니다", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", buttonTitle: "확인", handler: nil)
         captureSession = nil
     }
 }
