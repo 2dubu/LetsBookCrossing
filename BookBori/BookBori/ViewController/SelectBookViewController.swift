@@ -42,9 +42,14 @@ class SelectBookViewController: UIViewController {
         
         setWhiteView()
         initSearchBar()
+        setScrollUpButton()
         
         defaultImageView.image = UIImage(named: "selectCollectionViewPlaceholder")
         defaultImageView.isHidden = true
+        
+        self.view.bringSubviewToFront(self.refreshControl)
+        refreshControl.attributedTitle = NSAttributedString(string: "새로고침 중...",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font : UIFont(name: "GmarketSansMedium", size: 20)])
     }
     
 
@@ -54,6 +59,7 @@ class SelectBookViewController: UIViewController {
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var scrollUpButton: UIButton!
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
@@ -65,11 +71,34 @@ class SelectBookViewController: UIViewController {
         booksCollectionView.reloadData()
     }
     
+    @IBAction func scrollUpButtonTapped(_ sender: Any) {
+        self.booksCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    
     //MARK: - function
     
     // 화면 탭하여 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
+    }
+    
+    func setScrollUpButton() {
+        
+        let imageConfig = UIImage.SymbolConfiguration(scale: .medium)
+        let arrowUp = UIImage(systemName: "arrow.up", withConfiguration: imageConfig)
+        
+        scrollUpButton.tintColor = tintColor
+        scrollUpButton.layer.cornerRadius = UIScreen.main.bounds.width*0.14/2
+        scrollUpButton.backgroundColor = .white
+        scrollUpButton.setImage(arrowUp, for: .normal)
+        scrollUpButton.setTitle("", for: .normal)
+        scrollUpButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollUpButton.layer.shadowOpacity = 0.4
+        scrollUpButton.layer.shadowOffset = .zero
+        scrollUpButton.layer.shadowRadius = 3
+        scrollUpButton.layer.shadowColor = UIColor.black.cgColor
     }
     
     func setWhiteView() {
@@ -166,14 +195,15 @@ class SelectBookViewController: UIViewController {
     
     // refreshControl
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
         if (refreshControl.isRefreshing) {
             refreshControl.endRefreshing()
         }
     }
     
     @objc func refresh() {
-        booksCollectionView.reloadData()
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
+            self.booksCollectionView.reloadData()
+        }
     }
     
 }

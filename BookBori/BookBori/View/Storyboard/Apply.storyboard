@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -143,13 +143,23 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-fv-5Wt">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leq-YT-AIH">
+                                <rect key="frame" x="336" y="798" width="58" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="scrollUpButtonTapped:" destination="OKz-yk-3wv" eventType="touchUpInside" id="Ta7-nb-J05"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FvG-eT-wPD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="8va-QF-pov" secondAttribute="trailing" constant="20" id="9KJ-SJ-ng8"/>
+                            <constraint firstItem="leq-YT-AIH" firstAttribute="width" secondItem="leq-YT-AIH" secondAttribute="height" multiplier="1:1" id="AAp-4q-J3s"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="bottom" secondItem="Z44-rv-rnZ" secondAttribute="bottom" id="IXM-Lv-KfL"/>
                             <constraint firstItem="7Xn-fv-5Wt" firstAttribute="centerY" secondItem="Z44-rv-rnZ" secondAttribute="centerY" id="JeQ-On-183"/>
+                            <constraint firstItem="leq-YT-AIH" firstAttribute="width" secondItem="Z44-rv-rnZ" secondAttribute="width" multiplier="0.14" id="K4K-cU-Ibw"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="centerY" secondItem="Z44-rv-rnZ" secondAttribute="centerY" id="L49-Qj-SJE"/>
                             <constraint firstItem="8va-QF-pov" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" constant="10" id="Owe-iO-H1z"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="width" secondItem="Z44-rv-rnZ" secondAttribute="width" multiplier="0.6" id="TdY-EY-adz"/>
@@ -159,6 +169,8 @@
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="hSA-A1-6bn"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" id="htI-ch-u4G"/>
                             <constraint firstItem="8va-QF-pov" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="r7q-XJ-L5P"/>
+                            <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="leq-YT-AIH" secondAttribute="trailing" constant="20" id="rWy-VG-3NO"/>
+                            <constraint firstAttribute="bottom" secondItem="leq-YT-AIH" secondAttribute="bottom" constant="40" id="vU0-qd-PGt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="제목 검색" id="c8p-ow-aw3">
@@ -174,6 +186,7 @@
                         <outlet property="defaultImageView" destination="NdI-40-WRf" id="yQR-Ta-HpN"/>
                         <outlet property="descriptionLabel" destination="4en-qd-xOv" id="VBZ-3s-qBZ"/>
                         <outlet property="indicatorView" destination="7Xn-fv-5Wt" id="Tvd-iC-gJJ"/>
+                        <outlet property="scrollUpButton" destination="leq-YT-AIH" id="Jhp-Uh-RlR"/>
                         <outlet property="whiteView" destination="8va-QF-pov" id="7Cg-Zp-6Sw"/>
                     </connections>
                 </viewController>

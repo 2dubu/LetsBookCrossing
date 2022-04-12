@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 let backgroundColor = #colorLiteral(red: 0.9164561629, green: 0.9865347743, blue: 0.8901466727, alpha: 1)
+let tintColor = #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)
 
 // 0.4, 2
 func setButtonShadow(button: UIButton?, shadowRadius: CGFloat?, shadowOpacity: Float?) {
