@@ -15,6 +15,7 @@ class SelectBookViewController: UIViewController {
     let searchBar = UISearchBar()
     var baseArray: [BookData] = (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList)!
     var filteredArray: [BookData] = []
+    var isBaseArray = true
     
     var currentPage: Int = 1
     var currentPageForSearch: Int = 1
@@ -140,11 +141,10 @@ class SelectBookViewController: UIViewController {
             
             getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
                 self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
+                isBaseArray = false
                 self.booksCollectionView.reloadData()
                 self.indicatorView.stopAnimating()
                 self.indicatorView.isHidden = true
-                
-                self.booksCollectionView.reloadData()
                 
                 print("!!!!!!!!!!!!!", filteredArray)
                 
@@ -224,6 +224,7 @@ extension SelectBookViewController: UISearchBarDelegate {
             self.booksCollectionView.reloadData()
             defaultImageView.isHidden = true
             booksCollectionView.isScrollEnabled = true
+            isBaseArray = true
         }
     }
     
@@ -238,7 +239,7 @@ extension SelectBookViewController: UISearchBarDelegate {
 extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func returnArray() -> [BookData] {
-        if self.searchBar.text?.isEmpty == true {
+        if isBaseArray == true {
             return baseArray
         } else {
             return filteredArray
@@ -287,6 +288,11 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        applyBookPK = returnArray()[indexPath.row].bookPK
+        applyBookTitle = returnArray()[indexPath.row].bookTitle
+        applyBookImgURL = returnArray()[indexPath.row].imgUrl
+        
         bookApplied = BookDummyData.shared.books[indexPath.row]
         let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
         self.navigationController?.pushViewController(guideVC, animated: true)
@@ -300,6 +306,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 22)
     }
+    
 }
 
 

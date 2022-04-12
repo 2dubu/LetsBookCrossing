@@ -14,3 +14,8 @@ var bookRegister : Book?
 
 var userPhoneNumber : String?
 var userPassword : String?
+
+// 신청책 정보
+var applyBookPK : String?
+var applyBookTitle : String?
+var applyBookImgURL : String?

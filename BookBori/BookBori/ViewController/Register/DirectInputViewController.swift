@@ -137,7 +137,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
         self.navigationController?.pushViewController(completeRegisterVC, animated: true)
         
-        checkApplicableAndShowAlert(bookPK: 1)
+        checkApplicableAndShowAlert(bookPK: "1")
         
         /*
         let dateFormatter = DateFormatter()

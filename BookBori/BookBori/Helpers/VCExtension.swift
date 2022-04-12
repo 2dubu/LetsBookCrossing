@@ -38,7 +38,7 @@ extension UIViewController {
     }
     
     // 신청 불가 도서
-    func checkApplicableAndShowAlert(bookPK: Int) {
+    func checkApplicableAndShowAlert(bookPK: String) {
         // 네트워크 체킹
         getIsApplicableBook(bookPK: bookPK) {
             if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {

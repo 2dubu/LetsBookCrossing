@@ -13,7 +13,7 @@ class SeoulBookBogoDataManager {
     
     var applicableBookList: ApplicableBookList?
     var isApplicableBook: IsApplicableBook?
-    var appliedBookInfo: AppliedBookInfo?
+    var appliedBookInfo: ApplyBookInfo?
     var isApplicableUser: IsApplicableUser?
     
     private init () {
@@ -81,7 +81,7 @@ struct IsApplicableBookData: Codable {
     let canApply: Bool
 }
 
-func getIsApplicableBook(bookPK: Int, completion: @escaping ()->()) {
+func getIsApplicableBook(bookPK: String, completion: @escaping ()->()) {
     let url = "https://gschool.fortune8282.co.kr/isAppBook.asp?bookPK=\(bookPK)"
     
     // HTTP Request
@@ -107,18 +107,18 @@ func getIsApplicableBook(bookPK: Int, completion: @escaping ()->()) {
 
 //MARK: - GuideVC
 
-struct AppliedBookInfo: Codable {
+struct ApplyBookInfo: Codable {
     let header: Header
-    let data: AppliedBookData // 이름 수정
+    let data: ApplyBookData // 이름 수정
 }
 
-struct AppliedBookData: Codable { // 이름 수정
+struct ApplyBookData: Codable { // 이름 수정
     let writer: String
     let pubDate: Date
     let publisher: Date
 }
 
-func getAppliedBookInfo(bookPK: Int, completion: @escaping ()->()) {
+func getApplyBookInfo(bookPK: String, completion: @escaping ()->()) {
     let urlString = ""
     
     // HTTP Request
@@ -127,7 +127,7 @@ func getAppliedBookInfo(bookPK: Int, completion: @escaping ()->()) {
         case .success(let res):
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-                let json = try JSONDecoder().decode(AppliedBookInfo.self, from: jsonData)
+                let json = try JSONDecoder().decode(ApplyBookInfo.self, from: jsonData)
 
                 SeoulBookBogoDataManager.shared.appliedBookInfo = json
                 print("succes!", SeoulBookBogoDataManager.shared.appliedBookInfo)
