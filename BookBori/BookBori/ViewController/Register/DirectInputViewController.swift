@@ -130,21 +130,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBAction func registrationCompleteButtonTapped(_ sender: Any) {
         
         if whetherUploadCoverImage == false {
-            let inputImageAlert = UIAlertController(title: "안내", message: "교환할 책의 사진을 등록해 주세요", preferredStyle: .alert)
-            let inputImageAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            inputImageAlertAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
-
-            inputImageAlert.addAction(inputImageAlertAction)
-            self.present(inputImageAlert, animated: true, completion: nil)
+            self.showAlert1(title: "안내", message: "교환할 책의 사진을 등록해 주세요", buttonTitle: "확인", handler: nil)
         }
         
         bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
         guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
         self.navigationController?.pushViewController(completeRegisterVC, animated: true)
         
-        getIsApplicableBook(bookPK:1) {
-            self.checkApplicableAndShowAlert()
-        }
+        checkApplicableAndShowAlert(bookPK: 1)
         
         /*
         let dateFormatter = DateFormatter()
@@ -216,14 +209,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                     self.coverImagePC.sourceType = .photoLibrary
                     self.present(self.coverImagePC, animated: true, completion: nil)
                 case .denied: print("앨범 권한 거부")
-                    let albumPermissionAlert = UIAlertController(title: "책보리가 사진앨범에 접근하려고 합니다", message: "책보리가 사진앨범에 접근할 수 있도록 허가해 주세요", preferredStyle: .alert)
-                    let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                    self.showAlert1(title: "", message: "책보리가 사진앨범에 접근하려고 합니다", buttonTitle: "확인") {_ in
                         guard let appSettings = URL(string: UIApplication.openSettingsURLString) else { return }
-                    UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
                     }
-                    albumPermissionAlert.addAction(confirmAction)
-                    self.present(albumPermissionAlert, animated: true, completion: nil)
-                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
                 default: break
                 }
             }
@@ -240,14 +229,10 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
                     self.present(self.coverImagePC, animated: true, completion: nil)
                 } else {
                     print("카메라 권한 거부")
-                    let cameraPermissionAlert = UIAlertController(title: "책보리가 카메라에 접근하려고 합니다", message: "책보리가 카메라에 접근할 수 있도록 허가해 주세요", preferredStyle: .alert)
-                    let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                    self.showAlert1(title: "책보리가 카메라에 접근하려고 합니다", message: "책보리가 카메라에 접근할 수 있도록 허가해 주세요", buttonTitle: "확인") {_ in
                         guard let appSettings = URL(string: UIApplication.openSettingsURLString) else { return }
-                    UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
                     }
-                    cameraPermissionAlert.addAction(confirmAction)
-                    self.present(cameraPermissionAlert, animated: true, completion: nil)
-                    confirmAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
                 }
             }
         })

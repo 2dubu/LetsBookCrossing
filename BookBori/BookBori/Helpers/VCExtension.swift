@@ -38,10 +38,12 @@ extension UIViewController {
     }
     
     // 신청 불가 도서
-    func checkApplicableAndShowAlert() {
+    func checkApplicableAndShowAlert(bookPK: Int) {
         // 네트워크 체킹
-        if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
-            showAlert1(title: "신청 불가", message: "갑자기 다른 사람이 이 책 신청 완료하여 안타깝게 됐음.", buttonTitle: "확인", handler: nil)
+        getIsApplicableBook(bookPK: bookPK) {
+            if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
+                self.showAlert1(title: "신청 불가", message: "갑자기 다른 사람이 이 책 신청 완료하여 안타깝게 됐음.", buttonTitle: "확인", handler: nil)
+            }
         }
     }
 }

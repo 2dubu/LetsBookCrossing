@@ -74,10 +74,10 @@ func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion
 
 struct IsApplicableBook: Codable {
     let header: Header
-    let data: isApplicableBookData
+    let data: IsApplicableBookData
 }
 
-struct isApplicableBookData: Codable {
+struct IsApplicableBookData: Codable {
     let canApply: Bool
 }
 
