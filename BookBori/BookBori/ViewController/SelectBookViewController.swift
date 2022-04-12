@@ -29,6 +29,7 @@ class SelectBookViewController: UIViewController {
         super.viewDidLoad()
         
         indicatorView.isHidden = true
+        self.view.bringSubviewToFront(self.indicatorView)
         
         booksCollectionView.refreshControl = refreshControl
         booksCollectionView.delegate = self
@@ -183,6 +184,7 @@ class SelectBookViewController: UIViewController {
                 } else {
                     currentPage += 1
                     getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: "") {
+                        self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
                         self.booksCollectionView.reloadData()
                         self.indicatorView.stopAnimating()
                         self.indicatorView.isHidden = true
@@ -201,7 +203,10 @@ class SelectBookViewController: UIViewController {
     }
     
     @objc func refresh() {
+        self.currentPage = 1
+        baseArray.removeAll()
         getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
+            self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
             self.booksCollectionView.reloadData()
         }
     }
