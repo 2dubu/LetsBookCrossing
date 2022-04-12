@@ -143,7 +143,6 @@ class ScanBarcodeViewController: UIViewController {
             } handler2: { _ in
                 self.navigationController?.popViewController(animated: true)
             }
-
         }
     }
     

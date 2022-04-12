@@ -40,19 +40,23 @@ class MainViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
-        getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
-            let applySB = UIStoryboard(name: "Apply", bundle: nil)
-            let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
-            selectBookNC.modalPresentationStyle = .fullScreen
-            self.present(selectBookNC, animated: true, completion: nil)
+        self.checkDeviceNetworkStatusAndShowAlert() {
+            getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
+                let applySB = UIStoryboard(name: "Apply", bundle: nil)
+                let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
+                selectBookNC.modalPresentationStyle = .fullScreen
+                self.present(selectBookNC, animated: true, completion: nil)
+            }
         }
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
-        let registerSB = UIStoryboard(name: "Apply", bundle: nil)
-        let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
-        collectUserInfoNC.modalPresentationStyle = .fullScreen
-        self.present(collectUserInfoNC, animated: true, completion: nil)
+        self.checkDeviceNetworkStatusAndShowAlert() {
+            let registerSB = UIStoryboard(name: "Apply", bundle: nil)
+            let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
+            collectUserInfoNC.modalPresentationStyle = .fullScreen
+            self.present(collectUserInfoNC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func noticeButtonTapped(_ sender: Any) {
@@ -94,5 +98,18 @@ class MainViewController: UIViewController {
         FAQButton.titleLabel?.dynamicFont(fontSize: 16)
         
         howToUseButtonUnderLineView.layer.addBorder([.bottom], color: .black, width: 2)
+    }
+    
+    private func checkDeviceNetworkStatusAndShowAlert(completion: @escaping ()->()) {
+        if(DeviceManager.shared.networkStatus) == false {
+            // 네트워크 연결 X
+            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
+                self.checkDeviceNetworkStatusAndShowAlert() {
+                    completion()
+                }
+            }, handler2: nil)
+        } else {
+            completion()
+        }
     }
 }
