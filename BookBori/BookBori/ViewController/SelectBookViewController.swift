@@ -267,7 +267,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     // 위 아래 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
     
     // 옆 간격

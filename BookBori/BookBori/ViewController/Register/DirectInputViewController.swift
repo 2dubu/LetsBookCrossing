@@ -334,10 +334,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         reviewTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 10, right: 10)
         
-        coverImageView.layer.masksToBounds = false
-        coverImageView.layer.shadowOffset = .zero
-        coverImageView.layer.shadowOpacity = 0.3
-        coverImageView.layer.shadowColor = UIColor.gray.cgColor
+        setImageShadow(image: coverImageView, shadowRadius: 3, shadowOpacity: 0.7)
         
         guard let searchItem = searchItem else { return }
         

@@ -25,6 +25,7 @@ class GuideViewController: UIViewController {
         // button 초기 세팅
         continueButton.layer.cornerRadius = UIScreen.main.bounds.width/50
         setButtonShadow(button: continueButton, shadowRadius: 3, shadowOpacity: 0.3)
+        setImageShadow(image: bookCoverImageView, shadowRadius: 3, shadowOpacity: 0.7)
         ruleCheckImageView1.image = UIImage(named: "check")
         ruleCheckImageView2.image = UIImage(named: "check")
         ruleCheckImageView3.image = UIImage(named: "check")

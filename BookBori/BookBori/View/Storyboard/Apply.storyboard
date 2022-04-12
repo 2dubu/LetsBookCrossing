@@ -29,59 +29,50 @@
                                 <rect key="frame" x="20" y="88" width="374" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SV9-aS-nDk">
-                                    <size key="itemSize" width="124" height="177"/>
+                                    <size key="itemSize" width="124" height="194"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCell" id="0cH-oa-WOs" customClass="BooksCollectionViewCell" customModule="BookBori" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="177"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gOa-4l-s7s">
-                                            <rect key="frame" x="0.0" y="0.0" width="124" height="177"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0s-lds">
-                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="177"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-CP-JjT">
-                                                            <rect key="frame" x="12.5" y="0.0" width="99" height="143.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="H0C-CP-JjT" secondAttribute="height" multiplier="9:13" id="1qr-CF-3Ry"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="im6-eD-zqp">
-                                                            <rect key="frame" x="3" y="148.5" width="118" height="28.5"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="우주는 얼마나 넓을까?">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="11" name="GmarketSansMedium"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-CP-JjT">
+                                                    <rect key="frame" x="10" y="10" width="104" height="147"/>
                                                     <constraints>
-                                                        <constraint firstItem="im6-eD-zqp" firstAttribute="top" secondItem="H0C-CP-JjT" secondAttribute="bottom" constant="5" id="4sx-DO-v7F"/>
-                                                        <constraint firstAttribute="trailing" secondItem="im6-eD-zqp" secondAttribute="trailing" constant="3" id="6wy-pV-6gR"/>
-                                                        <constraint firstItem="H0C-CP-JjT" firstAttribute="top" secondItem="7LB-0s-lds" secondAttribute="top" id="OfX-DN-PsB"/>
-                                                        <constraint firstAttribute="bottom" secondItem="im6-eD-zqp" secondAttribute="bottom" id="QWL-eN-Vgn"/>
-                                                        <constraint firstItem="im6-eD-zqp" firstAttribute="leading" secondItem="7LB-0s-lds" secondAttribute="leading" constant="3" id="mZg-6W-KKQ"/>
+                                                        <constraint firstAttribute="width" secondItem="H0C-CP-JjT" secondAttribute="height" multiplier="9:13" id="1qr-CF-3Ry"/>
                                                     </constraints>
-                                                </stackView>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="im6-eD-zqp">
+                                                    <rect key="frame" x="5" y="165" width="114" height="41"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="우주는 얼마나 넓을까?">
+                                                            <attributes>
+                                                                <font key="NSFont" size="11" name="GmarketSansMedium"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="H0C-CP-JjT" firstAttribute="width" secondItem="gOa-4l-s7s" secondAttribute="width" multiplier="0.8" id="8Kn-Lw-tKg"/>
-                                                <constraint firstAttribute="bottom" secondItem="7LB-0s-lds" secondAttribute="bottom" id="EDA-Ph-Mo2"/>
-                                                <constraint firstItem="7LB-0s-lds" firstAttribute="leading" secondItem="gOa-4l-s7s" secondAttribute="leading" id="MYV-7y-AfC"/>
-                                                <constraint firstAttribute="trailing" secondItem="7LB-0s-lds" secondAttribute="trailing" id="bfh-O6-WWA"/>
-                                                <constraint firstItem="7LB-0s-lds" firstAttribute="centerY" secondItem="gOa-4l-s7s" secondAttribute="centerY" id="pU6-VU-tEd"/>
-                                                <constraint firstItem="7LB-0s-lds" firstAttribute="top" secondItem="gOa-4l-s7s" secondAttribute="top" id="sMd-eo-QBf"/>
+                                                <constraint firstAttribute="bottom" secondItem="im6-eD-zqp" secondAttribute="bottom" id="Air-ZO-P1N"/>
+                                                <constraint firstItem="im6-eD-zqp" firstAttribute="leading" secondItem="gOa-4l-s7s" secondAttribute="leading" constant="5" id="Cpe-sU-gHp"/>
+                                                <constraint firstItem="im6-eD-zqp" firstAttribute="top" secondItem="H0C-CP-JjT" secondAttribute="bottom" constant="8" id="E9S-Yk-cyJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="im6-eD-zqp" secondAttribute="trailing" constant="5" id="Gha-Op-LRE"/>
+                                                <constraint firstItem="H0C-CP-JjT" firstAttribute="leading" secondItem="gOa-4l-s7s" secondAttribute="leading" constant="10" id="Zf2-Fh-vnj"/>
+                                                <constraint firstAttribute="trailing" secondItem="H0C-CP-JjT" secondAttribute="trailing" constant="10" id="odG-wh-TRa"/>
+                                                <constraint firstItem="im6-eD-zqp" firstAttribute="height" relation="greaterThanOrEqual" secondItem="gOa-4l-s7s" secondAttribute="height" multiplier="0.2" id="sOE-CI-bQa"/>
+                                                <constraint firstItem="H0C-CP-JjT" firstAttribute="top" secondItem="gOa-4l-s7s" secondAttribute="top" constant="10" id="tRE-I5-YOB"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="124" height="206"/>
                                         <connections>
                                             <outlet property="coverImageView" destination="H0C-CP-JjT" id="I1v-2P-nee"/>
                                             <outlet property="titleLabel" destination="im6-eD-zqp" id="PUi-Da-7RG"/>

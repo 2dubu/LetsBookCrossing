@@ -23,11 +23,7 @@ class SearchBookTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        bookImageView.layer.masksToBounds = false
-        bookImageView.layer.shadowRadius = 3
-        bookImageView.layer.shadowOffset = .zero
-        bookImageView.layer.shadowOpacity = 0.2
-        bookImageView.layer.shadowColor = UIColor.gray.cgColor
+        setImageShadow(image: bookImageView, shadowRadius: 3, shadowOpacity: 0.7)
         
         whiteView.layer.cornerRadius = 15
         whiteView.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

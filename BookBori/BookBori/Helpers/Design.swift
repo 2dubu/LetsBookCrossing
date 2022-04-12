@@ -24,6 +24,7 @@ func setImageShadow(image: UIImageView?, shadowRadius: CGFloat?, shadowOpacity: 
     image?.layer.shadowColor = UIColor.gray.cgColor
     image?.layer.shadowOffset = .zero
     image?.layer.shadowRadius = shadowRadius ?? 0
+    image?.layer.masksToBounds = false
 }
 
 func setViewShadow(view: UIView?, shadowRadius: CGFloat?, shadowOpacity: Float?) {
