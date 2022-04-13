@@ -161,6 +161,7 @@ class SelectBookViewController: UIViewController {
                         self.searchBarSearchButtonClicked(self.searchBar)
                     }, handler2: nil)
                 } else {
+                    self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
                     // 검색 결과 없을 땐 defaultImage 표시
                     if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
                         self.filteredArray = []
@@ -171,7 +172,6 @@ class SelectBookViewController: UIViewController {
                         booksCollectionView.isScrollEnabled = true
                     }
                     
-                    self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
                     isBaseArray = false
                     self.booksCollectionView.reloadData()
                     self.indicatorView.stopAnimating()
