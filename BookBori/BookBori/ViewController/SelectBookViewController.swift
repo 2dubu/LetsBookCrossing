@@ -329,8 +329,12 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
         applyBookImgURL = returnArray()[indexPath.row].imgUrl
         
         bookApplied = BookDummyData.shared.books[indexPath.row]
-        let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
-        self.navigationController?.pushViewController(guideVC, animated: true)
+        
+        guard let applyBookPK = applyBookPK else { return }
+        self.checkApplicable(bookPK: applyBookPK) {
+            let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
+            self.navigationController?.pushViewController(guideVC, animated: true)
+        }
     }
     
     // collectionView 상하단 공백 추가

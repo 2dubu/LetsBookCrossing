@@ -204,8 +204,11 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                                 self.navigationController?.popViewController(animated: true)
                             }
                         } else {
-                            guard let directInputVC = self.storyboard?.instantiateViewController(withIdentifier: "DirectInputVC") else { return }
-                            self.navigationController?.pushViewController(directInputVC, animated: true)
+                            guard let applyBookPK = applyBookPK else { return }
+                            self.checkApplicable(bookPK: applyBookPK) {
+                                guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") else { return }
+                                self.navigationController?.pushViewController(directInputVC, animated: true)
+                            }
                         }
                     }
                 case .failure(let error):

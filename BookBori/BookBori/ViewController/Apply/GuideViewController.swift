@@ -102,8 +102,12 @@ class GuideViewController: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        let collectUserInfoVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "CollectUserInfoVC")
-        self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
+        
+        guard let applyBookPK = applyBookPK else { return }
+        self.checkApplicable(bookPK: applyBookPK) {
+            let collectUserInfoVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "CollectUserInfoVC")
+            self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
+        }
     }
     
     // MARK: - function

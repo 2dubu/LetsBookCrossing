@@ -24,12 +24,24 @@ class SetRegistrationMethodViewController: UIViewController {
     @IBAction func barcodeButtonTapped(_ sender: Any) {
         checkCameraPermission()
         userSelectRegistrationMethodButton = "바코드"
+        self.checkApplicable(bookPK: applyBookPK ?? "0") {
+            guard let scanBarcodeVC = self.storyboard?.instantiateViewController(identifier: "ScanBarcodeVC") as? ScanBarcodeViewController else { return }
+            self.navigationController?.pushViewController(scanBarcodeVC, animated: true)
+        }
     }
     @IBAction func searchTitleButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "검색"
+        self.checkApplicable(bookPK: applyBookPK ?? "0") {
+            guard let searchBookVC = self.storyboard?.instantiateViewController(identifier: "SearchBookVC") as? SearchBookViewController else { return }
+            self.navigationController?.pushViewController(searchBookVC, animated: true)
+        }
     }
     @IBAction func directButtonTapped(_ sender: Any) {
         userSelectRegistrationMethodButton = "입력"
+        self.checkApplicable(bookPK: applyBookPK ?? "0") {
+            guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") as? DirectInputViewController else { return }
+            self.navigationController?.pushViewController(directInputVC, animated: true)
+        }
     }
 
     

@@ -297,7 +297,7 @@
         <!--제목 검색-->
         <scene sceneID="bCM-8U-vBZ">
             <objects>
-                <viewController id="RRX-fZ-w9b" customClass="SearchBookViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchBookVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RRX-fZ-w9b" customClass="SearchBookViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8m-ZG-t76">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -637,7 +637,7 @@
         <!--바코드 스캔-->
         <scene sceneID="8wa-KD-2mU">
             <objects>
-                <viewController id="BhA-OU-dmx" customClass="ScanBarcodeViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanBarcodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BhA-OU-dmx" customClass="ScanBarcodeViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPY-Aj-fRV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

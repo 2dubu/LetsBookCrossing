@@ -38,17 +38,17 @@ extension UIViewController {
     }
     
     // 신청 불가 도서
-    func checkApplicableAndShowAlert(bookPK: String, nextVC: String) {
+    func checkApplicable(bookPK: String, completion: @escaping () -> ()) {
         // 네트워크 체킹
         getIsApplicableBook(bookPK: bookPK) {
             if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
-                self.showAlert1(title: "죄송합니다", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
+                self.showAlert1(title: "안내", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             } else {
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: nextVC) else { return }
-                self.navigationController?.pushViewController(nextVC, animated: true)
+                completion()
             }
         }
     }
+    
 }

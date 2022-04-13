@@ -72,9 +72,13 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         } else {
             // 도서 신청 중 이 화면을 띄웠을 때
             checkToPush()
-            let registerSB = UIStoryboard(name: "Register", bundle: nil)
-            let setRegistrationVC = registerSB.instantiateViewController(withIdentifier: "SetRegistrationVC")
-            self.navigationController?.pushViewController(setRegistrationVC, animated: true)
+            
+            guard let applyBookPK = applyBookPK else { return }
+            self.checkApplicable(bookPK: applyBookPK) {
+                let registerSB = UIStoryboard(name: "Register", bundle: nil)
+                let setRegistrationVC = registerSB.instantiateViewController(withIdentifier: "SetRegistrationVC")
+                self.navigationController?.pushViewController(setRegistrationVC, animated: true)
+            }
         }
     }
     

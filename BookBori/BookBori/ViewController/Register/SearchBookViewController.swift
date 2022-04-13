@@ -243,8 +243,12 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ 
         guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") as? DirectInputViewController else { return }
-        self.navigationController?.pushViewController(directInputVC, animated: true)
+        guard let applyBookPK = applyBookPK else { return }
+        self.checkApplicable(bookPK: applyBookPK) {
+            self.navigationController?.pushViewController(directInputVC, animated: true)
+        }
             
         if let index = searchBookTableView.indexPathsForSelectedRows {
             let userSelectedSearchBookNumber = index[0].row+1

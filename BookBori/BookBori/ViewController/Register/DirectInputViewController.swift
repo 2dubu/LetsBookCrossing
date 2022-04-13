@@ -135,8 +135,25 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
         
+        /*
         guard let applyBookPK = applyBookPK else { return }
-        self.checkApplicableAndShowAlert(bookPK: applyBookPK, nextVC: "CompleteRegisterVC")
+        getIsApplicableBook(bookPK: applyBookPK) {
+            if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
+                self.showAlert1(title: "죄송합니다", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            } else {
+                guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
+                self.navigationController?.pushViewController(directInputVC, animated: true)
+            }
+        }
+        */
+        
+        guard let applyBookPK = applyBookPK else { return }
+        self.checkApplicable(bookPK: applyBookPK) {
+            guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
+            self.navigationController?.pushViewController(completeRegisterVC, animated: true)
+        }
         
         /*
         let dateFormatter = DateFormatter()
