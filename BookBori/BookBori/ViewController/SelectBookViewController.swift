@@ -271,7 +271,13 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let cell = booksCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BooksCollectionViewCell
         
-        cell.titleLabel.text = returnArray()[indexPath.row].bookTitle
+        if returnArray()[indexPath.row].bookTitle == "" {
+            cell.titleLabel.textColor = UIColor.darkGray
+            cell.titleLabel.text = "(제목 없음)"
+        } else {
+            cell.titleLabel.textColor = UIColor.black
+            cell.titleLabel.text = returnArray()[indexPath.row].bookTitle
+        }
         cell.coverImageView.kf.indicatorType = .activity
         cell.coverImageView.kf.setImage(
             with: URL(string: returnArray()[indexPath.row].imgUrl),
@@ -307,7 +313,11 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         applyBookPK = returnArray()[indexPath.row].bookPK
-        applyBookTitle = returnArray()[indexPath.row].bookTitle
+        if returnArray()[indexPath.row].bookTitle == "" {
+            applyBookTitle = "(제목 없음)"
+        } else {
+            applyBookTitle = returnArray()[indexPath.row].bookTitle
+        }
         applyBookImgURL = returnArray()[indexPath.row].imgUrl
         
         bookApplied = BookDummyData.shared.books[indexPath.row]
