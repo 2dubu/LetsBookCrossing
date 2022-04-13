@@ -155,22 +155,22 @@ class SelectBookViewController: UIViewController {
             self.indicatorView.startAnimating()
             
             getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
-                self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
-                isBaseArray = false
-                self.booksCollectionView.reloadData()
-                self.indicatorView.stopAnimating()
-                self.indicatorView.isHidden = true
-                
-                print("!!!!!!!!!!!!!", filteredArray)
                 
                 // 검색 결과 없을 땐 defaultImage 표시
                 if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
+                    self.filteredArray = []
                     defaultImageView.isHidden = false
                     booksCollectionView.isScrollEnabled = false
                 } else {
                     defaultImageView.isHidden = true
                     booksCollectionView.isScrollEnabled = true
                 }
+                
+                self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
+                isBaseArray = false
+                self.booksCollectionView.reloadData()
+                self.indicatorView.stopAnimating()
+                self.indicatorView.isHidden = true
             }
         }
     }
