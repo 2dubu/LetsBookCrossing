@@ -167,18 +167,17 @@ class SelectBookViewController: UIViewController {
                         self.filteredArray = []
                         defaultImageView.isHidden = false
                         booksCollectionView.isScrollEnabled = false
+                        scrollUpButton.isHidden = true
                     } else {
                         defaultImageView.isHidden = true
                         booksCollectionView.isScrollEnabled = true
+                        scrollUpButton.isHidden = false
                     }
-                    
                     isBaseArray = false
                     self.booksCollectionView.reloadData()
                     self.indicatorView.stopAnimating()
                     self.indicatorView.isHidden = true
                 }
-                
-                
             }
         }
     }
@@ -247,6 +246,7 @@ extension SelectBookViewController: UISearchBarDelegate {
             self.booksCollectionView.reloadData()
             defaultImageView.isHidden = true
             booksCollectionView.isScrollEnabled = true
+            scrollUpButton.isHidden = false
             isBaseArray = true
         }
     }
