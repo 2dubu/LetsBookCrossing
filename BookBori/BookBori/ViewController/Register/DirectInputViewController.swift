@@ -134,10 +134,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
         
         bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
-        guard let completeRegisterVC = storyboard?.instantiateViewController(withIdentifier: "CompleteRegisterVC") else { return }
-        self.navigationController?.pushViewController(completeRegisterVC, animated: true)
         
-        checkApplicableAndShowAlert(bookPK: "1")
+        guard let applyBookPK = applyBookPK else { return }
+        self.checkApplicableAndShowAlert(bookPK: applyBookPK, nextVC: "CompleteRegisterVC")
         
         /*
         let dateFormatter = DateFormatter()
