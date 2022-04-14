@@ -135,8 +135,16 @@ class GuideViewController: UIViewController {
     func setBookAppliedInfo() {
         guard let book = bookApplied else { return }
         
-        bookCoverImageView.image = UIImage(named: book.image)
-        bookTitleLabel.text = book.title
+        bookCoverImageView.kf.indicatorType = .activity
+        bookCoverImageView.kf.setImage(
+            with: URL(string: applyBookImgURL ?? "0"),
+            placeholder: UIImage(named: "imageNotFound"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.7)),
+                .cacheOriginalImage
+            ])
+        bookTitleLabel.text = applyBookTitle
         authorLabel2.text = book.author
         publisherLabel2.text = book.publisher
         pubDateLabel2.text = String(book.yearPublished)
