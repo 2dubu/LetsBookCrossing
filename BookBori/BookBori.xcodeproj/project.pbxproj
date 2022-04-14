@@ -46,6 +46,7 @@
 		269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 		C6985EC627F591AF00B0571C /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6985EC527F591AF00B0571C /* CALayerExtension.swift */; };
+		C6F5267B28086918005EF1F5 /* 75212-cat-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = C6F5267A28086918005EF1F5 /* 75212-cat-loader.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		268E076527F67C2F0056F03F /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUseViewController.swift; path = BookBori/ViewController/HowToUseViewController.swift; sourceTree = SOURCE_ROOT; };
 		C6985EC527F591AF00B0571C /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		C6F5267A28086918005EF1F5 /* 75212-cat-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "75212-cat-loader.json"; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 		18F641B627C46E82000B2526 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C609121D2808633000B59266 /* Lottie */,
 				268132FF27F400200076CA33 /* Gifs */,
 				18998AB127DAEFC800943C21 /* Fonts */,
 				18F641AB27C46A83000B2526 /* Assets.xcassets */,
@@ -283,6 +286,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C609121D2808633000B59266 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				C6F5267A28086918005EF1F5 /* 75212-cat-loader.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */,
+				C6F5267B28086918005EF1F5 /* 75212-cat-loader.json in Resources */,
 				2641E4FB27F141A800689B77 /* LaunchScreen.storyboard in Resources */,
 				18998AB627DAF03400943C21 /* GmarketSansLight.otf in Resources */,
 				18F641AC27C46A83000B2526 /* Assets.xcassets in Resources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Lottie
 
 class SelectBookViewController: UIViewController {
     
@@ -28,6 +29,8 @@ class SelectBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animationView.loopMode = .loop
         
         indicatorView.isHidden = true
         self.view.bringSubviewToFront(self.indicatorView)
@@ -61,6 +64,7 @@ class SelectBookViewController: UIViewController {
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var scrollUpButton: UIButton!
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -75,6 +79,11 @@ class SelectBookViewController: UIViewController {
     
     @IBAction func scrollUpButtonTapped(_ sender: Any) {
         self.booksCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        if animationView.isAnimationPlaying {
+            animationView.stop()
+        } else {
+            animationView.play()
+        }
     }
     
     

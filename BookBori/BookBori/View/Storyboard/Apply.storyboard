@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iqu-8g-kqd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -131,7 +131,7 @@
                                     <constraint firstItem="4en-qd-xOv" firstAttribute="centerX" secondItem="8va-QF-pov" secondAttribute="centerX" id="wf3-v9-zVw"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-fv-5Wt">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-fv-5Wt">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leq-YT-AIH">
@@ -142,6 +142,17 @@
                                     <action selector="scrollUpButtonTapped:" destination="OKz-yk-3wv" eventType="touchUpInside" id="Ta7-nb-J05"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pph-Rg-o8B" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="157" y="642" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pph-Rg-o8B" secondAttribute="height" multiplier="1:1" id="0aH-eY-oUD"/>
+                                    <constraint firstAttribute="width" constant="100" id="2uc-vj-xuD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="75212-cat-loader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FvG-eT-wPD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,11 +163,13 @@
                             <constraint firstItem="7Xn-fv-5Wt" firstAttribute="centerY" secondItem="Z44-rv-rnZ" secondAttribute="centerY" id="JeQ-On-183"/>
                             <constraint firstItem="leq-YT-AIH" firstAttribute="width" secondItem="Z44-rv-rnZ" secondAttribute="width" multiplier="0.14" id="K4K-cU-Ibw"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="centerY" secondItem="Z44-rv-rnZ" secondAttribute="centerY" id="L49-Qj-SJE"/>
+                            <constraint firstItem="pph-Rg-o8B" firstAttribute="centerX" secondItem="Z44-rv-rnZ" secondAttribute="centerX" id="LKQ-Xg-kEX"/>
                             <constraint firstItem="8va-QF-pov" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" constant="10" id="Owe-iO-H1z"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="width" secondItem="Z44-rv-rnZ" secondAttribute="width" multiplier="0.6" id="TdY-EY-adz"/>
                             <constraint firstItem="NdI-40-WRf" firstAttribute="centerX" secondItem="Z44-rv-rnZ" secondAttribute="centerX" id="UqZ-NM-gfH"/>
                             <constraint firstItem="7Xn-fv-5Wt" firstAttribute="centerX" secondItem="Z44-rv-rnZ" secondAttribute="centerX" id="YhM-hv-2Da"/>
                             <constraint firstItem="FvG-eT-wPD" firstAttribute="trailing" secondItem="prP-Tt-r0g" secondAttribute="trailing" constant="20" id="foG-XG-17x"/>
+                            <constraint firstItem="FvG-eT-wPD" firstAttribute="bottom" secondItem="pph-Rg-o8B" secondAttribute="bottom" constant="120" id="gBC-u3-Df1"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="hSA-A1-6bn"/>
                             <constraint firstItem="prP-Tt-r0g" firstAttribute="top" secondItem="FvG-eT-wPD" secondAttribute="top" id="htI-ch-u4G"/>
                             <constraint firstItem="8va-QF-pov" firstAttribute="leading" secondItem="FvG-eT-wPD" secondAttribute="leading" constant="20" id="r7q-XJ-L5P"/>
@@ -173,6 +186,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="animationView" destination="pph-Rg-o8B" id="G7h-BU-SBI"/>
                         <outlet property="booksCollectionView" destination="prP-Tt-r0g" id="gt9-SU-5rb"/>
                         <outlet property="defaultImageView" destination="NdI-40-WRf" id="yQR-Ta-HpN"/>
                         <outlet property="descriptionLabel" destination="4en-qd-xOv" id="VBZ-3s-qBZ"/>
