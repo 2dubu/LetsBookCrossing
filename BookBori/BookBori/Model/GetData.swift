@@ -15,6 +15,8 @@ class SeoulBookBogoDataManager {
     var isApplicableBook: IsApplicableBook?
     var appliedBookInfo: ApplyBookInfo?
     var isApplicableUser: IsApplicableUser?
+    var exchangeInfo: ExchangeInfo?
+    var detailExchangeInfo: DetailExchangeInfo?
     
     private init () {
     }
@@ -116,10 +118,11 @@ struct ApplyBookData: Codable { // 이름 수정
     let writer: String
     let pubDate: Date
     let publisher: Date
+    let comment: String
 }
 
 func getApplyBookInfo(bookPK: String, completion: @escaping ()->()) {
-    let urlString = ""
+    let urlString = "https://gschool.fortune8282.co.kr/bookGuide.asp?bookPK=\(bookPK)"
     
     // HTTP Request
     AF.request(urlString).responseJSON { (response) in
@@ -176,5 +179,80 @@ func getIsApplicableUser(phoneNum: String, completion: @escaping ()->()) {
         completion()
     }
 }
+
+//MARK: - CheckUserInfo
+
+struct ExchangeInfo: Codable {
+    var header: Header
+    var data: ExchangeInfoData
+}
+
+struct ExchangeInfoData: Codable {
+    var applyStatus: Bool
+    var registerBookPK: String
+    var applyBookPK: String
+    var applyData: Date  // String인지 Date인지 잘 모름
+}
+
+func getExchangeInfo(phoneNum: String, password: String) {
+    let urlString = ""
+    
+    // HTTP Request
+    AF.request(urlString).responseJSON { (response) in
+        switch response.result {
+        case .success(let res):
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
+                let json = try JSONDecoder().decode(ExchangeInfo.self, from: jsonData)
+
+                SeoulBookBogoDataManager.shared.exchangeInfo = json
+                print("succes!", SeoulBookBogoDataManager.shared.exchangeInfo)
+            } catch(let err) {
+                print("err.localizedDescription", err.localizedDescription)
+            }
+            // 실패
+        case .failure(let err):
+            print(err.localizedDescription, "실패")
+        }
+    }
+}
+
+//MARK: - Check
+
+struct DetailExchangeInfo: Codable {
+    var header: Header
+    var data: detailExchangeInfoData
+}
+
+struct detailExchangeInfoData: Codable {
+    var registerBookImageURL: String
+    var registerBookTitle: String
+    var applyBookImgURL: String
+    var applyBookTitle: String
+}
+
+func getDetailExchangeInfo(registerBookPK: String, applyBookPK: String) {
+    let urlString = ""
+    
+    // HTTP Request
+    AF.request(urlString).responseJSON { (response) in
+        switch response.result {
+        case .success(let res):
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
+                let json = try JSONDecoder().decode(DetailExchangeInfo.self, from: jsonData)
+
+                SeoulBookBogoDataManager.shared.detailExchangeInfo = json
+                print("succes!", SeoulBookBogoDataManager.shared.detailExchangeInfo)
+            } catch(let err) {
+                print("err.localizedDescription", err.localizedDescription)
+            }
+            // 실패
+        case .failure(let err):
+            print(err.localizedDescription, "실패")
+        }
+    }
+}
+
 
 
