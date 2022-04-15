@@ -31,9 +31,10 @@ class SelectBookViewController: UIViewController {
         super.viewDidLoad()
         
         animationView.loopMode = .loop
+        animationView.animationSpeed = 2.0
         
-        indicatorView.isHidden = true
-        self.view.bringSubviewToFront(self.indicatorView)
+        animationView.isHidden = true
+        self.view.bringSubviewToFront(self.animationView)
         
         booksCollectionView.refreshControl = refreshControl
         booksCollectionView.delegate = self
@@ -97,8 +98,8 @@ class SelectBookViewController: UIViewController {
     private func checkDeviceNetworkStatus(completion: @escaping ()->()) {
         if(DeviceManager.shared.networkStatus) == false {
             // 네트워크 연결 X
-            self.indicatorView.stopAnimating()
-            self.indicatorView.isHidden = true
+            self.animationView.stop()
+            self.animationView.isHidden = true
             showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
                 self.searchBarSearchButtonClicked(self.searchBar)
             } handler2: { _ in
@@ -160,8 +161,8 @@ class SelectBookViewController: UIViewController {
             print("지금 몇개야?", filteredArray.count)
             
             // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
-            self.indicatorView.isHidden = false
-            self.indicatorView.startAnimating()
+            self.animationView.isHidden = false
+            self.animationView.play()
             
             getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
                 
@@ -184,8 +185,8 @@ class SelectBookViewController: UIViewController {
                     }
                     isBaseArray = false
                     self.booksCollectionView.reloadData()
-                    self.indicatorView.stopAnimating()
-                    self.indicatorView.isHidden = true
+                    self.animationView.stop()
+                    self.animationView.isHidden = true
                 }
             }
         }
@@ -200,16 +201,16 @@ class SelectBookViewController: UIViewController {
             if SeoulBookBogoDataManager.shared.applicableBookList?.data.nextPage == "Y" && fetchingMore {
                 
                 fetchingMore = false
-                self.indicatorView.isHidden = false
-                self.indicatorView.startAnimating()
+                self.animationView.isHidden = false
+                self.animationView.play()
                 
                 // 만약 도서를 검색한 상태라면
                 if self.searchBar.text?.isEmpty == false {
                     currentPageForSearch += 1
                     getApplicableBookList(pagesize: 21, page: self.currentPageForSearch, keyword: self.searchBar.text!) {
                         self.booksCollectionView.reloadData()
-                        self.indicatorView.stopAnimating()
-                        self.indicatorView.isHidden = true
+                        self.animationView.stop()
+                        self.animationView.isHidden = true
                         self.fetchingMore = true
                     }
                 } else {
@@ -217,8 +218,8 @@ class SelectBookViewController: UIViewController {
                     getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: "") {
                         self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
                         self.booksCollectionView.reloadData()
-                        self.indicatorView.stopAnimating()
-                        self.indicatorView.isHidden = true
+                        self.animationView.stop()
+                        self.animationView.isHidden = true
                         self.fetchingMore = true
                     }
                 }
