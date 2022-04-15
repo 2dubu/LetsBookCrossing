@@ -49,6 +49,10 @@ class GuideViewController: UIViewController {
     @IBOutlet weak var pubDateLabel1: UILabel!
     @IBOutlet weak var pubDateLabel2: UILabel!
     
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentBGView: UIView!
+    @IBOutlet weak var commentContent: UILabel!
+    
     // 이용약관
     @IBOutlet weak var ruleTitle: UILabel!
     
@@ -126,6 +130,9 @@ class GuideViewController: UIViewController {
         ruleContents2.dynamicFont(fontSize: 15)
         ruleContents3.dynamicFont(fontSize: 15)
         
+        commentLabel.dynamicFont(fontSize: 14)
+        commentContent.dynamicFont(fontSize: 12)
+        
         continueButton.isEnabled = false
         continueButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         continueButton.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
@@ -148,6 +155,7 @@ class GuideViewController: UIViewController {
         authorLabel2.text = book.author
         publisherLabel2.text = book.publisher
         pubDateLabel2.text = String(book.yearPublished)
+        commentContent.text = "전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말"
     }
     
     func setViews() {
@@ -164,6 +172,7 @@ class GuideViewController: UIViewController {
         setViewShadow(view: whiteView2, shadowRadius: 3, shadowOpacity: 0.3)
  
         bookInfoBGView.layer.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9764705882, blue: 0.9725490196, alpha: 1)
+        commentBGView.layer.backgroundColor = #colorLiteral(red: 0.878935039, green: 0.878935039, blue: 0.878935039, alpha: 1)
     }
     
     func updateContinueButton() {
