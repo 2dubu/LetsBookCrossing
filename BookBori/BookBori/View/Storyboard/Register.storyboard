@@ -21,26 +21,27 @@
             <objects>
                 <viewController storyboardIdentifier="DirectInputVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qp7-o4-sQX" customClass="DirectInputViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E38-5F-wvw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="xQx-4X-mGc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-FO-cM7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="839.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="839"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwR-vp-SsS">
-                                                <rect key="frame" x="18" y="8" width="378" height="726"/>
+                                                <rect key="frame" x="18" y="8" width="378" height="725.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beforeRegistration" translatesAutoresizingMaskIntoConstraints="NO" id="jJL-R9-erw">
-                                                        <rect key="frame" x="123" y="27" width="132" height="191"/>
+                                                        <rect key="frame" x="123" y="27" width="132" height="190.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="jJL-R9-erw" secondAttribute="height" multiplier="9:13" id="6qU-nI-DXa"/>
+                                                            <constraint firstAttribute="width" constant="132" id="abO-Bx-OJ1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mz1-Fa-2ph">
-                                                        <rect key="frame" x="20" y="243" width="338" height="73.5"/>
+                                                        <rect key="frame" x="20" y="242.5" width="338" height="73.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRm-UB-xih">
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="18"/>
@@ -68,7 +69,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-A4-WKE">
-                                                        <rect key="frame" x="20" y="338.5" width="338" height="73"/>
+                                                        <rect key="frame" x="20" y="338" width="338" height="73"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aur-jq-vRw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162" height="73"/>
@@ -123,7 +124,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aYh-wJ-ytg">
-                                                        <rect key="frame" x="20" y="433.5" width="338" height="73.5"/>
+                                                        <rect key="frame" x="20" y="433" width="338" height="73.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHV-QL-VIk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="18"/>
@@ -148,7 +149,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-qc-KHD">
-                                                        <rect key="frame" x="20" y="529" width="338" height="175"/>
+                                                        <rect key="frame" x="20" y="528.5" width="338" height="175"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1su-fU-9QC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="18"/>
@@ -173,7 +174,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV5-4Q-Y6e">
-                                                        <rect key="frame" x="123" y="27" width="132" height="191"/>
+                                                        <rect key="frame" x="123" y="27" width="132" height="190.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=""/>
                                                         <connections>
@@ -188,7 +189,6 @@
                                                     <constraint firstItem="NGz-A4-WKE" firstAttribute="top" secondItem="Mz1-Fa-2ph" secondAttribute="bottom" constant="22" id="FFn-FU-BjD"/>
                                                     <constraint firstItem="jJL-R9-erw" firstAttribute="centerX" secondItem="bwR-vp-SsS" secondAttribute="centerX" id="FiO-Yy-RYU"/>
                                                     <constraint firstAttribute="trailing" secondItem="Mz1-Fa-2ph" secondAttribute="trailing" constant="20" id="GOO-RT-ELC"/>
-                                                    <constraint firstItem="jJL-R9-erw" firstAttribute="width" secondItem="bwR-vp-SsS" secondAttribute="width" multiplier="0.35" id="J7s-5v-TSR"/>
                                                     <constraint firstItem="mkM-Iz-cq2" firstAttribute="height" secondItem="ldg-RL-A5A" secondAttribute="height" id="MTX-bR-z90"/>
                                                     <constraint firstItem="MMr-qc-KHD" firstAttribute="top" secondItem="aYh-wJ-ytg" secondAttribute="bottom" constant="22" id="T3U-MU-kuz"/>
                                                     <constraint firstItem="zLH-KQ-DA2" firstAttribute="height" secondItem="mkM-Iz-cq2" secondAttribute="height" id="VQh-hv-Fvh"/>
@@ -208,7 +208,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBa-KR-N3u">
-                                                <rect key="frame" x="25" y="749" width="364" height="60.5"/>
+                                                <rect key="frame" x="25" y="748.5" width="364" height="60.5"/>
                                                 <color key="backgroundColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="20"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,6 +278,7 @@
                         <outlet property="completeButton" destination="kBa-KR-N3u" id="t5X-Zx-bcW"/>
                         <outlet property="coverImageButton" destination="oV5-4Q-Y6e" id="myb-3f-4IK"/>
                         <outlet property="coverImageView" destination="jJL-R9-erw" id="qkQ-A2-e6c"/>
+                        <outlet property="coverImageWidth" destination="abO-Bx-OJ1" id="nex-Ao-u19"/>
                         <outlet property="pubdateLabel" destination="NHV-QL-VIk" id="Lpt-Nz-ebl"/>
                         <outlet property="pubdateTextField" destination="zLH-KQ-DA2" id="Egx-8V-mgN"/>
                         <outlet property="publisherLabel" destination="IJy-gS-vhw" id="9K6-84-RjU"/>
@@ -299,11 +300,11 @@
             <objects>
                 <viewController storyboardIdentifier="SearchBookVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RRX-fZ-w9b" customClass="SearchBookViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8m-ZG-t76">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Jj-68-E01">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -442,10 +443,10 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-vT-gWG">
-                                <rect key="frame" x="197" y="411" width="20" height="20"/>
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchTableViewPlaceholder1" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-MR-yg5">
-                                <rect key="frame" x="83" y="297" width="248" height="248"/>
+                                <rect key="frame" x="83" y="324" width="248" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vjg-MR-yg5" secondAttribute="height" id="zvj-g6-g9O"/>
                                 </constraints>
@@ -516,7 +517,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="barcodeButtonTapped:" destination="9Fx-fg-kc6" eventType="touchUpInside" id="4E9-lv-k5P"/>
-                                            <segue destination="BhA-OU-dmx" kind="show" id="G10-pp-vWE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-Ux-G83">
@@ -539,7 +539,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="searchTitleButtonTapped:" destination="9Fx-fg-kc6" eventType="touchUpInside" id="wH5-Kp-YoK"/>
-                                            <segue destination="RRX-fZ-w9b" kind="show" id="PMI-Cm-8b7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-Wb-2b4">
@@ -562,7 +561,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="directButtonTapped:" destination="9Fx-fg-kc6" eventType="touchUpInside" id="GLN-rF-PLo"/>
-                                            <segue destination="Qp7-o4-sQX" kind="show" id="NeW-rb-98K"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -639,15 +637,15 @@
             <objects>
                 <viewController storyboardIdentifier="ScanBarcodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BhA-OU-dmx" customClass="ScanBarcodeViewController" customModule="BookBori" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPY-Aj-fRV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nir-tQ-nwn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0En-2l-7Rh">
-                                <rect key="frame" x="197" y="411" width="20" height="20"/>
+                                <rect key="frame" x="197" y="460" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TZD-eG-vd4"/>
