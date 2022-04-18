@@ -29,6 +29,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     @IBOutlet weak var coverImageButton: UIButton!
     @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var coverImageBackgroundView: UIView!
     @IBOutlet weak var whiteView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -96,7 +97,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         library.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
         camera.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
         cancelAction.setValue(UIColor(#colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1)), forKey: "titleTextColor")
-            self.present(uploadCoverImageAlert, animated: true, completion: nil)
+        self.present(uploadCoverImageAlert, animated: true, completion: nil)
     }
     
     // complete button이 활성화되는 시점
@@ -269,6 +270,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         updateCompleteButtonState()
         scrollView.isScrollEnabled = true
         picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
+        setViewShadow(view: coverImageBackgroundView, shadowRadius: 3, shadowOpacity: 0.5)
+        coverImageView.clipsToBounds = true
     }
     
     // 사진 찍은 후 Retake 눌렀을 때
@@ -308,6 +311,8 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         whiteView.layer.shadowOffset = .zero
         whiteView.layer.shadowOpacity = 0.3
         whiteView.layer.shadowColor = UIColor.gray.cgColor
+        setViewShadow(view: coverImageBackgroundView, shadowRadius: 3, shadowOpacity: 0.5)
+        print(coverImageBackgroundView.layer.shadowOpacity)
         
         // 텍스트필트 글씨체 설정
         titleTextField.font = UIFont(name: "GmarketSansLight", size: 14)
@@ -339,8 +344,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.layer.cornerRadius = 5
         reviewTextView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         reviewTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 10, right: 10)
-        
-        setImageShadow(image: coverImageView, shadowRadius: 3, shadowOpacity: 0.7)
         
         guard let searchItem = searchItem else { return }
         
