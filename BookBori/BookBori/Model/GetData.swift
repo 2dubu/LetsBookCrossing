@@ -46,7 +46,7 @@ struct BookData: Codable {
     let bookPK: String
 }
 
-func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion: @escaping ()->()) {
+func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion: @escaping ()->(), error: @escaping ()->()) {
     let baseURL = "https://gschool.fortune8282.co.kr/bookList.asp?pagesize=\(pagesize)&page=\(page)&keyword="
     let encodingKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     let url = baseURL + "\(encodingKeyword ?? "")"
@@ -60,7 +60,10 @@ func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion
                 let json = try JSONDecoder().decode(ApplicableBookList.self, from: jsonData)
 
                 SeoulBookBogoDataManager.shared.applicableBookList = json
-                print("succes!", SeoulBookBogoDataManager.shared.applicableBookList)
+
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                    error()
+                }
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -83,7 +86,7 @@ struct IsApplicableBookData: Codable {
     let canApply: Bool
 }
 
-func getIsApplicableBook(bookPK: String, completion: @escaping ()->()) {
+func getIsApplicableBook(bookPK: String, completion: @escaping ()->(), error: @escaping ()->()) {
     let url = "https://gschool.fortune8282.co.kr/isAppBook.asp?bookPK=\(bookPK)"
     
     // HTTP Request
@@ -95,7 +98,9 @@ func getIsApplicableBook(bookPK: String, completion: @escaping ()->()) {
                 let json = try JSONDecoder().decode(IsApplicableBook.self, from: jsonData)
                 
                 SeoulBookBogoDataManager.shared.isApplicableBook = json
-                print("succes!", SeoulBookBogoDataManager.shared.isApplicableBook)
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                    error()
+                }
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -121,7 +126,7 @@ struct ApplyBookData: Codable { // 이름 수정
     let comment: String
 }
 
-func getApplyBookInfo(bookPK: String, completion: @escaping ()->()) {
+func getApplyBookInfo(bookPK: String, completion: @escaping ()->(), error: @escaping ()->()) {
     let urlString = "https://gschool.fortune8282.co.kr/bookGuide.asp?bookPK=\(bookPK)"
     
     // HTTP Request
@@ -133,7 +138,9 @@ func getApplyBookInfo(bookPK: String, completion: @escaping ()->()) {
                 let json = try JSONDecoder().decode(ApplyBookInfo.self, from: jsonData)
 
                 SeoulBookBogoDataManager.shared.appliedBookInfo = json
-                print("succes!", SeoulBookBogoDataManager.shared.appliedBookInfo)
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                    error()
+                }
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
@@ -156,8 +163,8 @@ struct IsApplicableUserData: Codable {
     let canApply: Bool
 }
 
-func getIsApplicableUser(phoneNum: String, completion: @escaping ()->()) {
-    let urlString = ""
+func getIsApplicableUser(phoneNum: String, completion: @escaping ()->(), error: @escaping ()->()) {
+    let urlString = "https://gschool.fortune8282.co.kr/CollectUserInfo.asp?phoneNumber=\(phoneNum)"
     
     // HTTP Request
     AF.request(urlString).responseJSON { (response) in
@@ -168,7 +175,9 @@ func getIsApplicableUser(phoneNum: String, completion: @escaping ()->()) {
                 let json = try JSONDecoder().decode(IsApplicableUser.self, from: jsonData)
 
                 SeoulBookBogoDataManager.shared.isApplicableUser = json
-                print("succes!", SeoulBookBogoDataManager.shared.isApplicableUser)
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                    error()
+                }
             } catch(let err) {
                 print("err.localizedDescription", err.localizedDescription)
             }
