@@ -42,14 +42,12 @@ class MainViewController: UIViewController {
     @IBAction func applyButtonTapped(_ sender: Any) {
         self.checkDeviceNetworkStatusAndShowAlert() {
             getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
-                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
-                    self.showAlert1(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle: "확인", handler: nil)
-                } else {
-                    let applySB = UIStoryboard(name: "Apply", bundle: nil)
-                    let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
-                    selectBookNC.modalPresentationStyle = .fullScreen
-                    self.present(selectBookNC, animated: true, completion: nil)
-                }
+                let applySB = UIStoryboard(name: "Apply", bundle: nil)
+                let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
+                selectBookNC.modalPresentationStyle = .fullScreen
+                self.present(selectBookNC, animated: true, completion: nil)
+            } error: {
+                self.showAlert1(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle: "확인", handler: nil)
             }
         }
     }

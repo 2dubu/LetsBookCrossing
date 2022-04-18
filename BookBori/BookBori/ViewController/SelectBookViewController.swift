@@ -165,12 +165,6 @@ class SelectBookViewController: UIViewController {
             self.animationView.play()
             
             getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
-                
-                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
-                    showAlert2(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
-                        self.searchBarSearchButtonClicked(self.searchBar)
-                    }, handler2: nil)
-                } else {
                     self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
                     // 검색 결과 없을 땐 defaultImage 표시
                     if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
@@ -187,7 +181,10 @@ class SelectBookViewController: UIViewController {
                     self.booksCollectionView.reloadData()
                     self.animationView.stop()
                     self.animationView.isHidden = true
-                }
+            } error: {
+                self.showAlert2(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
+                    self.searchBarSearchButtonClicked(self.searchBar)
+                }, handler2: nil)
             }
         }
     }
@@ -212,6 +209,8 @@ class SelectBookViewController: UIViewController {
                         self.animationView.stop()
                         self.animationView.isHidden = true
                         self.fetchingMore = true
+                    } error: {
+                        self.showServerErrorAlert()
                     }
                 } else {
                     currentPage += 1
@@ -221,6 +220,8 @@ class SelectBookViewController: UIViewController {
                         self.animationView.stop()
                         self.animationView.isHidden = true
                         self.fetchingMore = true
+                    } error: {
+                        self.showServerErrorAlert()
                     }
                 }
             }
@@ -240,6 +241,8 @@ class SelectBookViewController: UIViewController {
         getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
             self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
             self.booksCollectionView.reloadData()
+        } error: {
+            self.showServerErrorAlert()
         }
     }
     
@@ -345,6 +348,8 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
             getApplyBookInfo(bookPK: applyBookPK) {
                 let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
                 self.navigationController?.pushViewController(guideVC, animated: true)
+            } error: {
+                self.showServerErrorAlert()
             }
         }
     }
