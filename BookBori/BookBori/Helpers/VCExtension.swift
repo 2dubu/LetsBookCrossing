@@ -38,7 +38,7 @@ extension UIViewController {
     }
     
     func showServerErrorAlert() {
-        showAlert1(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle: "확인", handler: nil)
+        showAlert1(title: "안내", message: "서버에 일시적인 오류가 발생했습니다\n잠시 후 다시 시도해주세요", buttonTitle: "확인", handler: nil)
     }
     
     // 신청 불가 도서
