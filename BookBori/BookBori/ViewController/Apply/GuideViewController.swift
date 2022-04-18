@@ -9,6 +9,8 @@ import UIKit
 
 class GuideViewController: UIViewController {
     
+    var appliedBookInfo: ApplyBookInfo = SeoulBookBogoDataManager.shared.appliedBookInfo!
+    
     var checkButton1Tapped: Bool = false
     var checkButton2Tapped: Bool = false
     var checkButton3Tapped: Bool = false
@@ -140,7 +142,6 @@ class GuideViewController: UIViewController {
     }
     
     func setBookAppliedInfo() {
-        guard let book = bookApplied else { return }
         
         bookCoverImageView.kf.indicatorType = .activity
         bookCoverImageView.kf.setImage(
@@ -152,10 +153,19 @@ class GuideViewController: UIViewController {
                 .cacheOriginalImage
             ])
         bookTitleLabel.text = applyBookTitle
-        authorLabel2.text = book.author
-        publisherLabel2.text = book.publisher
-        pubDateLabel2.text = String(book.yearPublished)
-        commentContent.text = "전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말전할말"
+        authorLabel2.text = appliedBookInfo.data.writer
+        publisherLabel2.text = appliedBookInfo.data.publisher
+        pubDateLabel2.text = appliedBookInfo.data.pubDate
+        
+        if appliedBookInfo.data.comment == "" {
+            commentContent.textAlignment = .center
+            commentContent.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            commentContent.text = "전할 말이 없는 도서입니다."
+        } else {
+            commentContent.textAlignment = .left
+            commentContent.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            commentContent.text = appliedBookInfo.data.comment
+        }
     }
     
     func setViews() {

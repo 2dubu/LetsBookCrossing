@@ -342,8 +342,10 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
         
         guard let applyBookPK = applyBookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
-            let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
-            self.navigationController?.pushViewController(guideVC, animated: true)
+            getApplyBookInfo(bookPK: applyBookPK) {
+                let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
+                self.navigationController?.pushViewController(guideVC, animated: true)
+            }
         }
     }
     

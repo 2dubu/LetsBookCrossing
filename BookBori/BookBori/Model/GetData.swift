@@ -116,8 +116,8 @@ struct ApplyBookInfo: Codable {
 
 struct ApplyBookData: Codable { // 이름 수정
     let writer: String
-    let pubDate: Date
-    let publisher: Date
+    let pubDate: String
+    let publisher: String
     let comment: String
 }
 
