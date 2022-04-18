@@ -61,7 +61,7 @@ func getApplicableBookList(pagesize: Int, page: Int, keyword: String, completion
 
                 SeoulBookBogoDataManager.shared.applicableBookList = json
 
-                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 || (59000 != 0) {
                     error()
                 }
             } catch(let err) {
@@ -98,7 +98,7 @@ func getIsApplicableBook(bookPK: String, completion: @escaping ()->(), error: @e
                 let json = try JSONDecoder().decode(IsApplicableBook.self, from: jsonData)
                 
                 SeoulBookBogoDataManager.shared.isApplicableBook = json
-                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 || (59000 != 0) {
                     error()
                 }
             } catch(let err) {
@@ -138,7 +138,7 @@ func getApplyBookInfo(bookPK: String, completion: @escaping ()->(), error: @esca
                 let json = try JSONDecoder().decode(ApplyBookInfo.self, from: jsonData)
 
                 SeoulBookBogoDataManager.shared.appliedBookInfo = json
-                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 {
+                if SeoulBookBogoDataManager.shared.applicableBookList?.header.resultCode == 52000 || (59000 != 0) {
                     error()
                 }
             } catch(let err) {
