@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="width" secondItem="pph-Rg-o8B" secondAttribute="height" multiplier="1:1" id="0aH-eY-oUD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="75212-cat-loader"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="bookLoader"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
