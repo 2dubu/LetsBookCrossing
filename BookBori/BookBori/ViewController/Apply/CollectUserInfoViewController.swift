@@ -77,8 +77,8 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
             getIsApplicableUser(phoneNum: self.phoneNumberTextField.text!) {
                 if SeoulBookBogoDataManager.shared.isApplicableUser?.data.canApply == true {
                     let registerSB = UIStoryboard(name: "Register", bundle: nil)
-                    let checkVC = registerSB.instantiateViewController(withIdentifier: "CheckVC")
-                    self.navigationController?.pushViewController(checkVC, animated: true)
+                    let setRegistrationVC = registerSB.instantiateViewController(withIdentifier: "SetRegistrationVC")
+                    self.navigationController?.pushViewController(setRegistrationVC, animated: true)
                 } else {
                     self.showAlert1(title: "신청 불가", message: "동시에 5권 까지만 신청 가능합니다.\n신청 취소 또는 교환 완료 후 다시 신청하세요", buttonTitle: "확인", handler: nil)
                 }

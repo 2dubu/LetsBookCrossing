@@ -149,11 +149,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             }
         }
         */
-        
+        let filterdStr = self.reviewTextView.text.components(separatedBy: ["\"","\\"]).joined()
+
         guard let applyBookPK = applyBookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
-            guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
-            self.navigationController?.pushViewController(completeRegisterVC, animated: true)
+            self.showAlert1(title: "filterdStr", message: filterdStr, buttonTitle: "OK") { _ in
+                guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
+                self.navigationController?.pushViewController(completeRegisterVC, animated: true)
+            }
         }
         
         /*
