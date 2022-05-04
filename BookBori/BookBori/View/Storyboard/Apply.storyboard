@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="124" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-CP-JjT">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H0C-CP-JjT">
                                                     <rect key="frame" x="10" y="10" width="104" height="147"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="H0C-CP-JjT" secondAttribute="height" multiplier="9:13" id="1qr-CF-3Ry"/>
@@ -223,7 +223,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NWV-O4-oYy">
                                                         <rect key="frame" x="25" y="20" width="328" height="150"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-fg-6ag">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-fg-6ag">
                                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="150"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="9Ro-fg-6ag" secondAttribute="height" multiplier="9:13" id="8TU-iQ-hay"/>
