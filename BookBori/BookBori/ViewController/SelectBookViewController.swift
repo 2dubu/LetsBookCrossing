@@ -30,13 +30,17 @@ class SelectBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // lottie animationView
         animationView.loopMode = .loop
-        animationView.animationSpeed = 2.0
-        
+        animationView.animationSpeed = 1.0
         animationView.isHidden = true
         self.view.bringSubviewToFront(self.animationView)
         
+        // refreshControl
         booksCollectionView.refreshControl = refreshControl
+        refreshControl.tintColor = .clear
+        refreshControl.addSubview(self.animationView)
+        
         booksCollectionView.delegate = self
         booksCollectionView.dataSource = self
     
@@ -54,8 +58,6 @@ class SelectBookViewController: UIViewController {
         defaultImageView.isHidden = true
         
         self.view.bringSubviewToFront(self.refreshControl)
-        refreshControl.attributedTitle = NSAttributedString(string: "새로고침 중...",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font : UIFont(name: "GmarketSansMedium", size: 20)])
     }
     
 
@@ -236,11 +238,16 @@ class SelectBookViewController: UIViewController {
     }
     
     @objc func refresh() {
+        animationView.isHidden = false
+        animationView.play()
+        
         self.currentPage = 1
         baseArray.removeAll()
-        getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
-            self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
-            self.booksCollectionView.reloadData()
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [self] in
+            baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
+            booksCollectionView.reloadData()
+            animationView.isHidden = true
+            animationView.stop()
         } error: {
             self.showServerErrorAlert()
         }
