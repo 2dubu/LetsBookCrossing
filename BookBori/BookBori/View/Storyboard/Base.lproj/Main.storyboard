@@ -752,7 +752,7 @@
         <image name="launchLogo" width="261.33334350585938" height="86"/>
         <image name="logo" width="80" height="25"/>
         <image name="mainViewCharacter" width="229.33332824707031" height="266.66665649414062"/>
-        <image name="recycle" width="212.66667175292969" height="183.66667175292969"/>
+        <image name="recycle" width="266.66665649414062" height="231.66667175292969"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
