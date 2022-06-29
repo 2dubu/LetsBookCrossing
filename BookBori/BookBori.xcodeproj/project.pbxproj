@@ -36,6 +36,7 @@
 		18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */; };
 		263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */; };
 		2641E4FB27F141A800689B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AD27C46A84000B2526 /* LaunchScreen.storyboard */; };
+		26561873286C6B580077A127 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26561872286C6B580077A127 /* UIImageExtension.swift */; };
 		26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9927C4785D00304788 /* SelectBookViewController.swift */; };
 		26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */; };
 		26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26765C9D27C5B9A500304788 /* GuideViewController.swift */; };
@@ -81,6 +82,7 @@
 		18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegisterViewController.swift; sourceTree = "<group>"; };
 		263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayToParticipateCollectionViewCell.swift; sourceTree = "<group>"; };
+		26561872286C6B580077A127 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
 		26765C9B27C4821C00304788 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		26765C9D27C5B9A500304788 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				18F641C427C470F7000B2526 /* NavigationExtension.swift */,
 				18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */,
 				C6985EC527F591AF00B0571C /* CALayerExtension.swift */,
+				26561872286C6B580077A127 /* UIImageExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */,
 				18F641D227C4744E000B2526 /* DummyData.swift in Sources */,
 				18F641BF27C470D6000B2526 /* StartViewController.swift in Sources */,
+				26561873286C6B580077A127 /* UIImageExtension.swift in Sources */,
 				26765C9C27C4821C00304788 /* BooksCollectionViewCell.swift in Sources */,
 				26765C9A27C4785D00304788 /* SelectBookViewController.swift in Sources */,
 				18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */,
@@ -576,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -593,7 +597,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -609,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -626,7 +630,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
