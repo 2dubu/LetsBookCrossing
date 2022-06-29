@@ -693,7 +693,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-l1-yAt">
-                                <rect key="frame" x="30" y="253" width="354" height="300.5"/>
+                                <rect key="frame" x="30" y="125" width="354" height="556.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-Ug-aYK">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="192.5"/>
@@ -804,61 +804,74 @@
                                             <constraint firstItem="wT0-B6-naI" firstAttribute="top" secondItem="O4Z-ZO-YxO" secondAttribute="top" id="dXG-iE-uL4"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fdC-Pj-1Jq">
-                                        <rect key="frame" x="0.0" y="232.5" width="354" height="68"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-30-MH5">
+                                        <rect key="frame" x="0.0" y="232.5" width="354" height="324"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="24"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fdC-Pj-1Jq">
+                                                <rect key="frame" x="20" y="20" width="314" height="284"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-qc-Hug">
-                                                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="height" multiplier="1:2.4" id="s4N-46-sAg"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-fQ-s91">
-                                                        <rect key="frame" x="16.5" y="0.0" width="337.5" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Label">
-                                                                <attributes>
-                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                    <font key="NSFont" size="15" name="GmarketSansMedium"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-qd-0Ib">
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="24"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-qc-Hug">
+                                                                <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="KJP-be-XpX"/>
+                                                                    <constraint firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="height" multiplier="1:2.4" id="s4N-46-sAg"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-fQ-s91">
+                                                                <rect key="frame" x="16.5" y="0.0" width="297.5" height="24"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Label">
+                                                                        <attributes>
+                                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                            <font key="NSFont" size="15" name="GmarketSansMedium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
+                                                        <rect key="frame" x="0.0" y="260" width="314" height="24"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="B3V-Vt-aTb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="B3V-Vt-aTb" secondAttribute="height" multiplier="1:2.4" id="4qc-Fj-7C6"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-IP-VqA">
+                                                                <rect key="frame" x="16.5" y="0.0" width="297.5" height="24"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Label">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="15" name="GmarketSansMedium"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-rO-67D">
-                                                <rect key="frame" x="0.0" y="44" width="354" height="24"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="B3V-Vt-aTb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="8.5" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="B3V-Vt-aTb" secondAttribute="height" multiplier="1:2.4" id="4qc-Fj-7C6"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-IP-VqA">
-                                                        <rect key="frame" x="16.5" y="0.0" width="337.5" height="24"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Label">
-                                                                <attributes>
-                                                                    <font key="NSFont" size="15" name="GmarketSansMedium"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.6000000000000001" tighteningFactorForTruncation="0.0"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="B3V-Vt-aTb" firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="width" id="Iir-rg-7Su"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="B3V-Vt-aTb" firstAttribute="width" secondItem="DMN-qc-Hug" secondAttribute="width" id="Iir-rg-7Su"/>
+                                            <constraint firstItem="fdC-Pj-1Jq" firstAttribute="top" secondItem="yxV-30-MH5" secondAttribute="top" constant="20" id="Dt3-QR-6GJ"/>
+                                            <constraint firstItem="fdC-Pj-1Jq" firstAttribute="leading" secondItem="yxV-30-MH5" secondAttribute="leading" constant="20" id="Q9h-Zo-Vwf"/>
+                                            <constraint firstAttribute="bottom" secondItem="fdC-Pj-1Jq" secondAttribute="bottom" constant="20" id="odS-cK-wDA"/>
+                                            <constraint firstAttribute="trailing" secondItem="fdC-Pj-1Jq" secondAttribute="trailing" constant="20" id="zXK-qg-hbb"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-Lg-BKU">
@@ -898,7 +911,6 @@
                             <constraint firstItem="1h9-l1-yAt" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="30" id="793-lQ-HBp"/>
                             <constraint firstAttribute="trailing" secondItem="1h9-l1-yAt" secondAttribute="trailing" constant="30" id="Ugh-2p-dtN"/>
                             <constraint firstItem="1h9-l1-yAt" firstAttribute="centerY" secondItem="Ddw-FF-x6F" secondAttribute="centerY" multiplier="0.9" id="ZZH-GA-jza"/>
-                            <constraint firstItem="DMN-qc-Hug" firstAttribute="width" secondItem="Ddw-FF-x6F" secondAttribute="width" multiplier="0.02" id="enh-pL-TC1"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="bottom" secondItem="Ojj-Lg-BKU" secondAttribute="bottom" constant="30" id="inX-IX-1ay"/>
                             <constraint firstItem="Ojj-Lg-BKU" firstAttribute="leading" secondItem="0wW-km-0Nf" secondAttribute="leading" constant="40" id="iuD-50-5gQ"/>
                             <constraint firstItem="0wW-km-0Nf" firstAttribute="trailing" secondItem="Ojj-Lg-BKU" secondAttribute="trailing" constant="40" id="wvl-DO-p5f"/>
@@ -919,6 +931,7 @@
                         <outlet property="confirmButton" destination="Y3p-3a-WDo" id="dXJ-2U-vgL"/>
                         <outlet property="description1" destination="FmT-fQ-s91" id="15e-NT-pAs"/>
                         <outlet property="description2" destination="6L0-IP-VqA" id="nJZ-16-lgP"/>
+                        <outlet property="descriptionBackGroundView" destination="yxV-30-MH5" id="6ZY-3v-gBZ"/>
                         <outlet property="exchangeIcon" destination="tzH-US-YEg" id="hFr-wi-so6"/>
                         <outlet property="registerImageView" destination="O4Z-ZO-YxO" id="vKo-V5-3KR"/>
                         <outlet property="registerLabel" destination="oQg-Ri-dK4" id="9wg-JL-ck6"/>
@@ -927,7 +940,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Of6-qR-JkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3868" y="102"/>
+            <point key="canvasLocation" x="3866.666666666667" y="101.78571428571428"/>
         </scene>
         <!--신청내역 조회-->
         <scene sceneID="7Hb-82-3xA">

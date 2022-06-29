@@ -22,6 +22,7 @@ class CompleteRegisterViewController: UIViewController {
     
     @IBOutlet weak var description1: UILabel!
     @IBOutlet weak var description2: UILabel!
+    @IBOutlet weak var descriptionBackGroundView: UIView!
     
     @IBOutlet weak var confirmButton: UIButton!
     
@@ -84,6 +85,8 @@ class CompleteRegisterViewController: UIViewController {
         setButtonShadow(button: confirmButton, shadowRadius: 1, shadowOpacity: 0.5)
         setImageShadow(image: self.applyImageView, shadowRadius: 3, shadowOpacity: 0.2)
         setImageShadow(image: self.registerImageView, shadowRadius: 3, shadowOpacity: 0.2)
+        descriptionBackGroundView.layer.cornerRadius = 10
+        setViewShadow(view: descriptionBackGroundView, shadowRadius: 3, shadowOpacity: 0.4)
         
         if isPresentedToMain() {
             navigationItem.title = "신청내역 조회"
