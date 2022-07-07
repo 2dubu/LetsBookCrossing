@@ -163,15 +163,17 @@ class ScanBarcodeViewController: UIViewController {
         avLayerView.addSubview(centerGuideLineView2)
         avLayerView.bringSubviewToFront(centerGuideLineView2)
         
-        centerGuideLineView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        centerGuideLineView.centerXAnchor.constraint(equalTo: avLayerView.centerXAnchor).isActive = true
-        centerGuideLineView.centerYAnchor.constraint(equalTo: avLayerView.centerYAnchor).isActive = true
-        centerGuideLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
-        centerGuideLineView2.widthAnchor.constraint(equalToConstant: 1).isActive = true
-        centerGuideLineView2.centerXAnchor.constraint(equalTo: avLayerView.centerXAnchor).isActive = true
-        centerGuideLineView2.centerYAnchor.constraint(equalTo: avLayerView.centerYAnchor).isActive = true
-        centerGuideLineView2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        NSLayoutConstraint.activate([
+            centerGuideLineView.widthAnchor.constraint(equalToConstant: 30),
+            centerGuideLineView.centerXAnchor.constraint(equalTo: avLayerView.centerXAnchor),
+            centerGuideLineView.centerYAnchor.constraint(equalTo: avLayerView.centerYAnchor),
+            centerGuideLineView.heightAnchor.constraint(equalToConstant: 1),
+            
+            centerGuideLineView2.widthAnchor.constraint(equalToConstant: 1),
+            centerGuideLineView2.centerXAnchor.constraint(equalTo: avLayerView.centerXAnchor),
+            centerGuideLineView2.centerYAnchor.constraint(equalTo: avLayerView.centerYAnchor),
+            centerGuideLineView2.heightAnchor.constraint(equalToConstant: 30)
+        ])
     }
     
     //MARK: - overrides
