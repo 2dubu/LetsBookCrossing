@@ -17,8 +17,6 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     var indexPath: Int = 0
     let coverImagePC = UIImagePickerController()
     var whetherUploadCoverImage: Bool = false
-//    let db = Firestore.firestore()
-//    let user = Auth.auth().currentUser
     var searchItem : SearchResultOfNaver.BookInfo?
     var isApplicableBook = SeoulBookBogoDataManager.shared.isApplicableBook
     
