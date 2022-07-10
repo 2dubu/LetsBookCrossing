@@ -25,13 +25,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var noticeButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
     
-    //MARK: - Properties
-    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setButtons()
+        initView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,15 +73,23 @@ class MainViewController: UIViewController {
     
     //MARK: - Functions
 
-    func setButtons() {
-        
-        // 그림자 설정
+    /// init views
+    private func initView() {
+        setShadows()
+        setLayers()
+        setFonts()
+    }
+    
+    /// 그림자 설정
+    private func setShadows() {
         setViewShadow(view: applyView, shadowRadius: 3, shadowOpacity: 0.3)
         setViewShadow(view: checkView, shadowRadius: 3, shadowOpacity: 0.3)
         setButtonShadow(button: noticeButton, shadowRadius: 3, shadowOpacity: 0.3)
         setButtonShadow(button: FAQButton, shadowRadius: 3, shadowOpacity: 0.3)
-        
-        // corner radius
+    }
+    
+    /// layer 스타일 적용
+    private func setLayers() {
         applyView.layer.cornerRadius = 22
         checkView.layer.cornerRadius = 22
         applyView.layer.maskedCorners = CACornerMask.layerMinXMinYCorner // 좌측 상단
@@ -91,18 +97,21 @@ class MainViewController: UIViewController {
         noticeButton.layer.cornerRadius = 8
         FAQButton.layer.cornerRadius = 8
         
-        // dynamicFont
+        howToUseButtonUnderLineView.layer.addBorder([.bottom], color: .black, width: 2)
+    }
+    
+    /// 폰트 적용
+    private func setFonts() {
         bookCrossingLabel.dynamicFont(fontSize: 16)
         howToUseButton.titleLabel?.dynamicFont(fontSize: 20)
         applyLabel.dynamicFont(fontSize: 20)
         checkLabel.dynamicFont(fontSize: 20)
         noticeButton.titleLabel?.dynamicFont(fontSize: 16)
         FAQButton.titleLabel?.dynamicFont(fontSize: 16)
-        
-        howToUseButtonUnderLineView.layer.addBorder([.bottom], color: .black, width: 2)
     }
     
-    private func checkDeviceNetworkStatusAndShowAlert(completion: @escaping ()->()) {
+    /// 네트워크 체킹 후 알림 표시
+    private func checkDeviceNetworkStatusAndShowAlert(completion: @escaping () -> Void) {
         if(DeviceManager.shared.networkStatus) == false {
             // 네트워크 연결 X
             showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
