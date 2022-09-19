@@ -25,8 +25,19 @@ class SelectBookViewController: UIViewController {
     var refreshControl = UIRefreshControl()
     var collectionViewHearderHeight = 28 + (UIScreen.main.bounds.width-40)*0.2
     
-    //MARK: - viewController Life Cycle
     
+    //MARK: - IBOutlet
+    
+    @IBOutlet weak var booksCollectionView: UICollectionView!
+    @IBOutlet weak var defaultImageView: UIImageView!
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var animationView: AnimationView!
+    @IBOutlet weak var scrollUpButton: UIButton!
+    
+    
+    //MARK: - viewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +56,8 @@ class SelectBookViewController: UIViewController {
         booksCollectionView.dataSource = self
     
         self.searchBar.delegate = self
+        
+        // ⚠️ 이게 뭘까 시험해 봐야 할 듯
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         self.view.backgroundColor = #colorLiteral(red: 0.9164562225, green: 0.9865346551, blue: 0.8857880235, alpha: 1)
@@ -61,15 +74,7 @@ class SelectBookViewController: UIViewController {
     }
     
 
-    // MARK: - IBOutlet & IBAction
-    @IBOutlet weak var booksCollectionView: UICollectionView!
-    @IBOutlet weak var defaultImageView: UIImageView!
-    @IBOutlet weak var whiteView: UIView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var animationView: AnimationView!
-    @IBOutlet weak var scrollUpButton: UIButton!
-    
+    // MARK: - IBAction
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -97,23 +102,7 @@ class SelectBookViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    private func checkDeviceNetworkStatus(completion: @escaping ()->()) {
-        if(DeviceManager.shared.networkStatus) == false {
-            // 네트워크 연결 X
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
-                self.searchBarSearchButtonClicked(self.searchBar)
-            } handler2: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            completion()
-        }
-    }
-    
     func setScrollUpButton() {
-        
         let imageConfig = UIImage.SymbolConfiguration(scale: .medium)
         let arrowUp = UIImage(systemName: "arrow.up", withConfiguration: imageConfig)
         
@@ -160,7 +149,6 @@ class SelectBookViewController: UIViewController {
             self.showAlert1(title: "안내", message: "검색어를 입력해주세요", buttonTitle: "확인", handler: nil)
         } else  {
             filteredArray.removeAll()
-            print("지금 몇개야?", filteredArray.count)
             
             // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
             self.animationView.isHidden = false
@@ -273,8 +261,18 @@ extension SelectBookViewController: UISearchBarDelegate {
     
     // searchBar 완료 버튼 눌렀을 때 검색 결과 띄우기
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.checkDeviceNetworkStatus() {
+        if(DeviceManager.shared.networkStatus) == true {
+            // 네트워크 연결 O
             self.showSearchResult()
+        } else {
+            // 네트워크 연결 X
+            self.animationView.stop()
+            self.animationView.isHidden = true
+            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
+                self.searchBarSearchButtonClicked(self.searchBar)
+            } handler2: { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
@@ -340,6 +338,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        // ⚠️ 여기 고치자
         applyBookPK = returnArray()[indexPath.row].bookPK
         if returnArray()[indexPath.row].bookTitle == "" {
             applyBookTitle = "(제목 없음)"
