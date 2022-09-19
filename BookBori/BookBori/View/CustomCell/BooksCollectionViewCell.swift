@@ -12,7 +12,6 @@ class BooksCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     override func awakeFromNib() {
         setImageShadow(image: coverImageView, shadowRadius: 3, shadowOpacity: 0.7)
     }

@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
                 selectBookNC.modalPresentationStyle = .fullScreen
                 self.present(selectBookNC, animated: true, completion: nil)
             } error: {
-                self.showAlert1(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle: "확인", handler: nil)
+                self.showServerErrorAlert()
             }
         }
     }
@@ -109,18 +109,5 @@ class MainViewController: UIViewController {
         noticeButton.titleLabel?.dynamicFont(fontSize: 16)
         FAQButton.titleLabel?.dynamicFont(fontSize: 16)
     }
-    
-    /// 네트워크 체킹 후 알림 표시
-    private func checkDeviceNetworkStatusAndShowAlert(completion: @escaping () -> Void) {
-        if(DeviceManager.shared.networkStatus) == false {
-            // 네트워크 연결 X
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
-                self.checkDeviceNetworkStatusAndShowAlert() {
-                    completion()
-                }
-            }, handler2: nil)
-        } else {
-            completion()
-        }
-    }
+
 }
