@@ -8,7 +8,6 @@
 import Foundation
 
 // MARK: - Book Data
-// TODO : 더미데이터 삭제
 
 struct Book {
     var title : String
@@ -19,30 +18,6 @@ struct Book {
     var commnet: String
 }
 
-class BookDummyData {
-    static let shared = BookDummyData()
-    
-    var books : [Book] = [
-        Book(title: "우주는 얼마나 넓을까?", image: "1", author: "미미" , publisher: "행복한 출판사" , pubDate: 20001111, commnet: "좋은 책"),
-        Book(title: "글쓰기 잘 하는 아이는 이렇게 시작합니다", image: "2", author: "나나" , publisher: "멋진 출판사" , pubDate: 20101111, commnet: "좋은 책"),
-        Book(title: "일 잘하는 사람은 단순하게 합니다", image: "1", author: "주주" , publisher: "귀여운 출판사" , pubDate: 20111111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "모모" , publisher: "아름다운 출판사" , pubDate: 20131111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "뿌뿌" , publisher: "완벽한 출판사" , pubDate: 20181111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "디디" , publisher: "최고의 출판사" , pubDate: 20201111, commnet: "좋은 책"),
-        Book(title: "우주는 얼마나 넓을까?", image: "1", author: "미미" , publisher: "행복한 출판사" , pubDate: 20001111, commnet: "좋은 책"),
-        Book(title: "글쓰기 잘 하는 아이는 이렇게 시작합니다", image: "2", author: "나나" , publisher: "멋진 출판사" , pubDate: 20101111, commnet: "좋은 책"),
-        Book(title: "일 잘하는 사람은 단순하게 합니다", image: "1", author: "주주" , publisher: "귀여운 출판사" , pubDate: 20111111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "모모" , publisher: "아름다운 출판사" , pubDate: 20131111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "뿌뿌" , publisher: "완벽한 출판사" , pubDate: 20181111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "디디" , publisher: "최고의 출판사" , pubDate: 20201111, commnet: "좋은 책"),
-        Book(title: "우주는 얼마나 넓을까?", image: "1", author: "미미" , publisher: "행복한 출판사" , pubDate: 20001111, commnet: "좋은 책"),
-        Book(title: "글쓰기 잘 하는 아이는 이렇게 시작합니다", image: "2", author: "나나" , publisher: "멋진 출판사" , pubDate: 20101111, commnet: "좋은 책"),
-        Book(title: "일 잘하는 사람은 단순하게 합니다", image: "1", author: "주주" , publisher: "귀여운 출판사" , pubDate: 20111111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "모모" , publisher: "아름다운 출판사" , pubDate: 20131111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "뿌뿌" , publisher: "완벽한 출판사" , pubDate: 20181111, commnet: "좋은 책"),
-        Book(title: "생각 정리 습관", image: "2", author: "디디" , publisher: "최고의 출판사" , pubDate: 20201111, commnet: "좋은 책")
-    ]
-}
 
 // MARK: - ExchangeHistory Data
 // TODO : 신청내역 조회 화면 데이터 연동 후 1) 더미데이터 삭제 2) ExchangeHistory 객체 생성

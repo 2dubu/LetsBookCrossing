@@ -347,8 +347,6 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         applyBookImgURL = returnArray()[indexPath.row].imgUrl
         
-        bookApplied = BookDummyData.shared.books[indexPath.row]
-        
         guard let applyBookPK = applyBookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             getApplyBookInfo(bookPK: applyBookPK) {

@@ -27,13 +27,13 @@
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
 		18F641D527C4772E000B2526 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641D427C4772E000B2526 /* Register.storyboard */; };
 		18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */; };
-		18F641DC27C4AB92000B2526 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DB27C4AB92000B2526 /* Constants.swift */; };
 		18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */; };
 		18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */; };
 		18F641E227C4AD53000B2526 /* SearchBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E127C4AD53000B2526 /* SearchBookViewController.swift */; };
 		18F641E427C4C61F000B2526 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E327C4C61F000B2526 /* SearchData.swift */; };
 		18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */; };
 		18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */; };
+		26211F8328D9D21D00FB580F /* ExchangeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26211F8228D9D21D00FB580F /* ExchangeInfo.swift */; };
 		263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */; };
 		2641E4FB27F141A800689B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AD27C46A84000B2526 /* LaunchScreen.storyboard */; };
 		26561873286C6B580077A127 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26561872286C6B580077A127 /* UIImageExtension.swift */; };
@@ -74,13 +74,13 @@
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		18F641D427C4772E000B2526 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		18F641D927C4AB3A000B2526 /* SetRegistrationMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRegistrationMethodViewController.swift; sourceTree = "<group>"; };
-		18F641DB27C4AB92000B2526 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F641DD27C4ACBB000B2526 /* DirectInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectInputViewController.swift; sourceTree = "<group>"; };
 		18F641DF27C4AD4A000B2526 /* ScanBarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarcodeViewController.swift; sourceTree = "<group>"; };
 		18F641E127C4AD53000B2526 /* SearchBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookViewController.swift; sourceTree = "<group>"; };
 		18F641E327C4C61F000B2526 /* SearchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		18F641E527C4C952000B2526 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
 		18F641E927C5BFC0000B2526 /* CompleteRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteRegisterViewController.swift; sourceTree = "<group>"; };
+		26211F8228D9D21D00FB580F /* ExchangeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInfo.swift; sourceTree = "<group>"; };
 		263495EE27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayToParticipateCollectionViewCell.swift; sourceTree = "<group>"; };
 		26561872286C6B580077A127 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		26765C9927C4785D00304788 /* SelectBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectBookViewController.swift; path = BookBori/ViewController/SelectBookViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -167,7 +167,6 @@
 		18F641B727C46E98000B2526 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				18F641DB27C4AB92000B2526 /* Constants.swift */,
 				18BA6C7A27DF22C00031405D /* Design.swift */,
 				18F641C027C470EB000B2526 /* DeviceConfig.swift */,
 				18F641C627C4710D000B2526 /* VCExtension.swift */,
@@ -208,6 +207,7 @@
 				18E6015227E73C20005A993A /* GetData.swift */,
 				18F641E327C4C61F000B2526 /* SearchData.swift */,
 				18F641D127C4744E000B2526 /* DummyData.swift */,
+				26211F8228D9D21D00FB580F /* ExchangeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26211F8328D9D21D00FB580F /* ExchangeInfo.swift in Sources */,
 				268E076627F67C2F0056F03F /* CheckTableViewCell.swift in Sources */,
 				18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */,
 				18BA6C7B27DF22C00031405D /* Design.swift in Sources */,
@@ -427,7 +428,6 @@
 				18F641C727C4710D000B2526 /* VCExtension.swift in Sources */,
 				18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
-				18F641DC27C4AB92000B2526 /* Constants.swift in Sources */,
 				C6985EC627F591AF00B0571C /* CALayerExtension.swift in Sources */,
 				18F641CA27C47214000B2526 /* MainViewController.swift in Sources */,
 				18F641E027C4AD4A000B2526 /* ScanBarcodeViewController.swift in Sources */,
@@ -580,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -613,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6JLYLDSW4U;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
