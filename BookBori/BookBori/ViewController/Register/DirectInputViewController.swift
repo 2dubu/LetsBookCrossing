@@ -132,7 +132,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.showAlert1(title: "안내", message: "교환할 책의 사진을 등록해 주세요", buttonTitle: "확인", handler: nil)
         }
         
-        bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
+        bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", pubDate: Int(pubdateTextField.text ?? "0") ?? 0, commnet: reviewTextView.text)
         
         guard let image = coverImageView.image else { return }
         
