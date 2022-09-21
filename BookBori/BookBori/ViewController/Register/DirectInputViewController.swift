@@ -146,82 +146,15 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         print("jpeg 변환 성공?" + imageJpegData.description)
                 
         ExchangeDataManager.shared.bookRegister = Book(title: titleTextField.text ?? "", imageData: imageJpegData, author: authorLabel.text ?? "", publisher: publisherLabel.text ?? "", pubDate: Int(pubdateLabel.text ?? "0") ?? 0, commnet: reviewTextView.text)
-        
-        /*
-        guard let applyBookPK = applyBookPK else { return }
-        getIsApplicableBook(bookPK: applyBookPK) {
-            if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
-                self.showAlert1(title: "죄송합니다", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-            } else {
-                guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
-                self.navigationController?.pushViewController(directInputVC, animated: true)
-            }
-        }
-        */
+    
         let filterdStr = self.reviewTextView.text.components(separatedBy: ["\"","\\"]).joined()
 
         self.checkApplicable(bookPK: ExchangeDataManager.shared.applyBookInfo!.bookPK) {
-            self.showAlert1(title: "filterdStr", message: filterdStr, buttonTitle: "OK") { _ in
+            self.showAlert1(title: "교환 신청이 완료되었습니다.", message: "", buttonTitle: "확인") { _ in
                 guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
                 self.navigationController?.pushViewController(completeRegisterVC, animated: true)
             }
         }
-        
-        /*
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.000Z"
-        let convertDate = dateFormatter.date(from: searchItem!.datetime)
-        
-        let myDateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        let convertStr = myDateFormatter.string(from: convertDate!)
-        
-        let registrationCompleteAlert = UIAlertController(title: "책 등록이 완료되었습니다", message: "\(calculateDate())까지\n등록한 책을 가지고 서울책보고로 방문해 교환을 완료하세요.", preferredStyle: .alert)
-        let registrationCompleteCancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        let registrationCompleteConfirmAction = UIAlertAction(title: "확인", style: .default) { _ in
-            
-            if let indexPath = userSelectedShelfNumber {
-                guard let searchItem = self.searchItem else { return }
-                self.db.collection("registrationData").document(returnDocumentName()).setData([
-                    "author" : self.authorTextField.text ?? "",
-                    "category" : self.categoryTitle ?? "",
-                    "description" : self.reviewTextView.text ?? "",
-                    "detailImage" : "",
-                    "image" : searchItem.thumbnail,
-                    "shelfNumber" : indexPath + 1,
-                    "state" : true,
-                    "title" : self.titleTextField.text ?? "",
-                    "uid" : self.user?.uid ?? "",
-                    "publisher" : searchItem.publisher,
-                    "dateTime" : convertStr
-                ]) { err in
-                    if err != nil {
-                        print("add registrationData: \(err)")
-                    }
-                }
-                self.db.collection("bookShelfData").document(returnDocumentName()).setData([
-                    "state" : false
-                ], merge: true)
-                { err in
-                    if err != nil {
-                        print("edit bookShelfData state: \(err)")
-                    }
-                }
-            }
-            
-            var userSelectRegistrationMethodButton : String?
-
-            self.navigationController?.dismiss(animated: true, completion: nil)
-        }
-        registrationCompleteConfirmAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-        registrationCompleteCancelAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-        
-        registrationCompleteAlert.addAction(registrationCompleteCancelAction)
-        registrationCompleteAlert.addAction(registrationCompleteConfirmAction)
-        self.present(registrationCompleteAlert, animated: true, completion: nil)
-        */
     }
     
     //MARK: - functions
