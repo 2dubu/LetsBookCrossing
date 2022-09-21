@@ -283,7 +283,6 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func returnArray() -> [BookData] {
         if isBaseArray == true {
-            print("baseArray: \(baseArray[0].bookTitle)")
             return baseArray
         } else {
             return filteredArray
