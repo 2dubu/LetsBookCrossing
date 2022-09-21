@@ -165,8 +165,7 @@ class CollectUserInfoViewController: UIViewController, UITextFieldDelegate {
         }
         
         if phoneNumberSuitable == true && passwordSuitable == true {
-            userPhoneNumber = phoneNumberText
-            userPassword = passwordText
+            ExchangeDataManager.shared.userInfo = UserInfo(phoneNumber: phoneNumberText, password: passwordText)
         } else if phoneNumberSuitable == false {
             self.showAlert1(title: "안내", message: "전화번호 형식이 올바르지 않아요\n다시 한 번 확인해주세요", buttonTitle: "확인", handler: nil)
         } else {

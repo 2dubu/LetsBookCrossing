@@ -102,12 +102,21 @@ class CompleteRegisterViewController: UIViewController {
             description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
             description2.text = "교환 신청 취소는\"북크로싱 신청 내역 조회\"\n에서 진행할 수 있습니다."
             
-            registerImageView.image = UIImage(named: bookRegister?.image ?? "")
-            //applyImageView.image = UIImage(named: bookApplied?.image ?? "") // SeoulBookBogoDataManager에서 가져오기
-            applyImageView.image = UIImage(named: "1")
+            guard let registerBookImageData = ExchangeDataManager.shared.bookRegister?.imageData else { return }
+            registerImageView.image = UIImage(data: registerBookImageData)
             
-            registerTitleLabel.text = bookRegister?.title
-            //applyTitleLabel.text = bookApplied?.title // SeoulBookBogoDataManager에서 가져오기
+            applyImageView.kf.indicatorType = .activity
+            applyImageView.kf.setImage(
+                with: URL(string: ExchangeDataManager.shared.applyBookInfo?.imageURL ?? ""),
+                placeholder: UIImage(named: "imageNotFound"),
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(0.7)),
+                    .cacheOriginalImage
+                ])
+            
+            registerTitleLabel.text = ExchangeDataManager.shared.bookRegister?.title
+            applyTitleLabel.text = ExchangeDataManager.shared.applyBookInfo?.title
             
             confirmButton.setTitle("확인", for: .normal)
         }

@@ -245,7 +245,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
         guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") as? DirectInputViewController else { return }
-        guard let applyBookPK = applyBookPK else { return }
+        guard let applyBookPK = ExchangeDataManager.shared.applyBookInfo?.bookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             self.navigationController?.pushViewController(directInputVC, animated: true)
         }

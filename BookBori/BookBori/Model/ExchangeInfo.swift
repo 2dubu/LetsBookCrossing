@@ -1,25 +1,47 @@
-//
-//  ExchangeInfo.swift
-//  BookBori
-//
-//  Created by 이로운 on 2022/09/20.
-//
-
-// 1. 서버와의 교류 없이 앱에서만 쓰이는 데이터인가?
-// 2. 다른 객체에서 얻을 수 있는 정보는 아닌가?
-// -> 1, 2번에 해당되지 않는 변수만 남기기
 
 import Foundation
 
-var userSelectRegistrationMethodButton : String?
+class ExchangeDataManager {
+    static let shared: ExchangeDataManager = ExchangeDataManager()
+    
+    // 책 등록 방식 구분
+    var RegistrationMethod : RegistrationMethod?
 
-var bookRegister : Book?
+    // 교환 완료 시 보낼 정보
+    var bookRegister: Book?
+    var userInfo: UserInfo?
+    
+    // GuideVC, CompleteRegistrationVC에서 표시할 신청책 정보 + PK를 통해 신청 가능한지 확인
+    var applyBookInfo: ApplyBook?
+    
+    // TODO : sendData 함수 구현 (등록 완료 버튼 누를 시 실행)
+    // TODO : resetData 함수 구현 (교환 정보 확인 후 실행)
+}
 
-var userPhoneNumber : String?
-var userPassword : String?
+struct Book {
+    var title : String
+    var imageData : Data
+    var author : String
+    var publisher : String
+    var pubDate : Int
+    var commnet: String
+}
 
-// 다른 객체에서 얻을 수 있지만, 따로 저장하는 방법이 좋을 것 같아 예외적으로 남김
-var applyBookPK : String?
-var applyBookTitle : String?
-var applyBookImgURL : String?
+struct UserInfo {
+    var phoneNumber: String
+    var password: String
+}
+
+struct ApplyBook {
+    var bookPK: String
+    var title: String
+    var imageURL: String
+}
+
+enum RegistrationMethod {
+    case scanBarcode
+    case seach
+    case DirectInput
+}
+
 
