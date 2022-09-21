@@ -1,11 +1,3 @@
-//
-//  LabelExtension.swift
-//  BookBori
-//
-//  Created by 이건우 on 2021/10/20.
-//
-
-import Foundation
 import UIKit
 
 extension UILabel {

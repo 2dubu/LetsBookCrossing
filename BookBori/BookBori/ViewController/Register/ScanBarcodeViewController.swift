@@ -105,7 +105,7 @@ class ScanBarcodeViewController: UIViewController {
             "Content-Type": "application/json; charset=utf-8"
         ]
         if let urlEncoding = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-            checkDeviceNetworkStatusToScanBarcode {
+//            checkDeviceNetworkStatusToScanBarcode {
                 self.indicatorView.isHidden = false
                 self.indicatorView.startAnimating()
                 
@@ -130,24 +130,24 @@ class ScanBarcodeViewController: UIViewController {
                             completion(.failure(error))
                         }
                     }
-            }
+//            }
         }
     }
     
-    private func checkDeviceNetworkStatusToScanBarcode(completion: @escaping ()->()) {
-        if(DeviceManager.shared.networkStatus) == false {
-            // 네트워크 연결 X
-            self.indicatorView.stopAnimating()
-            self.indicatorView.isHidden = true
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
-                self.captureSession.startRunning()
-            } handler2: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            completion()
-        }
-    }
+//    private func checkDeviceNetworkStatusToScanBarcode(completion: @escaping ()->()) {
+//        if(DeviceManager.shared.networkStatus) == false {
+//            // 네트워크 연결 X
+//            self.indicatorView.stopAnimating()
+//            self.indicatorView.isHidden = true
+//            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
+//                self.captureSession.startRunning()
+//            } handler2: { _ in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        } else {
+//            completion()
+//        }
+//    }
     
     private func setCenterGuideLineView() {
         let centerGuideLineView = UIView()
@@ -201,7 +201,7 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                         self.indicatorView.stopAnimating()
                         self.indicatorView.isHidden = true
                         
-                        if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
+                        if dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                             self.showAlert1(title: "검색 결과가 없습니다", message: "검색 결과가 없습니다. 다른 등록 방법을 사용해주세요.", buttonTitle: "확인") { _ in
                                 self.navigationController?.popViewController(animated: true)
                             }

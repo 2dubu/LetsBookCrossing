@@ -11,17 +11,17 @@
 		18998AB627DAF03400943C21 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB327DAEFD800943C21 /* GmarketSansLight.otf */; };
 		18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18998AB227DAEFD800943C21 /* GmarketSansMedium.otf */; };
 		18BA6C7B27DF22C00031405D /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA6C7A27DF22C00031405D /* Design.swift */; };
-		18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */; };
+		18D1E45727E30DDB002A5B4F /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1E45627E30DDB002A5B4F /* UITextFieldExtension.swift */; };
 		18E6015327E73C20005A993A /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6015227E73C20005A993A /* GetData.swift */; };
 		18F641A327C46A7F000B2526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A227C46A7F000B2526 /* AppDelegate.swift */; };
 		18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641A427C46A7F000B2526 /* SceneDelegate.swift */; };
 		18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641A827C46A7F000B2526 /* Main.storyboard */; };
 		18F641AC27C46A83000B2526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F641AB27C46A83000B2526 /* Assets.xcassets */; };
 		18F641BF27C470D6000B2526 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641BE27C470D6000B2526 /* StartViewController.swift */; };
-		18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C027C470EB000B2526 /* DeviceConfig.swift */; };
-		18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C227C470F2000B2526 /* LabelExtension.swift */; };
-		18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C427C470F7000B2526 /* NavigationExtension.swift */; };
-		18F641C727C4710D000B2526 /* VCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C627C4710D000B2526 /* VCExtension.swift */; };
+		18F641C127C470EB000B2526 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C027C470EB000B2526 /* NetworkCheck.swift */; };
+		18F641C327C470F2000B2526 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C227C470F2000B2526 /* UILabelExtension.swift */; };
+		18F641C527C470F7000B2526 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C427C470F7000B2526 /* UINavigationControllerExtension.swift */; };
+		18F641C727C4710D000B2526 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C627C4710D000B2526 /* UIViewControllerExtension.swift */; };
 		18F641CA27C47214000B2526 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641C927C47214000B2526 /* MainViewController.swift */; };
 		18F641CC27C4731F000B2526 /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F641CB27C4731F000B2526 /* Apply.storyboard */; };
 		18F641D227C4744E000B2526 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F641D127C4744E000B2526 /* DummyData.swift */; };
@@ -47,7 +47,9 @@
 		269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
 		C61ECC7C280E3D2F000D34B9 /* bookLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = C61ECC7B280E3D2F000D34B9 /* bookLoader.json */; };
+		C6417DCA28DB3A3F00BC3A8B /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6417DC928DB3A3F00BC3A8B /* UIWindowExtension.swift */; };
 		C6985EC627F591AF00B0571C /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6985EC527F591AF00B0571C /* CALayerExtension.swift */; };
+		C6DB3AB928D9E74900870E8F /* NetworkCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB3AB828D9E74900870E8F /* NetworkCheckViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,7 @@
 		18998AB327DAEFD800943C21 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
 		18998AB427DAEFD900943C21 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		18BA6C7A27DF22C00031405D /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		18D1E45627E30DDB002A5B4F /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		18E6015227E73C20005A993A /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		18F6419F27C46A7F000B2526 /* BookBori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F641A227C46A7F000B2526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,10 +67,10 @@
 		18F641AE27C46A84000B2526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F641B027C46A84000B2526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F641BE27C470D6000B2526 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		18F641C027C470EB000B2526 /* DeviceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceConfig.swift; sourceTree = "<group>"; };
-		18F641C227C470F2000B2526 /* LabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
-		18F641C427C470F7000B2526 /* NavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
-		18F641C627C4710D000B2526 /* VCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtension.swift; sourceTree = "<group>"; };
+		18F641C027C470EB000B2526 /* NetworkCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
+		18F641C227C470F2000B2526 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		18F641C427C470F7000B2526 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		18F641C627C4710D000B2526 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		18F641C927C47214000B2526 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18F641CB27C4731F000B2526 /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
 		18F641D127C4744E000B2526 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
@@ -92,7 +94,9 @@
 		268E076527F67C2F0056F03F /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUseViewController.swift; path = BookBori/ViewController/HowToUseViewController.swift; sourceTree = SOURCE_ROOT; };
 		C61ECC7B280E3D2F000D34B9 /* bookLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bookLoader.json; sourceTree = "<group>"; };
+		C6417DC928DB3A3F00BC3A8B /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		C6985EC527F591AF00B0571C /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		C6DB3AB828D9E74900870E8F /* NetworkCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckViewController.swift; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,14 +171,9 @@
 		18F641B727C46E98000B2526 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C6DB3ABA28D9E81E00870E8F /* Extensions */,
 				18BA6C7A27DF22C00031405D /* Design.swift */,
-				18F641C027C470EB000B2526 /* DeviceConfig.swift */,
-				18F641C627C4710D000B2526 /* VCExtension.swift */,
-				18F641C227C470F2000B2526 /* LabelExtension.swift */,
-				18F641C427C470F7000B2526 /* NavigationExtension.swift */,
-				18D1E45627E30DDB002A5B4F /* TextFieldExtension.swift */,
-				C6985EC527F591AF00B0571C /* CALayerExtension.swift */,
-				26561872286C6B580077A127 /* UIImageExtension.swift */,
+				18F641C027C470EB000B2526 /* NetworkCheck.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -191,6 +190,7 @@
 		18F641B927C46EAA000B2526 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C6DB3AB828D9E74900870E8F /* NetworkCheckViewController.swift */,
 				18F641BE27C470D6000B2526 /* StartViewController.swift */,
 				18F641C927C47214000B2526 /* MainViewController.swift */,
 				269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */,
@@ -295,6 +295,20 @@
 				C61ECC7B280E3D2F000D34B9 /* bookLoader.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		C6DB3ABA28D9E81E00870E8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18F641C427C470F7000B2526 /* UINavigationControllerExtension.swift */,
+				18F641C627C4710D000B2526 /* UIViewControllerExtension.swift */,
+				18D1E45627E30DDB002A5B4F /* UITextFieldExtension.swift */,
+				18F641C227C470F2000B2526 /* UILabelExtension.swift */,
+				26561872286C6B580077A127 /* UIImageExtension.swift */,
+				C6985EC527F591AF00B0571C /* CALayerExtension.swift */,
+				C6417DC928DB3A3F00BC3A8B /* UIWindowExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,14 +419,16 @@
 				268E076627F67C2F0056F03F /* CheckTableViewCell.swift in Sources */,
 				18F641DE27C4ACBB000B2526 /* DirectInputViewController.swift in Sources */,
 				18BA6C7B27DF22C00031405D /* Design.swift in Sources */,
-				18F641C327C470F2000B2526 /* LabelExtension.swift in Sources */,
+				18F641C327C470F2000B2526 /* UILabelExtension.swift in Sources */,
+				C6417DCA28DB3A3F00BC3A8B /* UIWindowExtension.swift in Sources */,
 				18F641EA27C5BFC0000B2526 /* CompleteRegisterViewController.swift in Sources */,
 				18F641E627C4C952000B2526 /* SearchBookTableViewCell.swift in Sources */,
+				C6DB3AB928D9E74900870E8F /* NetworkCheckViewController.swift in Sources */,
 				268B02B527F6824100980723 /* CheckViewController.swift in Sources */,
-				18F641C527C470F7000B2526 /* NavigationExtension.swift in Sources */,
+				18F641C527C470F7000B2526 /* UINavigationControllerExtension.swift in Sources */,
 				263495EF27F3DDBD0087E1CA /* WayToParticipateCollectionViewCell.swift in Sources */,
 				18F641DA27C4AB3B000B2526 /* SetRegistrationMethodViewController.swift in Sources */,
-				18F641C127C470EB000B2526 /* DeviceConfig.swift in Sources */,
+				18F641C127C470EB000B2526 /* NetworkCheck.swift in Sources */,
 				18F641D227C4744E000B2526 /* DummyData.swift in Sources */,
 				18F641BF27C470D6000B2526 /* StartViewController.swift in Sources */,
 				26561873286C6B580077A127 /* UIImageExtension.swift in Sources */,
@@ -425,8 +441,8 @@
 				26765CA027C5B9DE00304788 /* CollectUserInfoViewController.swift in Sources */,
 				18F641E427C4C61F000B2526 /* SearchData.swift in Sources */,
 				26765C9E27C5B9A500304788 /* GuideViewController.swift in Sources */,
-				18F641C727C4710D000B2526 /* VCExtension.swift in Sources */,
-				18D1E45727E30DDB002A5B4F /* TextFieldExtension.swift in Sources */,
+				18F641C727C4710D000B2526 /* UIViewControllerExtension.swift in Sources */,
+				18D1E45727E30DDB002A5B4F /* UITextFieldExtension.swift in Sources */,
 				18F641A527C46A7F000B2526 /* SceneDelegate.swift in Sources */,
 				C6985EC627F591AF00B0571C /* CALayerExtension.swift in Sources */,
 				18F641CA27C47214000B2526 /* MainViewController.swift in Sources */,
@@ -580,7 +596,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9GHM5422CF;
+				DEVELOPMENT_TEAM = 6JLYLDSW4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -597,7 +613,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -613,7 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9GHM5422CF;
+				DEVELOPMENT_TEAM = 6JLYLDSW4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookBori/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -630,7 +646,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlrjsdn5012.BookBori0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

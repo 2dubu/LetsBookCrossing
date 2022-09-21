@@ -1,11 +1,3 @@
-//
-//  CALayerExtension.swift
-//  BookBori
-//
-//  Created by 이건우 on 2022/03/31.
-//
-
-import Foundation
 import UIKit
 
 extension CALayer {

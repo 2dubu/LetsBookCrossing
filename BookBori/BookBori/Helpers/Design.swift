@@ -1,11 +1,3 @@
-//
-//  Design.swift
-//  BookBori
-//
-//  Created by 이건우 on 2022/03/14.
-//
-
-import Foundation
 import UIKit
 
 let backgroundColor = #colorLiteral(red: 0.9164561629, green: 0.9865347743, blue: 0.8901466727, alpha: 1)
