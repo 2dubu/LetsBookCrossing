@@ -1,11 +1,3 @@
-//
-//  Alert.swift
-//  BookBori
-//
-//  Created by 이건우 on 2022/02/22.
-//
-
-import Foundation
 import UIKit
 
 extension UIViewController {
@@ -46,7 +38,7 @@ extension UIViewController {
     // 선택한 도서가 신청 가능한지 확인 (신청 화면을 넘길 때마다)
     func checkApplicable(bookPK: String, completion: @escaping () -> ()) {
         
-        checkDeviceNetworkStatusAndShowAlert {
+//        checkDeviceNetworkStatusAndShowAlert {
             getIsApplicableBook(bookPK: bookPK) {
                 if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
                     self.showAlert1(title: "안내", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
@@ -58,21 +50,21 @@ extension UIViewController {
             } error: {
                 self.showServerErrorAlert()
             }
-        }
+//        }
     }
     
-    // 네트워크 체킹 
-    func checkDeviceNetworkStatusAndShowAlert(completion: @escaping () -> Void) {
-        if(DeviceManager.shared.networkStatus) == false {
-            // 네트워크 연결 X
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
-                self.checkDeviceNetworkStatusAndShowAlert() {
-                    completion()
-                }
-            }, handler2: nil)
-        } else {
-            completion()
-        }
-    }
+//    // 네트워크 체킹
+//    func checkDeviceNetworkStatusAndShowAlert(completion: @escaping () -> Void) {
+//        if(DeviceManager.shared.networkStatus) == false {
+//            // 네트워크 연결 X
+//            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
+//                self.checkDeviceNetworkStatusAndShowAlert() {
+//                    completion()
+//                }
+//            }, handler2: nil)
+//        } else {
+//            completion()
+//        }
+//    }
     
 }

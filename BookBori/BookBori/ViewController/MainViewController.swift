@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
-        self.checkDeviceNetworkStatusAndShowAlert() {
+//        self.checkDeviceNetworkStatusAndShowAlert() {
             getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
                 let applySB = UIStoryboard(name: "Apply", bundle: nil)
                 let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
@@ -47,16 +47,16 @@ class MainViewController: UIViewController {
             } error: {
                 self.showServerErrorAlert()
             }
-        }
+//        }
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
-        self.checkDeviceNetworkStatusAndShowAlert() {
+//        self.checkDeviceNetworkStatusAndShowAlert() {
             let registerSB = UIStoryboard(name: "Apply", bundle: nil)
             let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
             collectUserInfoNC.modalPresentationStyle = .fullScreen
             self.present(collectUserInfoNC, animated: true, completion: nil)
-        }
+//        }
     }
     
     @IBAction func noticeButtonTapped(_ sender: Any) {

@@ -157,7 +157,7 @@ class SelectBookViewController: UIViewController {
             getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
                     self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
                     // 검색 결과 없을 땐 defaultImage 표시
-                    if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
+                    if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 {
                         self.filteredArray = []
                         defaultImageView.isHidden = false
                         booksCollectionView.isScrollEnabled = false
@@ -261,19 +261,19 @@ extension SelectBookViewController: UISearchBarDelegate {
     
     // searchBar 완료 버튼 눌렀을 때 검색 결과 띄우기
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if(DeviceManager.shared.networkStatus) == true {
+//        if(DeviceManager.shared.networkStatus) == true {
             // 네트워크 연결 O
             self.showSearchResult()
-        } else {
+//        } else {
             // 네트워크 연결 X
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
-                self.searchBarSearchButtonClicked(self.searchBar)
-            } handler2: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
+//            self.animationView.stop()
+//            self.animationView.isHidden = true
+//            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
+//                self.searchBarSearchButtonClicked(self.searchBar)
+//            } handler2: { _ in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
     }
     
 }

@@ -1,11 +1,3 @@
-//
-//  TextFieldExtension.swift
-//  BookBori
-//
-//  Created by 이건우 on 2022/03/17.
-//
-
-import Foundation
 import UIKit
 
 extension UITextField {
