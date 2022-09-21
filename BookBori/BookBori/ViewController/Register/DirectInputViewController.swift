@@ -362,31 +362,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 10, right: 10)
         
         guard let searchItem = searchItem else { return }
-        
-        let matchedStrData = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
-        print("matched strData : \(matchedStrData)")
-        
-        titleTextField.text = matchedStrData
-        
-        /*
-        if searchItem.authors.count == 1 {
-            authorTextField.text = searchItem.authors[0]
-        } else if searchItem.authors.count > 1 {
-            authorTextField.text = "\(searchItem.authors[0]) 외 \(searchItem.authors.count-1)명"
-        } */
+        titleTextField.text = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
         authorTextField.text = searchItem.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
-        
-        let pubdate = searchItem.pubdate
-        //pubdate.removeLast(2)
-        //pubdate.insert(contentsOf: "년 ", at: pubdate.index(pubdate.startIndex, offsetBy: 4))
-        //pubdate.append(contentsOf: "월")
-        pubdateTextField.text = pubdate
-        
-        guard let imageURL = URL(string: searchItem.image) else { return }
+        pubdateTextField.text = searchItem.pubdate
+
         coverImageView.kf.indicatorType = .activity
         coverImageView.kf.setImage(
-            with: imageURL,
+            with: URL(string: searchItem.image),
             placeholder: UIImage(named: "beforeRegistration"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
