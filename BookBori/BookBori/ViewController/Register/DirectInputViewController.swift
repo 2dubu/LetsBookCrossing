@@ -19,6 +19,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     var whetherUploadCoverImage: Bool = false
     var searchItem : SearchResultOfNaver.BookInfo?
     var isApplicableBook = SeoulBookBogoDataManager.shared.isApplicableBook
+    var registrationMethod = ExchangeDataManager.shared.RegistrationMethod
     
     //MARK: - IBOutlet
     
@@ -47,9 +48,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if userSelectRegistrationMethodButton == "검색" {
+        if registrationMethod == .seach {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
-        } else if userSelectRegistrationMethodButton == "바코드" {
+        } else {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
         
@@ -132,15 +133,13 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.showAlert1(title: "안내", message: "교환할 책의 사진을 등록해 주세요", buttonTitle: "확인", handler: nil)
         }
         
-        bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", pubDate: Int(pubdateTextField.text ?? "0") ?? 0, commnet: reviewTextView.text)
+        ExchangeDataManager.shared.bookRegister = Book(title: titleTextField.text ?? "", imageURL: "", author: authorLabel.text ?? "", publisher: publisherLabel.text ?? "", pubDate: Int(pubdateLabel.text ?? "0") ?? 0, commnet: reviewTextView.text)
         
         guard let image = coverImageView.image else { return }
-        
         // 이미지 리사이징
         print("이미지 리사이징 전 : \(image.size.width)")
         let resizingImage = image.resize(newWidth: 50) // 몇으로 리사이징할지 알아야 함.
         print("이미지 리사이징 후 : \(resizingImage.size.width)")
-        
         // 이미지 포맷 고정
         if let imageJpegData = image.jpegData(compressionQuality: 0.8) {
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -164,8 +163,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         */
         let filterdStr = self.reviewTextView.text.components(separatedBy: ["\"","\\"]).joined()
 
-        guard let applyBookPK = applyBookPK else { return }
-        self.checkApplicable(bookPK: applyBookPK) {
+        self.checkApplicable(bookPK: ExchangeDataManager.shared.applyBookInfo!.bookPK) {
             self.showAlert1(title: "filterdStr", message: filterdStr, buttonTitle: "OK") { _ in
                 guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
                 self.navigationController?.pushViewController(completeRegisterVC, animated: true)
@@ -304,11 +302,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
 
     func updateWhetherUploadCoverImage() {
-        if userSelectRegistrationMethodButton == "바코드" {
+        switch registrationMethod {
+        case .scanBarcode:
             whetherUploadCoverImage = true
-        } else if userSelectRegistrationMethodButton == "검색" {
+        case .seach:
             whetherUploadCoverImage = true
-        } else {
+        case .DirectInput:
+            whetherUploadCoverImage = false
+        case .none:
             whetherUploadCoverImage = false
         }
     }

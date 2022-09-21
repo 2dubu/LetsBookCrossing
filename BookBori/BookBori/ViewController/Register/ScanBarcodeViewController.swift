@@ -206,8 +206,7 @@ extension ScanBarcodeViewController: AVCaptureMetadataOutputObjectsDelegate {
                                 self.navigationController?.popViewController(animated: true)
                             }
                         } else {
-                            guard let applyBookPK = applyBookPK else { return }
-                            self.checkApplicable(bookPK: applyBookPK) {
+                            self.checkApplicable(bookPK: ExchangeDataManager.shared.applyBookInfo?.bookPK ?? "") {
                                 guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") else { return }
                                 self.navigationController?.pushViewController(directInputVC, animated: true)
                             }

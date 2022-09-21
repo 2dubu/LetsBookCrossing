@@ -109,7 +109,7 @@ class GuideViewController: UIViewController {
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         
-        guard let applyBookPK = applyBookPK else { return }
+        guard let applyBookPK = ExchangeDataManager.shared.applyBookInfo?.bookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             let collectUserInfoVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "CollectUserInfoVC")
             self.navigationController?.pushViewController(collectUserInfoVC, animated: true)
@@ -143,16 +143,17 @@ class GuideViewController: UIViewController {
     
     func setBookAppliedInfo() {
         
+        guard let applyBookImageURL = ExchangeDataManager.shared.applyBookInfo?.imageURL else { return }
         bookCoverImageView.kf.indicatorType = .activity
         bookCoverImageView.kf.setImage(
-            with: URL(string: applyBookImgURL ?? "0"),
+            with: URL(string: applyBookImageURL),
             placeholder: UIImage(named: "imageNotFound"),
             options: [
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(0.7)),
                 .cacheOriginalImage
             ])
-        bookTitleLabel.text = applyBookTitle
+        bookTitleLabel.text = ExchangeDataManager.shared.applyBookInfo?.title
         authorLabel2.text = appliedBookInfo.data.writer
         publisherLabel2.text = appliedBookInfo.data.publisher
         pubDateLabel2.text = appliedBookInfo.data.pubDate

@@ -7,18 +7,6 @@
 
 import Foundation
 
-// MARK: - Book Data
-
-struct Book {
-    var title : String
-    var image : String
-    var author : String
-    var publisher : String
-    var pubDate : Int
-    var commnet: String
-}
-
-
 // MARK: - ExchangeHistory Data
 // TODO : 신청내역 조회 화면 데이터 연동 후 1) 더미데이터 삭제 2) ExchangeHistory 객체 생성
 

@@ -283,6 +283,7 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func returnArray() -> [BookData] {
         if isBaseArray == true {
+            print("baseArray: \(baseArray[0].bookTitle)")
             return baseArray
         } else {
             return filteredArray
@@ -338,16 +339,9 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        // ⚠️ 여기 고치자
-        applyBookPK = returnArray()[indexPath.row].bookPK
-        if returnArray()[indexPath.row].bookTitle == "" {
-            applyBookTitle = "(제목 없음)"
-        } else {
-            applyBookTitle = returnArray()[indexPath.row].bookTitle
-        }
-        applyBookImgURL = returnArray()[indexPath.row].imgUrl
+        ExchangeDataManager.shared.applyBookInfo = ApplyBook(bookPK: returnArray()[indexPath.row].bookPK, title: returnArray()[indexPath.row].bookTitle, imageURL: returnArray()[indexPath.row].imgUrl)
         
-        guard let applyBookPK = applyBookPK else { return }
+        guard let applyBookPK = ExchangeDataManager.shared.applyBookInfo?.bookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             getApplyBookInfo(bookPK: applyBookPK) {
                 let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")
