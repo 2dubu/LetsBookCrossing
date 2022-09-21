@@ -102,8 +102,8 @@ class CompleteRegisterViewController: UIViewController {
             description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
             description2.text = "교환 신청 취소는\"북크로싱 신청 내역 조회\"\n에서 진행할 수 있습니다."
             
-            // ⚠️ 등록책 이미지 가져올 방법 찾아야 함 : DirectInpurVC의 ImageView의 이미지 가져오기
-            // registerImageView.image =
+            guard let registerBookImageData = ExchangeDataManager.shared.bookRegister?.imageData else { return }
+            registerImageView.image = UIImage(data: registerBookImageData)
             
             applyImageView.kf.indicatorType = .activity
             applyImageView.kf.setImage(

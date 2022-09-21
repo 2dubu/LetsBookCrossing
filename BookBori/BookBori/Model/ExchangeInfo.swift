@@ -20,7 +20,7 @@ class ExchangeDataManager {
 
 struct Book {
     var title : String
-    var imageURL : String
+    var imageData : Data
     var author : String
     var publisher : String
     var pubDate : Int

@@ -133,20 +133,19 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.showAlert1(title: "안내", message: "교환할 책의 사진을 등록해 주세요", buttonTitle: "확인", handler: nil)
         }
         
-        ExchangeDataManager.shared.bookRegister = Book(title: titleTextField.text ?? "", imageURL: "", author: authorLabel.text ?? "", publisher: publisherLabel.text ?? "", pubDate: Int(pubdateLabel.text ?? "0") ?? 0, commnet: reviewTextView.text)
-        
         guard let image = coverImageView.image else { return }
         // 이미지 리사이징
         print("이미지 리사이징 전 : \(image.size.width)")
         let resizingImage = image.resize(newWidth: 50) // 몇으로 리사이징할지 알아야 함.
         print("이미지 리사이징 후 : \(resizingImage.size.width)")
         // 이미지 포맷 고정
-        if let imageJpegData = image.jpegData(compressionQuality: 0.8) {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let fileName = paths[0].appendingPathComponent("bookCoverImage.jpeg")
-            try? imageJpegData.write(to: fileName)
-            print("jpeg 변환 성공?" + imageJpegData.description)
-        }
+        guard let imageJpegData = image.jpegData(compressionQuality: 0.8) else { return }
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let fileName = paths[0].appendingPathComponent("bookCoverImage.jpeg")
+        try? imageJpegData.write(to: fileName)
+        print("jpeg 변환 성공?" + imageJpegData.description)
+                
+        ExchangeDataManager.shared.bookRegister = Book(title: titleTextField.text ?? "", imageData: imageJpegData, author: authorLabel.text ?? "", publisher: publisherLabel.text ?? "", pubDate: Int(pubdateLabel.text ?? "0") ?? 0, commnet: reviewTextView.text)
         
         /*
         guard let applyBookPK = applyBookPK else { return }
