@@ -25,14 +25,14 @@ class SetRegistrationMethodViewController: UIViewController {
     
     @IBAction func barcodeButtonTapped(_ sender: Any) {
         checkCameraPermission()
-        exchangeDM.RegistrationMethod = .scanBarcode
+        exchangeDM.registrationMethod = .scanBarcode
         self.checkApplicable(bookPK: exchangeDM.applyBookInfo?.bookPK ?? "0") {
             guard let scanBarcodeVC = self.storyboard?.instantiateViewController(identifier: "ScanBarcodeVC") as? ScanBarcodeViewController else { return }
             self.navigationController?.pushViewController(scanBarcodeVC, animated: true)
         }
     }
     @IBAction func searchTitleButtonTapped(_ sender: Any) {
-        exchangeDM.RegistrationMethod = .seach
+        exchangeDM.registrationMethod = .seach
         
         self.checkApplicable(bookPK: exchangeDM.applyBookInfo?.bookPK ?? "0") {
             guard let searchBookVC = self.storyboard?.instantiateViewController(identifier: "SearchBookVC") as? SearchBookViewController else { return }
@@ -40,7 +40,7 @@ class SetRegistrationMethodViewController: UIViewController {
         }
     }
     @IBAction func directButtonTapped(_ sender: Any) {
-        exchangeDM.RegistrationMethod = .DirectInput
+        exchangeDM.registrationMethod = .DirectInput
         self.checkApplicable(bookPK: exchangeDM.applyBookInfo?.bookPK ?? "0") {
             guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") as? DirectInputViewController else { return }
             self.navigationController?.pushViewController(directInputVC, animated: true)

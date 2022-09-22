@@ -19,7 +19,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     var whetherUploadCoverImage: Bool = false
     var searchItem : SearchResultOfNaver.BookInfo?
     var isApplicableBook = SeoulBookBogoDataManager.shared.isApplicableBook
-    var registrationMethod = ExchangeDataManager.shared.RegistrationMethod
+    var registrationMethod = ExchangeDataManager.shared.registrationMethod
     
     //MARK: - IBOutlet
     

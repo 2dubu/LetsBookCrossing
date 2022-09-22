@@ -57,7 +57,8 @@ class CompleteRegisterViewController: UIViewController {
         } else {
             self.dismiss(animated: true)
         }
-        
+        // 신청 프로세스 이후 ExchangeDataManager 초기화
+        ExchangeDataManager.shared.resetData()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
