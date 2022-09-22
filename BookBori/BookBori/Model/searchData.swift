@@ -16,21 +16,21 @@ class dataManager {
 }
 
 struct SearchResultOfNaver: Codable {
-    struct BookInfo: Codable {
-        let title: String
-        let link: String
-        let image: String
-        let author: String
-        let price: String
-        let publisher: String
-        let pubdate: String
-        let isbn: String
-        let description: String
-    }
-    
     let lastBuildDate: String
     let total: Int
     let start: Int
     let display: Int
     var items: [BookInfo]
+    
+    struct BookInfo: Codable {
+        let title: String
+        let link: String
+        let image: String
+        let author: String
+        let discount: String
+        let publisher: String
+        let pubdate: String
+        let isbn: String
+        let description: String
+    }
 }
