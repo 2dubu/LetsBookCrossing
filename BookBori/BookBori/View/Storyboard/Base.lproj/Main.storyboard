@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GmarketSansLight.otf">
+            <string>GmarketSansLight</string>
+        </array>
         <array key="GmarketSansMedium.otf">
             <string>GmarketSansMedium</string>
         </array>
@@ -57,13 +61,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Eoe-Al-oUc">
-                                <rect key="frame" x="148.33333333333334" y="83" width="93.333333333333343" height="29.333333333333329"/>
+                                <rect key="frame" x="148.33333333333334" y="86" width="93.333333333333343" height="29.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Eoe-Al-oUc" secondAttribute="height" multiplier="16:5" id="Yuo-Bt-kM6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjZ-ai-lVA">
-                                <rect key="frame" x="23" y="162.33333333333334" width="183" height="96.000000000000028"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjZ-ai-lVA">
+                                <rect key="frame" x="23" y="162.33333333333337" width="183" height="96"/>
                                 <attributedString key="attributedText">
                                     <fragment content="북크로싱은 헌책을 매개로 시민 간에 연결되는 경험을 제공하고 헌책이 순환되는  문화를 형성합니다.">
                                         <attributes>
@@ -84,8 +88,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainViewCharacter" translatesAutoresizingMaskIntoConstraints="NO" id="lMM-Pp-AFm">
                                 <rect key="frame" x="200.33333333333337" y="190" width="162.66666666666663" height="166.66666666666663"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-dF-CpV">
-                                <rect key="frame" x="23" y="288.33333333333331" width="160" height="32.333333333333314"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-dF-CpV">
+                                <rect key="frame" x="23" y="288.33333333333337" width="160" height="32.333333333333314"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
@@ -102,8 +106,8 @@
                                     <segue destination="vNW-KF-bWK" kind="show" id="9BY-wR-aQe"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_v_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-lZ-FhY">
-                                <rect key="frame" x="188" y="297.33333333333331" width="23.333333333333343" height="8.3333333333333144"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ico_v_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-lZ-FhY">
+                                <rect key="frame" x="188" y="297.33333333333337" width="23.333333333333343" height="8.3333333333333144"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SZe-lZ-FhY" secondAttribute="height" multiplier="11:4" id="Znl-6D-iCH"/>
                                 </constraints>
@@ -319,13 +323,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nee-j7-pMl">
-                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-TW-6Ei">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1478"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1470"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvg-9c-Z9a">
-                                                <rect key="frame" x="15" y="12" width="360" height="580.66666666666663"/>
+                                                <rect key="frame" x="15" y="12" width="360" height="572.66666666666663"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="howToUseImage" translatesAutoresizingMaskIntoConstraints="NO" id="oSu-w8-S9P">
                                                         <rect key="frame" x="17" y="16.999999999999986" width="326" height="224.66666666666663"/>
@@ -346,13 +350,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcf-MT-xUb">
-                                                        <rect key="frame" x="19" y="297.66666666666669" width="322" height="75"/>
+                                                        <rect key="frame" x="19" y="297.66666666666669" width="322" height="72"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="책을 읽은 후 책과 함께 메시지를 적어 공공장소에 놓아두면 다른 사람이 그 책을 읽고 또 다른 사람에게 넘기는 책 순환 운동입니다.">
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Medium"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.3" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                    <font key="NSFont" size="16" name="GmarketSansMedium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                         <tabStops/>
                                                                     </paragraphStyle>
                                                                 </attributes>
@@ -361,7 +365,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDg-kY-92G">
-                                                        <rect key="frame" x="19" y="402.66666666666669" width="322" height="20"/>
+                                                        <rect key="frame" x="19" y="399.66666666666669" width="322" height="20"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="서울책보고는,">
                                                                 <attributes>
@@ -373,14 +377,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-w2-TaP">
-                                                        <rect key="frame" x="19" y="430.66666666666663" width="322" height="125"/>
+                                                        <rect key="frame" x="19" y="427.66666666666663" width="322" height="120"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="온라인 ‘책보리’와 오프라인 서가를 마련해 시민들이 다 읽은 책을 다른 사람에게 건넬 수 있도록 온·오프라인 북크로싱 프로그램을 운영합니다. 집에서 잠들어 있는 책을 책보리에 등록된 500여 권의 책과 교환해 보세요!">
+                                                            <fragment content="온라인 ‘책보리’와 오프라인 서가를 마련해 시민들이 다 읽은 책을 다른 사람에게 건넬 수 있도록 온·오프라인 북크로싱 프로그램을 운영합니다. 집에서 잠들어 있는 책을 책보리에 등록된 500여 권의 책과 교환해 보세요!">
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Medium"/>
+                                                                    <font key="NSFont" size="16" name="GmarketSansMedium"/>
                                                                     <real key="NSKern" value="0.29999999999999999"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.3" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                         <tabStops/>
                                                                     </paragraphStyle>
                                                                 </attributes>
@@ -410,7 +414,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-FN-iv6">
-                                                <rect key="frame" x="0.0" y="612.66666666666663" width="390" height="51.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="604.66666666666663" width="390" height="51.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NI-3d-3y9">
                                                         <rect key="frame" x="76.333333333333329" y="14.666666666666742" width="237.33333333333337" height="22"/>
@@ -473,7 +477,7 @@
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z10-gj-mW3">
-                                                <rect key="frame" x="0.0" y="682" width="390" height="585"/>
+                                                <rect key="frame" x="0.0" y="674" width="390" height="585"/>
                                                 <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="z10-gj-mW3" secondAttribute="height" multiplier="1:1.5" id="kFS-qC-71t"/>
@@ -504,8 +508,8 @@
 교환하고 싶은 도서 선택 후 이용 약관 확인</string>
                                                                                     <attributes>
                                                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                                        <font key="NSFont" size="16" name="GmarketSansLight"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                        <font key="NSFont" size="16" name="GmarketSansMedium"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
                                                                                     </attributes>
                                                                                 </fragment>
                                                                             </attributedString>
@@ -548,12 +552,12 @@
                                                 </cells>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mqS-Id-mGd">
-                                                <rect key="frame" x="0.0" y="1220" width="390" height="25"/>
+                                                <rect key="frame" x="0.0" y="1211" width="390" height="26"/>
                                                 <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.40000003579999999" green="0.60784316059999999" blue="0.39607840779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </pageControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmC-Qr-RxC">
-                                                <rect key="frame" x="0.0" y="1200" width="390" height="15"/>
+                                                <rect key="frame" x="0.0" y="1191" width="390" height="15"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="옆으로 스와이프 하세요">
                                                         <attributes>
@@ -566,7 +570,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-lg-wjL">
-                                                <rect key="frame" x="15" y="1282" width="360" height="176"/>
+                                                <rect key="frame" x="15" y="1274" width="360" height="176"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-KN-GNN">
                                                         <rect key="frame" x="0.0" y="30" width="360" height="22"/>
@@ -625,11 +629,20 @@
                                                             <fragment>
                                                                 <string key="content">신청 당일 또는 다음 날 운영 시간 이내에 
 서울책보고에 방문 후 안내 데스크에 문의하기
-(시간이 지나면 신청이 자동으로 취소됩니다.)</string>
+</string>
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                    <font key="NSFont" size="16" name="GmarketSansLight"/>
+                                                                    <font key="NSFont" size="16" name="GmarketSansMedium"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops/>
+                                                                    </paragraphStyle>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="(시간이 지나면 신청이 자동으로 취소됩니다.)">
+                                                                <attributes>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="16" name="GmarketSansMedium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineHeightMultiple="1.5" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                         <tabStops/>
                                                                     </paragraphStyle>
                                                                 </attributes>
@@ -729,7 +742,7 @@
                 <navigationController storyboardIdentifier="MainNC" automaticallyAdjustsScrollViewInsets="NO" id="aKU-o6-3JV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6xD-lW-OUI">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -761,7 +774,7 @@
         <image name="applyIcon" width="528" height="512"/>
         <image name="bg_wrap" width="252.66667175292969" height="198"/>
         <image name="checkIcon" width="528" height="512"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="howToUseImage" width="1732" height="1190"/>
         <image name="ico_v_arrow" width="36.666667938232422" height="13"/>
         <image name="launchLogo" width="261.33334350585938" height="86"/>
@@ -769,7 +782,7 @@
         <image name="mainViewCharacter" width="229.33332824707031" height="266.66665649414062"/>
         <image name="recycle" width="266.66665649414062" height="231.66667175292969"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
