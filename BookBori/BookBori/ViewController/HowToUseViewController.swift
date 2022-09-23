@@ -1,17 +1,23 @@
-//
-//  HowToUserViewController.swift
-//  BookBori
-//
-//  Created by 이로운 on 2022/03/29.
-//
 
 import UIKit
 import Gifu
+
+struct HowToUse {
+    var description : String
+    var image : String
+}
 
 class HowToUserViewController: UIViewController {
     
     // MARK: - Variables
     var nowPage: Int = 0
+    
+    // TODO : image를 앱 화면 gif로 변경
+    var howToUseData: [HowToUse] = [
+        HowToUse(description: "첫 번째,\n‘북크로싱 신청하기’ 메뉴의 도서 목록 중,\n교환하고 싶은 도서 선택 후 이용 약관 확인", image: "3"),
+        HowToUse(description: "두 번째,\n본인의 전화번호와 비밀번호 입력\n(본인 확인에 사용되니 정확히 입력해 주세요)", image: "3"),
+        HowToUse(description: "세 번째,\n선택한 책과 교환할,\n자신의 책 등록 후 교환 신청 완료!", image: "3")
+    ]
     
     // MARK: - IBOutlets
     @IBOutlet weak var whiteView1: UIView!
@@ -86,7 +92,7 @@ class HowToUserViewController: UIViewController {
         seoulBookbogoDescriptionLabel.dynamicFont(fontSize: 16)
         
         wayToParticipateTitleLabel.dynamicFont(fontSize: 22)
-        swipeLabel.dynamicFont(fontSize: 16)
+        swipeLabel.dynamicFont(fontSize: 15)
         afterApplyLabel.dynamicFont(fontSize: 22)
         afterApplyDescriptionLabel.dynamicFont(fontSize: 16)
     }
@@ -96,13 +102,13 @@ class HowToUserViewController: UIViewController {
 extension HowToUserViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HowToUseDummyData.shared.descriptions.count
+        return howToUseData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = wayToParticipateCollectionView.dequeueReusableCell(withReuseIdentifier: "WayToParticipateCell", for: indexPath) as! WayToParticipateCollectionViewCell
-        cell.descriptionLabel.text = HowToUseDummyData.shared.descriptions[indexPath.row].description
-        cell.gifImageView.animate(withGIFNamed: HowToUseDummyData.shared.descriptions[indexPath.row].image)
+        cell.descriptionLabel.text = howToUseData[indexPath.row].description
+        cell.gifImageView.animate(withGIFNamed: howToUseData[indexPath.row].image)
         
         // Set whiteView
         cell.whiteView.layer.cornerRadius = 15
