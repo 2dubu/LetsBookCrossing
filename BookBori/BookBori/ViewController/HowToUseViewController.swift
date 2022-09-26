@@ -1,17 +1,23 @@
-//
-//  HowToUserViewController.swift
-//  BookBori
-//
-//  Created by 이로운 on 2022/03/29.
-//
 
 import UIKit
 import Gifu
+
+struct HowToUse {
+    var description : String
+    var image : String
+}
 
 class HowToUserViewController: UIViewController {
     
     // MARK: - Variables
     var nowPage: Int = 0
+    
+    // TODO : image를 앱 화면 gif로 변경
+    var howToUseData: [HowToUse] = [
+        HowToUse(description: "첫 번째,\n‘북크로싱 신청하기’ 메뉴의 도서 목록 중,\n교환하고 싶은 도서 선택 후 이용 약관 확인", image: "3"),
+        HowToUse(description: "두 번째,\n본인의 전화번호와 비밀번호 입력\n(본인 확인에 사용되니 정확히 입력해 주세요)", image: "3"),
+        HowToUse(description: "세 번째,\n선택한 책과 교환할,\n자신의 책 등록 후 교환 신청 완료!", image: "3")
+    ]
     
     // MARK: - IBOutlets
     @IBOutlet weak var whiteView1: UIView!
@@ -54,7 +60,6 @@ class HowToUserViewController: UIViewController {
         setNavigation()
         setWhiteView()
         dynamicFont()
-        applyAttribute()
     }
     
     /// navigatoin 설정
@@ -87,27 +92,9 @@ class HowToUserViewController: UIViewController {
         seoulBookbogoDescriptionLabel.dynamicFont(fontSize: 16)
         
         wayToParticipateTitleLabel.dynamicFont(fontSize: 22)
+        swipeLabel.dynamicFont(fontSize: 15)
         afterApplyLabel.dynamicFont(fontSize: 22)
         afterApplyDescriptionLabel.dynamicFont(fontSize: 16)
-    }
-    
-    /// Attribute 적용
-    func applyAttribute() {
-        guard let text = self.afterApplyDescriptionLabel.text else { return }
-        let attributeString = NSMutableAttributedString(string: text)
-        
-        // 특정 문자 굵기 변경
-        guard let font = UIFont(name: "GmarketSansMedium", size: 16) else { return }
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "신청 당일 또는 다음 날 운영 시간 이내"))
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "안내 데스크에 문의"))
-        
-        // 행간 간격 조절
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
-        attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributeString.length))
-        
-        afterApplyDescriptionLabel.attributedText = attributeString
-        afterApplyDescriptionLabel.textAlignment = .center
     }
 }
 
@@ -115,13 +102,13 @@ class HowToUserViewController: UIViewController {
 extension HowToUserViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HowToUseDummyData.shared.descriptions.count
+        return howToUseData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = wayToParticipateCollectionView.dequeueReusableCell(withReuseIdentifier: "WayToParticipateCell", for: indexPath) as! WayToParticipateCollectionViewCell
-        cell.descriptionLabel.text = HowToUseDummyData.shared.descriptions[indexPath.row].description
-        cell.gifImageView.animate(withGIFNamed: HowToUseDummyData.shared.descriptions[indexPath.row].image)
+        cell.descriptionLabel.text = howToUseData[indexPath.row].description
+        cell.gifImageView.animate(withGIFNamed: howToUseData[indexPath.row].image)
         
         // Set whiteView
         cell.whiteView.layer.cornerRadius = 15
@@ -129,30 +116,7 @@ extension HowToUserViewController : UICollectionViewDelegate, UICollectionViewDa
         cell.whiteView.layer.borderWidth = 0.5
         setViewShadow(view: cell.whiteView, shadowRadius: 3, shadowOpacity: 0.3)
         
-        // Set descriptionLabel
-        let text = cell.descriptionLabel.text
-        let attributeString = NSMutableAttributedString(string: text ?? "")
-        // 특정 문자 색상 변경
-        attributeString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1) , range: (text! as NSString).range(of:"첫 번째,"))
-        attributeString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1), range: (text! as NSString).range(of:"두 번째,"))
-        attributeString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.3300665617, green: 0.614702642, blue: 0.3727215827, alpha: 1), range: (text! as NSString).range(of:"세 번째,"))
-        
-        // 특정 문자 굵기 변경
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "첫 번째,"))
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "두 번째,"))
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "세 번째,"))
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "교환하고 싶은 도서 선택"))
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "전화번호와 비밀번호 입력"))
-        attributeString.addAttribute(.font, value: UIFont(name: "GmarketSansMedium", size: 16)!, range: (text! as NSString).range(of: "선택한 책과 교환할,\n자신의 책 등록"))
-        cell.descriptionLabel.attributedText = attributeString
-        
-        // 행간 간격 조절
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
-        attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributeString.length))
-        cell.descriptionLabel.attributedText = attributeString
-        
-        // 중간 정렬
+        cell.descriptionLabel.dynamicFont(fontSize: 16)
         cell.descriptionLabel.textAlignment = .center
         
         return cell
