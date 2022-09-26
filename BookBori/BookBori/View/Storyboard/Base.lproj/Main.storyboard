@@ -251,6 +251,20 @@
                                     <constraint firstAttribute="height" constant="5" id="1Vd-d7-1ps"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5s-zu-dKY">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ux9-cU-Byc" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="156" y="383" width="78" height="78"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ux9-cU-Byc" secondAttribute="height" multiplier="1:1" id="9LN-1D-Ixm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="bookLoader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUU-ax-mkS"/>
                         <color key="backgroundColor" red="0.92941176889999999" green="0.98431372640000003" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -258,12 +272,14 @@
                             <constraint firstItem="Eoe-Al-oUc" firstAttribute="width" secondItem="m1S-Wh-4DB" secondAttribute="width" multiplier="0.24" id="1BA-LW-p4U"/>
                             <constraint firstAttribute="bottom" secondItem="4l9-wE-rV4" secondAttribute="bottom" constant="50" id="7xk-HP-oeb"/>
                             <constraint firstItem="zen-ic-CoR" firstAttribute="trailing" secondItem="07c-tW-jsf" secondAttribute="trailing" id="8k9-gk-XW2"/>
+                            <constraint firstItem="V5s-zu-dKY" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" id="9v1-Ns-dyC"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="trailing" secondItem="gUU-ax-mkS" secondAttribute="trailing" id="A1F-Fz-vxe"/>
                             <constraint firstItem="CeN-dF-CpV" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="23" id="CnQ-m7-Ndu"/>
                             <constraint firstItem="OGt-dl-tj8" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="F7N-Y4-eAY"/>
                             <constraint firstItem="RIl-n7-iYK" firstAttribute="top" secondItem="CeN-dF-CpV" secondAttribute="bottom" id="GUb-xl-b8Q"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="top" secondItem="m1S-Wh-4DB" secondAttribute="top" id="GfX-cg-ClI"/>
                             <constraint firstItem="OGt-dl-tj8" firstAttribute="top" secondItem="CeN-dF-CpV" secondAttribute="bottom" constant="38" id="IuT-pj-Two"/>
+                            <constraint firstItem="ux9-cU-Byc" firstAttribute="centerY" secondItem="m1S-Wh-4DB" secondAttribute="centerY" id="JR7-A0-O3g"/>
                             <constraint firstItem="Eoe-Al-oUc" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="Kt1-M8-G7H"/>
                             <constraint firstItem="4l9-wE-rV4" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="LIK-rY-5Gy"/>
                             <constraint firstItem="JjZ-ai-lVA" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="23" id="Nh3-eg-bGs"/>
@@ -277,15 +293,20 @@
                             <constraint firstItem="iR7-hB-8Jz" firstAttribute="leading" secondItem="7wd-qY-rbt" secondAttribute="leading" id="WHD-X0-mKy"/>
                             <constraint firstItem="zen-ic-CoR" firstAttribute="leading" secondItem="07c-tW-jsf" secondAttribute="leading" id="XdD-es-n0P"/>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="width" secondItem="m1S-Wh-4DB" secondAttribute="width" multiplier="0.43" id="Y9d-Oc-JGy"/>
+                            <constraint firstAttribute="bottom" secondItem="V5s-zu-dKY" secondAttribute="bottom" id="Ybh-Qc-wcG"/>
                             <constraint firstItem="RIl-n7-iYK" firstAttribute="leading" secondItem="CeN-dF-CpV" secondAttribute="leading" id="Zip-BY-72p"/>
                             <constraint firstItem="lMM-Pp-AFm" firstAttribute="top" secondItem="ppy-Ab-hVi" secondAttribute="top" constant="15" id="a00-iz-8fY"/>
                             <constraint firstItem="ppy-Ab-hVi" firstAttribute="top" secondItem="7Gd-Xa-6fw" secondAttribute="bottom" constant="40" id="dHA-QX-761"/>
                             <constraint firstItem="4l9-wE-rV4" firstAttribute="leading" secondItem="gUU-ax-mkS" secondAttribute="leading" constant="23" id="dlm-aS-EXB"/>
+                            <constraint firstItem="ux9-cU-Byc" firstAttribute="width" secondItem="V5s-zu-dKY" secondAttribute="width" multiplier="0.2" id="e4B-9M-kjd"/>
                             <constraint firstItem="SZe-lZ-FhY" firstAttribute="leading" secondItem="CeN-dF-CpV" secondAttribute="trailing" constant="5" id="fGU-jf-A3m"/>
+                            <constraint firstItem="ux9-cU-Byc" firstAttribute="centerX" secondItem="m1S-Wh-4DB" secondAttribute="centerX" id="fVc-Pi-jNE"/>
                             <constraint firstItem="7Gd-Xa-6fw" firstAttribute="height" secondItem="m1S-Wh-4DB" secondAttribute="height" multiplier="0.16" id="gFE-sG-JSj"/>
+                            <constraint firstItem="V5s-zu-dKY" firstAttribute="top" secondItem="m1S-Wh-4DB" secondAttribute="top" id="ibj-14-u78"/>
                             <constraint firstItem="iR7-hB-8Jz" firstAttribute="top" secondItem="7wd-qY-rbt" secondAttribute="top" id="ikM-1p-1LG"/>
                             <constraint firstItem="Eoe-Al-oUc" firstAttribute="top" secondItem="gUU-ax-mkS" secondAttribute="top" constant="-5" id="l8h-Ce-EUZ"/>
                             <constraint firstItem="SZe-lZ-FhY" firstAttribute="centerY" secondItem="CeN-dF-CpV" secondAttribute="centerY" constant="-3" id="lwx-xj-flj"/>
+                            <constraint firstItem="V5s-zu-dKY" firstAttribute="trailing" secondItem="gUU-ax-mkS" secondAttribute="trailing" id="n2A-Ba-cxz"/>
                             <constraint firstItem="OGt-dl-tj8" firstAttribute="top" secondItem="lMM-Pp-AFm" secondAttribute="bottom" constant="2" id="osz-vf-9xQ"/>
                             <constraint firstItem="lMM-Pp-AFm" firstAttribute="height" secondItem="ppy-Ab-hVi" secondAttribute="height" multiplier="1.15" id="pWs-1d-Vwe"/>
                             <constraint firstItem="SZe-lZ-FhY" firstAttribute="width" secondItem="m1S-Wh-4DB" secondAttribute="width" multiplier="0.06" id="pyP-ny-eTJ"/>
@@ -298,6 +319,7 @@
                     <navigationItem key="navigationItem" id="ZWb-A3-2Ym"/>
                     <connections>
                         <outlet property="FAQButton" destination="ijt-Uh-qao" id="sXF-Rc-DLQ"/>
+                        <outlet property="animationView" destination="ux9-cU-Byc" id="gXZ-ZW-pi6"/>
                         <outlet property="applyButton" destination="iR7-hB-8Jz" id="eRA-IL-Wkf"/>
                         <outlet property="applyLabel" destination="OyD-DF-64N" id="zuK-rX-4ps"/>
                         <outlet property="applyView" destination="7wd-qY-rbt" id="IRE-wU-iB3"/>
@@ -308,6 +330,7 @@
                         <outlet property="howToUseButton" destination="CeN-dF-CpV" id="qsO-MR-UTh"/>
                         <outlet property="howToUseButtonUnderLineView" destination="RIl-n7-iYK" id="by8-dM-0OZ"/>
                         <outlet property="noticeButton" destination="zZb-84-zyq" id="gy1-QA-pzI"/>
+                        <outlet property="opaqueView" destination="V5s-zu-dKY" id="o0t-Uf-NTp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKy-bk-IW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
