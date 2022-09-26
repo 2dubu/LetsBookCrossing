@@ -43,7 +43,7 @@ class SelectBookViewController: UIViewController {
         
         // lottie animationView
         animationView.loopMode = .loop
-        animationView.animationSpeed = 1.0
+        animationView.animationSpeed = 2.0
         animationView.isHidden = true
         self.view.bringSubviewToFront(self.animationView)
         
@@ -231,11 +231,15 @@ class SelectBookViewController: UIViewController {
         
         self.currentPage = 1
         baseArray.removeAll()
-        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [self] in
-            baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
-            booksCollectionView.reloadData()
-            animationView.isHidden = true
-            animationView.stop()
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [weak self] in
+            guard let self = self else { return }
+            self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
+            self.booksCollectionView.reloadData()
+            
+            if self.refreshControl.isRefreshing == false {
+                self.animationView.isHidden = true
+                self.animationView.stop()
+            }
         } error: {
             self.showServerErrorAlert()
         }
