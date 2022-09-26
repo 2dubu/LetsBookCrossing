@@ -41,43 +41,21 @@ class CompleteRegisterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if isPresentedToMain() {
-            self.navigationItem.hidesBackButton = false
-        } else {
-            self.navigationItem.hidesBackButton = true
-        }
+        self.navigationItem.hidesBackButton = true
     }
     
     //MARK: - IBAction
     @IBAction func confirmButtonTapped(_ sender: Any) {
-        
-        if isPresentedToMain() {
-            // 교환 취소
-            self.showAlert1(title: "안내", message: "아직 준비 중인 기능입니다.", buttonTitle: "확인", handler: nil)
-        } else {
-            self.dismiss(animated: true)
-        }
         // 신청 프로세스 이후 ExchangeDataManager 초기화
         ExchangeDataManager.shared.resetData()
+        self.dismiss(animated: true)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-
     //MARK: - Functions
-    func isPresentedToMain() -> Bool {
-        let nv = (presentingViewController?.presentedViewController as? UINavigationController)
-        let viewControllersCount = nv?.viewControllers.count
-        if viewControllersCount != nil && viewControllersCount! <= 3 {
-            // 메인 화면에서 띄워짐 -> 사용자가 신청 내역 조회 중
-            return true
-        } else {
-            // 메인 화면에서 띄워지지 않음 -> 사용자가 도서 교환 중
-            return false
-        }
-    }
     
     func setElements() {
         
@@ -89,38 +67,27 @@ class CompleteRegisterViewController: UIViewController {
         descriptionBackGroundView.layer.cornerRadius = 10
         setViewShadow(view: descriptionBackGroundView, shadowRadius: 3, shadowOpacity: 0.4)
         
-        if isPresentedToMain() {
-            navigationItem.title = "신청내역 조회"
-            
-            description1.text = "(신청일)에 신청하셨습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
-            description2.text = "서울책보고 업무시간은 평일 11시 ~ 20시, 주말 및 공휴일 10시 ~ 20시입니다.\n* 매주 월요일, 1월1일, 설날 및 추석연휴는 휴관일입니다."
-            
-            // image, bookTitle set
-            
-            confirmButton.setTitle("북크로싱 신청 취소", for: .normal)
-        } else {
-            navigationItem.title = "북크로싱 정보 확인"
-            description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
-            description2.text = "교환 신청 취소는\"북크로싱 신청 내역 조회\"\n에서 진행할 수 있습니다."
-            
-            guard let registerBookImageData = ExchangeDataManager.shared.bookRegister?.imageData else { return }
-            registerImageView.image = UIImage(data: registerBookImageData)
-            
-            applyImageView.kf.indicatorType = .activity
-            applyImageView.kf.setImage(
-                with: URL(string: ExchangeDataManager.shared.applyBookInfo?.imageURL ?? ""),
-                placeholder: UIImage(named: "imageNotFound"),
-                options: [
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(0.7)),
-                    .cacheOriginalImage
-                ])
-            
-            registerTitleLabel.text = ExchangeDataManager.shared.bookRegister?.title
-            applyTitleLabel.text = ExchangeDataManager.shared.applyBookInfo?.title
-            
-            confirmButton.setTitle("확인", for: .normal)
-        }
+        navigationItem.title = "북크로싱 정보 확인"
+        description1.text = "신청이 완료되었습니다.\n익일(내일 / 서울책보고 업무시간 이내) 이내에 \"서울책보고\"에 방문하셔서\n교환을 완료하여 주시기 바랍니다."
+        description2.text = "교환 신청 취소는\"북크로싱 신청 내역 조회\"\n에서 진행할 수 있습니다."
+        
+        guard let registerBookImageData = ExchangeDataManager.shared.bookRegister?.imageData else { return }
+        registerImageView.image = UIImage(data: registerBookImageData)
+        
+        applyImageView.kf.indicatorType = .activity
+        applyImageView.kf.setImage(
+            with: URL(string: ExchangeDataManager.shared.applyBookInfo?.imageURL ?? ""),
+            placeholder: UIImage(named: "imageNotFound"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.7)),
+                .cacheOriginalImage
+            ])
+        
+        registerTitleLabel.text = ExchangeDataManager.shared.bookRegister?.title
+        applyTitleLabel.text = ExchangeDataManager.shared.applyBookInfo?.title
+        
+        confirmButton.setTitle("확인", for: .normal)
     }
     
     func calculateDate() -> String {
@@ -151,5 +118,4 @@ class CompleteRegisterViewController: UIViewController {
         
         confirmButton.titleLabel?.dynamicFont(fontSize: 18)
     }
-
 }
