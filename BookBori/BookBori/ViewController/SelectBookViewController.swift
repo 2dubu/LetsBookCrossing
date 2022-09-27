@@ -150,27 +150,29 @@ class SelectBookViewController: UIViewController {
         } else  {
             filteredArray.removeAll()
             
-            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
+            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기
             self.animationView.isHidden = false
             self.animationView.play()
             
-            getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
-                    self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
-                    // 검색 결과 없을 땐 defaultImage 표시
-                    if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 {
-                        self.filteredArray = []
-                        defaultImageView.isHidden = false
-                        booksCollectionView.isScrollEnabled = false
-                        scrollUpButton.isHidden = true
-                    } else {
-                        defaultImageView.isHidden = true
-                        booksCollectionView.isScrollEnabled = true
-                        scrollUpButton.isHidden = false
-                    }
-                    isBaseArray = false
-                    self.booksCollectionView.reloadData()
-                    self.animationView.stop()
-                    self.animationView.isHidden = true
+            getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [weak self] in
+                guard let self = self else { return }
+                
+                self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
+                // 검색 결과 없을 땐 defaultImage 표시
+                if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 {
+                    self.filteredArray = []
+                    self.defaultImageView.isHidden = false
+                    self.booksCollectionView.isScrollEnabled = false
+                    self.scrollUpButton.isHidden = true
+                } else {
+                    self.defaultImageView.isHidden = true
+                    self.booksCollectionView.isScrollEnabled = true
+                    self.scrollUpButton.isHidden = false
+                }
+                self.isBaseArray = false
+                self.booksCollectionView.reloadData()
+                self.animationView.stop()
+                self.animationView.isHidden = true
             } error: {
                 self.showAlert2(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
                     self.searchBarSearchButtonClicked(self.searchBar)
