@@ -46,10 +46,10 @@
 		268E076627F67C2F0056F03F /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E076527F67C2F0056F03F /* CheckTableViewCell.swift */; };
 		269AA2C227F2EEC200D8B22B /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */; };
 		4451796A89D78BC21104A479 /* libPods-BookBori.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */; };
-		C61ECC7C280E3D2F000D34B9 /* bookLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = C61ECC7B280E3D2F000D34B9 /* bookLoader.json */; };
 		C6417DCA28DB3A3F00BC3A8B /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6417DC928DB3A3F00BC3A8B /* UIWindowExtension.swift */; };
 		C6985EC627F591AF00B0571C /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6985EC527F591AF00B0571C /* CALayerExtension.swift */; };
 		C6DB3AB928D9E74900870E8F /* NetworkCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DB3AB828D9E74900870E8F /* NetworkCheckViewController.swift */; };
+		C6EFB9A528E5E5DB00C53743 /* bookLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9A428E5E5DB00C53743 /* bookLoader.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,10 +93,10 @@
 		268B02B427F6824100980723 /* CheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		268E076527F67C2F0056F03F /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 		269AA2C127F2EEC100D8B22B /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HowToUseViewController.swift; path = BookBori/ViewController/HowToUseViewController.swift; sourceTree = SOURCE_ROOT; };
-		C61ECC7B280E3D2F000D34B9 /* bookLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bookLoader.json; sourceTree = "<group>"; };
 		C6417DC928DB3A3F00BC3A8B /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		C6985EC527F591AF00B0571C /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		C6DB3AB828D9E74900870E8F /* NetworkCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckViewController.swift; sourceTree = "<group>"; };
+		C6EFB9A428E5E5DB00C53743 /* bookLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bookLoader.json; path = ../../bookLoader.json; sourceTree = "<group>"; };
 		E24A9F31EF6ED56DAC4252DB /* Pods-BookBori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.release.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.release.xcconfig"; sourceTree = "<group>"; };
 		E38DAF75BA2DE3A0338FCF3B /* Pods-BookBori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookBori.debug.xcconfig"; path = "Target Support Files/Pods-BookBori/Pods-BookBori.debug.xcconfig"; sourceTree = "<group>"; };
 		F5A1B715D748FB3AAF88EE63 /* libPods-BookBori.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookBori.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,7 +292,7 @@
 		C609121D2808633000B59266 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				C61ECC7B280E3D2F000D34B9 /* bookLoader.json */,
+				C6EFB9A428E5E5DB00C53743 /* bookLoader.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				18F641AA27C46A7F000B2526 /* Main.storyboard in Resources */,
 				2681330127F400480076CA33 /* 3.gif in Resources */,
 				18998AB727DAF03700943C21 /* GmarketSansMedium.otf in Resources */,
-				C61ECC7C280E3D2F000D34B9 /* bookLoader.json in Resources */,
+				C6EFB9A528E5E5DB00C53743 /* bookLoader.json in Resources */,
 				18998AB527DAF03200943C21 /* GmarketSansBold.otf in Resources */,
 				18F641D527C4772E000B2526 /* Register.storyboard in Resources */,
 			);
