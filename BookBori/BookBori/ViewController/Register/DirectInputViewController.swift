@@ -19,6 +19,7 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     var whetherUploadCoverImage: Bool = false
     var searchItem : SearchResultOfNaver.BookInfo?
     var isApplicableBook = SeoulBookBogoDataManager.shared.isApplicableBook
+    var registrationMethod = ExchangeDataManager.shared.registrationMethod
     
     //MARK: - IBOutlet
     
@@ -47,9 +48,9 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if userSelectRegistrationMethodButton == "검색" {
+        if registrationMethod == .seach {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath-1]
-        } else if userSelectRegistrationMethodButton == "바코드" {
+        } else {
             self.searchItem = dataManager.shared.searchResultOfNaver?.items[indexPath]
         }
         
@@ -132,99 +133,28 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
             self.showAlert1(title: "안내", message: "교환할 책의 사진을 등록해 주세요", buttonTitle: "확인", handler: nil)
         }
         
-        bookRegister = Book(title: titleTextField.text ?? "", image: "", author: authorTextField.text ?? "", publisher: publisherTextField.text ?? "", yearPublished: Int(pubdateTextField.text ?? "0") ?? 0)
-        
         guard let image = coverImageView.image else { return }
-        
         // 이미지 리사이징
         print("이미지 리사이징 전 : \(image.size.width)")
         let resizingImage = image.resize(newWidth: 50) // 몇으로 리사이징할지 알아야 함.
         print("이미지 리사이징 후 : \(resizingImage.size.width)")
-        
         // 이미지 포맷 고정
-        if let imageJpegData = image.jpegData(compressionQuality: 0.8) {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let fileName = paths[0].appendingPathComponent("bookCoverImage.jpeg")
-            try? imageJpegData.write(to: fileName)
-            print("jpeg 변환 성공?" + imageJpegData.description)
-        }
-        
-        /*
-        guard let applyBookPK = applyBookPK else { return }
-        getIsApplicableBook(bookPK: applyBookPK) {
-            if SeoulBookBogoDataManager.shared.isApplicableBook?.data.canApply == false {
-                self.showAlert1(title: "죄송합니다", message: "이미 다른 사용자가 신청한 책입니다", buttonTitle: "다른 책 고르기") {_ in
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-            } else {
-                guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
-                self.navigationController?.pushViewController(directInputVC, animated: true)
-            }
-        }
-        */
+        guard let imageJpegData = image.jpegData(compressionQuality: 0.8) else { return }
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let fileName = paths[0].appendingPathComponent("bookCoverImage.jpeg")
+        try? imageJpegData.write(to: fileName)
+        print("jpeg 변환 성공?" + imageJpegData.description)
+                
+        ExchangeDataManager.shared.bookRegister = Book(title: titleTextField.text ?? "", imageData: imageJpegData, author: authorLabel.text ?? "", publisher: publisherLabel.text ?? "", pubDate: Int(pubdateLabel.text ?? "0") ?? 0, commnet: reviewTextView.text)
+    
         let filterdStr = self.reviewTextView.text.components(separatedBy: ["\"","\\"]).joined()
 
-        guard let applyBookPK = applyBookPK else { return }
-        self.checkApplicable(bookPK: applyBookPK) {
-            self.showAlert1(title: "filterdStr", message: filterdStr, buttonTitle: "OK") { _ in
+        self.checkApplicable(bookPK: ExchangeDataManager.shared.applyBookInfo!.bookPK) {
+            self.showAlert1(title: "교환 신청이 완료되었습니다.", message: "", buttonTitle: "확인") { _ in
                 guard let completeRegisterVC = self.storyboard?.instantiateViewController(identifier: "CompleteRegisterVC") as? CompleteRegisterViewController else { return }
                 self.navigationController?.pushViewController(completeRegisterVC, animated: true)
             }
         }
-        
-        /*
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.000Z"
-        let convertDate = dateFormatter.date(from: searchItem!.datetime)
-        
-        let myDateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yyyy년 MM월 dd일"
-        let convertStr = myDateFormatter.string(from: convertDate!)
-        
-        let registrationCompleteAlert = UIAlertController(title: "책 등록이 완료되었습니다", message: "\(calculateDate())까지\n등록한 책을 가지고 서울책보고로 방문해 교환을 완료하세요.", preferredStyle: .alert)
-        let registrationCompleteCancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        let registrationCompleteConfirmAction = UIAlertAction(title: "확인", style: .default) { _ in
-            
-            if let indexPath = userSelectedShelfNumber {
-                guard let searchItem = self.searchItem else { return }
-                self.db.collection("registrationData").document(returnDocumentName()).setData([
-                    "author" : self.authorTextField.text ?? "",
-                    "category" : self.categoryTitle ?? "",
-                    "description" : self.reviewTextView.text ?? "",
-                    "detailImage" : "",
-                    "image" : searchItem.thumbnail,
-                    "shelfNumber" : indexPath + 1,
-                    "state" : true,
-                    "title" : self.titleTextField.text ?? "",
-                    "uid" : self.user?.uid ?? "",
-                    "publisher" : searchItem.publisher,
-                    "dateTime" : convertStr
-                ]) { err in
-                    if err != nil {
-                        print("add registrationData: \(err)")
-                    }
-                }
-                self.db.collection("bookShelfData").document(returnDocumentName()).setData([
-                    "state" : false
-                ], merge: true)
-                { err in
-                    if err != nil {
-                        print("edit bookShelfData state: \(err)")
-                    }
-                }
-            }
-            
-            var userSelectRegistrationMethodButton : String?
-
-            self.navigationController?.dismiss(animated: true, completion: nil)
-        }
-        registrationCompleteConfirmAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-        registrationCompleteCancelAction.setValue(UIColor(#colorLiteral(red: 0.3294117647, green: 0.6156862745, blue: 0.3764705882, alpha: 1)), forKey: "titleTextColor")
-        
-        registrationCompleteAlert.addAction(registrationCompleteCancelAction)
-        registrationCompleteAlert.addAction(registrationCompleteConfirmAction)
-        self.present(registrationCompleteAlert, animated: true, completion: nil)
-        */
     }
     
     //MARK: - functions
@@ -304,11 +234,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
 
     func updateWhetherUploadCoverImage() {
-        if userSelectRegistrationMethodButton == "바코드" {
+        switch registrationMethod {
+        case .scanBarcode:
             whetherUploadCoverImage = true
-        } else if userSelectRegistrationMethodButton == "검색" {
+        case .seach:
             whetherUploadCoverImage = true
-        } else {
+        case .DirectInput:
+            whetherUploadCoverImage = false
+        case .none:
             whetherUploadCoverImage = false
         }
     }
@@ -362,31 +295,14 @@ class DirectInputViewController: UIViewController, UITextFieldDelegate, UITextVi
         reviewTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 10, right: 10)
         
         guard let searchItem = searchItem else { return }
-        
-        let matchedStrData = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
-        print("matched strData : \(matchedStrData)")
-        
-        titleTextField.text = matchedStrData
-        
-        /*
-        if searchItem.authors.count == 1 {
-            authorTextField.text = searchItem.authors[0]
-        } else if searchItem.authors.count > 1 {
-            authorTextField.text = "\(searchItem.authors[0]) 외 \(searchItem.authors.count-1)명"
-        } */
+        titleTextField.text = searchItem.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "\\s?\\([^)]*\\)", with: "", options: .regularExpression)
         authorTextField.text = searchItem.author.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
         publisherTextField.text = searchItem.publisher.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
-        
-        let pubdate = searchItem.pubdate
-        //pubdate.removeLast(2)
-        //pubdate.insert(contentsOf: "년 ", at: pubdate.index(pubdate.startIndex, offsetBy: 4))
-        //pubdate.append(contentsOf: "월")
-        pubdateTextField.text = pubdate
-        
-        guard let imageURL = URL(string: searchItem.image) else { return }
+        pubdateTextField.text = searchItem.pubdate
+
         coverImageView.kf.indicatorType = .activity
         coverImageView.kf.setImage(
-            with: imageURL,
+            with: URL(string: searchItem.image),
             placeholder: UIImage(named: "beforeRegistration"),
             options: [
                 .scaleFactor(UIScreen.main.scale),

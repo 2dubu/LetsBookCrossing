@@ -43,7 +43,7 @@ class SelectBookViewController: UIViewController {
         
         // lottie animationView
         animationView.loopMode = .loop
-        animationView.animationSpeed = 1.0
+        animationView.animationSpeed = 2.0
         animationView.isHidden = true
         self.view.bringSubviewToFront(self.animationView)
         
@@ -150,27 +150,29 @@ class SelectBookViewController: UIViewController {
         } else  {
             filteredArray.removeAll()
             
-            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기 
+            // 검색된 키워드가 포함된 도서명의 데이터만 서버로부터 불러오기
             self.animationView.isHidden = false
             self.animationView.play()
             
-            getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [self] in
-                    self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
-                    // 검색 결과 없을 땐 defaultImage 표시
-                    if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 && (DeviceManager.shared.networkStatus) == true {
-                        self.filteredArray = []
-                        defaultImageView.isHidden = false
-                        booksCollectionView.isScrollEnabled = false
-                        scrollUpButton.isHidden = true
-                    } else {
-                        defaultImageView.isHidden = true
-                        booksCollectionView.isScrollEnabled = true
-                        scrollUpButton.isHidden = false
-                    }
-                    isBaseArray = false
-                    self.booksCollectionView.reloadData()
-                    self.animationView.stop()
-                    self.animationView.isHidden = true
+            getApplicableBookList(pagesize: 21, page: self.currentPage, keyword: text) { [weak self] in
+                guard let self = self else { return }
+                
+                self.filteredArray = SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? []
+                // 검색 결과 없을 땐 defaultImage 표시
+                if SeoulBookBogoDataManager.shared.applicableBookList?.data.listCount == 0 {
+                    self.filteredArray = []
+                    self.defaultImageView.isHidden = false
+                    self.booksCollectionView.isScrollEnabled = false
+                    self.scrollUpButton.isHidden = true
+                } else {
+                    self.defaultImageView.isHidden = true
+                    self.booksCollectionView.isScrollEnabled = true
+                    self.scrollUpButton.isHidden = false
+                }
+                self.isBaseArray = false
+                self.booksCollectionView.reloadData()
+                self.animationView.stop()
+                self.animationView.isHidden = true
             } error: {
                 self.showAlert2(title: "안내", message: "서버에 일시적인 오류가 발생했습니다.\n잠시 후 다시 시도해주세요", buttonTitle1: "다시 시도", buttonTitle2: "확인", handler1: { _ in
                     self.searchBarSearchButtonClicked(self.searchBar)
@@ -231,11 +233,15 @@ class SelectBookViewController: UIViewController {
         
         self.currentPage = 1
         baseArray.removeAll()
-        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [self] in
-            baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
-            booksCollectionView.reloadData()
-            animationView.isHidden = true
-            animationView.stop()
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [weak self] in
+            guard let self = self else { return }
+            self.baseArray += (SeoulBookBogoDataManager.shared.applicableBookList?.data.bookList ?? [])
+            self.booksCollectionView.reloadData()
+            
+            if self.refreshControl.isRefreshing == false {
+                self.animationView.isHidden = true
+                self.animationView.stop()
+            }
         } error: {
             self.showServerErrorAlert()
         }
@@ -261,19 +267,19 @@ extension SelectBookViewController: UISearchBarDelegate {
     
     // searchBar 완료 버튼 눌렀을 때 검색 결과 띄우기
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if(DeviceManager.shared.networkStatus) == true {
+//        if(DeviceManager.shared.networkStatus) == true {
             // 네트워크 연결 O
             self.showSearchResult()
-        } else {
+//        } else {
             // 네트워크 연결 X
-            self.animationView.stop()
-            self.animationView.isHidden = true
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
-                self.searchBarSearchButtonClicked(self.searchBar)
-            } handler2: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }
-        }
+//            self.animationView.stop()
+//            self.animationView.isHidden = true
+//            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
+//                self.searchBarSearchButtonClicked(self.searchBar)
+//            } handler2: { _ in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
     }
     
 }
@@ -338,18 +344,9 @@ extension SelectBookViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        // ⚠️ 여기 고치자
-        applyBookPK = returnArray()[indexPath.row].bookPK
-        if returnArray()[indexPath.row].bookTitle == "" {
-            applyBookTitle = "(제목 없음)"
-        } else {
-            applyBookTitle = returnArray()[indexPath.row].bookTitle
-        }
-        applyBookImgURL = returnArray()[indexPath.row].imgUrl
+        ExchangeDataManager.shared.applyBookInfo = ApplyBook(bookPK: returnArray()[indexPath.row].bookPK, title: returnArray()[indexPath.row].bookTitle, imageURL: returnArray()[indexPath.row].imgUrl)
         
-        bookApplied = BookDummyData.shared.books[indexPath.row]
-        
-        guard let applyBookPK = applyBookPK else { return }
+        guard let applyBookPK = ExchangeDataManager.shared.applyBookInfo?.bookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             getApplyBookInfo(bookPK: applyBookPK) {
                 let guideVC = UIStoryboard(name: "Apply", bundle: nil).instantiateViewController(withIdentifier: "GuideVC")

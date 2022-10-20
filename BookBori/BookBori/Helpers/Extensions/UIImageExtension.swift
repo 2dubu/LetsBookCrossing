@@ -1,11 +1,3 @@
-//
-//  UIImageExtension.swift
-//  BookBori
-//
-//  Created by 이로운 on 2022/06/29.
-//
-
-import Foundation
 import UIKit
 
 extension UIImage {

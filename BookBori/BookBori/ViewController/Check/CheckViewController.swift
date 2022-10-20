@@ -19,7 +19,10 @@ class CheckViewController: UIViewController {
         checkTableView.delegate = self
         checkTableView.dataSource = self
     }
-
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
 
 extension CheckViewController : UITableViewDelegate, UITableViewDataSource {

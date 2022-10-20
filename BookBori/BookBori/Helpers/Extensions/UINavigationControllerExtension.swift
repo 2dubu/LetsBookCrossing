@@ -1,11 +1,3 @@
-//
-//  NavigationExtension.swift
-//  BookBori
-//
-//  Created by 이건우 on 2021/11/13.
-//
-
-import Foundation
 import UIKit
 
 extension UINavigationController: UIGestureRecognizerDelegate {

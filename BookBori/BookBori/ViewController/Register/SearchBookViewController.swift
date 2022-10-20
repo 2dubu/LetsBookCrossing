@@ -81,7 +81,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
                             self.searchBookTableView.reloadData()
                             self.searchBookTableView.isScrollEnabled = true
                             
-                            if (DeviceManager.shared.networkStatus) == true && dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
+                            if dataManager.shared.searchResultOfNaver?.items.isEmpty == true {
                                 self.defaultImage.image = UIImage(named: "searchTableViewPlaceholder2")
                                 self.defaultImage.isHidden = false
                                 self.searchBookTableView.isScrollEnabled = false
@@ -97,9 +97,9 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        checkDeviceNetworkStatus {
+//        checkDeviceNetworkStatus {
             self.showSearchResult()
-        }
+//        }
     }
     
     func requestBookBySearch(
@@ -146,20 +146,20 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    private func checkDeviceNetworkStatus(completion: @escaping ()->()) {
-        if(DeviceManager.shared.networkStatus) == false {
-            // 네트워크 연결 X
-            self.indicatorView.stopAnimating()
-            self.indicatorView.isHidden = true
-            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
-                self.searchBarSearchButtonClicked(self.searchBar)
-            } handler2: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            completion()
-        }
-    }
+//    private func checkDeviceNetworkStatus(completion: @escaping ()->()) {
+//        if(DeviceManager.shared.networkStatus) == false {
+//            // 네트워크 연결 X
+//            self.indicatorView.stopAnimating()
+//            self.indicatorView.isHidden = true
+//            showAlert2(title: "서버에 연결할 수 없습니다", message: "네트워크가 연결되지 않았습니다.\nWi-Fi 또는 데이터를 활성화 해주세요.", buttonTitle1: "다시 시도", buttonTitle2: "확인") { _ in
+//                self.searchBarSearchButtonClicked(self.searchBar)
+//            } handler2: { _ in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        } else {
+//            completion()
+//        }
+//    }
     
     func getFilterdData() -> [SearchResultOfNaver.BookInfo] {
         let filteredItem = dataManager.shared.searchResultOfNaver?.items.filter({ item in
@@ -245,7 +245,7 @@ class SearchBookViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
         guard let directInputVC = self.storyboard?.instantiateViewController(identifier: "DirectInputVC") as? DirectInputViewController else { return }
-        guard let applyBookPK = applyBookPK else { return }
+        guard let applyBookPK = ExchangeDataManager.shared.applyBookInfo?.bookPK else { return }
         self.checkApplicable(bookPK: applyBookPK) {
             self.navigationController?.pushViewController(directInputVC, animated: true)
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class MainViewController: UIViewController {
     
@@ -25,6 +26,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var noticeButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
     
+    // present loading views
+    @IBOutlet weak var opaqueView: UIView!
+    @IBOutlet weak var animationView: AnimationView!
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +43,29 @@ class MainViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func applyButtonTapped(_ sender: Any) {
-        self.checkDeviceNetworkStatusAndShowAlert() {
-            getApplicableBookList(pagesize: 21, page: 1, keyword: "") {
-                let applySB = UIStoryboard(name: "Apply", bundle: nil)
-                let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
-                selectBookNC.modalPresentationStyle = .fullScreen
-                self.present(selectBookNC, animated: true, completion: nil)
-            } error: {
-                self.showServerErrorAlert()
+        self.startAnimation()
+        
+        getApplicableBookList(pagesize: 21, page: 1, keyword: "") { [weak self] in
+            guard let self = self else { return }
+            let applySB = UIStoryboard(name: "Apply", bundle: nil)
+            let selectBookNC = applySB.instantiateViewController(withIdentifier: "SelectBookNC")
+            selectBookNC.modalPresentationStyle = .fullScreen
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.present(selectBookNC, animated: true) {
+                    self.stopAnimation()
+                }
             }
+        } error: {
+            self.showServerErrorAlert()
         }
     }
     
     @IBAction func checkButtonTapped(_ sender: Any) {
-        self.checkDeviceNetworkStatusAndShowAlert() {
-            let registerSB = UIStoryboard(name: "Apply", bundle: nil)
-            let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
-            collectUserInfoNC.modalPresentationStyle = .fullScreen
-            self.present(collectUserInfoNC, animated: true, completion: nil)
-        }
+        let registerSB = UIStoryboard(name: "Apply", bundle: nil)
+        let collectUserInfoNC = registerSB.instantiateViewController(withIdentifier: "CollectUserInfoNC")
+        collectUserInfoNC.modalPresentationStyle = .fullScreen
+        self.present(collectUserInfoNC, animated: true, completion: nil)
     }
     
     @IBAction func noticeButtonTapped(_ sender: Any) {
@@ -78,6 +87,7 @@ class MainViewController: UIViewController {
         setShadows()
         setLayers()
         setFonts()
+        setAnimationView()
     }
     
     /// 그림자 설정
@@ -109,5 +119,27 @@ class MainViewController: UIViewController {
         noticeButton.titleLabel?.dynamicFont(fontSize: 16)
         FAQButton.titleLabel?.dynamicFont(fontSize: 16)
     }
-
+    
+    /// 화면 전환 로딩 애니메이션 뷰 세팅
+    private func setAnimationView() {
+        opaqueView.isHidden = true
+        animationView.isHidden = true
+        
+        animationView.animationSpeed = 2.0
+        animationView.loopMode = .loop
+    }
+    
+    private func startAnimation() {
+        opaqueView.isHidden = false
+        animationView.isHidden = false
+        
+        animationView.play()
+    }
+    
+    private func stopAnimation() {
+        opaqueView.isHidden = true
+        animationView.isHidden = true
+        
+        animationView.stop()
+    }
 }
